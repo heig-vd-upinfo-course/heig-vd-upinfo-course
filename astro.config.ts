@@ -3,9 +3,11 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://ludelafo.github.io',
+	base: '/test-astro',
 	integrations: [
 		starlight({
-			title: "UPInfoIM",
+			title: "HEIG-VD UPInfoIM",
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
 			sidebar: [
 				{
