@@ -10,9 +10,10 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
+				"astro-build.astro-vscode",
 				"DavidAnson.vscode-markdownlint",
 				"esbenp.prettier-vscode",
-				"astro-build.astro-vscode",
+				"GitHub.copilot",
 				"redhat.vscode-yaml",
 				"streetsidesoftware.code-spell-checker",
 				"streetsidesoftware.code-spell-checker-french"

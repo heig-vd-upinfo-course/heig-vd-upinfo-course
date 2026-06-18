@@ -1,18 +1,20 @@
 ---
-title: UPInfoIM
-description: Get started building your docs site with Starlight.
+title: Accueil
+description:
+  Page d'accueil à l'unité préparatoire d'informatique pour l'ingénierie des
+  médias à la HEIG-VD.
 template: splash # Remove or comment out this line to display the site sidebar on this page.
 hero:
   tagline:
-    Bienvenue à l'unité préparatoire d'informatique pour l'ingénierie des médias
-    à la HEIG-VD !
+    Bienvenue sur la page d'accueil de l'unité préparatoire d'informatique pour
+    l'ingénierie des médias à la HEIG-VD !
   image:
     file: ../../assets/houston.webp
   actions:
-    - text: C'est parti !
-      link: /test-astro/guides/example
+    - text: Voir le programme
+      link: /test-astro/01-introduction-au-cours/02-bienvenue
       icon: right-arrow
-    - text: Accéder au site de la HEIG-VD
+    - text: Site de la HEIG-VD
       link: https://heig-vd.ch
       icon: external
       variant: minimal
@@ -20,25 +22,30 @@ hero:
 
 import { Card, CardGrid, LinkButton } from "@astrojs/starlight/components";
 
-## Buts
+## Buts du cours
 
-<CardGrid stagger>
-	<Card title="Comprendre son ordinateur" icon="desktop">
-		Comprendre les composants d'un ordinateur et leurs interactions pour mieux
-		l'utiliser et le dépanner.
-	</Card>
-	<Card title="Configurer son ordinateur" icon="pencil">
-		Configurer son ordinateur pour être productif.ve et efficace dans ses études
+Un aperçu des objectifs du cours et de ce que vous allez apprendre.
+
+<CardGrid>
+	<Card
+		title="Comprendre et utiliser efficacement votre ordinateur"
+		icon="desktop"
+	>
+		Comprendre et configurer votre ordinateur pour être efficace dans vos études
 		à la HEIG-VD.
 	</Card>
-	<Card title="Installer les logiciels de base" icon="window">
-		Installer et configurer les logiciels de base pour vos études à la HEIG-VD.
+	<Card
+		title="Installer les logiciels de base liés à la formation"
+		icon="window"
+	>
+		Installer et configurer les logiciels de base nécessaires pour vos études à
+		la HEIG-VD.
 	</Card>
-	<Card title="Savoir où trouver les ressources" icon="question-circle">
-		Savoir où trouver les ressources et des aides pour vos études à la HEIG-VD.
-	</Card>
-	<Card title="Gérer ses fichiers et dossiers" icon="add-document">
-		Gérer ses fichiers et dossiers pour mieux organiser son travail et ne pas
-		perdre des données importantes.
+	<Card
+		title="Une ressource qui peut vous être utile en toute circonstance"
+		icon="rocket"
+	>
+		Aider dans la configuration de votre ordinateur et avoir un environnement de
+		travail professionnel.
 	</Card>
 </CardGrid>
