@@ -5,14 +5,15 @@ import starlightLinksValidator from "starlight-links-validator";
 const title = "UPInfoIM";
 const description =
 	"Unité préparatoire d'informatique pour ingénierie des médias à la HEIG-VD.";
-const site = "https://ludelafo.github.io";
+const protocol = "https";
+const site = "ludelafo.github.io";
 const base = "/test-astro";
-const ogUrl = new URL(`${base}/og.webp?v=1`, site).href;
+const ogUrl = new URL(`${base}/og.webp?v=1`, `${protocol}://${site}`).href;
 const ogImageAlt = `${title} - ${description}`;
 
 // https://astro.build/config
 export default defineConfig({
-	site,
+	site: `${protocol}://${site}`,
 	base,
 	integrations: [
 		starlight({
@@ -35,6 +36,7 @@ export default defineConfig({
 					attrs: {
 						src: "https://cloud.umami.is/script.js",
 						"data-website-id": "20c47a80-8802-463c-99a5-fe881bde77b9",
+						"data-domains": site,
 						defer: true,
 					},
 				},
