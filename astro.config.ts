@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
+import starlightLinksValidator from "starlight-links-validator";
 
 // https://astro.build/config
 export default defineConfig({
@@ -36,6 +37,10 @@ export default defineConfig({
 				minHeadingLevel: 2,
 				maxHeadingLevel: 3,
 			},
+			plugins: [
+				// https://starlight-links-validator.vercel.app/
+				starlightLinksValidator(),
+			],
 			sidebar: [
 				{
 					label: "Introduction au cours",
