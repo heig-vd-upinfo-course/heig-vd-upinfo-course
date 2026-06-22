@@ -3,12 +3,12 @@ import starlight from "@astrojs/starlight";
 import starlightLinksValidator from "starlight-links-validator";
 import starlightVideos from "starlight-videos";
 
-const title = "UPInfoIM";
+const title = "InfoIM";
 const description =
-	"Unité préparatoire d'informatique pour ingénierie des médias à la HEIG-VD.";
+	"Cours préparatoire d'informatique pour ingénierie des médias à la HEIG-VD.";
 const protocol = "https";
-const site = "ludelafo.github.io";
-const base = "/test-astro";
+const site = "mediacomem.github.io";
+const base = "/im-cours-preparatoire-dinformatique";
 const ogUrl = new URL(`${base}/og.webp?v=1`, `${protocol}://${site}`).href;
 const ogImageAlt = `${title} - ${description}`;
 
@@ -28,7 +28,7 @@ export default defineConfig({
 				{
 					icon: "github",
 					label: "GitHub",
-					href: "https://github.com/ludelafo/test-astro",
+					href: "https://github.com/MediaComem/im-cours-preparatoire-dinformatique",
 				},
 			],
 			head: [
@@ -59,7 +59,8 @@ export default defineConfig({
 			},
 			credits: true,
 			editLink: {
-				baseUrl: "https://github.com/ludelafo/test-astro/edit/main/",
+				baseUrl:
+					"https://github.com/MediaComem/im-cours-preparatoire-dinformatique/edit/main/",
 			},
 			lastUpdated: true,
 			tableOfContents: {
