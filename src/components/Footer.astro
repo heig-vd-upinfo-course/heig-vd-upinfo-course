@@ -1,0 +1,14 @@
+---
+import Feedback from "@components/Feedback.astro";
+import Default from "@astrojs/starlight/components/Footer.astro";
+---
+
+{
+	Astro.locals.starlightRoute.entry.data.feedback !== false && (
+		<div class="sl-markdown-content">
+			<Feedback />
+		</div>
+	)
+}
+
+<Default><slot /></Default>

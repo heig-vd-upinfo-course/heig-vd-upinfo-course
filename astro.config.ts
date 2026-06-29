@@ -1,7 +1,6 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
-// TODO: Uncomment this line when the plugin is fixed to work with Astro v7 - https://github.com/HiDeoo/starlight-links-validator/issues/165
-// import starlightLinksValidator from "starlight-links-validator";
+import starlightLinksValidator from "starlight-links-validator";
 
 const title =
 	"Unité préparatoire d'informatique pour ingénierie des médias à la HEIG-VD";
@@ -67,10 +66,13 @@ export default defineConfig({
 				minHeadingLevel: 2,
 				maxHeadingLevel: 3,
 			},
+			components: {
+				Footer: "./src/components/Footer.astro",
+			},
+			routeMiddleware: ["./src/routeData.ts"],
 			plugins: [
 				// https://starlight-links-validator.vercel.app/
-				// TODO: Uncomment this line when the plugin is fixed to work with Astro v7 - https://github.com/HiDeoo/starlight-links-validator/issues/165
-				// starlightLinksValidator(),
+				starlightLinksValidator(),
 			],
 			sidebar: [
 				{

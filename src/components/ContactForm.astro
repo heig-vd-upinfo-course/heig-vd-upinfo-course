@@ -1,0 +1,182 @@
+---
+// JavaScript comes here.
+---
+
+<form id="form">
+	<input
+		type="hidden"
+		name="access_key"
+		value="8179d56f-31d9-47fc-aad5-0000228ad932"
+	/>
+
+	<fieldset>
+		<label for="name">Nom complet (optionnel)</label>
+		<input
+			type="text"
+			id="name"
+			name="name"
+			placeholder="Saisissez votre nom complet (optionnel)"
+		/>
+	</fieldset>
+	<fieldset>
+		<label for="email_address">Adresse email (optionnel)</label>
+		<input
+			type="email"
+			id="email_address"
+			name="email"
+			placeholder="Saisissez votre adresse email (optionnel)"
+		/>
+	</fieldset>
+	<fieldset>
+		<label for="message">Message</label>
+		<textarea
+			id="message"
+			name="message"
+			placeholder="Saisissez votre message"
+			required></textarea>
+	</fieldset>
+
+	<button id="submit-button" type="submit">Envoyer le message</button>
+</form>
+
+<style>
+	#form {
+		display: grid;
+		gap: 1rem;
+		margin-top: 1rem;
+		padding: 1.25rem;
+		border: 1px solid var(--sl-color-hairline);
+		border-radius: 0.75rem;
+		background-color: var(--sl-color-bg-nav);
+	}
+
+	fieldset {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		display: grid;
+		gap: 0.5rem;
+	}
+
+	label {
+		font-size: var(--sl-text-sm);
+		font-weight: 600;
+		color: var(--sl-color-white);
+	}
+
+	input,
+	textarea {
+		width: 100%;
+		font: inherit;
+		font-size: var(--sl-text-sm);
+		line-height: var(--sl-line-height-normal);
+		color: var(--sl-color-white);
+		background-color: var(--sl-color-black);
+		border: 1px solid var(--sl-color-hairline-light);
+		border-radius: 0.5rem;
+		padding: 0.65rem 0.75rem;
+		margin-top: 0.25rem;
+		transition:
+			border-color 0.2s ease,
+			box-shadow 0.2s ease;
+	}
+
+	textarea {
+		min-height: 8rem;
+		resize: vertical;
+	}
+
+	input::placeholder,
+	textarea::placeholder {
+		color: var(--sl-color-gray-3);
+	}
+
+	input:focus-visible,
+	textarea:focus-visible {
+		outline: none;
+		border-color: var(--sl-color-accent-high);
+		box-shadow: 0 0 0 3px var(--sl-color-accent-low);
+	}
+
+	button[type="submit"] {
+		justify-self: stretch;
+		width: 100%;
+		font: inherit;
+		font-weight: 600;
+		font-size: var(--sl-text-sm);
+		line-height: 1;
+		padding: 0.7rem 1rem;
+		border: 1px solid var(--sl-color-accent);
+		border-radius: 0.5rem;
+		color: var(--sl-color-black);
+		background: var(--sl-color-accent-high);
+		cursor: pointer;
+		transition:
+			transform 0.15s ease,
+			opacity 0.15s ease,
+			background-color 0.15s ease;
+	}
+
+	button[type="submit"]:hover {
+		opacity: 0.95;
+		transform: translateY(-1px);
+	}
+
+	button[type="submit"]:focus-visible {
+		outline: none;
+		box-shadow: 0 0 0 3px var(--sl-color-accent-low);
+	}
+
+	button[type="submit"]:active {
+		transform: translateY(0);
+	}
+</style>
+
+<script is:inline>
+	document.addEventListener(
+		"DOMContentLoaded",
+		() => {
+			const form = document.getElementById("form");
+			const submitButton = document.getElementById("submit-button");
+
+			form.addEventListener("submit", function (e) {
+				e.preventDefault();
+
+				const formData = new FormData(form);
+				const object = Object.fromEntries(formData);
+				const json = JSON.stringify(object);
+
+				submitButton.disabled = true;
+				submitButton.innerHTML = "Envoi du message...";
+
+				fetch("https://api.web3forms.com/submit", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+						Accept: "application/json",
+					},
+					body: json,
+				})
+					.then(async (response) => {
+						if (response.status == 200) {
+							submitButton.innerHTML =
+								"Message envoyé avec succès ! Merci pour votre retour.";
+						} else {
+							submitButton.disabled = false;
+							submitButton.innerHTML =
+								"Quelque chose s'est mal passé ! Merci de réessayer plus tard.";
+						}
+					})
+					.catch(() => {
+						submitButton.disabled = false;
+						submitButton.innerHTML =
+							"Quelque chose s'est mal passé ! Merci de réessayer plus tard.";
+					})
+					.then(function () {
+						form.reset();
+					});
+			});
+		},
+		{ once: true },
+	);
+</script>
