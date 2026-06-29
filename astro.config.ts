@@ -41,6 +41,13 @@ export default defineConfig({
 					},
 				},
 				{
+					tag: "script",
+					attrs: {
+						src: "https://cdn.jsdelivr.net/npm/@tsparticles/confetti@4/tsparticles.confetti.bundle.min.js",
+						defer: true,
+					},
+				},
+				{
 					tag: "meta",
 					attrs: { property: "og:image", content: ogUrl },
 				},

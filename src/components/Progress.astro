@@ -11,7 +11,8 @@ import { Aside, Icon } from "@astrojs/starlight/components";
 			data-umami-event-value="toggle"
 		/>
 		<span>
-			Félicitations ! Cochez cette case lorsque vous avez terminé ce contenu.
+			Félicitations ! Cochez cette case pour suivre votre progression dans le
+			menu latéral.
 		</span>
 	</label>
 </Aside>
@@ -29,6 +30,7 @@ import { Aside, Icon } from "@astrojs/starlight/components";
 		display: inline-flex;
 		align-items: center;
 		gap: 1rem;
+		cursor: pointer;
 	}
 
 	.progress-label input[type="checkbox"] {
@@ -67,7 +69,8 @@ import { Aside, Icon } from "@astrojs/starlight/components";
 </style>
 
 <script is:inline>
-	const STORAGE_KEY = "starlight-progress-v1";
+	const STORAGE_KEY = "progress-state";
+
 	const markerTemplate = document.getElementById("progress-marker-template");
 
 	function normalizePath(pathname) {
@@ -164,6 +167,7 @@ import { Aside, Icon } from "@astrojs/starlight/components";
 
 				if (checkbox.checked) {
 					nextState[pagePath] = true;
+					confetti({ particleCount: 100, spread: 70 });
 				} else {
 					delete nextState[pagePath];
 				}

@@ -33,7 +33,7 @@
 	// Ports to expose on the container's network host
 	"forwardPorts": [4321],
 	"portsAttributes": {
-		"8080": {
+		"4321": {
 			"label": "Astro's development server"
 		}
 	}

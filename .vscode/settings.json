@@ -25,5 +25,8 @@
 		"no-hard-tabs": false,
 		"no-inline-html": false,
 		"no-trailing-punctuation": false
-	}
+	},
+	"markdown.marp.breaks": "off",
+	"markdown.marp.html": "all",
+	"markdown.marp.themes": [".marp/theme.css"]
 }
