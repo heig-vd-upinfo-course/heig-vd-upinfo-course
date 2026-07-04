@@ -1,7 +1,7 @@
 ## Documentation
 # https://docs.astro.build/en/guides/deploy/github/
 
-name: HEIG-VD UPInfoIM Course GitHub Workflow
+name: HEIG-VD UPInfo Course GitHub Workflow
 
 # Allow one concurrent deployment
 concurrency:

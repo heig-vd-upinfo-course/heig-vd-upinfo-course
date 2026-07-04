@@ -96,56 +96,36 @@ export default defineConfig({
 					],
 				},
 				{
-					label: "Composants matériels d'un ordinateur",
+					label: "Composants matériels et logiciels d'un ordinateur",
 					collapsed: false,
 					items: [
 						{
 							autogenerate: {
-								directory: "03-composants-materiels-dun-ordinateur",
+								directory:
+									"03-composants-materiels-et-logiciels-dun-ordinateur",
 							},
 						},
 					],
 				},
 				{
-					label: "Composants logiciels d'un ordinateur",
+					label: "Communications réseaux et Internet",
 					collapsed: false,
 					items: [
 						{
 							autogenerate: {
-								directory: "04-composants-logiciels-dun-ordinateur",
+								directory: "04-communications-reseaux-et-internet",
 							},
 						},
 					],
 				},
 				{
-					label: "Composants d'un système d'exploitation",
+					label: "Configurer son système d'exploitation et ses applications",
 					collapsed: false,
 					items: [
 						{
 							autogenerate: {
-								directory: "05-composants-dun-systeme-dexploitation",
-							},
-						},
-					],
-				},
-				{
-					label: "Configurer son système d'exploitation",
-					collapsed: false,
-					items: [
-						{
-							autogenerate: {
-								directory: "06-configurer-son-systeme-dexploitation",
-							},
-						},
-					],
-				},
-				{
-					label: "Installer et configurer ses applications",
-					collapsed: false,
-					items: [
-						{
-							autogenerate: {
-								directory: "07-installer-et-configurer-ses-applications",
+								directory:
+									"05-configurer-son-systeme-dexploitation-et-ses-applications",
 							},
 						},
 					],
@@ -156,29 +136,40 @@ export default defineConfig({
 					items: [
 						{
 							autogenerate: {
-								directory: "08-sauvegarder-et-restaurer-ses-donnees",
+								directory: "06-sauvegarder-et-restaurer-ses-donnees",
 							},
 						},
 					],
 				},
 				{
-					label: "Prise de notes Markdown",
+					label: "Prendre des notes Markdown",
 					collapsed: false,
 					items: [
 						{
 							autogenerate: {
-								directory: "09-prise-de-notes-markdown",
+								directory: "07-prendre-des-notes-markdown",
+							},
+						},
+					],
+				},
+				{
+					label: "Travailler avec le terminal",
+					collapsed: false,
+					items: [
+						{
+							autogenerate: {
+								directory: "08-travailler-avec-le-terminal",
 							},
 						},
 					],
 				},
 				{
 					label: "Conclusion au cours",
-					items: [{ autogenerate: { directory: "10-conclusion-au-cours" } }],
+					items: [{ autogenerate: { directory: "09-conclusion-au-cours" } }],
 				},
 				{
 					label: "Autre",
-					items: [{ autogenerate: { directory: "11-autre" } }],
+					items: [{ autogenerate: { directory: "10-autre" } }],
 				},
 			],
 		}),
