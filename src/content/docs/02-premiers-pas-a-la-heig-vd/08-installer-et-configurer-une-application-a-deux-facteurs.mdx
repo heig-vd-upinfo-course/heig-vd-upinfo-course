@@ -8,3 +8,57 @@ import { Aside } from "@astrojs/starlight/components";
 	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
 	prochainement. Merci de revenir plus tard.
 </Aside>
+
+L'authentification à deux facteurs (2FA, ou MFA pour Multi-Factor
+Authentication) ajoute une deuxième couche de sécurité à vos comptes en ligne.
+Même si votre mot de passe est compromis, un attaquant ne pourra pas accéder à
+votre compte sans ce second facteur.
+
+## Qu'est-ce que le 2FA ?
+
+Après avoir saisi votre mot de passe (premier facteur : ce que vous
+**connaissez**), l'application vous demande un code temporaire généré par une
+application sur votre smartphone (second facteur : ce que vous **possédez**). Ce
+code change toutes les 30 secondes et est impossible à deviner à distance.
+
+## Applications recommandées
+
+### Aegis Authenticator (Android)
+
+[Aegis](https://getaegis.app) est une application open source pour Android,
+gratuite et sans publicité. Elle permet d'exporter et de chiffrer sa base de
+codes 2FA, ce qui facilite la migration vers un nouveau téléphone.
+
+### Microsoft Authenticator
+
+Disponible sur Android et iOS, Microsoft Authenticator est l'application
+recommandée pour les comptes HES-SO / Microsoft 365. Elle prend également en
+charge les comptes d'autres services.
+
+### Apple Passwords (iOS/macOS)
+
+Depuis iOS 18 et macOS 15, Apple Passwords gère nativement les codes 2FA (TOTP),
+intégré à l'écosystème Apple et synchronisé via iCloud.
+
+## Activer le 2FA sur son compte HES-SO
+
+La HEIG-VD recommande ou impose l'activation du 2FA sur les comptes HES-SO. Pour
+l'activer :
+
+1. Connectez-vous sur [portal.hes-so.ch](https://portal.hes-so.ch).
+2. Accédez aux paramètres de sécurité de votre compte.
+3. Suivez les instructions pour configurer une application d'authentification.
+
+## Codes de secours
+
+Lors de l'activation du 2FA, des **codes de secours** vous sont fournis.
+Conservez-les en lieu sûr (dans votre gestionnaire de mots de passe, par
+exemple). Ils vous permettront d'accéder à votre compte si vous perdez accès à
+votre application 2FA.
+
+## Résumé
+
+Le 2FA est l'une des mesures de sécurité les plus efficaces disponibles.
+Activez-le sur tous les comptes importants (HES-SO, e-mail, gestionnaire de mots
+de passe, GitHub...). Aegis est recommandé sur Android ; Microsoft Authenticator
+pour les comptes Microsoft.

@@ -10,3 +10,87 @@ import { Aside } from "@astrojs/starlight/components";
 	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
 	prochainement. Merci de revenir plus tard.
 </Aside>
+
+Pandoc est un outil en ligne de commande qui convertit des documents d'un format
+à un autre. Il supporte une très grande variété de formats d'entrée et de
+sortie, et est particulièrement utile pour transformer des notes Markdown en
+documents professionnels.
+
+## Installation
+
+Pandoc est disponible sur Windows, macOS et Linux :
+
+```sh
+# macOS
+brew install pandoc
+
+# Ubuntu/Debian
+sudo apt install pandoc
+
+# Windows
+winget install JohnMacFarlane.Pandoc
+```
+
+Pour générer des PDF, Pandoc nécessite également une installation de LaTeX. Une
+version légère suffit :
+
+```sh
+# macOS / Linux
+brew install basictex   # ou tlmgr install scheme-basic
+
+# Ou installer TinyTeX via R
+wget -qO- "https://yihui.org/tinytex/install-unixl.sh" | sh
+```
+
+## Conversions courantes
+
+```sh
+# Markdown vers PDF
+pandoc notes.md -o notes.pdf
+
+# Markdown vers Word
+pandoc notes.md -o notes.docx
+
+# Markdown vers HTML
+pandoc notes.md -o notes.html
+
+# Avec un style personnalisé
+pandoc notes.md -o notes.pdf --template=modele.tex
+```
+
+## En-tête YAML (frontmatter)
+
+Pandoc supporte un en-tête YAML en début de fichier pour définir les métadonnées
+du document :
+
+```markdown
+---
+title: Mon rapport
+author: Alice Dupont
+date: 2025-09-01
+---
+
+# Introduction
+
+...
+```
+
+Ces métadonnées sont utilisées pour générer la page de titre et l'en-tête du
+document converti.
+
+## Cas d'usage
+
+Pandoc est particulièrement utile pour :
+
+- Rédiger des rapports en Markdown et les exporter en PDF pour le rendu.
+- Convertir des notes en documents Word pour les partager avec des personnes
+  n'utilisant pas Markdown.
+- Générer une documentation technique dans plusieurs formats à partir d'une
+  seule source.
+
+## Résumé
+
+Pandoc est un outil incontournable pour quiconque rédige en Markdown et a besoin
+de produire des documents dans d'autres formats. Sa maîtrise vous permet de
+travailler dans un format simple (Markdown) tout en produisant des documents
+d'aspect professionnel.

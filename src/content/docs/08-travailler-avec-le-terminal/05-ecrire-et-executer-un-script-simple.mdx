@@ -8,3 +8,110 @@ import { Aside } from "@astrojs/starlight/components";
 	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
 	prochainement. Merci de revenir plus tard.
 </Aside>
+
+Un script est un fichier texte contenant une séquence de commandes que le shell
+exécute automatiquement. Il permet d'automatiser des tâches répétitives et
+d'enchaider des opérations complexes en une seule commande.
+
+## Créer un script Bash
+
+Un script Bash est un fichier texte avec l'extension `.sh`. Voici un exemple
+minimal :
+
+```sh
+#!/bin/bash
+echo "Bonjour, monde !"
+```
+
+La première ligne (`#!/bin/bash`) s'appelle le **shebang**. Elle indique au
+système quel interpréteur utiliser pour exécuter le script. Sans elle, le
+système ne sait pas comment l'interpréter.
+
+## Rendre un script exécutable
+
+Par défaut, un fichier texte n'est pas exécutable. Il faut lui accorder la
+permission d'exécution :
+
+```sh
+chmod +x mon-script.sh
+```
+
+## Exécuter un script
+
+```sh
+./mon-script.sh        # Exécuter depuis le répertoire courant
+bash mon-script.sh     # Exécuter explicitement avec Bash
+```
+
+Le `./` avant le nom du script indique que le fichier se trouve dans le
+répertoire courant (il n'est pas dans le PATH du système).
+
+## Variables
+
+```sh
+#!/bin/bash
+NOM="Alice"
+echo "Bonjour, $NOM !"
+```
+
+Les variables ne portent pas de type : ce sont des chaînes de caractères. On y
+accède avec le signe `$` devant le nom.
+
+## Arguments
+
+Un script peut recevoir des arguments passés lors de son appel :
+
+```sh
+#!/bin/bash
+echo "Premier argument : $1"
+echo "Deuxième argument : $2"
+echo "Tous les arguments : $@"
+```
+
+Appel :
+
+```sh
+./mon-script.sh Alice Bob
+# Premier argument : Alice
+# Deuxième argument : Bob
+```
+
+## Conditions et boucles
+
+```sh
+#!/bin/bash
+
+# Condition
+if [ -f "fichier.txt" ]; then
+  echo "Le fichier existe."
+else
+  echo "Le fichier n'existe pas."
+fi
+
+# Boucle sur des fichiers
+for fichier in *.md; do
+  echo "Traitement de $fichier"
+done
+```
+
+## Exemple pratique : sauvegarder un dossier
+
+```sh
+#!/bin/bash
+# sauvegarde.sh : crée une archive datée d'un dossier
+
+SOURCE="$HOME/Documents"
+DESTINATION="$HOME/sauvegardes"
+DATE=$(date +%Y-%m-%d)
+
+mkdir -p "$DESTINATION"
+tar -czf "$DESTINATION/documents-$DATE.tar.gz" "$SOURCE"
+echo "Sauvegarde terminée : documents-$DATE.tar.gz"
+```
+
+## Résumé
+
+Écrire des scripts est une compétence clé pour automatiser des tâches
+répétitives. Un script Bash commence par un shebang, s'exécute après un
+`chmod +x`, et peut utiliser des variables, des arguments, des conditions et des
+boucles pour effectuer des opérations complexes.

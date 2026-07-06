@@ -8,3 +8,101 @@ import { Aside } from "@astrojs/starlight/components";
 	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
 	prochainement. Merci de revenir plus tard.
 </Aside>
+
+Markdown est un langage de balisage créé en 2004 par John Gruber. Son objectif
+est de permettre d'écrire du texte structuré dans un format lisible à la fois
+par les humains et convertible facilement en HTML ou d'autres formats.
+
+Contrairement à un traitement de texte comme Word, Markdown sépare le contenu
+(ce que vous écrivez) de la mise en forme (l'apparence). Le fichier `.md` est un
+simple fichier texte qui peut être ouvert avec n'importe quel éditeur.
+
+## Syntaxe de base
+
+### Titres
+
+```markdown
+# Titre de niveau 1
+
+## Titre de niveau 2
+
+### Titre de niveau 3
+```
+
+### Mise en évidence
+
+```markdown
+**Texte en gras** _Texte en italique_ ~~Texte barré~~
+```
+
+### Listes
+
+```markdown
+- Élément de liste non ordonnée
+- Autre élément
+
+1. Premier élément
+2. Deuxième élément
+```
+
+### Liens et images
+
+```markdown
+[Texte du lien](https://exemple.com) ![Texte alternatif](chemin/vers/image.png)
+```
+
+### Code
+
+Pour du code en ligne, entourez-le de backticks :
+
+```markdown
+Voici une commande `ls -la` dans le texte.
+```
+
+Pour un bloc de code avec coloration syntaxique, utilisez trois backticks et
+spécifiez le langage :
+
+````markdown
+```python
+print("Bonjour le monde")
+```
+````
+
+### Tableaux
+
+```markdown
+| Colonne A | Colonne B |
+| --------- | --------- |
+| Valeur 1  | Valeur 2  |
+```
+
+### Citations
+
+```markdown
+> Ceci est une citation.
+```
+
+### Séparateur horizontal
+
+```markdown
+---
+```
+
+## Variantes de Markdown
+
+Il existe plusieurs variantes de Markdown selon les plateformes :
+
+- **CommonMark** : spécification standardisée, la référence.
+- **GitHub Flavored Markdown (GFM)** : variante utilisée sur GitHub, avec des
+  extensions comme les cases à cocher, les tableaux et les blocs de code avec
+  coloration syntaxique.
+- **MDX** : Markdown enrichi avec des composants JSX, utilisé notamment dans ce
+  site.
+
+Les différences entre variantes sont mineures pour un usage courant.
+
+## Résumé
+
+Markdown est simple à apprendre : quelques symboles suffisent pour structurer la
+grande majorité des documents. C'est un format universel, portable et conçu pour
+rester lisible même sans rendu graphique.

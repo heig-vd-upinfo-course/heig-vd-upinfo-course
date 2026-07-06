@@ -8,3 +8,65 @@ import { Aside } from "@astrojs/starlight/components";
 	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
 	prochainement. Merci de revenir plus tard.
 </Aside>
+
+Chaque système d'exploitation propose des outils natifs pour sauvegarder ses
+données. Il existe également des solutions tierces offrant plus de flexibilité
+ou de fonctionnalités.
+
+## Windows : Historique des fichiers
+
+**L'Historique des fichiers** (File History) est l'outil de sauvegarde intégré à
+Windows. Il sauvegarde automatiquement les versions de vos fichiers sur un
+disque externe ou un partage réseau.
+
+Activation : Paramètres > Mise à jour et sécurité > Sauvegarde (Windows 10) ou
+Paramètres > Système > Stockage > Options de sauvegarde (Windows 11).
+
+Il faut connecter un disque externe et sélectionner les dossiers à surveiller.
+Windows créera automatiquement des copies à intervalles réguliers.
+
+## macOS : Time Machine
+
+**Time Machine** est l'outil de sauvegarde natif de macOS. Il sauvegarde
+automatiquement et incrémentalement l'intégralité de votre Mac sur un disque
+externe.
+
+Activation : Réglages système > Général > Time Machine > Sélectionner le disque
+de sauvegarde.
+
+Time Machine conserve :
+
+- Les sauvegardes horaires des 24 dernières heures.
+- Les sauvegardes quotidiennes du dernier mois.
+- Les sauvegardes hebdomadaires pour toutes les périodes plus anciennes.
+
+## Linux : outils courants
+
+Sur Linux, plusieurs outils permettent de sauvegarder ses données :
+
+- **rsync** : outil en ligne de commande très puissant pour synchroniser des
+  dossiers locaux ou distants (via SSH).
+
+  ```sh
+  rsync -avh ~/Documents/ /mnt/backup/Documents/
+  ```
+
+- **Deja Dup** (Backups) : interface graphique simple basée sur Duplicity,
+  disponible sur GNOME. Permet des sauvegardes locales ou dans le cloud.
+- **BorgBackup** : outil de sauvegarde incrémentale et dédupliquée, très
+  efficace pour les sauvegardes importantes.
+
+## Solutions tierces multiplateformes
+
+- **Duplicati** ([duplicati.com](https://www.duplicati.com)) : gratuit, open
+  source, supporte de nombreuses destinations (local, FTP, S3, Backblaze B2,
+  OneDrive, etc.) avec chiffrement.
+- **Backblaze Personal Backup** : solution cloud automatique abordable (~9
+  $/mois), sauvegarde l'intégralité du disque.
+
+## Résumé
+
+Time Machine (macOS) et l'Historique des fichiers (Windows) sont des outils
+natifs faciles à configurer et suffisants pour une utilisation courante. Sur
+Linux, `rsync` ou Deja Dup font très bien l'affaire. Pour une sauvegarde cloud
+automatisée, Duplicati est une excellente option libre et gratuite.

@@ -8,3 +8,65 @@ import { Aside } from "@astrojs/starlight/components";
 	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
 	prochainement. Merci de revenir plus tard.
 </Aside>
+
+La première étape pour travailler avec le terminal est de savoir l'ouvrir sur
+votre système. Les procédures varient selon le système d'exploitation.
+
+## Windows
+
+Plusieurs options sont disponibles sur Windows :
+
+- **Windows Terminal** : l'application recommandée, moderne et configurable.
+  Elle regroupe PowerShell, CMD et les environnements WSL en un seul endroit.
+  Disponible sur le Microsoft Store ou via
+  `winget install Microsoft.WindowsTerminal`.
+- **PowerShell** : recherchez « PowerShell » dans le menu Démarrer.
+- **Git Bash** : installé avec Git pour Windows, il fournit un terminal Bash sur
+  Windows sans WSL.
+- **WSL** : si vous avez installé WSL, ouvrez l'application de votre
+  distribution Linux (Ubuntu, Debian...) depuis le menu Démarrer.
+
+## macOS
+
+- **Terminal.app** : l'application native, située dans Applications >
+  Utilitaires > Terminal.
+- **iTerm2** : alternative populaire avec de nombreuses fonctionnalités
+  supplémentaires (onglets, panneaux divisés, recherche...). Téléchargeable sur
+  [iterm2.com](https://iterm2.com).
+- **VS Code** : le terminal intégré de VS Code (`` Ctrl+` ``) ouvre directement
+  Zsh ou Bash selon votre configuration.
+
+Raccourci rapide : `⌘+Espace` pour ouvrir Spotlight, puis taper « Terminal ».
+
+## Linux
+
+Le raccourci `Ctrl+Alt+T` ouvre un terminal sur la plupart des distributions.
+Selon l'environnement de bureau, l'émulateur de terminal par défaut varie :
+
+- **GNOME** : GNOME Terminal.
+- **KDE** : Konsole.
+- **XFCE** : xfce4-terminal.
+
+D'autres terminaux populaires : **Alacritty** (rapide, basé sur le GPU),
+**Kitty** (configurable, supporte les images), **Wezterm** (multiplateforme).
+
+## Anatomie d'un terminal
+
+Lorsque vous ouvrez un terminal, vous voyez une **invite de commande** (prompt)
+qui indique :
+
+```
+alice@monpc:~/Documents$
+```
+
+- `alice` : le nom d'utilisateur·trice.
+- `monpc` : le nom de la machine.
+- `~/Documents` : le répertoire courant (`~` est le dossier personnel).
+- `$` : indique un utilisateur·trice normal·e (sur certains systèmes `#` indique
+  le mode root).
+
+## Résumé
+
+Chaque système d'exploitation propose plusieurs façons d'ouvrir un terminal. Sur
+Windows, Windows Terminal avec WSL offre la meilleure expérience pour le
+développement. Sur macOS, Terminal.app ou iTerm2 conviennent parfaitement.

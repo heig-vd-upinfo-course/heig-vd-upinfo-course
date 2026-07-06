@@ -8,3 +8,53 @@ import { Aside } from "@astrojs/starlight/components";
 	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
 	prochainement. Merci de revenir plus tard.
 </Aside>
+
+La règle **3-2-1** est la stratégie de sauvegarde la plus recommandée. Simple à
+retenir, elle réduit considérablement le risque de perte de données face aux
+scenarios les plus courants.
+
+## La règle 3-2-1
+
+- **3** copies de vos données : l'original et deux sauvegardes.
+- **2** supports de stockage différents : par exemple un disque dur externe et
+  un service cloud.
+- **1** copie hors site : une sauvegarde conservée dans un lieu physique
+  différent (cloud, disque chez un proche, etc.).
+
+Cette règle protège contre les pannes matérielles, les incendies, les vols et
+les ransomwares (qui chiffrent les fichiers locaux et réseau, mais pas
+nécessairement les sauvegardes hors ligne).
+
+## Pourquoi deux supports différents ?
+
+Deux sauvegardes sur le même type de support (deux disques dans la même machine,
+ou deux clés USB dans le même sac) ne vous protègent pas contre un incendie, un
+vol ou une panne simultanée. Diversifier les supports réduit ce risque.
+
+## Pourquoi une copie hors site ?
+
+Si votre domicile ou bureau est inaccessible (incendie, inondation), une copie
+dans le cloud ou chez un proche reste accessible. C'est cette copie qui fait la
+différence dans les situations les plus graves.
+
+## Exemple concret
+
+| Copie | Support                        | Emplacement          |
+| ----- | ------------------------------ | -------------------- |
+| 1     | Ordinateur (disque interne)    | Chez soi             |
+| 2     | Disque dur externe             | Chez soi             |
+| 3     | Service cloud (OneDrive, etc.) | En ligne (hors site) |
+
+## Sauvegarde vs synchronisation
+
+Un service de synchronisation (OneDrive, Google Drive) n'est **pas** une
+sauvegarde à part entière. Si vous supprimez accidentellement un fichier, il est
+synchronisé supprimé partout. Une vraie sauvegarde conserve des instantanés
+(snapshots) à différents moments dans le temps, vous permettant de revenir à une
+version antérieure.
+
+## Résumé
+
+La règle 3-2-1 est simple et efficace : 3 copies, sur 2 supports différents,
+dont 1 hors site. Appliquer ce principe vous protège contre la grande majorité
+des scénarios de perte de données.

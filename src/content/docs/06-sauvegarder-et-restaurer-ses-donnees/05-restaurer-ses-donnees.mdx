@@ -8,3 +8,65 @@ import { Aside } from "@astrojs/starlight/components";
 	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
 	prochainement. Merci de revenir plus tard.
 </Aside>
+
+Savoir restaurer ses données est aussi important que de les sauvegarder. C'est
+souvent dans l'urgence qu'on en a besoin : il est utile de s'y entraîner avant
+que cela ne devienne nécessaire.
+
+## Restaurer un fichier avec Time Machine (macOS)
+
+1. Ouvrez **Time Machine** depuis la barre de menus ou les Préférences système.
+2. Naviguez jusqu'au dossier contenant le fichier perdu.
+3. Utilisez la ligne du temps à droite pour choisir la version à restaurer.
+4. Cliquez sur **Restaurer**. Le fichier est récupéré à son emplacement
+   d'origine.
+
+Vous pouvez également restaurer un fichier spécifique vers un autre dossier pour
+comparer avec la version actuelle.
+
+## Restaurer un fichier avec l'Historique des fichiers (Windows)
+
+1. Naviguez jusqu'au dossier où se trouvait le fichier dans l'Explorateur.
+2. Cliquez sur l'onglet **Accueil** > **Historique**.
+3. Parcourez les versions disponibles avec les flèches.
+4. Sélectionnez la version souhaitée et cliquez sur le bouton de restauration
+   (icône verte).
+
+## Restaurer avec rsync (Linux)
+
+Si vous avez sauvegardé avec `rsync`, la restauration consiste à inverser la
+source et la destination :
+
+```sh
+rsync -avh /mnt/backup/Documents/ ~/Documents/
+```
+
+Attention à ne pas écraser des fichiers plus récents. Utilisez l'option
+`--dry-run` pour simuler l'opération avant de l'exécuter réellement.
+
+## Restaurer depuis le cloud
+
+Pour les services cloud (OneDrive, Google Drive, Dropbox), les fichiers
+supprimés sont généralement conservés dans une **corbeille en ligne** pendant 30
+jours (voire plus selon le plan). Consultez l'interface web du service pour y
+accéder.
+
+De nombreux services proposent aussi un **historique de versions** : vous pouvez
+récupérer une version antérieure d'un fichier même s'il n'a pas été supprimé.
+
+## Restauration complète du système
+
+En cas de panne grave (disque défaillant, système inutilisable), certains outils
+permettent une restauration complète :
+
+- **Time Machine** peut restaurer l'intégralité d'un Mac depuis le menu de
+  récupération au démarrage.
+- **Windows Backup** permet de créer une image système complète restaurable
+  depuis un support externe.
+
+## Résumé
+
+Restaurer des données est une compétence pratique que tout le monde devrait
+posséder. Tester la restauration au moins une fois garantit que votre sauvegarde
+fonctionne réellement. En cas de besoin, les outils natifs (Time Machine,
+Historique des fichiers) rendent l'opération accessible.

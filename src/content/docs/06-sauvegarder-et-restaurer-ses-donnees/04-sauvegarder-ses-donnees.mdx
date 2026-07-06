@@ -8,3 +8,61 @@ import { Aside } from "@astrojs/starlight/components";
 	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
 	prochainement. Merci de revenir plus tard.
 </Aside>
+
+Une sauvegarde n'a de valeur que si elle est effectuée régulièrement et
+vérifiée. Cette page présente les bonnes pratiques pour sauvegarder ses données
+efficacement.
+
+## Que sauvegarder ?
+
+Il n'est pas nécessaire de tout sauvegarder. Les données importantes à protéger
+sont généralement :
+
+- **Vos documents personnels** : travaux universitaires, rapports, CV.
+- **Vos projets de développement** : code source, configurations.
+- **Vos photos et médias** : fichiers irremplaçables.
+- **Vos configurations** : fichiers `.dotfiles`, clés SSH, paramètres
+  d'applications.
+- **Vos mots de passe** : si vous n'utilisez pas encore de gestionnaire de mots
+  de passe synchronisé dans le cloud.
+
+Les fichiers du système d'exploitation et les applications installées peuvent
+globalement être réinstallées facilement ; ce ne sont pas des priorités, sauf si
+vous avez des outils complexes à reconfigurer.
+
+## Fréquence de sauvegarde
+
+La fréquence idéale dépend de la quantité de données que vous pouvez vous
+permettez de perdre :
+
+- **Sauvegarde quotidienne** : recommandée pour des documents en cours de
+  modification active (projets, cours).
+- **Sauvegarde hebdomadaire** : suffisante pour des fichiers moins souvent
+  modifiés.
+- **Sauvegarde avant une opération risquée** : toujours sauvegarder avant une
+  réinstallation du système ou une mise à jour majeure.
+
+La plupart des outils de sauvegarde automatisent cette fréquence.
+
+## Sauvegarde incrémentale vs complète
+
+- **Sauvegarde complète** : copie tous les fichiers à chaque fois. Simple mais
+  lente et volumineuse.
+- **Sauvegarde incrémentale** : ne copie que les fichiers modifiés depuis la
+  dernière sauvegarde. Plus rapide et économique en espace. C'est le mode
+  utilisé par Time Machine et la plupart des outils modernes.
+
+## Vérifier ses sauvegardes
+
+Une sauvegarde non testée est une sauvegarde dont on ne sait pas si elle
+fonctionne. Prenez l'habitude de vérifier régulièrement que :
+
+- Les sauvegardes s'exécutent bien (vérifiez les journaux ou notifications).
+- Vous pouvez effectivement accéder aux fichiers sauvegardés et les ouvrir.
+- La destination de sauvegarde a suffisamment d'espace libre.
+
+## Résumé
+
+Une bonne sauvegarde est régulière, automatisée et vérifiée. Concentrez-vous sur
+vos données irremplaçables (projets, documents, configurations) et assurez-vous
+que votre outil de sauvegarde tourne effectivement.

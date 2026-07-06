@@ -8,3 +8,72 @@ import { Aside } from "@astrojs/starlight/components";
 	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
 	prochainement. Merci de revenir plus tard.
 </Aside>
+
+Même avec une bonne stratégie de sauvegarde, des situations imprévues peuvent
+survenir : panne matérielle, vol, ransomware, suppression accidentelle sans
+sauvegarde. Cette page présente les réflexes à avoir.
+
+## Garder son calme et ne pas aggraver la situation
+
+En cas de perte de données, la première règle est de **ne pas paniquer et ne pas
+agir précipitamment**. Écrire de nouvelles données sur un disque défaillant peut
+rendre une récupération impossible.
+
+Si un disque semble défaillant :
+
+- Éteignez l'ordinateur immédiatement pour éviter d'aggraver la panne.
+- Ne tentez pas de réparer le disque vous-même si les données sont critiques.
+- Consultez un professionnel de la récupération de données.
+
+## Suppression accidentelle sans sauvegarde
+
+Si un fichier a été supprimé récemment :
+
+1. Vérifiez d'abord la **corbeille** du système ou du service cloud.
+2. Sur Windows, des outils comme **Recuva**
+   ([recuva.com](https://www.recuva.com)) permettent de récupérer des fichiers
+   supprimés tant que leur espace n'a pas été réécrit.
+3. Sur macOS et Linux, **PhotoRec** / **TestDisk**
+   ([cgsecurity.org](https://www.cgsecurity.org)) sont des outils open source de
+   récupération puissants.
+4. Plus vous utilisez le disque après la suppression, moins les chances de
+   récupération sont bonnes.
+
+## Attaque par ransomware
+
+Un ransomware chiffre vos fichiers et réclame une rançon pour les déchiffrer. En
+cas d'infection :
+
+1. Déconnectez immédiatement l'ordinateur du réseau (Wi-Fi et câble) pour
+   stopper la propagation.
+2. Ne payez pas la rançon : rien ne garantit la récupération des fichiers et
+   cela finance des activités criminelles.
+3. Signalez l'incident aux autorités (en Suisse :
+   [ncsc.admin.ch](https://www.ncsc.admin.ch)).
+4. Si vous avez une sauvegarde hors ligne récente, réinstallez le système et
+   restaurez depuis la sauvegarde.
+5. Consultez [nomoreransom.org](https://www.nomoreransom.org) : des outils de
+   déchiffrement gratuits existent pour certaines familles de ransomware.
+
+## Panne matérielle
+
+Si le disque est physiquement endommagé (bruit de cliquetis, non reconnu par le
+système), les logiciels de récupération ne suffiront probablement pas. Des
+socialisations spécialisées (comme **Ontrack** ou **DriveSavers**) possèdent des
+salles blanches pour démonter et récupérer les données directement sur les
+plateaux du disque. Ces services sont coûteux (souvent plusieurs centaines à
+milliers de francs) mais peuvent récupérer des données irremplaçables.
+
+## Le meilleur remède reste la prévention
+
+Aucune récupération n'est garantie. La seule protection fiable reste une
+sauvegarde régulière, testée et hors site. Le coût d'une sauvegarde est toujours
+inférieur à celui de la perte de données.
+
+## Résumé
+
+Face à une perte de données, ne pas aggraver la situation est la première
+précaution. Des outils comme Recuva ou TestDisk peuvent aider en cas de
+suppression accidentelle. Pour les ransomwares et les pannes matérielles graves,
+une sauvegarde hors ligne récente est souvent la seule solution fiable. La
+prévention reste toujours préférable à la récupération.

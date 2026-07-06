@@ -8,3 +8,102 @@ import { Aside } from "@astrojs/starlight/components";
 	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
 	prochainement. Merci de revenir plus tard.
 </Aside>
+
+Après la navigation, voici les commandes les plus utiles pour manipuler des
+fichiers et des dossiers, afficher du contenu et interagir avec le système.
+
+## Créer, copier, déplacer, supprimer
+
+```sh
+# Créer un dossier
+mkdir mon-dossier
+mkdir -p chemin/vers/dossier    # Crée tous les dossiers intermédiaires
+
+# Créer un fichier vide
+touch fichier.txt
+
+# Copier
+cp source.txt destination.txt
+cp -r dossier/ copie-dossier/   # Copie récursive d'un dossier
+
+# Déplacer ou renommer
+mv ancien-nom.txt nouveau-nom.txt
+mv fichier.txt ~/Documents/
+
+# Supprimer
+rm fichier.txt
+rm -r dossier/                  # Supprime un dossier et son contenu
+rm -ri dossier/                 # Demande confirmation pour chaque fichier
+```
+
+<Aside type="danger">
+	`rm` supprime les fichiers **définitivement**, sans passer par la corbeille.
+	Soyez prudent·e, surtout avec `rm -r`. Il n'existe pas de « Ctrl+Z » en
+	terminal pour cette opération.
+</Aside>
+
+## Afficher le contenu d'un fichier
+
+```sh
+cat fichier.txt             # Affiche tout le contenu
+head -20 fichier.txt        # Affiche les 20 premières lignes
+tail -20 fichier.txt        # Affiche les 20 dernières lignes
+tail -f journal.log         # Affiche les nouvelles lignes en temps réel
+less fichier.txt            # Affichage paginable (quitter avec q)
+```
+
+## Rechercher
+
+```sh
+# Chercher un fichier par nom
+find . -name "*.md"         # Tous les fichiers .md dans le dossier courant
+find ~ -name "rapport.pdf"  # Cherche dans le dossier personnel
+
+# Chercher du texte dans des fichiers
+grep "mot" fichier.txt      # Cherche un mot dans un fichier
+grep -r "erreur" logs/      # Cherche récursivement dans un dossier
+grep -n "TODO" *.py         # Affiche le numéro de ligne
+```
+
+## Redirection et pipes
+
+Les redirections permettent de contrôler où vont les entrées et sorties d'une
+commande.
+
+```sh
+echo "Bonjour" > fichier.txt       # Écrit dans un fichier (remplace)
+echo "Suite" >> fichier.txt        # Ajoute à la fin du fichier
+cat fichier.txt 2> erreurs.txt     # Redirige les erreurs vers un fichier
+
+ls -l | grep ".md"                 # Filtre la sortie de ls
+cat fichier.txt | wc -l            # Compte les lignes
+sort fichier.txt | uniq            # Trie et supprime les doublons
+```
+
+Le **pipe** (`|`) enchaîne les commandes : la sortie de l'une devient l'entrée
+de la suivante. C'est l'un des outils les plus puissants du terminal.
+
+## Informations système
+
+```sh
+uname -a            # Informations sur le système
+df -h               # Espace disque disponible
+du -sh dossier/     # Taille d'un dossier
+top                 # Processus en cours (quitter avec q)
+ps aux              # Liste tous les processus
+kill <PID>          # Arrêter un processus par son identifiant
+```
+
+## Obtenir de l'aide
+
+```sh
+man ls              # Manuel de la commande ls (quitter avec q)
+ls --help           # Aide résumée (disponible sur la plupart des commandes)
+```
+
+## Résumé
+
+Un ensemble restreint de commandes suffit pour la plupart des tâches courantes :
+`mkdir`, `touch`, `cp`, `mv`, `rm`, `cat`, `grep`, `find`. Les pipes (`|`) et
+les redirections (`>`, `>>`) démultiplient la puissance de ces commandes en les
+combinant.
