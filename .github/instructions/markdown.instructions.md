@@ -11,7 +11,7 @@ applyTo: "**/*.md, **/*.mdx"
   personne qui étudie", "la personne qui utilise le service").
 - Use inclusive language and examples that resonate with a diverse student body.
 - If gender-neutral language is not possible, use masculine and feminine forms
-  together (e.g., "les étudiant·e·s", "les utilisateur·trice·s").
+  together (e.g., "les étudiant·es", "les utilisateur·trices").
 
 ## General formatting
 

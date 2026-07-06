@@ -9,22 +9,224 @@ import { Aside } from "@astrojs/starlight/components";
 	prochainement. Merci de revenir plus tard.
 </Aside>
 
-<Aside
-	type="tip"
-	icon="question-circle"
-	title="Besoin d'une introduction à ce contenu ?"
->
-	La page [Introduction et
-	ressources](/heig-vd-upinfo-course/03-composants-materiels-et-logiciels-dun-ordinateur/01-introduction-et-ressources)
-	donne un aperçu du contenu qui suit avec des ressources pour vous aider à
-	démarrer.
-</Aside>
+## Qu'est-ce que le stockage ?
+
+Le stockage est un composant essentiel d'un ordinateur, permettant de conserver
+les données et les programmes de manière permanente. Il existe différents types
+de stockage, chacun ayant ses propres caractéristiques et usages. Les principaux
+types de stockage sont :
+
+- Les disques durs (HDD) : ils utilisent des plateaux magnétiques pour stocker
+  les données. Ils offrent une grande capacité de stockage à un coût
+  relativement bas, mais sont plus lents que les SSD.
+- Les disques SSD (Solid State Drives) : ils utilisent des puces de mémoire pour
+  stocker les données. Ils sont plus rapides que les HDD, mais plus coûteux par
+  unité de capacité.
+
+Le stockage se distingue de la mémoire vive (RAM) par le fait qu'il conserve les
+données même lorsque l'ordinateur est éteint, tandis que la RAM est volatile et
+perd son contenu à l'arrêt de l'alimentation.
+
+## Tailles de stockage
+
+Les tailles de stockage typiques pour un ordinateur aujourd'hui varient de 256
+Go à plusieurs To, selon les besoins de l'utilisateur et le type de stockage
+utilisé.
+
+Pour vos études, il est recommandé d'avoir au moins 512 Go de stockage pour
+pouvoir installer le système d'exploitation, les logiciels et disposer d'un
+espace suffisant pour vos fichiers et projets.
 
 ## Partitions et systèmes de fichiers
 
-## Sensibilité à la casse et encodage des caractères
+Un disque de stockage peut être divisé en plusieurs partitions, c'est-à-dire en
+zones indépendantes qui se comportent comme des disques séparés. Cela permet,
+par exemple, de séparer les données personnelles des données système ou de
+d'installer plusieurs systèmes d'exploitation sur le même disque.
+
+Chaque partition est formatée avec un système de fichiers, qui définit comment
+les données sont organisées et stockées. Les systèmes de fichiers les plus
+courants sont :
+
+- NTFS : utilisé par Windows.
+- APFS : utilisé par macOS.
+- ext4 : utilisé par la plupart des distributions Linux.
+- FAT32 / exFAT : formats universels souvent utilisés sur les clés USB et les
+  cartes SD.
+
+Ces systèmes de fichiers ont des caractéristiques différentes en termes de
+performances, de sécurité et de compatibilité avec les différents systèmes
+d'exploitation.
+
+Lorsque vous allez travailler sur vos projets, il sera commun de travailler
+entre différents systèmes de fichiers, surtout si vous utilisez des
+périphériques de stockage externes ou si vous partagez des fichiers avec
+d'autres personnes utilisant différents systèmes d'exploitation.
+
+Par exemple, si vous utilisez un disque externe formaté en exFAT, vous pourrez
+l'utiliser à la fois sur Windows, macOS et Linux sans problème. Cependant, si
+vous utilisez un disque formaté en NTFS, vous pourriez rencontrer des
+limitations sur macOS et Linux, et vice versa pour les systèmes de fichiers
+spécifiques à macOS ou Linux.
+
+Pour imprimer vos documents avec une clé USB, de notre expérience, seul le
+format FAT32 est compatible avec les imprimantes de l'école. Il est donc
+recommandé de formater vos clés USB en FAT32 pour éviter tout problème lors de
+l'impression.
+
+## Sensibilité à la casse
+
+La sensibilité à la casse désigne le fait de distinguer les lettres majuscules
+et minuscules dans les noms des fichiers et des dossiers. Cela peut varier selon
+le système de fichiers utilisé.
+
+Sur les systèmes de fichiers par défaut de Linux et macOS, les noms de fichiers
+sont sensibles à la casse : `Document.txt` et `document.txt` sont deux fichiers
+différents.
+
+Sur Windows, ils sont traités comme un seul et même fichier.
+
+Bien que cela puisse paraître anodin, il est important de garder cette
+différence à l'esprit lorsque vous travaillez sur différents systèmes
+d'exploitation, surtout si vous partagez des fichiers ou des projets avec
+d'autres personnes.
+
+Il est recommandé d'adopter une convention de nommage cohérente pour vos
+fichiers et dossiers, en utilisant par exemple uniquement des lettres minuscules
+et des underscores (`_`) pour séparer les mots, afin d'éviter toute confusion.
+
+## Encodage des caractères
+
+Comme mentionné dans le contenu
+[Processeur (CPU)](/heig-vd-upinfo-course/03-composants-materiels-et-logiciels-dun-ordinateur/02-processeur-cpu),
+un ordinateur ne comprend que le langage binaire, constitué de 0 et de 1, appelé
+des bits.
+
+Ces séquences de bits permettent de représenter des caractères à l'aide d'octets
+(des séries de8 bits). Mais une problématique survient : comment interpréter une
+suite de bits tels que `01000001` ? Ou encore `11000011 10101000` ? Comment
+savoir ce que ces suites de bits représentent ? Des lettres, des chiffres ou des
+symboles ?
+
+C'est ici qu'intervient l'encodage des caractères. L'encodage des caractères
+définit comment les lettres, chiffres et symboles doivent être interprétés pour
+l'humain à partir de ces suites de bits. Il existe plusieurs encodages, chacun
+ayant ses propres règles pour représenter les caractères :
+
+- ASCII : un encodage simple qui représente les caractères anglais de base.
+- ISO-8859-1 : un encodage qui étend ASCII pour inclure des caractères accentués
+  utilisés dans les langues européennes.
+- UTF-8 : un encodage universel et moderne qui peut représenter tous les
+  caractères de toutes les langues du monde, y compris les symboles et les
+  emojis.
+
+Ainsi, selon l'encodage utilisé, une même suite de bits peut représenter des
+caractères différents. Par exemple, la suite de bits `01000001` représente la
+lettre "A" en ASCII et UTF-8, mais pourrait représenter un caractère différent
+dans un autre encodage. De même, la suite de bits `11000011 10101000` représente
+le caractère "è" en UTF-8, mais pourrait être interprétée différemment dans un
+autre encodage.
+
+Ainsi, selon le nom donné à vos fichiers et dossiers ou encore comment votre
+fichier texte est encodé, vous pourriez avoir des caractères mal affichés ou des
+problèmes de compatibilité entre différents systèmes ou logiciels. Il est donc
+important de connaître l'encodage utilisé pour vos fichiers et de s'assurer
+qu'il est compatible avec les systèmes et logiciels que vous utilisez.
+
+Peut-être êtes-vous déjà tombé·e sur des fichiers texte avec des caractères
+bizarres ou des symboles étranges à la place des lettres accentuées. Cela est
+souvent dû à un problème d'encodage des caractères. Par exemple, si un fichier
+texte est encodé en UTF-8 mais ouvert avec un logiciel qui s'attend à un
+encodage ISO-8859-1, les caractères accentués peuvent apparaître comme des
+symboles étranges (�) ou des points d'interrogation (?). C'est pour ça que
+l'encodage des caractères est crucial pour garantir que les fichiers texte sont
+lisibles et interprétés correctement sur différents systèmes et logiciels.
+
+L'encodage le plus répandu aujourd'hui est UTF-8, qui supporte la quasi-totalité
+des caractères de toutes les langues du monde.
+
+La plupart des systèmes d'exploitation modernes et des logiciels utilisent UTF-8
+par défaut, ce qui facilite le partage de fichiers texte entre différents
+systèmes et logiciels sans rencontrer de problèmes d'affichage des caractères.
+
+Mais peut-être que vous allez rencontrer des fichiers texte encodés dans
+d'autres formats, comme ISO-8859-1 ou ASCII. Si vous rencontrez des problèmes
+d'affichage de caractères, il est recommandé de vérifier l'encodage du fichier
+et de le convertir en UTF-8 si nécessaire. La plupart des éditeurs de texte
+modernes offrent des options pour changer l'encodage d'un fichier ou pour
+l'enregistrer dans un encodage différent.
+
+C'est une des raisons pour lesquelles nous vous recommandons de ne pas utiliser
+de caractères accentués dans les noms de fichiers et dossiers, afin d'éviter
+tout problème d'encodage et de compatibilité entre différents systèmes et
+logiciels.
 
 ## Fichiers et dossiers
 
-Racine, répertoire, sous-répertoire, chemin d'accès, chemin relatif, chemin
-absolu, "home"
+Les fichiers et les dossiers sont stockés sur le disque de stockage et organisés
+en une structure hiérarchique appelée arborescence. Cette arborescence est
+représentée par des chemins d'accès qui indiquent l'emplacement d'un fichier ou
+d'un dossier dans cette structure.
+
+Lorsque nous parlons de fichiers et de dossiers, il est important de comprendre
+les notions suivantes :
+
+- Un fichier est une unité de stockage qui contient des données, comme un
+  document texte, une image, une vidéo ou un programme.
+- Un dossier (ou répertoire) est un conteneur qui peut contenir des fichiers ou
+  d'autres dossiers. Il permet d'organiser les fichiers de manière logique.
+- Nous parlons parfois de dossier racine (root) pour désigner le dossier
+  principal d'un disque de stockage ou d'un projet, à partir duquel tous les
+  autres dossiers et fichiers sont organisés.
+- L'arborescence est la structure hiérarchique des dossiers et fichiers sur le
+  disque de stockage. Elle commence par une racine (root) et se ramifie en
+  sous-dossiers et fichiers.
+
+Pour naviguer dans cette arborescence, on utilise des chemins d'accès :
+
+- Un chemin absolu décrit l'emplacement complet d'un fichier depuis la racine
+  (ex. `/home/sam/documents/rapport.pdf` sur Linux ou macOS ou
+  `C:\Users\sam\documents\rapport.pdf` sur Windows).
+- Un chemin relatif décrit l'emplacement d'un fichier par rapport au répertoire
+  courant (ex. `documents/rapport.pdf` si nous sommes dans le répertoire
+  `/home/sam`).
+
+Selon le système d'exploitation et le système de fichiers utilisé, la structure
+de l'arborescence peut varier, mais les concepts de base restent les mêmes.
+Voici quelques points clés à retenir :
+
+- Sur Windows, chaque disque a sa propre racine (`C:\`, `D:\`...). Sur macOS et
+  Linux, il n'y a qu'une seule racine représentée par `/`.
+- Sur Windows, les dossiers sont séparés par des barres obliques inverses (`\`)
+  tandis que sur macOS et Linux, ils utilisent des barres obliques (`/`).
+- Le répertoire personnel (home) est le dossier dédié à chaque
+  utilisateur·trice. Il contient ses documents, sa configuration, ses
+  téléchargements, etc. Sur Linux et macOS, il se trouve généralement à
+  `/home/nom` ou `/Users/nom`. Sur Windows, à `C:\Users\nom`.
+- Le répertoire personnel contient des dossiers communs qui peuvent être
+  utilisés par des logiciels ou vous-même pour organiser vos fichiers, comme
+  `Documents`, `Images`, `Vidéos`, `Téléchargements`, etc.
+
+## Résumé
+
+Le tableau suivant résume les principales caractéristiques des systèmes de
+fichiers courants :
+
+| Système de fichiers | Compatibilité                                                                                     | Sensible à la casse | Commentaires                                                                                     |
+| ------------------- | ------------------------------------------------------------------------------------------------- | ------------------- | ------------------------------------------------------------------------------------------------ |
+| NTFS                | Windows, macOS (lecture seule), Linux (lecture/écriture avec des limitations)                     | Non                 | Système de fichiers par défaut pour Windows. Supporte les permissions et la journalisation.      |
+| APFS                | macOS, iOS                                                                                        | Oui                 | Système de fichiers moderne pour les appareils Apple. Optimisé pour les SSDs et la sécurité.     |
+| ext4                | Linux, Windows (lecture seule avec des outils tiers), macOS (lecture seule avec des outils tiers) | Oui                 | Système de fichiers principal pour la plupart des distributions Linux.                           |
+| FAT32               | Windows, macOS, Linux                                                                             | Non                 | Ancien système de fichiers compatible avec presque tous les systèmes. Limité à 4 Go par fichier. |
+| exFAT               | Windows, macOS, Linux                                                                             | Non                 | Système de fichiers moderne pour les périphériques amovibles. Supporte de grands fichiers.       |
+
+Et le tableau suivant résume les dossiers communs avec leur chemin d'accès
+typique sur les différents systèmes d'exploitation :
+
+| Dossier commun  | Windows                  | macOS                  | Linux                 |
+| --------------- | ------------------------ | ---------------------- | --------------------- |
+| Documents       | `C:\Users\Nom\Documents` | `/Users/Nom/Documents` | `/home/nom/Documents` |
+| Images          | `C:\Users\Nom\Pictures`  | `/Users/Nom/Pictures`  | `/home/nom/Pictures`  |
+| Vidéos          | `C:\Users\Nom\Videos`    | `/Users/Nom/Movies`    | `/home/nom/Videos`    |
+| Téléchargements | `C:\Users\Nom\Downloads` | `/Users/Nom/Downloads` | `/home/nom/Downloads` |
+| Musique         | `C:\Users\Nom\Music`     | `/Users/Nom/Music`     | `/home/nom/Music`     |

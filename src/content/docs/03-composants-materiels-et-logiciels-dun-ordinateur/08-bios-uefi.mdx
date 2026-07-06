@@ -9,13 +9,70 @@ import { Aside } from "@astrojs/starlight/components";
 	prochainement. Merci de revenir plus tard.
 </Aside>
 
-<Aside
-	type="tip"
-	icon="question-circle"
-	title="Besoin d'une introduction à ce contenu ?"
->
-	La page [Introduction et
-	ressources](/heig-vd-upinfo-course/03-composants-materiels-et-logiciels-dun-ordinateur/01-introduction-et-ressources)
-	donne un aperçu du contenu qui suit avec des ressources pour vous aider à
-	démarrer.
-</Aside>
+## Qu'est-ce que le BIOS/UEFI ?
+
+Le BIOS (Basic Input/Output System) et son successeur l'UEFI (Unified Extensible
+Firmware Interface) sont des logiciels intégrés directement dans la carte mère.
+Ils constituent le premier programme exécuté lorsque l'ordinateur est mis sous
+tension.
+
+Leur rôle principal est de vérifier que les composants matériels fonctionnent
+correctement, puis de lancer le système d'exploitation installé sur le disque de
+stockage.
+
+## Séquence de démarrage (boot)
+
+Lorsque l'ordinateur démarre, il suit une séquence précise :
+
+1. Le BIOS/UEFI s'exécute et effectue un test rapide des composants (POST —
+   Power-On Self Test). Il vérifie que le processeur, la mémoire, la carte
+   graphique et les autres composants essentiels sont opérationnels.
+2. Il recherche un périphérique de démarrage (disque dur, SSD, clé USB...) selon
+   un ordre configurable.
+3. Il lance le chargeur d'amorçage (bootloader), qui à son tour charge le
+   système d'exploitation.
+
+## Différences entre BIOS et UEFI
+
+Le BIOS est l'ancienne technologie, présente sur les ordinateurs depuis les
+années 1980. L'UEFI est son successeur moderne, introduit progressivement à
+partir des années 2010. Aujourd'hui, tous les ordinateurs récents utilisent
+l'UEFI.
+
+Les principales améliorations apportées par l'UEFI sont :
+
+- Une interface graphique plus conviviale (parfois avec support de la souris).
+- La prise en charge de disques de grande capacité (au-delà de 2 To).
+- Un démarrage plus rapide.
+- Des mécanismes de sécurité renforcés (Secure Boot).
+
+## Accéder au BIOS/UEFI
+
+Pour accéder au BIOS/UEFI, il faut généralement appuyer sur une touche
+spécifique lors du démarrage de l'ordinateur. Les touches les plus courantes
+sont `F2`, `F10`, `Del` ou `Esc`. Le message indiquant la touche à presser
+s'affiche souvent à l'écran au moment du démarrage.
+
+## Paramétrer le BIOS/UEFI
+
+Le BIOS/UEFI permet de configurer divers paramètres matériels, tels que l'ordre
+de démarrage, la fréquence de la mémoire, les options de sécurité et bien plus
+encore. Il est important de manipuler ces paramètres avec précaution, car des
+modifications incorrectes peuvent empêcher l'ordinateur de démarrer
+correctement. A l'inverse, certaines options permettent d'optimiser les
+performances ou de résoudre des problèmes matériels qu'il est nécessaire de
+connaître pour un usage avancé de l'ordinateur.
+
+### Activer les options de virtualisation
+
+Les options de virtualisation permettent à l'ordinateur d'exécuter des machines
+virtuelles plus efficacement. Pour activer cette fonctionnalité, il faut
+généralement accéder au BIOS/UEFI et chercher une option nommée "Intel VT-x",
+"AMD-V" ou similaire, puis la mettre sur "Enabled".
+
+## Résumé
+
+Le BIOS/UEFI est le logiciel de base qui initialise le matériel de l'ordinateur
+et lance le système d'exploitation. L'UEFI est la version moderne du BIOS,
+offrant des fonctionnalités avancées et une meilleure compatibilité avec les
+systèmes récents.
