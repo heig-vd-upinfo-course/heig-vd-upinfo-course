@@ -9,14 +9,21 @@ export const onRequest = defineRouteMiddleware(async (context, next) => {
 		return;
 	}
 
-	if (route.entry.data.feedback === false) {
-		return;
+	if (route.entry.data.progress !== false) {
+		route.toc.items.push({
+			depth: 2,
+			slug: "progress",
+			text: "Marquer ce contenu comme terminé",
+			children: [],
+		});
 	}
 
-	route.toc.items.push({
-		depth: 2,
-		slug: "feedback",
-		text: "Feedback",
-		children: [],
-	});
+	if (route.entry.data.feedback !== false) {
+		route.toc.items.push({
+			depth: 2,
+			slug: "feedback",
+			text: "Feedback",
+			children: [],
+		});
+	}
 });

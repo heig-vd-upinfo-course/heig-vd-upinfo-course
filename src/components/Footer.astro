@@ -4,14 +4,21 @@ import Progress from "@components/Progress.astro";
 import Default from "@astrojs/starlight/components/Footer.astro";
 ---
 
-<Progress enabled={Astro.locals.starlightRoute.entry.data.progress !== false} />
-
 {
-	Astro.locals.starlightRoute.entry.data.feedback !== false && (
+	Astro.locals.starlightRoute.entry.data.feedback !== false ||
+	Astro.locals.starlightRoute.entry.data.progress !== false ? (
 		<div class="sl-markdown-content">
-			<Feedback />
+			<hr />
+
+			<Progress
+				enabled={Astro.locals.starlightRoute.entry.data.progress !== false}
+			/>
+
+			{Astro.locals.starlightRoute.entry.data.feedback !== false && (
+				<Feedback />
+			)}
 		</div>
-	)
+	) : null
 }
 
 <Default><slot /></Default>

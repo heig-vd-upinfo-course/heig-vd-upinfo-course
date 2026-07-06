@@ -10,20 +10,22 @@ const { enabled = true } = Astro.props;
 
 {
 	enabled && (
-		<Aside type="note" icon="rocket" title="J'ai terminé ce contenu !">
-			<label class="progress-label" for="page-progress-checkbox">
-				<input
-					id="page-progress-checkbox"
-					type="checkbox"
-					data-umami-event="progress"
-					data-umami-event-value="toggle"
-				/>
-				<span>
-					Félicitations ! Cochez cette case pour suivre votre progression dans
-					le menu latéral.
-				</span>
-			</label>
-		</Aside>
+		<div id="progress">
+			<Aside type="note" icon="rocket" title="J'ai terminé ce contenu !">
+				<label class="progress-label" for="page-progress-checkbox">
+					<input
+						id="page-progress-checkbox"
+						type="checkbox"
+						data-umami-event="progress"
+						data-umami-event-value="toggle"
+					/>
+					<span>
+						Félicitations ! Cochez cette case pour suivre votre progression dans
+						le menu latéral.
+					</span>
+				</label>
+			</Aside>
+		</div>
 	)
 }
 
