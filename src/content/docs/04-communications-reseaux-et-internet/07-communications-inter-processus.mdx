@@ -8,3 +8,116 @@ import { Aside } from "@astrojs/starlight/components";
 	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
 	prochainement. Merci de revenir plus tard.
 </Aside>
+
+Des processus distincts, qu'ils s'exécutent sur la même machine ou sur des
+machines différentes, ont souvent besoin d'échanger des données. C'est ce qu'on
+appelle les **communications inter-processus** (IPC, Inter-Process
+Communication).
+
+## Pourquoi les processus communiquent-ils ?
+
+Les systèmes modernes sont composés de nombreux processus spécialisés qui
+collaborent. Par exemple :
+
+- Un navigateur web lance un processus par onglet et communique avec un
+  processus principal.
+- Une application envoie des données à une base de données qui tourne dans un
+  autre processus.
+- Un serveur web reçoit une requête et délègue son traitement à un service
+  tiers.
+
+## Mécanismes locaux (même machine)
+
+Quand les processus se trouvent sur la même machine, plusieurs mécanismes
+permettent leur communication :
+
+- **Pipes (tubes)** : flux de données unidirectionnel entre deux processus. Dans
+  un terminal, le caractère `|` relie la sortie d'une commande à l'entrée d'une
+  autre.
+- **Fichiers partagés** : un processus écrit dans un fichier qu'un autre lit.
+- **Mémoire partagée** : deux processus accèdent à la même zone mémoire. Très
+  rapide, mais nécessite une synchronisation soigneuse.
+- **Signaux** : messages simples envoyés par le système pour notifier un
+  processus d'un événement (ex. : `Ctrl+C` envoie un signal d'interruption).
+- **Sockets Unix** : canaux de communication locaux, similaires aux sockets
+  réseau mais sans passer par la pile TCP/IP.
+
+## Mécanismes réseau (machines différentes)
+
+Lorsque les processus se trouvent sur des machines distinctes, la communication
+passe par le réseau :
+
+- **Sockets réseau** : abstraction logicielle permettant d'établir une connexion
+  entre deux processus via TCP ou UDP. C'est le mécanisme de base de la quasi
+  totalité des communications réseau (web, e-mail, jeux en ligne, etc.).
+- **API HTTP/REST** : les processus échangent des messages structurés (souvent
+  en JSON) via le protocole HTTP. C'est le modèle dominant du web moderne.
+- **WebSockets** : connexion bidirectionnelle persistante entre un client et un
+  serveur, utile pour les applications temps réel (messagerie instantanée,
+  tableaux de bord, etc.).
+
+## Ports réseau
+
+Un port est un numéro qui identifie un service ou une application sur une
+machine. Une adresse IP identifie la machine, mais c'est le port qui précise le
+processus destinataire de la communication.
+
+Quelques ports bien connus :
+
+- **80** : HTTP (web non chiffré).
+- **443** : HTTPS (web chiffré).
+- **22** : SSH (connexion sécurisée à distance).
+- **25** / **587** : SMTP (envoi d'e-mails).
+
+On note généralement une adresse et un port sous la forme `adresse:port`, par
+exemple `192.168.1.1:80` ou `localhost:3000`.
+
+Ainsi, lorsqu'un processus démarre sur un serveur, il peut écouter sur un port
+spécifique pour recevoir des connexions de clients.
+
+Les clients, quant à eux, se connectent à ce port pour envoyer des requêtes et
+recevoir des réponses. Cela permet à plusieurs services de coexister sur la même
+machine, chacun étant accessible via son propre port.
+
+Une analogie pour cette situation est celle d'un immeuble avec plusieurs
+appartements : l'adresse de l'immeuble correspond à l'adresse IP, tandis que le
+numéro de l'appartement correspond au port. Chaque appartement (port) peut être
+occupé par un locataire différent (processus), et les visiteurs (clients)
+doivent connaître le numéro de l'appartement pour savoir où frapper.
+
+Sur une même machine, seul un processus peut écouter sur un port donné à un
+moment donné. Si un autre processus tente d'écouter sur le même port, il recevra
+une erreur indiquant que le port est déjà utilisé. C'est pourquoi il est
+important de choisir des ports uniques pour chaque service ou application. Pour
+reprendre l'analogie de l'immeuble, il est impossible que deux appartements
+aient le même numéro.
+
+## Protocoles de communication
+
+Pour que des machines puissent se comprendre, elles doivent respecter des règles
+communes appelées protocoles. Un protocole définit le format des messages,
+l'ordre des échanges et la gestion des erreurs.
+
+Les protocoles fondamentaux d'Internet sont :
+
+- **IP** (Internet Protocol) : adresse et achemine les paquets de données entre
+  les machines.
+- **TCP** (Transmission Control Protocol) : garantit la livraison complète et
+  ordonnée des données.
+- **UDP** (User Datagram Protocol) : envoie des données sans garantie de
+  livraison, mais très rapidement (utilisé pour la vidéo en direct, les jeux en
+  ligne).
+- **HTTP/HTTPS** : protocole du web, utilisé pour échanger des pages et des
+  ressources entre navigateur et serveur.
+
+Ces protocoles fonctionnent ensemble en couches : IP s'occupe du routage, TCP ou
+UDP de la fiabilité du transport, et HTTP de la signification des messages
+applicatifs.
+
+## Résumé
+
+Les communications inter-processus permettent à des programmes distincts
+d'échanger des données, localement ou via le réseau. Les sockets et le protocole
+HTTP sont les mécanismes les plus utilisés dans le développement web et
+applicatif. Comprendre ces mécanismes est indispensable pour développer des
+applications qui communiquent entre elles.
