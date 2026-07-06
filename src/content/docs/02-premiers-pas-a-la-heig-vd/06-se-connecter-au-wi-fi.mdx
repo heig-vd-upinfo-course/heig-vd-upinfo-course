@@ -2,52 +2,130 @@
 title: Se connecter au Wi-Fi
 ---
 
-import { Aside } from "@astrojs/starlight/components";
+import { Aside, TabItem, Tabs } from "@astrojs/starlight/components";
 
 <Aside type="caution">
 	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
 	prochainement. Merci de revenir plus tard.
 </Aside>
 
-La HEIG-VD met à disposition plusieurs réseaux Wi-Fi sur ses campus. Le réseau
-**eduroam** est le principal réseau recommandé pour les étudiant·es.
+La HEIG-VD met à disposition plusieurs réseaux Wi-Fi sur ses campus :
+
+- [**HEIG-VD**](#heig-vd) : réseau principal de l'école.
+- [**eduroam**](#eduroam) : réseau également accessible dans de nombreux
+  établissements partenaires.
+- [**HEIG-VD public**](#heig-vd-public) : réseau ouvert à accès limité, destiné
+  aux visiteur·euses. Il ne doit pas être utilisé pour les cours ou les travaux.
+
+Nous vous conseillons de vous connecter au réseau **HEIG-VD** et **eduroam**.
+
+## HEIG-VD
+
+Pour vous connecter au réseau Wi-Fi **HEIG-VD**, utilisez les identifiants que
+vous avez reçu lors de votre inscription à la HEIG-VD. Ces identifiants sont
+généralement sous la forme `prenom.nom` où `prenom` et `nom` sont limités à 8
+caractères chacun.
+
+<Tabs syncKey="operating-system">
+
+    <TabItem label="Windows" icon="seti:windows">
+    	TODO
+    </TabItem>
+    <TabItem label="macOS" icon="apple">
+    	TODO
+    </TabItem>
+    <TabItem label="Linux" icon="linux">
+    	- Sécurité : WPA & WPA2 Enterprise
+    	- Authentification : Protected EAP (PEAP)
+    	- Anonymous identity : (laisser vide)
+    	- Domaine : (laisser vide)
+    	- Cocher la case "Aucun certificat CA requis"
+    	- Version PEAP : Automatique
+    	- Authentification interne : MSCHAPv2
+    	- Nom d'utilisateur : `EINET\prenom.nom` (remplacez `prenom` et `nom` par vos informations, par exemple `EINET\ludovic.delafont`)
+    	- Mot de passe : votre mot de passe HES-SO
+    </TabItem>
+
+</Tabs>
+
+<Tabs syncKey="smartphone-operating-system">
+	<TabItem label="iOS" icon="mobile-android">
+		TODO
+	</TabItem>
+	<TabItem label="Android" icon="mobile-android">
+		TODO
+	</TabItem>
+</Tabs>
 
 ## eduroam
 
-Eduroam (Education Roaming) est un réseau Wi-Fi sécurisé utilisé par des
+eduroam (education roaming) est un réseau Wi-Fi sécurisé utilisé par des
 milliers d'établissements d'enseignement et de recherche dans le monde entier.
+
 Il vous permet de vous connecter au Wi-Fi non seulement à la HEIG-VD, mais aussi
 dans toutes les institutions partenaires (universités, hautes écoles,
 bibliothèques, aéroports...) avec les mêmes identifiants.
 
-Pour vous connecter à eduroam à la HEIG-VD :
+<Aside type="note">
 
-1. Sélectionnez le réseau **eduroam** dans la liste des réseaux Wi-Fi
-   disponibles.
-2. Saisissez votre identifiant sous la forme `prenom.nom@hes-so.ch`.
-3. Saisissez votre mot de passe HES-SO.
-4. Acceptez le certificat si votre appareil vous le demande.
+Certains services et ressources de la HEIG-VD peuvent nécessiter l'utilisation
+du réseau HEIG-VD plutôt que d'eduroam. Assurez-vous de vérifier les exigences
+spécifiques de chaque service ou ressource avant de choisir le réseau auquel
+vous connecter.
 
-<Aside type="tip">
-	La configuration d'eduroam peut varier selon le système d'exploitation. Des
-	instructions détaillées par plateforme sont disponibles sur le site du
-	helpdesk de la HEIG-VD.
 </Aside>
 
-## Autres réseaux disponibles
+Pour vous connecter au réseau Wi-Fi **eduroam**, utilisez les identifiants que
+vous avez reçu lors de votre inscription à la HEIG-VD. Ces identifiants sont
+généralement sous la forme `prenom.nom@hes-so.ch` où `prenom` et `nom` sont
+limités à 8 caractères chacun.
 
-- **HEIG-VD-Guest** : réseau ouvert à accès limité, destiné aux visiteurs. Il ne
-  doit pas être utilisé pour les cours ou les travaux.
-- **HEIG-VD** : réseau interne pour les appareils gérés par l'école
-  (imprimantes, matériel de laboratoire).
+<Tabs syncKey="operating-system">
+
+    <TabItem label="Windows" icon="seti:windows">
+    	TODO
+    </TabItem>
+    <TabItem label="macOS" icon="apple">
+    	TODO
+    </TabItem>
+    <TabItem label="Linux" icon="linux">
+    	- Sécurité : WPA & WPA2 Enterprise
+    	- Authentification : Protected EAP (PEAP)
+    	- Anonymous identity : (laisser vide)
+    	- Domaine : (laisser vide)
+    	- Cocher la case "Aucun certificat CA requis"
+    	- Version PEAP : Automatique
+    	- Authentification interne : MSCHAPv2
+    	- Nom d'utilisateur : `prenom.nom@hes-so.ch` (remplacez `prenom` et `nom` par vos informations, par exemple `ludovic.delafont@hes-so.ch`)
+    	- Mot de passe : votre mot de passe HES-SO
+    </TabItem>
+
+</Tabs>
+
+<Tabs syncKey="smartphone-operating-system">
+	<TabItem label="iOS" icon="mobile-android">
+		TODO
+	</TabItem>
+	<TabItem label="Android" icon="mobile-android">
+		TODO
+	</TabItem>
+</Tabs>
+
+## HEIG-VD public
+
+Le réseau **HEIG-VD public** est un réseau Wi-Fi ouvert destiné aux
+visiteur·euses. Il offre un accès limité à Internet et **ne doit pas être
+utilisé** pour les cours ou les travaux.
 
 ## En cas de problème
 
-Si vous n'arrivez pas à vous connecter à eduroam, vérifiez :
+Si vous n'arrivez pas à vous connecter au Wi-Fi, assurez-vous de vérifier les
+points suivants :
 
 - Que votre compte HES-SO est bien activé (voir le contenu
   [Gérer son compte HES-SO, HEIG-VD et Switch eduID](/heig-vd-upinfo-course/02-premiers-pas-a-la-heig-vd/09-gerer-son-compte-hes-so-heig-vd-et-switch-eduid)).
-- Que vous utilisez le bon format d'identifiant (`prenom.nom@hes-so.ch`).
+- Que vous utilisez le bon format d'identifiant (`prenom.nom` où `prenom` et
+  `nom` sont limités à 8 caractères chacun).
 - Que votre mot de passe est correct.
 
 En cas de difficulté persistante, contactez le helpdesk.

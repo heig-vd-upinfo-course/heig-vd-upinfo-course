@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
+import { satteri } from "@astrojs/markdown-satteri";
 import starlightLinksValidator from "starlight-links-validator";
 
 const title =
@@ -17,6 +18,22 @@ const ogImageAlt = `${title} - ${description}`;
 export default defineConfig({
 	site: `${protocol}://${site}`,
 	base,
+	// https://docs.astro.build/en/reference/configuration-reference/#markdownprocessor
+	markdown: {
+		processor: satteri({
+			// https://satteri.bruits.org/docs/features/
+			features: {
+				gfm: {
+					footnotes: {
+						label: "Notes de bas de page",
+						backLabel: (n, k) => (k > 1 ? `Retour ${n}-${k}` : `Retour ${n}`),
+						backContent: (_n, k) => (k === 1 ? "↩" : `↩${k}`),
+					},
+				},
+				smartPunctuation: false,
+			},
+		}),
+	},
 	integrations: [
 		starlight({
 			title,

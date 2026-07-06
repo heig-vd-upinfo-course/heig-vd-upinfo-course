@@ -2,7 +2,7 @@
 title: Se connecter au VPN
 ---
 
-import { Aside } from "@astrojs/starlight/components";
+import { Aside, Tabs, TabItem } from "@astrojs/starlight/components";
 
 <Aside type="caution">
 	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
@@ -23,16 +23,34 @@ Le VPN est nécessaire lorsque vous souhaitez accéder depuis chez vous à :
 - Certaines licences logicielles qui nécessitent une connexion au réseau
   interne.
 
-Sur le campus, le VPN n'est généralement pas nécessaire.
+Sur le campus, si vous êtes connecté·e au réseau HEIG-VD, le VPN n'est
+généralement pas nécessaire.
 
 ## Client VPN
 
-La HEIG-VD utilise une solution VPN dont le client est disponible via le
-helpdesk. Les instructions d'installation et de configuration varient selon le
-système d'exploitation.
+La HEIG-VD utilise une solution VPN dont le client est disponible sur
+[vpn.heig-vd.ch](https://vpn.heig-vd.ch). Les instructions d'installation et de
+configuration varient selon le système d'exploitation.
 
-Pour obtenir le client et les instructions de configuration, contactez le
-helpdesk ou consultez l'intranet de la HEIG-VD.
+<Tabs syncKey="operating-system">
+
+    <TabItem label="Windows" icon="seti:windows">
+    	TODO
+    </TabItem>
+    <TabItem label="macOS" icon="apple">
+    	TODO
+    </TabItem>
+    <TabItem label="Linux" icon="linux">
+			- Protocole VPN : Palo Alto Networks GlobalProtect
+			- Passerelle : vpn.heig-vd.ch
+			- Certificat CA : (Aucun)
+			
+			Toutes les autres informations restent par défaut. Vous devrez vous connecter avec vos identifiants HES-SO.
+
+			**Note** : J'ai (Ludovic) eu plusieurs soucis avec le VPN sur Linux avant de me rendre compte que je devais me connecter au moins une fois sur le site [vpn.heig-vd.ch](https://vpn.heig-vd.ch) pour que ma configuration soit correctement initialisée. Si vous avez des problèmes, essayez de vous connecter au site web du VPN avant d'utiliser le client.
+	</TabItem>
+
+</Tabs>
 
 ## Connexion au VPN
 

@@ -2,12 +2,7 @@
 title: Installer et configurer un gestionnaire de mots de passe
 ---
 
-import { Aside } from "@astrojs/starlight/components";
-
-<Aside type="caution">
-	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
-	prochainement. Merci de revenir plus tard.
-</Aside>
+import { Aside, Steps } from "@astrojs/starlight/components";
 
 Au cours de votre formation et de votre vie numérique, vous allez accumuler de
 nombreux comptes en ligne : HES-SO, HEIG-VD, GitHub, services cloud, etc. Un
@@ -17,44 +12,93 @@ uniques pour chaque service, sans avoir à les mémoriser.
 ## Pourquoi utiliser un gestionnaire de mots de passe ?
 
 Utiliser le même mot de passe partout est une pratique dangereuse : si un
-service est compromis, tous vos comptes le deviennent. Un gestionnaire de mots
-de passe résout ce problème en générant et en stockant des mots de passe
-complexes et différents pour chaque compte, protégés par un unique **mot de
-passe maître**.
+service est compromis, tous vos comptes le deviennent.
 
-## Options recommandées
+Un gestionnaire de mots de passe résout ce problème en générant et en stockant
+des mots de passe complexes et différents pour chaque compte, protégés par un
+unique **mot de passe maître**.
 
-### Bitwarden
+## Bonnes pratiques pour la sécurité de vos mots de passe
 
-[Bitwarden](https://bitwarden.com) est un gestionnaire de mots de passe libre et
-open source, gratuit pour un usage personnel. Il est disponible sur Windows,
-macOS, Linux, Android et iOS, avec des extensions pour les navigateurs.
+Voici quelques bonnes pratiques pour la sécurité de vos mots de passe et
+l'utilisation d'un gestionnaire de mots de passe :
+
+- Choisissez un mot de passe maître long (au moins 16 caractères) et mémorisable
+  : une phrase de passe est souvent plus efficace qu'un mot de passe complexe
+  court (voir ci-dessous pour un exemple).
+- Ne partagez jamais votre mot de passe maître.
+- Activez l'authentification à deux facteurs sur votre gestionnaire de mots de
+  passe lui-même (voir le contenu suivant).
+- Pour tous les mots de passe générés par le gestionnaire, utilisez les options
+  de génération pour créer des mots de passe longs et complexes (au moins 16
+  caractères, avec majuscules, minuscules, chiffres et symboles).
+- Chaque compte doit avoir un mot de passe unique. Ne réutilisez jamais un mot
+  de passe pour plusieurs services.
+
+Une célébrité d'Internet, xkcd, a résumé cela de manière humoristique dans sa
+célèbre bande dessinée sur les mots de passe ([source](https://xkcd.com/936/)) :
+
+![xkcd comic on password strength](https://imgs.xkcd.com/comics/password_strength.png)
+
+En résumé, il est préférable de choisir une phrase de passe longue et facile à
+retenir, plutôt qu'un mot de passe complexe mais court.
+
+## Option recommandée : Bitwarden
+
+Nous recommandons d'utiliser un gestionnaire de mots de passe open source et
+multiplateforme, tel que [Bitwarden](https://bitwarden.com).
+
+Bitwarden est un gestionnaire de mots de passe libre et open source, gratuit
+pour un usage personnel. Il est disponible sur Windows, macOS, Linux, Android et
+iOS, avec des extensions pour les navigateurs.
 
 Il synchronise vos mots de passe dans le cloud (chiffrés) et vous permet d'y
 accéder depuis tous vos appareils.
 
 Pour commencer :
 
+<Steps>
+
 1. Créez un compte sur [bitwarden.com](https://bitwarden.com).
+
 2. Installez l'extension pour votre navigateur.
+
 3. Installez l'application sur votre smartphone.
+
 4. Définissez un mot de passe maître fort et mémorisable.
+
+5. A l'avenir, utilisez Bitwarden pour générer et stocker vos mots de passe pour
+   tous vos comptes en ligne. Si besoin, mettez à jour vos mots de passe
+   existants avec des mots de passe forts et uniques.
+
+</Steps>
+
+## Alternatives
+
+Il existe de nombreux autres gestionnaires de mots de passe, tels que 1Password,
+LastPass, Dashlane, etc. Cependant, nous recommandons Bitwarden pour sa
+gratuité, son ouverture et sa disponibilité multiplateforme.
+
+Si vous préférez ne pas stocker vos mots de passe dans le cloud, vous pouvez
+utiliser un gestionnaire de mots de passe local, tel que KeePassXC.
 
 ### KeePassXC
 
 [KeePassXC](https://keepassxc.org) est une alternative open source qui stocke
 vos mots de passe localement dans un fichier chiffré. Il ne nécessite pas de
-compte en ligne. C'est un excellent choix pour ceux et celles qui préfèrent ne
+compte en ligne. C'est un excellent choix pour les personnes qui préfèrent ne
 pas stocker leurs données dans le cloud.
 
-## Bonnes pratiques
+<Aside type="caution">
 
-- Choisissez un mot de passe maître long (au moins 16 caractères) et mémorisable
-  : une phrase de passe est souvent plus efficace qu'un mot de passe complexe
-  court.
-- Ne partagez jamais votre mot de passe maître.
-- Activez l'authentification à deux facteurs sur votre gestionnaire de mots de
-  passe lui-même (voir le contenu suivant).
+Si vous utilisez KeePassXC, assurez-vous de sauvegarder régulièrement votre
+fichier de mots de passe et de le protéger avec un mot de passe maître fort.
+
+La section
+[Sauvegarder et restaurer ses données](/heig-vd-upinfo-course/06-sauvegarder-et-restaurer-ses-donnees/01-introduction-et-ressources)
+de ce site contient des informations utiles sur la sauvegarde de vos données.
+
+</Aside>
 
 ## Résumé
 

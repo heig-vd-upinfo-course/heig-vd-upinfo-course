@@ -4,7 +4,7 @@
 
 Bienvenue sur le dépôt principal de l'unité préparatoire d'informatique pour
 ingénierie des médias enseignée à la
-[Haute École d'Ingénierie et de Gestion du Canton de Vaud (HEIG-VD)](https://heig-vd.ch),
+[Haute École d'ingénierie et de gestion du canton de Vaud (HEIG-VD)](https://heig-vd.ch),
 Suisse !
 
 ## 🎯 Objectifs généraux
