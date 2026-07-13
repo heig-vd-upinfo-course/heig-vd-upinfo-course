@@ -4,11 +4,6 @@ title: Se connecter au Wi-Fi
 
 import { Aside, TabItem, Tabs } from "@astrojs/starlight/components";
 
-<Aside type="caution">
-	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
-	prochainement. Merci de revenir plus tard.
-</Aside>
-
 La HEIG-VD met à disposition plusieurs réseaux Wi-Fi sur ses campus :
 
 - [**HEIG-VD**](#heig-vd) : réseau principal de l'école.
@@ -18,6 +13,18 @@ La HEIG-VD met à disposition plusieurs réseaux Wi-Fi sur ses campus :
   aux visiteur·euses. Il ne doit pas être utilisé pour les cours ou les travaux.
 
 Nous vous conseillons de vous connecter au réseau **HEIG-VD** et **eduroam**.
+
+<Aside type="note">
+
+Des informations supplémentaires sur la configuration du Wi-Fi sont disponibles
+sur l'intranet de la HEIG-VD à l'adresse suivante :
+[Services - Informatique - Services - Réseau - Wi-Fi](https://intranet.heig-vd.ch/services/informatique/poste-de-travail/reseau/wifi/Pages/wifi.aspx).
+
+Consultez la page
+[Accéder à l'intranet de la HEIG-VD](/heig-vd-upinfo-course/02-premiers-pas-a-la-heig-vd/13-acceder-a-lintranet)
+pour plus d'informations sur l'accès à l'intranet.
+
+</Aside>
 
 ## HEIG-VD
 
@@ -29,15 +36,21 @@ caractères chacun.
 <Tabs syncKey="operating-system">
 
     <TabItem label="Windows" icon="seti:windows">
-    	TODO
+    	- Nom d'utilisateur : `EINET\prenom.nom` (remplacez `prenom` et `nom` par vos informations, par exemple `EINET\ludovic.delafont`)
+    	- Mot de passe : votre mot de passe HES-SO
+
+    	Lors de la première connexion, acceptez le certificat de sécurité.
     </TabItem>
     <TabItem label="macOS" icon="apple">
-    	TODO
+    	- Nom d'utilisateur : `prenom.nom` (remplacez `prenom` et `nom` par vos informations, par exemple `ludovic.delafont`)
+    	- Mot de passe : votre mot de passe HES-SO
+
+    	Lors de la première connexion, acceptez le certificat de sécurité.
     </TabItem>
     <TabItem label="Linux" icon="linux">
     	- Sécurité : WPA & WPA2 Enterprise
     	- Authentification : Protected EAP (PEAP)
-    	- Anonymous identity : (laisser vide)
+    	- Identité anonyme : (laisser vide)
     	- Domaine : (laisser vide)
     	- Cocher la case "Aucun certificat CA requis"
     	- Version PEAP : Automatique
@@ -50,11 +63,20 @@ caractères chacun.
 
 <Tabs syncKey="smartphone-operating-system">
 	<TabItem label="iOS" icon="mobile-android">
-		TODO
-	</TabItem>
-	<TabItem label="Android" icon="mobile-android">
-		TODO
-	</TabItem>
+    	- Nom d'utilisateur : `prenom.nom` (remplacez `prenom` et `nom` par vos informations, par exemple `ludovic.delafont`)
+    	- Mot de passe : votre mot de passe HES-SO
+
+    	Lors de la première connexion, acceptez le certificat de sécurité.
+    </TabItem>
+    <TabItem label="Android" icon="mobile-android">
+    	- Méthode EAP : PEAP
+    	- Authentification phase 2 : MSCHAPv2
+    	- Certificat CA : S'y fier lors de la première connexion
+    	- Identité : `EINET\prenom.nom` (remplacez `prenom` et `nom` par vos informations, par exemple `EINET\ludovic.delafont`)
+    	- Identité anonyme : (laisser vide)
+    	- Mot de passe : votre mot de passe HES-SO
+    </TabItem>
+
 </Tabs>
 
 ## eduroam
@@ -83,15 +105,21 @@ limités à 8 caractères chacun.
 <Tabs syncKey="operating-system">
 
     <TabItem label="Windows" icon="seti:windows">
-    	TODO
+    	- Nom d'utilisateur : `prenom.nom@hes-so.ch` (remplacez `prenom` et `nom` par vos informations, par exemple `ludovic.delafont@hes-so.ch`)
+    	- Mot de passe : votre mot de passe HES-SO
+
+    	Lors de la première connexion, acceptez le certificat de sécurité.
     </TabItem>
     <TabItem label="macOS" icon="apple">
-    	TODO
+    	- Nom d'utilisateur : `prenom.nom@hes-so.ch` (remplacez `prenom` et `nom` par vos informations, par exemple `ludovic.delafont@hes-so.ch`)
+    	- Mot de passe : votre mot de passe HES-SO
+
+    	Lors de la première connexion, acceptez le certificat de sécurité.
     </TabItem>
     <TabItem label="Linux" icon="linux">
     	- Sécurité : WPA & WPA2 Enterprise
     	- Authentification : Protected EAP (PEAP)
-    	- Anonymous identity : (laisser vide)
+    	- Identité anonyme : (laisser vide)
     	- Domaine : (laisser vide)
     	- Cocher la case "Aucun certificat CA requis"
     	- Version PEAP : Automatique
@@ -104,11 +132,20 @@ limités à 8 caractères chacun.
 
 <Tabs syncKey="smartphone-operating-system">
 	<TabItem label="iOS" icon="mobile-android">
-		TODO
-	</TabItem>
-	<TabItem label="Android" icon="mobile-android">
-		TODO
-	</TabItem>
+    	- Nom d'utilisateur : `prenom.nom@hes-so.ch` (remplacez `prenom` et `nom` par vos informations, par exemple `ludovic.delafont@hes-so.ch`)
+    	- Mot de passe : votre mot de passe HES-SO
+
+    	Lors de la première connexion, acceptez le certificat de sécurité.
+    </TabItem>
+    <TabItem label="Android" icon="mobile-android">
+    	- Méthode EAP : PEAP
+    	- Authentification phase 2 : MSCHAPv2
+    	- Certificat CA : S'y fier lors de la première connexion
+    	- Identité : `EINET\prenom.nom@hes-so.ch` (remplacez `prenom` et `nom` par vos informations, par exemple `EINET\ludovic.delafont@hes-so.ch`)
+    	- Identité anonyme : (laisser vide)
+    	- Mot de passe : votre mot de passe HES-SO
+    </TabItem>
+
 </Tabs>
 
 ## HEIG-VD public

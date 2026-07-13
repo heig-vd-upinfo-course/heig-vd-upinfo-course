@@ -2,23 +2,31 @@
 title: Se connecter au VPN
 ---
 
-import { Aside, Tabs, TabItem } from "@astrojs/starlight/components";
-
-<Aside type="caution">
-	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
-	prochainement. Merci de revenir plus tard.
-</Aside>
+import { Aside, Steps, Tabs, TabItem } from "@astrojs/starlight/components";
 
 Un VPN (Virtual Private Network) crée un tunnel chiffré entre votre ordinateur
 et le réseau de la HEIG-VD. Il vous permet d'accéder à des ressources internes
 (intranet, serveurs, licences logicielles...) depuis l'extérieur du campus,
 comme si vous étiez physiquement présent·e à l'école.
 
+<Aside type="note">
+
+Des informations supplémentaires sur la configuration du VPN sont disponibles
+sur l'intranet de la HEIG-VD à l'adresse suivante :
+[Services - Informatique - Services - Réseau - VPN](https://intranet.heig-vd.ch/services/informatique/poste-de-travail/reseau/vpn/Pages/vpn.aspx).
+
+Consultez la page
+[Accéder à l'intranet de la HEIG-VD](/heig-vd-upinfo-course/02-premiers-pas-a-la-heig-vd/13-acceder-a-lintranet)
+pour plus d'informations sur l'accès à l'intranet.
+
+</Aside>
+
 ## Quand utiliser le VPN ?
 
 Le VPN est nécessaire lorsque vous souhaitez accéder depuis chez vous à :
 
-- L'intranet de la HEIG-VD.
+- L'intranet de la HEIG-VD (voir page
+  [Accéder à l'intranet de la HEIG-VD](/heig-vd-upinfo-course/02-premiers-pas-a-la-heig-vd/13-acceder-a-lintranet)).
 - Des serveurs ou ressources réseau internes à l'école.
 - Certaines licences logicielles qui nécessitent une connexion au réseau
   interne.
@@ -35,20 +43,45 @@ configuration varient selon le système d'exploitation.
 <Tabs syncKey="operating-system">
 
     <TabItem label="Windows" icon="seti:windows">
-    	TODO
+    	<Steps>
+
+    	1. Installez le client VPN depuis le site [vpn.heig-vd.ch](https://vpn.heig-vd.ch).
+
+    	2. Lancez le client et configurez-le avec les informations suivantes :
+    		- Portail : `vpn.heig-vd.ch`
+    		- Adresse e-mail : votre adresse e-mail HEIG-VD (ex. : `ludovic.delafontaine@heig-vd.ch`)
+    		- Mot de passe : votre mot de passe HES-SO
+
+    	</Steps>
     </TabItem>
     <TabItem label="macOS" icon="apple">
-    	TODO
+    	<Steps>
+
+    	1. Installez le client VPN depuis le site [vpn.heig-vd.ch](https://vpn.heig-vd.ch).
+
+    	2. Lancez le client et configurez-le avec les informations suivantes :
+    		- Portail : `vpn.heig-vd.ch`
+    		- Adresse e-mail : votre adresse e-mail HEIG-VD (ex. : `ludovic.delafontaine@heig-vd.ch`)
+    		- Mot de passe : votre mot de passe HES-SO
+
+    	</Steps>
     </TabItem>
     <TabItem label="Linux" icon="linux">
-			- Protocole VPN : Palo Alto Networks GlobalProtect
-			- Passerelle : vpn.heig-vd.ch
-			- Certificat CA : (Aucun)
-			
-			Toutes les autres informations restent par défaut. Vous devrez vous connecter avec vos identifiants HES-SO.
+    	<Steps>
 
-			**Note** : J'ai (Ludovic) eu plusieurs soucis avec le VPN sur Linux avant de me rendre compte que je devais me connecter au moins une fois sur le site [vpn.heig-vd.ch](https://vpn.heig-vd.ch) pour que ma configuration soit correctement initialisée. Si vous avez des problèmes, essayez de vous connecter au site web du VPN avant d'utiliser le client.
-	</TabItem>
+    	1. Il n'est pas nécessaire d'installer un client VPN spécifique sur Linux. Vous pouvez utiliser le client intégré à votre distribution Linux (NetworkManager) ou un client tiers compatible avec le protocole utilisé par la HEIG-VD (Palo Alto Networks GlobalProtect).
+
+    	2. Configurez le client VPN avec les informations suivantes :
+    		- Protocole VPN : Palo Alto Networks GlobalProtect
+    		- Passerelle : vpn.heig-vd.ch
+    		- Certificat CA : (Aucun)
+
+    		Toutes les autres informations restent par défaut. Vous devrez vous connecter avec votre adresse e-mail HEIG-VD et le mot de passe HES-SO (ex. : `ludovic.delafontaine@heig-vd.ch`)
+
+    	</Steps>
+
+    	**Note** : J'ai (Ludovic) eu plusieurs soucis avec le VPN sur Linux avant de me rendre compte que je devais me connecter au moins une fois sur le site [vpn.heig-vd.ch](https://vpn.heig-vd.ch) pour que ma configuration soit correctement initialisée. Si vous avez des problèmes, essayez de vous connecter au site web du VPN avant d'utiliser le client.
+    </TabItem>
 
 </Tabs>
 
@@ -56,9 +89,16 @@ configuration varient selon le système d'exploitation.
 
 Une fois le client installé et configuré :
 
+<Steps>
+
 1. Lancez le client VPN.
-2. Connectez-vous avec vos identifiants HES-SO.
+
+2. Connectez-vous avec votre adresse e-mail HEIG-VD et le mot de passe HES-SO
+   associé.
+
 3. Votre connexion est sécurisée et vous avez accès aux ressources internes.
+
+</Steps>
 
 N'oubliez pas de déconnecter le VPN lorsque vous n'en avez plus besoin afin de
 ne pas ralentir votre connexion Internet inutilement.

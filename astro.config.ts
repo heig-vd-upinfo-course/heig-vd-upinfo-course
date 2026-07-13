@@ -26,7 +26,7 @@ export default defineConfig({
 				gfm: {
 					footnotes: {
 						label: "Notes de bas de page",
-						backLabel: (n, k) => (k > 1 ? `Retour ${n}-${k}` : `Retour ${n}`),
+						backLabel: (n, k) => (k === 1 ? `Retour ${n}` : `Retour ${n}-${k}`),
 						backContent: (_n, k) => (k === 1 ? "↩" : `↩${k}`),
 					},
 				},
