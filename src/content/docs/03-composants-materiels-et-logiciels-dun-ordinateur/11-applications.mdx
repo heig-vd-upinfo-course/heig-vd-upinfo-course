@@ -52,7 +52,7 @@ suivantes :
 ### Langages de programmation
 
 Comme vu dans le contenu
-[Processeur (CPU)](/heig-vd-upinfo-course/03-composants-materiels-et-logiciels-dun-ordinateur/03-processeur-cpu),
+[Processeur (CPU)](/heig-vd-upinfo-course/03-composants-materiels-et-logiciels-dun-ordinateur/02-processeur-cpu),
 le processeur ne comprend que le langage machine, constitué de 0 et de 1. Les
 langages de programmation permettent aux développeur·euses d'écrire du code plus
 compréhensible pour les humains.
@@ -98,3 +98,75 @@ Une application est un programme qui permet d'effectuer des tâches spécifiques
 sur un ordinateur. Les applications peuvent être natives, web ou mobiles. Elles
 sont créées à l'aide de langages de programmation et traduites en langage
 machine pour être exécutées par le processeur.
+
+```mermaid
+---
+title: Composants matériels et logiciels d'un ordinateur
+---
+flowchart
+  CPU["`
+    **Processeur (CPU)**
+    _Cerveau de l'ordinateur_
+  `"]
+  RAM["`
+    **Mémoire vive (RAM)**
+    _Stockage temporaire des données_
+  `"]
+  Storage["`
+    **Stockage**
+    _Conservation permanente des données_
+  `"]
+  Motherboard["`
+    **Carte mère**
+    _Relie tous les composants_
+  `"]
+  GPU["`
+    **Carte graphique (GPU) (dédiée ou intégrée)**
+    _Gère l'affichage et le rendu visuel_
+  `"]
+  Peripherals["`
+    **Périphériques externes**
+    _Clavier, souris, écran..._
+  `"]
+  BIOS_UEFI["`
+    **BIOS/UEFI**
+    _Démarre l'ordinateur_
+  `"]
+  OS["`
+    **Système d'exploitation**
+    _Windows, macOS, Linux_
+  `"]
+  GUI["`
+    **Interface graphique (GUI)**
+    _Interaction visuelle avec l'utilisateur_
+  `"]
+  CLI["`
+    **Terminal (CLI)**
+    _Interaction textuelle avec l'utilisateur_
+  `"]
+  Applications["`
+    **Applications**
+    _Logiciels pour accomplir des tâches spécifiques_
+  `"]
+
+  subgraph Software["`**Composants logiciels**`"]
+    direction TB
+
+    GUI --> OS
+    CLI --> OS
+    Applications --> GUI
+    Applications --> CLI
+  end
+
+  subgraph Hardware["`**Composants matériels**`"]
+    direction TB
+
+    CPU --> RAM
+    CPU --> Storage
+    Motherboard --> CPU
+    GPU --> Motherboard
+    Peripherals --> Motherboard
+  end
+
+  Software --> BIOS_UEFI --> Hardware
+```

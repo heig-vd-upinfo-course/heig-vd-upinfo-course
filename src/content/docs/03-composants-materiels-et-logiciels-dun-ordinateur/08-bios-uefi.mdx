@@ -74,3 +74,50 @@ Le BIOS/UEFI est le logiciel de base qui initialise le matériel de l'ordinateur
 et lance le système d'exploitation. L'UEFI est la version moderne du BIOS,
 offrant des fonctionnalités avancées et une meilleure compatibilité avec les
 systèmes récents.
+
+```mermaid
+---
+title: Composants matériels et logiciels d'un ordinateur
+---
+flowchart
+  CPU["`
+    **Processeur (CPU)**
+    _Cerveau de l'ordinateur_
+  `"]
+  RAM["`
+    **Mémoire vive (RAM)**
+    _Stockage temporaire des données_
+  `"]
+  Storage["`
+    **Stockage**
+    _Conservation permanente des données_
+  `"]
+  Motherboard["`
+    **Carte mère**
+    _Relie tous les composants_
+  `"]
+  GPU["`
+    **Carte graphique (GPU) (dédiée ou intégrée)**
+    _Gère l'affichage et le rendu visuel_
+  `"]
+  Peripherals["`
+    **Périphériques externes**
+    _Clavier, souris, écran..._
+  `"]
+  BIOS_UEFI["`
+    **BIOS/UEFI**
+    _Démarre l'ordinateur_
+  `"]
+
+  subgraph Hardware["`**Composants matériels**`"]
+    direction TB
+
+    CPU --> RAM
+    CPU --> Storage
+    Motherboard --> CPU
+    GPU --> Motherboard
+    Peripherals --> Motherboard
+  end
+
+  BIOS_UEFI --> Hardware
+```

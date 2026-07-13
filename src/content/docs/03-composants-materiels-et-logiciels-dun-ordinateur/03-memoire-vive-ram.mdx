@@ -37,3 +37,24 @@ La RAM est un composant essentiel pour le fonctionnement rapide et efficace d'un
 ordinateur. Elle stocke temporairement les données et les programmes en cours
 d'utilisation, permettant au processeur d'y accéder rapidement. Une quantité
 suffisante de RAM est cruciale pour éviter les ralentissements.
+
+```mermaid
+---
+title: Composants matériels et logiciels d'un ordinateur
+---
+flowchart
+  CPU["`
+    **Processeur (CPU)**
+    _Cerveau de l'ordinateur_
+  `"]
+  RAM["`
+    **Mémoire vive (RAM)**
+    _Stockage temporaire des données_
+  `"]
+
+  subgraph Hardware["`**Composants matériels**`"]
+    direction TB
+
+    CPU --> RAM
+  end
+```

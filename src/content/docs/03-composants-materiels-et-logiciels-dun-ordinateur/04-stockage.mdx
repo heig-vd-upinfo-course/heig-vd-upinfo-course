@@ -96,7 +96,7 @@ et des underscores (`_`) pour séparer les mots, afin d'éviter toute confusion.
 ## Encodage des caractères
 
 Comme mentionné dans le contenu
-[Processeur (CPU)](/heig-vd-upinfo-course/03-composants-materiels-et-logiciels-dun-ordinateur/03-processeur-cpu),
+[Processeur (CPU)](/heig-vd-upinfo-course/03-composants-materiels-et-logiciels-dun-ordinateur/02-processeur-cpu),
 un ordinateur ne comprend que le langage binaire, constitué de 0 et de 1, appelé
 des bits.
 
@@ -228,3 +228,29 @@ typique sur les différents systèmes d'exploitation :
 | Vidéos          | `C:\Users\Nom\Videos`    | `/Users/Nom/Movies`    | `/home/nom/Videos`    |
 | Téléchargements | `C:\Users\Nom\Downloads` | `/Users/Nom/Downloads` | `/home/nom/Downloads` |
 | Musique         | `C:\Users\Nom\Music`     | `/Users/Nom/Music`     | `/home/nom/Music`     |
+
+```mermaid
+---
+title: Composants matériels et logiciels d'un ordinateur
+---
+flowchart
+  CPU["`
+    **Processeur (CPU)**
+    _Cerveau de l'ordinateur_
+  `"]
+  RAM["`
+    **Mémoire vive (RAM)**
+    _Stockage temporaire des données_
+  `"]
+  Storage["`
+    **Stockage**
+    _Conservation permanente des données_
+  `"]
+
+  subgraph Hardware["`**Composants matériels**`"]
+    direction TB
+
+    CPU --> RAM
+    CPU --> Storage
+  end
+```
