@@ -16,6 +16,7 @@
 <div class="container">
 	<button
 		type="button"
+		aria-pressed="false"
 		data-umami-event="feedback"
 		data-umami-event-value="positive"
 	>
@@ -24,6 +25,7 @@
 
 	<button
 		type="button"
+		aria-pressed="false"
 		data-umami-event="feedback"
 		data-umami-event-value="neutral"
 	>
@@ -32,12 +34,30 @@
 
 	<button
 		type="button"
+		aria-pressed="false"
 		data-umami-event="feedback"
 		data-umami-event-value="negative"
 	>
 		🙁
 	</button>
 </div>
+
+<script>
+	const feedbackContainer = document.querySelector(".container");
+	const feedbackButtons = feedbackContainer?.querySelectorAll("button") ?? [];
+
+	feedbackButtons.forEach((button) => {
+		button.addEventListener("click", () => {
+			feedbackButtons.forEach((candidate) => {
+				candidate.classList.remove("is-selected");
+				candidate.setAttribute("aria-pressed", "false");
+			});
+
+			button.classList.add("is-selected");
+			button.setAttribute("aria-pressed", "true");
+		});
+	});
+</script>
 
 <style>
 	.container {
@@ -62,11 +82,29 @@
 		cursor: pointer;
 		transition:
 			transform 0.2s ease,
-			opacity 0.2s ease;
+			opacity 0.2s ease,
+			box-shadow 0.2s ease,
+			background-color 0.2s ease;
 	}
 
 	.container button:hover {
 		transform: scale(1.1);
 		opacity: 0.9;
+	}
+
+	.container button:active {
+		transform: scale(0.92);
+	}
+
+	.container button:focus-visible {
+		outline: 2px solid currentColor;
+		outline-offset: 4px;
+	}
+
+	.container button.is-selected {
+		background-color: color-mix(in srgb, currentColor 18%, transparent);
+		box-shadow: 0 0 0 3px color-mix(in srgb, currentColor 30%, transparent);
+		transform: scale(1.08);
+		opacity: 1;
 	}
 </style>

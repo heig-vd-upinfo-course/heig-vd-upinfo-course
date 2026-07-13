@@ -2,17 +2,10 @@
 title: Comment utiliser ce site
 ---
 
-import { Aside } from "@astrojs/starlight/components";
+import { Aside, Steps, TabItem, Tabs } from "@astrojs/starlight/components";
 
-<Aside type="caution">
-	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
-	prochainement. Merci de revenir plus tard.
-</Aside>
-
-## But de ce site
-
-Ce site est conçu pour vous aider à acquérir les connaissances et compétences
-nécessaires pour réussir vos études à la HEIG-VD.
+Ce site est conçu pour vous aider à acquérir les compétences nécessaires en
+informatique qui vont vous accompagner tout au long de votre formation.
 
 ## Naviguer dans le site
 
@@ -28,12 +21,16 @@ pratiques pour vous aider à appliquer ce que vous avez appris.
 
 ## Alertes et informations importantes
 
-En lisant les contenus préparés, vous trouverez peut-être ce que l'on appelle
-des _avertissements_ ou des _alertes_.
+En lisant les contenus préparés, vous trouverez peut-être ce que nous appelons
+des _"avertissements"_ ou des _"alertes"_.
 
 Elles se présentent comme suit :
 
-<Aside type="note">Hé ! Je suis une note ! Merci de m'avoir lue !</Aside>
+<Aside type="note">
+
+Hé ! Je suis une note ! Merci de m'avoir lue !
+
+</Aside>
 
 Elles sont là pour mettre en évidence des informations importantes dont vous
 devez tenir compte.
@@ -42,29 +39,100 @@ Voici les différents types d'alertes que vous pourriez trouver et leur
 signification :
 
 <Aside type="note">
-	Informations mises en évidence que vous devriez prendre en compte.
+
+Informations mises en évidence que vous devriez prendre en compte.
+
 </Aside>
 
 <Aside type="tip">
-	Informations facultatives pour vous aider à mieux réussir avec des conseils,
-	des astuces, ou encore des suggestions.
+
+Informations facultatives pour vous aider à mieux réussir avec des conseils, des
+astuces, ou encore des suggestions.
+
 </Aside>
 
 <Aside type="caution">
-	Informations cruciales nécessaires à la réussite des actions que vous devriez
-	effectuer.
+
+Informations cruciales nécessaires à la réussite des actions que vous devriez
+effectuer.
+
 </Aside>
 
 <Aside type="danger">
-	Informations critiques exigeant votre attention immédiate en raison des
-	risques potentiels.
+
+Informations critiques exigeant votre attention immédiate en raison des risques
+potentiels.
+
 </Aside>
+
+## Instructions spécifiques à votre environnement
+
+Tout au long du site, vous trouverez des instructions spécifiques à votre
+environnement (Windows, macOS, Linux, Docker). Ces instructions sont regroupées
+dans des onglets pour vous permettre de suivre les étapes correspondant à votre
+système d'exploitation ou environnement de travail.
+
+Ils se présentent comme suit :
+
+<Tabs syncKey="operating-system">
+	<TabItem label="Windows" icon="seti:windows">
+		_Les instructions spécifiques à Windows..._
+	</TabItem>
+	<TabItem label="macOS" icon="apple">
+		_Les instructions spécifiques à macOS..._
+	</TabItem>
+	<TabItem label="Linux" icon="linux">
+		_Les instructions spécifiques à Linux..._
+	</TabItem>
+	<TabItem label="Docker" icon="seti:docker">
+		_Les instructions spécifiques à Docker..._
+	</TabItem>
+</Tabs>
+
+<Tabs syncKey="smartphone-operating-system">
+	<TabItem label="iOS" icon="mobile-android">
+		_Les instructions spécifiques à iOS..._
+	</TabItem>
+	<TabItem label="Android" icon="mobile-android">
+		_Les instructions spécifiques à Android..._
+	</TabItem>
+</Tabs>
+
+Ces onglets sont synchronisés, ce qui signifie que si vous changez d'onglet dans
+une section, les autres sections suivront automatiquement le même onglet
+sélectionné. Cela vous permet de rester cohérent dans vos actions et de suivre
+les instructions adaptées à votre environnement.
+
+## Instructions en étapes
+
+Finalement, vous pourriez rencontrer des instructions en étapes numérotées pour
+vous guider à travers les différentes actions à effectuer. Ces étapes sont
+conçues pour être suivies dans l'ordre, afin de garantir que vous accomplissez
+correctement chaque tâche.
+
+Elles se présentent comme suit :
+
+<Steps>
+
+1. Lisez attentivement chaque étape avant de commencer.
+
+2. Suivez les instructions dans l'ordre indiqué.
+
+3. Validez chaque étape avant de passer à la suivante.
+
+</Steps>
+
+Comme indiqué, lisez attentivement les contenus que vous trouverez sur ce site,
+suivez les instructions et n'hésitez pas à poser des questions si quelque chose
+n'est pas clair. Nous sommes là pour vous aider à réussir dans votre parcours
+académique et à vous assurer que vous disposez des compétences nécessaires pour
+tirer le meilleur parti de votre formation à la HEIG-VD.
 
 ## Suivre votre progression
 
 A la fin de chaque contenu, vous pouvez marquer le contenu comme lu pour suivre
-votre progression. Vous pouvez également consulter votre progression globale
-dans le menu de navigation.
+votre progression dans le menu latéral. Vous pouvez ainsi consulter votre
+progression globale dans le menu de navigation en tout temps.
 
 ## Faire un retour
 

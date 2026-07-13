@@ -2,12 +2,7 @@
 title: Installer et configurer une application à deux facteurs
 ---
 
-import { Aside } from "@astrojs/starlight/components";
-
-<Aside type="caution">
-	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
-	prochainement. Merci de revenir plus tard.
-</Aside>
+import { Aside, Steps } from "@astrojs/starlight/components";
 
 L'authentification à deux facteurs (2FA, ou MFA pour Multi-Factor
 Authentication) ajoute une deuxième couche de sécurité à vos comptes en ligne.
@@ -16,49 +11,154 @@ votre compte sans ce second facteur.
 
 ## Qu'est-ce que le 2FA ?
 
-Après avoir saisi votre mot de passe (premier facteur : ce que vous
-**connaissez**), l'application vous demande un code temporaire généré par une
-application sur votre smartphone (second facteur : ce que vous **possédez**). Ce
-code change toutes les 30 secondes et est impossible à deviner à distance.
+Une authentification à deux facteurs est une forme d'authentification qui
+nécessite deux éléments pour vérifier votre identité :
 
-## Applications recommandées
+- Le premier facteur est quelque chose que vous **connaissez**, comme un mot de
+  passe ou un code PIN.
+- Le second facteur est quelque chose que vous **possédez**, comme un
+  smartphone, une clé de sécurité physique ou un code généré par une application
+  d'authentification.
+
+Un troisième facteur peut être quelque chose que vous **êtes**, comme une
+empreinte digitale ou la reconnaissance faciale, mais il est moins courant.
+
+Le plus courant est l'utilisation d'une application d'authentification sur un
+smartphone, qui génère des codes temporaires (TOTP) toutes les 30 secondes. Ces
+codes sont utilisés comme second facteur lors de la connexion à un compte.
+
+## Comment ça marche ?
+
+La double authentification fonctionne en combinant deux éléments pour vérifier
+votre identité. Après avoir saisi votre mot de passe (premier facteur), le
+système vous demande un code temporaire généré par une application sur votre
+smartphone (second facteur). Ce code change toutes les 30 secondes et est
+impossible à deviner à distance.
+
+Ainsi, même si le mot de passe d'un de vos comptes est compromis, un attaquant
+ne pourra pas se connecter sans le second facteur, ce qui renforce
+considérablement la sécurité de vos comptes en ligne.
+
+Lors de l'activation du 2FA, des **codes de secours** vous sont généralement
+fournis. Ils permettent de se connecter à votre compte si vous perdez l'accès à
+votre second facteur (par exemple, si vous perdez votre smartphone).
+
+Conservez-les en lieu sûr (sur votre ordinateur ou imprimé et stocké en
+sécurité, par exemple). Ils vous permettront d'accéder à votre compte si vous
+perdez accès à votre application 2FA.
+
+## Que se passe-t-il si je perds mon second facteur ?
+
+Si vous perdez l'accès à votre second facteur (par exemple, si vous perdez votre
+smartphone), vous ne pourrez pas vous connecter à vos comptes protégés par le
+2FA. C'est pourquoi il est crucial de sauvegarder vos codes de secours et de
+configurer un moyen de récupération (comme un e-mail secondaire ou une clé de
+sécurité) lors de l'activation du 2FA.
+
+## Une habitude à prendre
+
+L'utilisation de l'authentification à deux facteurs demande une certaine
+discipline et une habitude à prendre : vous devez toujours avoir accès à votre
+second facteur (smartphone, clé de sécurité, etc.) pour pouvoir vous connecter.
+Mais avec ce système, vos comptes en ligne sont beaucoup plus sécurisés contre
+les attaques et les compromissions de mots de passe.
+
+## Séparer votre gestionnaire de mots de passe et votre application 2FA
+
+Bien qu'il soit possible d'utiliser un gestionnaire de mots de passe pour
+stocker vos codes 2FA, il est recommandé de séparer ces deux fonctions pour des
+raisons de sécurité.
+
+En effet, si un attaquant parvient à accéder à votre gestionnaire de mots de
+passe, il pourrait également obtenir vos codes 2FA. En utilisant une application
+d'authentification distincte sur votre smartphone, vous ajoutez une couche
+supplémentaire de sécurité.
+
+## Mettre en place le 2FA sur vos comptes
+
+Pour commencer :
+
+<Steps>
+
+1. Installez l'application d'authentification sur votre smartphone :
+
+   - Aegis pour Android (voir ci-dessous).
+   - Ente Auth pour les autres plateformes (ou Android) (voir ci-dessous).
+
+2. Connectez-vous à un service en ligne qui supporte le 2FA (par exemple, votre
+   compte HES-SO, GitHub, Google, etc.) et accédez aux paramètres de sécurité.
+
+3. Suivez les instructions pour activer le 2FA et scannez le code QR avec votre
+   application d'authentification.
+
+4. Conservez vos codes de secours dans un endroit sûr.
+
+5. Testez la connexion avec le 2FA pour vous assurer que tout fonctionne
+   correctement.
+
+6. Lorsque vous vous connecterez à votre compte, après avoir saisi votre mot de
+   passe, ouvrez l'application d'authentification pour obtenir le code
+   temporaire et saisissez-le pour compléter la connexion.
+
+7. Répétez ce processus pour tous les comptes en ligne qui supportent le 2FA
+   afin de renforcer la sécurité de vos informations personnelles et
+   professionnelles.
+
+</Steps>
+
+## Options recommandées : Aegis (Android) ou Ente Auth (multi-plateformes)
+
+Nous recommandons d'utiliser une application d'authentification open source et
+multiplateforme, telle que **Aegis** sur Android, ou l'application native **Ente
+Auth** sur d'autres plateformes. Ces applications génèrent des codes TOTP pour
+vos comptes et sont compatibles avec la plupart des services en ligne.
 
 ### Aegis Authenticator (Android)
 
-[Aegis](https://getaegis.app) est une application open source pour Android,
-gratuite et sans publicité. Elle permet d'exporter et de chiffrer sa base de
-codes 2FA, ce qui facilite la migration vers un nouveau téléphone.
+[Aegis](https://getaegis.app) est une application open source pour Android et
+gratuite. Elle permet d'exporter et de chiffrer sa base de codes 2FA, ce qui
+facilite la migration vers un nouveau téléphone. Le fait qu'Aegis ne soit pas
+connecté à un compte cloud centralisé renforce la sécurité de vos codes 2FA.
 
-### Microsoft Authenticator
+<Aside type="caution">
 
-Disponible sur Android et iOS, Microsoft Authenticator est l'application
-recommandée pour les comptes HES-SO / Microsoft 365. Elle prend également en
-charge les comptes d'autres services.
+Si vous utilisez Aegis, assurez-vous de sauvegarder régulièrement votre fichier
+de codes 2FA et de le protéger avec un mot de passe maître fort.
 
-### Apple Passwords (iOS/macOS)
+La section
+[Sauvegarder et restaurer ses données](/heig-vd-upinfo-course/06-sauvegarder-et-restaurer-ses-donnees/01-introduction-et-ressources)
+de ce site contient des informations utiles sur la sauvegarde de vos données.
 
-Depuis iOS 18 et macOS 15, Apple Passwords gère nativement les codes 2FA (TOTP),
-intégré à l'écosystème Apple et synchronisé via iCloud.
+</Aside>
 
-## Activer le 2FA sur son compte HES-SO
+### Ente Auth (multi-plateformes)
 
-La HEIG-VD recommande ou impose l'activation du 2FA sur les comptes HES-SO. Pour
-l'activer :
+[Ente Auth](https://ente.com/auth/) est une application open source et
+multiplateforme et gratuite. Elle permet de gérer les codes 2FA de manière
+sécurisée et de les synchroniser entre différents appareils via un compte Ente
+sécurisé. Elle est disponible sur Android, iOS, Windows, macOS et Linux.
 
-1. Connectez-vous sur [portal.hes-so.ch](https://portal.hes-so.ch).
-2. Accédez aux paramètres de sécurité de votre compte.
-3. Suivez les instructions pour configurer une application d'authentification.
+## Alternatives
 
-## Codes de secours
+Il existe de nombreuses autres applications d'authentification, telles que Apple
+Passwords, Google Authenticator, Authy, Microsoft Authenticator, etc.
 
-Lors de l'activation du 2FA, des **codes de secours** vous sont fournis.
-Conservez-les en lieu sûr (dans votre gestionnaire de mots de passe, par
-exemple). Ils vous permettront d'accéder à votre compte si vous perdez accès à
-votre application 2FA.
+Cependant, nous recommandons Aegis ou Ente Auth pour leur gratuité, leur
+ouverture et leur sécurité. Certaines applications, comme Authy, nécessitent la
+création d'un compte en ligne, ce qui peut introduire des risques de sécurité
+supplémentaires ou ne pas permettre de facilement exporter vos codes 2FA vers un
+autre appareil.
+
+Si vous souhaitez utiliser un mécanisme de double authentification plus avancé,
+vous pouvez également envisager d'utiliser une clé de sécurité physique (comme
+[YubiKey](https://www.yubico.com)) pour vos comptes les plus sensibles.
 
 ## Résumé
 
 Le 2FA est l'une des mesures de sécurité les plus efficaces disponibles.
-Activez-le sur tous les comptes importants (HES-SO, e-mail, gestionnaire de mots
-de passe, GitHub...). Aegis est recommandé sur Android ; Microsoft Authenticator
-pour les comptes Microsoft.
+
+Activez-le sur tous les comptes quji le supportent (HES-SO, e-mail, gestionnaire
+de mots de passe, GitHub...). Aegis est recommandé sur Android ; Ente Auth est
+recommandé sur d'autres plateformes. Conservez vos codes de secours en lieu sûr
+et configurez un moyen de récupération pour éviter de perdre l'accès à vos
+comptes.
