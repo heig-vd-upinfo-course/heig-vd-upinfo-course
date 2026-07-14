@@ -4,13 +4,6 @@ sidebar:
   label: Introduction et ressources
 ---
 
-import { Aside } from "@astrojs/starlight/components";
-
-<Aside type="caution">
-	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
-	prochainement. Merci de revenir plus tard.
-</Aside>
-
 Cette section présente les bases des communications réseau et d'Internet. Vous y
 découvrirez comment les ordinateurs communiquent entre eux, comment ils
 s'identifient sur un réseau et comment fonctionne le web que vous utilisez
@@ -28,3 +21,77 @@ Les thématiques abordées sont les suivantes :
 - Les communications inter-processus : comment les programmes échangent des
   données, localement ou à distance.
 - Effectuer une recherche sur Internet : outils et bonnes pratiques.
+
+```mermaid
+flowchart
+  IP["`
+    **🏠 Adresse IP**
+    _Identifie chaque machine sur un réseau_
+  `"]
+  DHCP["`
+    **📣 Serveur DHCP**
+    _Attribue automatiquement les adresses IP_
+  `"]
+  DNS["`
+    **↔️ Serveur DNS**
+    _Traduit les noms de domaine en adresses IP_
+  `"]
+  Process1["`
+    **⚙️ Processus 1**
+    _Programme en cours d'exécution_
+  `"]
+  Process2["`
+    **⚙️ Processus 2**
+    _Programme en cours d'exécution_
+  `"]
+  Computer["`
+    **💻 Ordinateur**
+    _Machine qui exécute des applications, dont un navigateur web_
+  `"]
+  Server1["`
+    **🖥️ Serveur 1**
+    _Machine qui fournit des services à d'autres machines_
+  `"]
+  Server2["`
+    **🖥️ Serveur 2**
+    _Machine qui fournit des services à d'autres machines_
+  `"]
+  Internet["`
+    **☁️ Internet**
+    _Réseau mondial de machines interconnectées_
+  `"]
+  User["`
+    **👤 Utilisateur**
+    _Personne qui utilise un ordinateur pour accéder à Internet_
+  `"]
+
+  subgraph LAN_1["🏢 Réseau interne (LAN entreprise)"]
+    direction TB
+
+    Process1 --> Server1
+    Process2 --> Server2
+  end
+
+  subgraph WAN["🌍 Réseau externe (WAN)"]
+    direction TB
+
+    Internet
+  end
+
+  subgraph LAN_2["🏢 Réseau interne (LAN maison)"]
+    direction TB
+
+    subgraph Modem["📡 Modem/Routeur"]
+      direction TB
+
+      DHCP
+      DNS
+    end
+
+    Modem <--> Computer
+    Computer --> IP
+    Computer --> User
+  end
+
+  LAN_1 <--> WAN <--> LAN_2
+```
