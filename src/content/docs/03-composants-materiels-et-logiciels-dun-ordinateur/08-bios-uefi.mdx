@@ -2,13 +2,6 @@
 title: BIOS/UEFI
 ---
 
-import { Aside } from "@astrojs/starlight/components";
-
-<Aside type="caution">
-	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
-	prochainement. Merci de revenir plus tard.
-</Aside>
-
 Le BIOS (Basic Input/Output System) et son successeur l'UEFI (Unified Extensible
 Firmware Interface) sont des logiciels intégrés directement dans la carte mère.
 Ils constituent le premier programme exécuté lorsque l'ordinateur est mis sous
@@ -18,13 +11,20 @@ Leur rôle principal est de vérifier que les composants matériels fonctionnent
 correctement, puis de lancer le système d'exploitation installé sur le disque de
 stockage.
 
+Le BIOS/UEFI peut être considéré comme un composant matériel et logiciel, car il
+est stocké directement sur la carte mère mais fonctionne comme un logiciel qui
+interagit avec le matériel.
+
 ## Séquence de démarrage (boot)
 
 Lorsque l'ordinateur démarre, il suit une séquence précise :
 
-1. Le BIOS/UEFI s'exécute et effectue un test rapide des composants (POST -
-   Power-On Self Test). Il vérifie que le processeur, la mémoire, la carte
-   graphique et les autres composants essentiels sont opérationnels.
+1. Le BIOS/UEFI s'exécute et effectue un test rapide des composants (appelé
+   POST - Power-On Self Test). Il vérifie que le processeur, la mémoire, la
+   carte graphique et les autres composants essentiels sont disponibles et
+   fonctionnent correctement (dans la limite de ses capacités). Si une erreur
+   survient, le BIOS/UEFI peut émettre des bips sonores ou afficher un message
+   d'erreur à l'écran pour indiquer le problème.
 2. Il recherche un périphérique de démarrage (disque dur, SSD, clé USB...) selon
    un ordre configurable.
 3. Il lance le chargeur d'amorçage (bootloader), qui à son tour charge le
@@ -74,3 +74,64 @@ Le BIOS/UEFI est le logiciel de base qui initialise le matériel de l'ordinateur
 et lance le système d'exploitation. L'UEFI est la version moderne du BIOS,
 offrant des fonctionnalités avancées et une meilleure compatibilité avec les
 systèmes récents.
+
+```mermaid
+---
+title: Composants matériels et logiciels d'un ordinateur
+---
+flowchart
+  CPU["`
+    **Processeur (CPU)**
+    _Cerveau de l'ordinateur_
+  `"]
+  RAM["`
+    **Mémoire vive (RAM)**
+    _Stockage temporaire des données_
+  `"]
+  Storage["`
+    **Stockage**
+    _Conservation permanente des données_
+  `"]
+  Motherboard["`
+    **Carte mère**
+    _Relie tous les composants_
+  `"]
+  GPU["`
+    **Carte graphique (GPU) (dédiée ou intégrée)**
+    _Gère l'affichage et le rendu visuel_
+  `"]
+  Peripherals["`
+    **Périphériques externes**
+    _Clavier, souris, écran..._
+  `"]
+  BIOS_UEFI["`
+    **BIOS/UEFI**
+    _Démarre l'ordinateur et vérifie le matériel disponible_
+  `"]
+
+  subgraph Hardware["`**Composants matériels**`"]
+    direction TB
+
+    CPU --> RAM
+    CPU --> Storage
+    Motherboard --> CPU
+    GPU --> Motherboard
+    Peripherals --> Motherboard
+  end
+
+  BIOS_UEFI --> Hardware
+```
+
+## À vous de jouer !
+
+### Exercice pratique 1
+
+Identifiez la touche à presser pour accéder au BIOS/UEFI de votre ordinateur.
+Redémarrez votre ordinateur et appuyez sur cette touche pour entrer dans le
+BIOS/UEFI. Explorez les différentes options disponibles, mais soyez prudent et
+évitez de modifier des paramètres si vous n'êtes pas sûr de leur fonction.
+
+### Exercice pratique 2
+
+Activez les options de virtualisation dans le BIOS/UEFI de votre ordinateur.
+Redémarrez ensuite votre ordinateur après avoir activé cette fonctionnalité.

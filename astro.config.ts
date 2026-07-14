@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config";
-import starlight from "@astrojs/starlight";
 import { satteri } from "@astrojs/markdown-satteri";
+import starlight from "@astrojs/starlight";
+import mermaid from "astro-mermaid";
 import starlightLinksValidator from "starlight-links-validator";
 
 const title =
@@ -35,6 +36,14 @@ export default defineConfig({
 		}),
 	},
 	integrations: [
+		mermaid({
+			mermaidConfig: {
+				look: "classic",
+				startOnLoad: false,
+				logLevel: "error",
+				securityLevel: "strict",
+			},
+		}),
 		starlight({
 			title,
 			description,
@@ -95,7 +104,7 @@ export default defineConfig({
 			components: {
 				Footer: "./src/components/Footer.astro",
 			},
-			routeMiddleware: ["./src/routeData.ts"],
+			routeMiddleware: ["./src/route-middleware.ts"],
 			plugins: [
 				// https://starlight-links-validator.vercel.app/
 				starlightLinksValidator(),

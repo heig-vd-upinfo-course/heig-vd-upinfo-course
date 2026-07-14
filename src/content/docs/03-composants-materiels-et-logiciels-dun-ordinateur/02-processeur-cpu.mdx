@@ -1,0 +1,170 @@
+---
+title: Processeur (CPU)
+---
+
+import { Steps, TabItem, Tabs } from "@astrojs/starlight/components";
+
+Le processeur, ou CPU (Central Processing Unit), est le composant central d'un
+ordinateur. Il exécute les instructions des programmes : calculs, comparaisons,
+déplacements de données. Tout ce que fait un ordinateur passe par lui.
+
+Vous pouvez imaginer le processeur comme le cerveau de l'ordinateur. Il reçoit
+des instructions, les interprète et effectue les opérations nécessaires pour
+produire un résultat. Il est responsable de la vitesse et de l'efficacité de
+l'ordinateur.
+
+## Langage machine
+
+Un ordinateur est un composant électronique qui, dans le fond, est extrêmement
+basique et n'a aucune intelligence (il n'est pas capable de réfléchir ou de
+comprendre le langage humain).
+
+Il ne comprend que le langage machine, constitué de 0 et de 1 (appelés des
+bits).
+
+Tout ce que vous faites sur un ordinateur, que ce soit ouvrir un logiciel, taper
+du texte ou regarder une vidéo, est traduit en langage machine pour que le
+processeur puisse l'exécuter et vous renvoyer le résultat.
+
+## Processeurs 32 bits et 64 bits
+
+Un bit est la plus petite unité d'information en informatique, représentée par
+un 0 ou un 1.
+
+Plutôt que de traiter les bits un par un, les processeurs traitent les données
+par blocs de bits. La taille de ces blocs dépend de l'architecture du processeur
+: un processeur 32 bits traite les données par blocs de 32 bits, tandis qu'un
+processeur 64 bits traite les données par blocs de 64 bits.
+
+Cette différence de taille de bloc a des implications sur la quantité de mémoire
+que le processeur peut utiliser et sur la performance globale de l'ordinateur.
+
+Les processeurs 32 bits sont parfois appelés x86, tandis que les processeurs 64
+bits sont appelés x64 ou x86-64 (car un processeur 64 bits peut exécuter des
+instructions 32 bits).
+
+Certains logiciels font encore la différence entre les versions 32 bits et 64
+bits, mais la plupart des logiciels modernes sont conçus pour les processeurs 64
+bits. C'est la raison pour laquelle vous pourriez encore trouver des logiciels
+avec les mentions "32 bits" ou "64 bits" dans leurs noms ou descriptions.
+
+## Architectures x86/x64 et ARM
+
+Il existe deux grandes familles d'architectures de processeurs :
+
+- L'architecture x86/x64 est la plus répandue sur les ordinateurs de bureau et
+  les portables. Elle est utilisée par les processeurs Intel et AMD. Elle est
+  puissante mais consomme plus d'énergie.
+- L'architecture ARM est utilisée notamment par Apple (Apple Silicon : M1, M2,
+  M3, etc.) et dans les smartphones. Elle est plus économe en énergie tout en
+  offrant d'excellentes performances. Son adoption croissante ne date que de
+  quelques années, mais elle est en train de devenir un standard pour les
+  ordinateurs portables et les appareils mobiles.
+
+Ces deux architectures ne sont pas directement compatibles : un programme
+compilé pour x86/x64 ne fonctionnera pas nativement sur un processeur ARM, et
+vice versa.
+
+Durant votre formation, il est important de connaître ces architectures, car
+elles influencent la compatibilité des logiciels. Vos enseignant·es essaient de
+considérer les deux architectures dans leurs cours, mais il est possible que
+certains logiciels ne soient pas disponibles pour l'une ou l'autre architecture.
+
+Lorsque vous allez installer un logiciel, vérifiez toujours la compatibilité
+avec votre architecture de processeur. Par exemple, si vous utilisez un
+ordinateur Apple récent avec un processeur Apple Silicon, pensez à bien
+installer et utiliser la version ARM du logiciel, et non la version x86/x64.
+
+Des systèmes de traduction permettent d'exécuter des logiciels x86/x64 sur ARM,
+mais cela peut entraîner une perte de performance. Il est donc préférable
+d'utiliser des logiciels natifs pour votre architecture.
+
+## Résumé
+
+Le processeur est le cerveau de l'ordinateur. C'est lui qui exécute toutes les
+applications et gère les opérations de calcul et de traitement des données. Il
+s'agit de la pièce maîtresse qui détermine en majorité la vitesse et
+l'efficacité de l'ordinateur.
+
+Les processeurs ont beaucoup évolué au fil des années, mais les concepts de base
+restent les mêmes : ils traitent des instructions en langage machine, et leur
+architecture (x86/x64 ou ARM) influence la compatibilité des logiciels et les
+performances de l'ordinateur.
+
+```mermaid
+---
+title: Composants matériels et logiciels d'un ordinateur
+---
+flowchart
+  CPU["`
+    **Processeur (CPU)**
+    _Cerveau de l'ordinateur_
+  `"]
+
+  subgraph Hardware["`**Composants matériels**`"]
+    direction TB
+
+    CPU
+  end
+```
+
+## À vous de jouer !
+
+### Exercice pratique 1
+
+Identifiez la marque et le modèle de votre ordinateur et notez ces informations
+pour référence future.
+
+### Exercice pratique 2
+
+Identifiez le fabricant (Intel, AMD, Apple, etc.) et le modèle de votre
+processeur et notez ces informations pour référence future. Identifiez également
+l'architecture de votre processeur ainsi que sa version (32 bits ou 64 bits) sur
+votre ordinateur.
+
+<Tabs syncKey="operating-system">
+
+    <TabItem label="Windows" icon="seti:windows">
+    	Accédez aux informations sur votre processeur en suivant ces étapes :
+
+      <Steps>
+
+    	1. Cliquez sur le bouton Démarrer.
+
+    	2. Tapez "Informations système" dans la barre de recherche et appuyez sur Entrée.
+
+      3. Dans la fenêtre qui s'ouvre, recherchez la section "Processeur" pour voir le fabricant, le modèle et l'architecture de votre processeur.
+
+      </Steps>
+    </TabItem>
+    <TabItem label="macOS" icon="apple">
+    	Accédez aux informations sur votre processeur en suivant ces étapes :
+
+      <Steps>
+
+    	1. Cliquez sur le menu Apple dans le coin supérieur gauche de l'écran.
+
+    	2. Sélectionnez "À propos de ce Mac".
+
+    	3. Dans la fenêtre qui s'ouvre, vous verrez les informations sur votre processeur, y compris le fabricant, le modèle et l'architecture.
+
+      </Steps>
+    </TabItem>
+    <TabItem label="Linux" icon="linux">
+      	Accédez aux informations sur votre processeur en suivant ces étapes :
+
+        <Steps>
+
+      	1. Ouvrez un terminal.
+
+      	2. Tapez la commande suivante et appuyez sur Entrée :
+      	   ```
+      	   lscpu
+      	   ```
+
+      	3. Recherchez les lignes "Architecture" et "Modèle du processeur" pour voir le fabricant, le modèle et l'architecture de votre processeur.
+
+        </Steps>
+    </TabItem>
+
+</Tabs>

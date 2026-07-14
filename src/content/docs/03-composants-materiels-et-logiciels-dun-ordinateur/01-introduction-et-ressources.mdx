@@ -1,15 +1,9 @@
 ---
-title: Composants matériels d'un ordinateur - Introduction et ressources
+title:
+  Composants matériels et logiciels d'un ordinateur - Introduction et ressources
 sidebar:
   label: Introduction et ressources
 ---
-
-import { Aside } from "@astrojs/starlight/components";
-
-<Aside type="caution">
-	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
-	prochainement. Merci de revenir plus tard.
-</Aside>
 
 Cette section présente les principaux composants d'un ordinateur, aussi bien
 matériels que logiciels. Vous y découvrirez comment ces éléments fonctionnent
@@ -23,8 +17,84 @@ Les thématiques abordées sont les suivantes :
 - Le stockage (disque dur, SSD), qui conserve les données de manière permanente.
 - La carte mère, qui relie tous les composants entre eux.
 - La carte graphique (GPU), qui gère l'affichage et le rendu visuel.
-- Les périphériques externes (clavier, souris, écran...).
-- Le BIOS/UEFI, qui démarre l'ordinateur.
-- Le système d'exploitation (Windows, macOS, Linux).
-- L'interface graphique (GUI) et le terminal (TUI).
-- Les applications.
+- Les périphériques externes (clavier, souris, écran...), qui permettent
+  d'interagir avec l'ordinateur.
+- Le BIOS/UEFI, qui démarre l'ordinateur et initialise le matériel.
+- Le système d'exploitation (Windows, macOS, Linux), qui gère l'interaction
+  entre le matériel et les logiciels.
+- L'interface graphique (GUI) et le terminal (CLI), qui permettent d'interagir
+  avec l'ordinateur.
+- Les applications, qui sont les logiciels utilisés pour accomplir des tâches
+  spécifiques.
+
+```mermaid
+---
+title: Composants matériels et logiciels d'un ordinateur
+---
+flowchart
+  CPU["`
+    **Processeur (CPU)**
+    _Cerveau de l'ordinateur_
+  `"]
+  RAM["`
+    **Mémoire vive (RAM)**
+    _Stockage temporaire des données_
+  `"]
+  Storage["`
+    **Stockage**
+    _Conservation permanente des données_
+  `"]
+  Motherboard["`
+    **Carte mère**
+    _Relie tous les composants_
+  `"]
+  GPU["`
+    **Carte graphique (GPU) (dédiée ou intégrée)**
+    _Gère l'affichage et le rendu visuel_
+  `"]
+  Peripherals["`
+    **Périphériques externes**
+    _Clavier, souris, écran..._
+  `"]
+  BIOS_UEFI["`
+    **BIOS/UEFI**
+    _Démarre l'ordinateur et vérifie le matériel disponible_
+  `"]
+  OS["`
+    **Système d'exploitation**
+    _Windows, macOS, Linux_
+  `"]
+  GUI["`
+    **Interface graphique (GUI)**
+    _Interaction visuelle avec l'utilisateur·trice_
+  `"]
+  CLI["`
+    **Terminal (CLI)**
+    _Interaction textuelle avec l'utilisateur·trice_
+  `"]
+  Applications["`
+    **Applications**
+    _Logiciels pour accomplir des tâches spécifiques_
+  `"]
+
+  subgraph Software["`**Composants logiciels**`"]
+    direction TB
+
+    GUI --> OS
+    CLI --> OS
+    Applications --> GUI
+    Applications --> CLI
+  end
+
+  subgraph Hardware["`**Composants matériels**`"]
+    direction TB
+
+    CPU --> RAM
+    CPU --> Storage
+    Motherboard --> CPU
+    GPU --> Motherboard
+    Peripherals --> Motherboard
+  end
+
+  Software --> BIOS_UEFI --> Hardware
+```

@@ -1,13 +1,6 @@
 ---
-title: Interface graphique (GUI) et terminal (CLI/TUI)
+title: Interface graphique (GUI) et terminal (CLI)
 ---
-
-import { Aside } from "@astrojs/starlight/components";
-
-<Aside type="caution">
-	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
-	prochainement. Merci de revenir plus tard.
-</Aside>
 
 Nous sommes habitué·es à utiliser des ordinateurs avec une interface graphique
 (des fenêtres, des icônes, des menus). C'est l'interface que la plupart des
@@ -18,8 +11,8 @@ accessibles via un terminal (un écran noir et vert avec un curseur qui clignote
 comme dans les films).
 
 Même aujourd'hui, les deux interfaces coexistent : l'interface graphique (GUI)
-et le terminal (CLI/TUI). Chacune a ses avantages et ses inconvénients, et il
-est important de savoir quand utiliser l'une ou l'autre.
+et le terminal (CLI). Chacune a ses avantages et ses inconvénients, et il est
+important de savoir quand utiliser l'une ou l'autre.
 
 ## Interface graphique (GUI)
 
@@ -36,12 +29,11 @@ certaines tâches, notamment celles qui nécessitent de répéter des actions ou
 configurer finement le système. C'est là que le terminal peut s'avérer plus
 puissant.
 
-## Terminal (CLI/TUI)
+## Terminal (CLI)
 
 Le terminal, aussi appelé interface en ligne de commande (Command Line Interface
-(CLI) ou TUI (Text User Interface)), permet d'interagir avec l'ordinateur en
-saisissant des commandes textuelles. Il n'y a pas de souris, uniquement du
-texte.
+(CLI)), permet d'interagir avec l'ordinateur en saisissant des commandes
+textuelles. Il n'y a pas de souris, uniquement du texte.
 
 Malgré son apparence austère, le terminal est un outil très puissant et
 efficace. Il permet d'automatiser des tâches, de configurer finement son
@@ -57,24 +49,91 @@ l'automatisation.
 
 ## Quand utiliser l'un ou l'autre ?
 
+Il n'y a pas de règle stricte, mais voici quelques indications :
+
 - L'interface graphique est idéale pour les tâches du quotidien : navigation
   web, traitement de texte, édition de photos.
 - Le terminal est préférable pour les tâches techniques et répétitives :
   développement, administration système, automatisation.
 
-Dans le cadre de vos études en ingénierie des médias, vous serez amené·e à
-utiliser les deux. Le terminal sera abordé en détail dans un futur contenu
-dédié.
+Dans le cadre de vos études, vous serez amené·e à utiliser les deux. Le terminal
+sera abordé en détail dans le contenu
+[Travailler avec le terminal](/heig-vd-upinfo-course/08-travailler-avec-le-terminal/01-introduction-et-ressources).
 
 Lorsque nous sommes habitué·es à l'interface graphique, il peut être difficile
 de se familiariser avec le terminal. Cependant, il est important de comprendre
-que le terminal offre un contrôle plus fin et une efficacité accrue pour
-certaines tâches. Il est donc recommandé de se familiariser avec les deux
-interfaces pour devenir un·e utilisateur·trice compétent·e et polyvalent·e.
+que le terminal est un outil puissant et efficace. Il est donc recommandé de se
+familiariser avec les deux interfaces pour devenir un·e utilisateur·trice
+compétent·e et polyvalent·e.
 
 ## Résumé
 
-L'interface graphique (GUI) et le terminal (CLI/TUI) sont deux modes
-d'interaction avec l'ordinateur. L'interface graphique est conviviale et
-intuitive, tandis que le terminal est puissant et efficace pour les tâches
-techniques.
+L'interface graphique (GUI) et le terminal (CLI) sont deux modes d'interaction
+avec l'ordinateur. L'interface graphique est conviviale et intuitive, tandis que
+le terminal est puissant et efficace pour les tâches techniques.
+
+```mermaid
+---
+title: Composants matériels et logiciels d'un ordinateur
+---
+flowchart
+  CPU["`
+    **Processeur (CPU)**
+    _Cerveau de l'ordinateur_
+  `"]
+  RAM["`
+    **Mémoire vive (RAM)**
+    _Stockage temporaire des données_
+  `"]
+  Storage["`
+    **Stockage**
+    _Conservation permanente des données_
+  `"]
+  Motherboard["`
+    **Carte mère**
+    _Relie tous les composants_
+  `"]
+  GPU["`
+    **Carte graphique (GPU) (dédiée ou intégrée)**
+    _Gère l'affichage et le rendu visuel_
+  `"]
+  Peripherals["`
+    **Périphériques externes**
+    _Clavier, souris, écran..._
+  `"]
+  BIOS_UEFI["`
+    **BIOS/UEFI**
+    _Démarre l'ordinateur et vérifie le matériel disponible_
+  `"]
+  OS["`
+    **Système d'exploitation**
+    _Windows, macOS, Linux_
+  `"]
+  GUI["`
+    **Interface graphique (GUI)**
+    _Interaction visuelle avec l'utilisateur·trice_
+  `"]
+  CLI["`
+    **Terminal (CLI)**
+    _Interaction textuelle avec l'utilisateur·trice_
+  `"]
+
+  subgraph Software["`**Composants logiciels**`"]
+    direction TB
+
+    GUI --> OS
+    CLI --> OS
+  end
+
+  subgraph Hardware["`**Composants matériels**`"]
+    direction TB
+
+    CPU --> RAM
+    CPU --> Storage
+    Motherboard --> CPU
+    GPU --> Motherboard
+    Peripherals --> Motherboard
+  end
+
+  Software --> BIOS_UEFI --> Hardware
+```
