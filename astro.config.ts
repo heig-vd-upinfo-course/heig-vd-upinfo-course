@@ -104,7 +104,7 @@ export default defineConfig({
 			components: {
 				Footer: "./src/components/Footer.astro",
 			},
-			routeMiddleware: ["./src/routeData.ts"],
+			routeMiddleware: ["./src/route-middleware.ts"],
 			plugins: [
 				// https://starlight-links-validator.vercel.app/
 				starlightLinksValidator(),

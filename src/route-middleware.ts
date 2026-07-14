@@ -1,9 +1,12 @@
 import { defineRouteMiddleware } from "@astrojs/starlight/route-data";
+import { usePageTitleInTOC } from "./route-utils";
 
 export const onRequest = defineRouteMiddleware(async (context, next) => {
 	await next();
 
 	const route = context.locals.starlightRoute;
+
+	usePageTitleInTOC(context.locals.starlightRoute);
 
 	if (!route?.toc) {
 		return;
