@@ -2,7 +2,7 @@
 title: Processeur (CPU)
 ---
 
-import { Aside } from "@astrojs/starlight/components";
+import { Steps, TabItem, Tabs } from "@astrojs/starlight/components";
 
 Le processeur, ou CPU (Central Processing Unit), est le composant central d'un
 ordinateur. Il exécute les instructions des programmes : calculs, comparaisons,
@@ -107,3 +107,64 @@ flowchart
     CPU
   end
 ```
+
+## À vous de jouer !
+
+### Exercice pratique 1
+
+Identifiez la marque et le modèle de votre ordinateur et notez ces informations
+pour référence future.
+
+### Exercice pratique 2
+
+Identifiez le fabricant (Intel, AMD, Apple, etc.) et le modèle de votre
+processeur et notez ces informations pour référence future. Identifiez également
+l'architecture de votre processeur ainsi que sa version (32 bits ou 64 bits) sur
+votre ordinateur.
+
+<Tabs syncKey="operating-system">
+
+    <TabItem label="Windows" icon="seti:windows">
+    	Accédez aux informations sur votre processeur en suivant ces étapes :
+
+      <Steps>
+
+    	1. Cliquez sur le bouton Démarrer.
+
+    	2. Tapez "Informations système" dans la barre de recherche et appuyez sur Entrée.
+
+      3. Dans la fenêtre qui s'ouvre, recherchez la section "Processeur" pour voir le fabricant, le modèle et l'architecture de votre processeur.
+
+      </Steps>
+    </TabItem>
+    <TabItem label="macOS" icon="apple">
+    	Accédez aux informations sur votre processeur en suivant ces étapes :
+
+      <Steps>
+
+    	1. Cliquez sur le menu Apple dans le coin supérieur gauche de l'écran.
+
+    	2. Sélectionnez "À propos de ce Mac".
+
+    	3. Dans la fenêtre qui s'ouvre, vous verrez les informations sur votre processeur, y compris le fabricant, le modèle et l'architecture.
+
+      </Steps>
+    </TabItem>
+    <TabItem label="Linux" icon="linux">
+      	Accédez aux informations sur votre processeur en suivant ces étapes :
+
+        <Steps>
+
+      	1. Ouvrez un terminal.
+
+      	2. Tapez la commande suivante et appuyez sur Entrée :
+      	   ```
+      	   lscpu
+      	   ```
+
+      	3. Recherchez les lignes "Architecture" et "Modèle du processeur" pour voir le fabricant, le modèle et l'architecture de votre processeur.
+
+        </Steps>
+    </TabItem>
+
+</Tabs>
