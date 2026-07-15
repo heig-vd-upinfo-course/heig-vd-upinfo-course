@@ -95,3 +95,54 @@ flowchart
 
   LAN_1 <--> WAN <--> LAN_2
 ```
+
+```mermaid
+sequenceDiagram
+  autonumber
+
+  box 💻 Ordinateur client<br/>(Adresse IP 192.168.1.34)
+    participant User as 👤 Utilisateur·trice
+    participant ClientProcess as ⚙️ Processus<br/>(Application client)
+
+  end
+
+  box 🖥️ Serveur<br/>(Adresse IP 192.168.1.67)
+    participant ServerProcess as ⚙️ Processus<br/>(Application serveur)
+    participant Admin as 👤 Administrateur·trice
+  end
+
+  Admin ->> ServerProcess: L'administrateur·trice<br/>démarre l'application<br/>serveur sur le serveur.
+
+  Note over Admin, ServerProcess: Nous parlons parfois de "lancer" ou<br/>"d'exécuter" une application pour dire<br/>qu'un processus est démarré.
+
+  ServerProcess ->> ServerProcess: Le processus crée un socket<br/>sur le port 8080.
+
+  Note over ServerProcess: L'application serveur attend<br/>une connexion externe<br/>(d'une machine externe<br/>ou d'un autre processus).
+
+  loop L'application serveur attend des connexions externes
+    Note over User, ServerProcess: Une boucle infinie permet<br/>à l'application serveur d'attendre<br/>des connexions externes.
+
+    User ->> ClientProcess: L'utilisateur·trice<br/>démarre l'application<br/>client pour se connecter<br/>au serveur à l'adresse<br/>192.168.1.67:8080.
+
+    Note over User, ClientProcess: La notation 192.168.1.67:8080<br/>indique que nous nous<br/>connectons à l'IP 192.168.1.67<br/>sur le port 8080.
+
+    ClientProcess <<-->> ServerProcess: Une connexion est établie.
+    User ->> ClientProcess: L'utilisateur·trice<br/>demande à lister<br/>les fichiers disponibles<br/>sur le serveur.
+
+    ClientProcess ->> ServerProcess: Une requête est envoyée à<br/>l'application serveur pour<br/>demander la liste des fichiers.
+
+    ServerProcess ->> ServerProcess: Récupère la liste des fichiers.
+
+    ServerProcess ->> ClientProcess: Retourne la liste des fichiers.
+
+    ClientProcess ->> ClientProcess: Reçoit et affiche la liste des fichiers.
+
+    User ->> ClientProcess: L'utilisateur·trice<br/>quitte l'application<br/>client.
+
+    ClientProcess <<-->> ServerProcess: La connexion est terminée.
+
+    Note over ClientProcess, ServerProcess: Nous parlons parfois de "couper" ou<br/>"arrêter" la connexion pour dire<br/>que la connexion est terminée.
+
+    Note over User, ServerProcess: Ce mécanisme peut recommencer<br/>à l'infini tant que l'application<br/>serveur est en cours d'exécution.
+  end
+```
