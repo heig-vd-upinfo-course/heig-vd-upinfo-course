@@ -102,7 +102,7 @@ jobs:
           mv website-files public
 
           # Move the presentation files to the `public` directory
-          cp --recursive --link --update presentation-files/src/content/docs/* public/
+          cp --recursive --link --update presentation-files/* public/
 
           # Move the printable documents to the `public` directory
           cp --recursive --link --update printable-documents-files/* public/
