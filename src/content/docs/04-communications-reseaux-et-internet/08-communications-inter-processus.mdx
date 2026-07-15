@@ -2,117 +2,91 @@
 title: Communications inter-processus
 ---
 
-import { Aside } from "@astrojs/starlight/components";
-
-<Aside type="caution">
-	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
-	prochainement. Merci de revenir plus tard.
-</Aside>
-
 Des processus distincts, qu'ils s'exécutent sur la même machine ou sur des
 machines différentes, ont souvent besoin d'échanger des données. C'est ce qu'on
 appelle les **communications inter-processus** (IPC, Inter-Process
 Communication).
 
-## Pourquoi les processus communiquent-ils ?
+En effet, un processus exécuté seul sur une machine ne peut pas accomplir
+grand-chose. Il a besoin de communiquer avec d'autres processus pour accomplir
+des tâches plus complexes. Par exemple, un navigateur web (processus) doit
+communiquer avec un serveur web (autre processus) pour récupérer des pages et
+des ressources. De même, un processus peut avoir besoin de communiquer avec
+d'autres processus sur la même machine pour partager des données ou coordonner
+des actions.
 
-Les systèmes modernes sont composés de nombreux processus spécialisés qui
-collaborent. Par exemple :
+## Communications inter-processus entre deux machines
 
-- Un navigateur web lance un processus par onglet et communique avec un
-  processus principal.
-- Une application envoie des données à une base de données qui tourne dans un
-  autre processus.
-- Un serveur web reçoit une requête et délègue son traitement à un service
-  tiers.
+Il existe de nombreux mécanismes pour permettre à des processus de communiquer
+entre eux, que ce soit sur la même machine (via des pipes (`|`) par exemple) ou
+sur des machines différentes (via des sockets réseau par exemple).
 
-## Mécanismes locaux (même machine)
+Dans ce cours, nous allons nous concentrer sur les communications
+inter-processus entre deux machines distinctes, en utilisant le réseau. Pour
+cela, nous allons utiliser des **sockets réseau**, qui sont une abstraction
+logicielle permettant d'établir une connexion entre deux processus.
 
-Quand les processus se trouvent sur la même machine, plusieurs mécanismes
-permettent leur communication :
+### Sockets réseau
 
-- **Pipes (tubes)** : flux de données unidirectionnel entre deux processus. Dans
-  un terminal, le caractère `|` relie la sortie d'une commande à l'entrée d'une
-  autre.
-- **Fichiers partagés** : un processus écrit dans un fichier qu'un autre lit.
-- **Mémoire partagée** : deux processus accèdent à la même zone mémoire. Très
-  rapide, mais nécessite une synchronisation soigneuse.
-- **Signaux** : messages simples envoyés par le système pour notifier un
-  processus d'un événement (ex. : `Ctrl+C` envoie un signal d'interruption).
-- **Sockets Unix** : canaux de communication locaux, similaires aux sockets
-  réseau mais sans passer par la pile TCP/IP.
+Un socket est un élément logiciel qui permet à un processus d'envoyer et de
+recevoir des données sur le réseau. Pour envoyer et recevoir des données, un
+processus doit créer un socket.
 
-## Mécanismes réseau (machines différentes)
+Lors du démarrage d'un processus, celui-ci peut créer un socket et l'associer à
+une adresse IP et un numéro de port. Il sera alors en mesure d'écouter les
+connexions entrantes sur ce port et de recevoir des données de la part d'autres
+processus.
 
-Lorsque les processus se trouvent sur des machines distinctes, la communication
-passe par le réseau :
+De même, un autre processus peut créer un socket et se connecter à l'adresse IP
+et au port du premier processus pour envoyer des données.
 
-- **Sockets réseau** : abstraction logicielle permettant d'établir une connexion
-  entre deux processus via TCP ou UDP. C'est le mécanisme de base de la quasi
-  totalité des communications réseau (web, e-mail, jeux en ligne, etc.).
-- **API HTTP/REST** : les processus échangent des messages structurés (souvent
-  en JSON) via le protocole HTTP. C'est le modèle dominant du web moderne.
-- **WebSockets** : connexion bidirectionnelle persistante entre un client et un
-  serveur, utile pour les applications temps réel (messagerie instantanée,
-  tableaux de bord, etc.).
+Tant que le processus est en cours d'exécution, il peut continuer à écouter les
+connexions entrantes et à recevoir des données.
 
-## Ports réseau
+### Port
 
-Un port est un numéro qui identifie un service ou une application sur une
-machine. Une adresse IP identifie la machine, mais c'est le port qui précise le
-processus destinataire de la communication.
-
-Quelques ports bien connus :
-
-- **80** : HTTP (web non chiffré).
-- **443** : HTTPS (web chiffré).
-- **22** : SSH (connexion sécurisée à distance).
-- **25** / **587** : SMTP (envoi d'e-mails).
-
-On note généralement une adresse et un port sous la forme `adresse:port`, par
-exemple `192.168.1.1:80` ou `localhost:3000`.
+En plus de l'adresse IP qui identifie la machine sur le réseau comme étudié dans
+le contenu
+[Adresse IP](/heig-vd-upinfo-course/04-communications-reseaux-et-internet/03-adresse-ip),
+chaque socket est identifié par un numéro de port.
 
 Ainsi, lorsqu'un processus démarre sur un serveur, il peut écouter sur un port
-spécifique pour recevoir des connexions de clients.
+spécifique (un numéro entre 0 et 65535) pour recevoir des connexions de clients.
 
 Les clients, quant à eux, se connectent à ce port pour envoyer des requêtes et
 recevoir des réponses. Cela permet à plusieurs services de coexister sur la même
 machine, chacun étant accessible via son propre port.
 
-Une analogie pour cette situation est celle d'un immeuble avec plusieurs
-appartements : l'adresse de l'immeuble correspond à l'adresse IP, tandis que le
-numéro de l'appartement correspond au port. Chaque appartement (port) peut être
-occupé par un locataire différent (processus), et les visiteurs (clients)
-doivent connaître le numéro de l'appartement pour savoir où frapper.
+Une analogie pour comprendre cette situation est celle d'un immeuble avec
+plusieurs appartements : l'adresse de l'immeuble correspond à l'adresse IP,
+tandis que le numéro de l'appartement correspond au port.
 
-Sur une même machine, seul un processus peut écouter sur un port donné à un
-moment donné. Si un autre processus tente d'écouter sur le même port, il recevra
-une erreur indiquant que le port est déjà utilisé. C'est pourquoi il est
-important de choisir des ports uniques pour chaque service ou application. Pour
-reprendre l'analogie de l'immeuble, il est impossible que deux appartements
-aient le même numéro.
+Chaque appartement (port) peut être occupé par un locataire différent (processus
+qui utilise un socket), et les visiteur·euses (clients) doivent connaître le
+numéro de l'appartement pour savoir où frapper et entamer une conversation avec
+le locataire (processus et le socket associé) approprié.
 
-## Protocoles de communication
+Il n'est pas possible que deux sockets écoutent sur le même port à un moment
+donné. Si un autre socket tente d'écouter sur le même port, il recevra une
+erreur indiquant que le port est déjà utilisé.
+
+On note généralement une adresse et un port sous la forme `adresse:port`, par
+exemple `192.168.1.1:80` ou `localhost:3000` où `localhost` est un alias pour
+l'adresse IP `127.0.0.1` qui désigne la machine locale (notre propre machine).
+
+### Protocoles de communication
 
 Pour que des machines puissent se comprendre, elles doivent respecter des règles
 communes appelées protocoles. Un protocole définit le format des messages,
 l'ordre des échanges et la gestion des erreurs.
 
-Les protocoles fondamentaux d'Internet sont :
+Il existe de nombreux protocoles de communication, chacun ayant ses propres
+caractéristiques et usages (IP, TCP, UDP, HTTP, etc.).
 
-- **IP** (Internet Protocol) : adresse et achemine les paquets de données entre
-  les machines.
-- **TCP** (Transmission Control Protocol) : garantit la livraison complète et
-  ordonnée des données.
-- **UDP** (User Datagram Protocol) : envoie des données sans garantie de
-  livraison, mais très rapidement (utilisé pour la vidéo en direct, les jeux en
-  ligne).
-- **HTTP/HTTPS** : protocole du web, utilisé pour échanger des pages et des
-  ressources entre navigateur et serveur.
-
-Ces protocoles fonctionnent ensemble en couches : IP s'occupe du routage, TCP ou
-UDP de la fiabilité du transport, et HTTP de la signification des messages
-applicatifs.
+Vous étudierez plus en détail ces protocoles durant votre formation, mais pour
+l'instant, il est important de comprendre que les communications inter-processus
+reposent sur des protocoles bien définis pour assurer une communication fiable
+et efficace.
 
 ## Résumé
 
@@ -121,3 +95,54 @@ d'échanger des données, localement ou via le réseau. Les sockets et le protoc
 HTTP sont les mécanismes les plus utilisés dans le développement web et
 applicatif. Comprendre ces mécanismes est indispensable pour développer des
 applications qui communiquent entre elles.
+
+```mermaid
+sequenceDiagram
+  autonumber
+
+  box 💻 Ordinateur client<br/>(Adresse IP 192.168.1.34)
+    participant User as 👤 Utilisateur·trice
+    participant ClientProcess as ⚙️ Processus<br/>(Application client)
+
+  end
+
+  box 🖥️ Serveur<br/>(Adresse IP 192.168.1.67)
+    participant ServerProcess as ⚙️ Processus<br/>(Application serveur)
+    participant Admin as 👤 Administrateur·trice
+  end
+
+  Admin ->> ServerProcess: L'administrateur·trice<br/>démarre l'application<br/>serveur sur le serveur.
+
+  Note over Admin, ServerProcess: Nous parlons parfois de "lancer" ou<br/>"d'exécuter" une application pour dire<br/>qu'un processus est démarré.
+
+  ServerProcess ->> ServerProcess: Le processus crée un socket<br/>sur le port 8080.
+
+  Note over ServerProcess: L'application serveur attend<br/>une connexion externe<br/>(d'une machine externe<br/>ou d'un autre processus).
+
+  loop L'application serveur attend des connexions externes
+    Note over User, ServerProcess: Une boucle infinie permet<br/>à l'application serveur d'attendre<br/>des connexions externes.
+
+    User ->> ClientProcess: L'utilisateur·trice<br/>démarre l'application<br/>client pour se connecter<br/>au serveur à l'adresse<br/>192.168.1.67:8080.
+
+    Note over User, ClientProcess: La notation 192.168.1.67:8080<br/>indique que nous nous<br/>connectons à l'IP 192.168.1.67<br/>sur le port 8080.
+
+    ClientProcess <<-->> ServerProcess: Une connexion est établie.
+    User ->> ClientProcess: L'utilisateur·trice<br/>demande à lister<br/>les fichiers disponibles<br/>sur le serveur.
+
+    ClientProcess ->> ServerProcess: Une requête est envoyée à<br/>l'application serveur pour<br/>demander la liste des fichiers.
+
+    ServerProcess ->> ServerProcess: Récupère la liste des fichiers.
+
+    ServerProcess ->> ClientProcess: Retourne la liste des fichiers.
+
+    ClientProcess ->> ClientProcess: Reçoit et affiche la liste des fichiers.
+
+    User ->> ClientProcess: L'utilisateur·trice<br/>quitte l'application<br/>client.
+
+    ClientProcess <<-->> ServerProcess: La connexion est terminée.
+
+    Note over ClientProcess, ServerProcess: Nous parlons parfois de "couper" ou<br/>"arrêter" la connexion pour dire<br/>que la connexion est terminée.
+
+    Note over User, ServerProcess: Ce mécanisme peut recommencer<br/>à l'infini tant que l'application<br/>serveur est en cours d'exécution.
+  end
+```

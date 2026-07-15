@@ -2,13 +2,6 @@
 title: Définition d'un processus
 ---
 
-import { Aside } from "@astrojs/starlight/components";
-
-<Aside type="caution">
-	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
-	prochainement. Merci de revenir plus tard.
-</Aside>
-
 Un processus est un programme en cours d'exécution. C'est l'unité fondamentale
 de travail gérée par le système d'exploitation.
 
@@ -23,29 +16,6 @@ même programme. Par exemple, si vous ouvrez deux fenêtres de votre navigateur
 web, deux processus distincts (ou plus) peuvent être en cours d'exécution, mais
 ils utilisent les mêmes fichiers du programme.
 
-## Ce que contient un processus
-
-Lorsqu'un processus est créé, le système d'exploitation lui alloue :
-
-- Un espace mémoire propre (code, données, pile d'exécution).
-- Un identifiant unique : le **PID** (Process IDentifier).
-- Des ressources : fichiers ouverts, connexions réseau, accès au processeur.
-
-## Cycle de vie d'un processus
-
-Un processus passe par plusieurs états au cours de son existence :
-
-- **Créé** : le système d'exploitation instancie le processus.
-- **Prêt** : le processus attend que le processeur soit disponible.
-- **En cours d'exécution** : le processeur exécute ses instructions.
-- **En attente** : le processus attend un événement (lecture d'un fichier,
-  réponse réseau, etc.).
-- **Terminé** : le processus a fini et ses ressources sont libérées.
-
-Le système d'exploitation gère en permanence la commutation entre ces états pour
-donner l'illusion que plusieurs programmes tournent simultanément, même sur un
-processeur à un seul cœur.
-
 ## Voir les processus en cours
 
 Vous pouvez consulter les processus actifs sur votre machine :
@@ -54,8 +24,9 @@ Vous pouvez consulter les processus actifs sur votre machine :
 - Sur **macOS** : utilisez le Moniteur d'activité (Activity Monitor).
 - Sur **Linux** : utilisez la commande `ps`, `top` ou `htop` dans un terminal.
 
-Ces outils vous montrent, pour chaque processus, son PID, sa consommation de
-processeur et de mémoire, et l'utilisateur qui l'a lancé.
+Ces outils vous montrent, pour chaque processus, son PID (Process ID, son
+identifiant unique), sa consommation de processeur et de mémoire, et
+l'utilisateur·trice qui l'a lancé.
 
 ## Résumé
 
@@ -63,3 +34,102 @@ Un processus est un programme en cours d'exécution, géré par le système
 d'exploitation. Il possède un identifiant unique (PID) et des ressources
 propres. Comprendre la notion de processus est essentiel pour appréhender
 comment les applications et les services fonctionnent sur une machine.
+
+```mermaid
+flowchart
+  IP["`
+    **🏠 Adresse IP**
+    _Identifie chaque machine sur un réseau_
+  `"]
+  DHCP["`
+    **📣 Serveur DHCP**
+    _Attribue automatiquement les adresses IP_
+  `"]
+  DNS["`
+    **↔️ Serveur DNS**
+    _Traduit les noms de domaine en adresses IP_
+  `"]
+  Process1["`
+    **⚙️ Processus 1**
+    _Programme en cours d'exécution_
+  `"]
+  Process2["`
+    **⚙️ Processus 2**
+    _Programme en cours d'exécution_
+  `"]
+  Process3["`
+    **⚙️ Processus 3**
+    _Programme en cours d'exécution_
+  `"]
+  Computer["`
+    **💻 Ordinateur**
+    _Machine qui exécute des applications, dont un navigateur web_
+  `"]
+  Server1["`
+    **🖥️ Serveur 1**
+    _Machine qui fournit des services à d'autres machines_
+  `"]
+  Server2["`
+    **🖥️ Serveur 2**
+    _Machine qui fournit des services à d'autres machines_
+  `"]
+  Internet["`
+    **☁️ Internet**
+    _Réseau mondial de machines interconnectées_
+  `"]
+  User["`
+    **👤 Utilisateur·trice**
+    _Personne qui utilise un ordinateur_
+  `"]
+
+  subgraph LAN_1["🏢 Réseau interne (LAN entreprise)"]
+    direction TB
+
+    Process2 --> Server1
+    Process3 --> Server2
+  end
+
+  subgraph WAN["🌍 Réseau externe (WAN)"]
+    direction TB
+
+    Internet
+  end
+
+  subgraph LAN_2["🏢 Réseau interne (LAN maison)"]
+    direction TB
+
+    subgraph Modem["📡 Modem/Routeur"]
+      direction TB
+
+      DHCP
+      DNS
+    end
+
+    Modem <--> Computer
+    Computer --> IP
+    Computer --> User
+    Computer --> Process1
+  end
+
+  LAN_1 <--> WAN <--> LAN_2
+```
+
+```mermaid
+sequenceDiagram
+  autonumber
+
+  box 💻 Ordinateur client<br/>(Adresse IP 192.168.1.34)
+    participant User as 👤 Utilisateur·trice
+    participant ClientProcess as ⚙️ Processus<br/>(Application client)
+
+  end
+
+  box 🖥️ Serveur<br/>(Adresse IP 192.168.1.67)
+    participant ServerProcess as ⚙️ Processus<br/>(Application serveur)
+    participant Admin as 👤 Administrateur·trice
+  end
+
+  Admin ->> ServerProcess: L'administrateur·trice<br/>démarre l'application<br/>serveur sur le serveur.
+
+  Note over Admin, ServerProcess: Nous parlons parfois de "lancer" ou<br/>"d'exécuter" une application pour dire<br/>qu'un processus est démarré.
+```

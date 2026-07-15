@@ -4,13 +4,6 @@ sidebar:
   label: Introduction et ressources
 ---
 
-import { Aside } from "@astrojs/starlight/components";
-
-<Aside type="caution">
-	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
-	prochainement. Merci de revenir plus tard.
-</Aside>
-
 Cette section présente les bases des communications réseau et d'Internet. Vous y
 découvrirez comment les ordinateurs communiquent entre eux, comment ils
 s'identifient sur un réseau et comment fonctionne le web que vous utilisez
@@ -28,3 +21,128 @@ Les thématiques abordées sont les suivantes :
 - Les communications inter-processus : comment les programmes échangent des
   données, localement ou à distance.
 - Effectuer une recherche sur Internet : outils et bonnes pratiques.
+
+```mermaid
+flowchart
+  IP["`
+    **🏠 Adresse IP**
+    _Identifie chaque machine sur un réseau_
+  `"]
+  DHCP["`
+    **📣 Serveur DHCP**
+    _Attribue automatiquement les adresses IP_
+  `"]
+  DNS["`
+    **↔️ Serveur DNS**
+    _Traduit les noms de domaine en adresses IP_
+  `"]
+  Process1["`
+    **⚙️ Processus 1**
+    _Programme en cours d'exécution_
+  `"]
+  Process2["`
+    **⚙️ Processus 2**
+    _Programme en cours d'exécution_
+  `"]
+  Computer["`
+    **💻 Ordinateur**
+    _Machine qui exécute des applications, dont un navigateur web_
+  `"]
+  Server1["`
+    **🖥️ Serveur 1**
+    _Machine qui fournit des services à d'autres machines_
+  `"]
+  Server2["`
+    **🖥️ Serveur 2**
+    _Machine qui fournit des services à d'autres machines_
+  `"]
+  Internet["`
+    **☁️ Internet**
+    _Réseau mondial de machines interconnectées_
+  `"]
+  User["`
+    **👤 Utilisateur·trice**
+    _Personne qui utilise un ordinateur_
+  `"]
+
+  subgraph LAN_1["🏢 Réseau interne (LAN entreprise)"]
+    direction TB
+
+    Process1 --> Server1
+    Process2 --> Server2
+  end
+
+  subgraph WAN["🌍 Réseau externe (WAN)"]
+    direction TB
+
+    Internet
+  end
+
+  subgraph LAN_2["🏢 Réseau interne (LAN maison)"]
+    direction TB
+
+    subgraph Modem["📡 Modem/Routeur"]
+      direction TB
+
+      DHCP
+      DNS
+    end
+
+    Modem <--> Computer
+    Computer --> IP
+    Computer --> User
+  end
+
+  LAN_1 <--> WAN <--> LAN_2
+```
+
+```mermaid
+sequenceDiagram
+  autonumber
+
+  box 💻 Ordinateur client<br/>(Adresse IP 192.168.1.34)
+    participant User as 👤 Utilisateur·trice
+    participant ClientProcess as ⚙️ Processus<br/>(Application client)
+
+  end
+
+  box 🖥️ Serveur<br/>(Adresse IP 192.168.1.67)
+    participant ServerProcess as ⚙️ Processus<br/>(Application serveur)
+    participant Admin as 👤 Administrateur·trice
+  end
+
+  Admin ->> ServerProcess: L'administrateur·trice<br/>démarre l'application<br/>serveur sur le serveur.
+
+  Note over Admin, ServerProcess: Nous parlons parfois de "lancer" ou<br/>"d'exécuter" une application pour dire<br/>qu'un processus est démarré.
+
+  ServerProcess ->> ServerProcess: Le processus crée un socket<br/>sur le port 8080.
+
+  Note over ServerProcess: L'application serveur attend<br/>une connexion externe<br/>(d'une machine externe<br/>ou d'un autre processus).
+
+  loop L'application serveur attend des connexions externes
+    Note over User, ServerProcess: Une boucle infinie permet<br/>à l'application serveur d'attendre<br/>des connexions externes.
+
+    User ->> ClientProcess: L'utilisateur·trice<br/>démarre l'application<br/>client pour se connecter<br/>au serveur à l'adresse<br/>192.168.1.67:8080.
+
+    Note over User, ClientProcess: La notation 192.168.1.67:8080<br/>indique que nous nous<br/>connectons à l'IP 192.168.1.67<br/>sur le port 8080.
+
+    ClientProcess <<-->> ServerProcess: Une connexion est établie.
+    User ->> ClientProcess: L'utilisateur·trice<br/>demande à lister<br/>les fichiers disponibles<br/>sur le serveur.
+
+    ClientProcess ->> ServerProcess: Une requête est envoyée à<br/>l'application serveur pour<br/>demander la liste des fichiers.
+
+    ServerProcess ->> ServerProcess: Récupère la liste des fichiers.
+
+    ServerProcess ->> ClientProcess: Retourne la liste des fichiers.
+
+    ClientProcess ->> ClientProcess: Reçoit et affiche la liste des fichiers.
+
+    User ->> ClientProcess: L'utilisateur·trice<br/>quitte l'application<br/>client.
+
+    ClientProcess <<-->> ServerProcess: La connexion est terminée.
+
+    Note over ClientProcess, ServerProcess: Nous parlons parfois de "couper" ou<br/>"arrêter" la connexion pour dire<br/>que la connexion est terminée.
+
+    Note over User, ServerProcess: Ce mécanisme peut recommencer<br/>à l'infini tant que l'application<br/>serveur est en cours d'exécution.
+  end
+```
