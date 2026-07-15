@@ -28,8 +28,8 @@ Go (gigaoctets en français ou GB (gigabytes) en anglais) à plusieurs To
 (teraoctets en français ou TB (terabytes) en anglais), selon les besoins et le
 type de stockage utilisé.
 
-Nous parlons de Go (gigaoctets) et de To (teraoctets) pour mesurer la capacité
-de stockage. 1 To équivaut à 1 024 Go, et 1 Go équivaut à 1 024 Mo (mégaoctets).
+Nous parlons de Go et de To pour mesurer la capacité de stockage. 1 To équivaut
+à 1 024 Go, et 1 Go équivaut à 1 024 Mo (mégaoctets).
 
 Un octet est une unité de mesure de la quantité de données, équivalente à 8
 bits. Les bits sont les plus petites unités d'information dans un ordinateur,
@@ -176,6 +176,24 @@ Il est de coutume de se limiter à des lettres minuscules sans accents, des
 espaces, des tirets (`-`), des underscores (`_`) et des chiffres pour nommer vos
 fichiers et dossiers, afin d'éviter les problèmes d'encodage et de sensibilité à
 la casse.
+
+De plus, certains caractères spéciaux sont interdits dans les noms de fichiers
+et de dossiers sur certains systèmes de fichiers, comme les caractères `/`, `\`,
+`:`, `*`, `?`, `"`, `<`, `>`, et `|`. Il est donc préférable de les éviter pour
+garantir la compatibilité entre différents systèmes d'exploitation et logiciels,
+même si vous arrivez à créer des fichiers ou dossiers avec ces caractères sur
+certains systèmes.
+
+Par exemple :
+
+- Nom correct d'un dossier : `mon_projet_2026`.
+- Nom incorrect d'un dossier : `Mon Projet 2026` (majuscules).
+- Nom correct d'un fichier : `specificites-dun-fichier.png`.
+- Nom incorrect d'un fichier : `Spécificités d'un fichier.png` (caractères
+  accentués et apostrophe).
+
+Ce ne sont que des conseils ; vous n'êtes pas obligé·e de suivre ces
+recommandations.
 
 ### Arborescence et chemins d'accès
 
