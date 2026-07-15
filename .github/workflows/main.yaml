@@ -72,7 +72,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Generate printable documents with Pandoc
-        uses: docker://pandoc/latex:3-alpine
+        uses: docker://pandoc/latex:3-debian
         with:
           entrypoint: bash
           args: generate-printable-documents.sh
