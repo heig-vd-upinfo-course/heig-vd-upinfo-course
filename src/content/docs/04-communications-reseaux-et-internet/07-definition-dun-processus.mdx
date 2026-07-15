@@ -57,6 +57,10 @@ flowchart
     **⚙️ Processus 2**
     _Programme en cours d'exécution_
   `"]
+  Process3["`
+    **⚙️ Processus 3**
+    _Programme en cours d'exécution_
+  `"]
   Computer["`
     **💻 Ordinateur**
     _Machine qui exécute des applications, dont un navigateur web_
@@ -74,15 +78,15 @@ flowchart
     _Réseau mondial de machines interconnectées_
   `"]
   User["`
-    **👤 Utilisateur**
-    _Personne qui utilise un ordinateur pour accéder à Internet_
+    **👤 Utilisateur·trice**
+    _Personne qui utilise un ordinateur_
   `"]
 
   subgraph LAN_1["🏢 Réseau interne (LAN entreprise)"]
     direction TB
 
-    Process1 --> Server1
-    Process2 --> Server2
+    Process2 --> Server1
+    Process3 --> Server2
   end
 
   subgraph WAN["🌍 Réseau externe (WAN)"]
@@ -104,7 +108,33 @@ flowchart
     Modem <--> Computer
     Computer --> IP
     Computer --> User
+    Computer --> Process1
   end
 
   LAN_1 <--> WAN <--> LAN_2
+```
+
+```mermaid
+---
+title: Cycle de vie d'une communication inter-processus
+config:
+    mirrorActors: false
+---
+sequenceDiagram
+  autonumber
+
+  box 💻 Ordinateur client<br/>(Adresse IP 192.168.1.34)
+    participant User as 👤 Utilisateur·trice
+    participant ClientProcess as ⚙️ Processus<br/>(Application client)
+
+  end
+
+  box 🖥️ Serveur<br/>(Adresse IP 192.168.1.67)
+    participant ServerProcess as ⚙️ Processus<br/>(Application serveur)
+    participant Admin as 👤 Administrateur·trice
+  end
+
+  Admin ->> ServerProcess: L'administrateur·trice<br/>démarre l'application<br/>serveur sur le serveur.
+
+  Note over Admin, ServerProcess: Nous parlons parfois de "lancer" ou<br/>"d'exécuter" une application pour dire<br/>qu'un processus est démarré.
 ```
