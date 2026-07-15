@@ -61,13 +61,6 @@ correctement. A l'inverse, certaines options permettent d'optimiser les
 performances ou de résoudre des problèmes matériels qu'il est nécessaire de
 connaître pour un usage avancé de l'ordinateur.
 
-### Activer les options de virtualisation
-
-Les options de virtualisation permettent à l'ordinateur d'exécuter des machines
-virtuelles plus efficacement. Pour activer cette fonctionnalité, il faut
-généralement accéder au BIOS/UEFI et chercher une option nommée "Intel VT-x",
-"AMD-V" ou similaire, puis la mettre sur "Enabled".
-
 ## Résumé
 
 Le BIOS/UEFI est le logiciel de base qui initialise le matériel de l'ordinateur
@@ -124,14 +117,51 @@ flowchart
 
 ## À vous de jouer !
 
-### Exercice pratique 1
+### Exercice pratique 1 - Accéder au BIOS/UEFI
 
 Identifiez la touche à presser pour accéder au BIOS/UEFI de votre ordinateur.
 Redémarrez votre ordinateur et appuyez sur cette touche pour entrer dans le
 BIOS/UEFI. Explorez les différentes options disponibles, mais soyez prudent et
-évitez de modifier des paramètres si vous n'êtes pas sûr de leur fonction.
+évitez de modifier des paramètres si vous n'êtes pas sûr·e de leur fonction.
 
-### Exercice pratique 2
+### Exercice pratique 2 - Activer les options de virtualisation
 
-Activez les options de virtualisation dans le BIOS/UEFI de votre ordinateur.
-Redémarrez ensuite votre ordinateur après avoir activé cette fonctionnalité.
+Les options de virtualisation permettent à l'ordinateur d'exécuter des machines
+virtuelles plus efficacement. Pour activer cette fonctionnalité, il faut
+généralement accéder au BIOS/UEFI et chercher une option nommée "Intel VT-x",
+"AMD-V" ou similaire, puis la mettre sur "Enabled".
+
+### Exercice pratique 3 - Changer l'ordre de démarrage
+
+L'ordre de démarrage détermine quel périphérique l'ordinateur essaie de démarrer
+en premier. Cela peut être utile pour démarrer à partir d'une clé USB ou d'un
+disque externe. Pour modifier l'ordre de démarrage, il faut accéder au BIOS/UEFI
+et chercher une section nommée "Boot" ou "Boot Order", puis réorganiser les
+périphériques selon vos besoins.
+
+### Exercice pratique 4 - Limiter la charge de la batterie sur les ordinateurs portables
+
+Certains ordinateurs portables permettent de limiter la charge de la batterie
+pour prolonger sa durée de vie. Cette option se trouve généralement dans le
+BIOS/UEFI sous une section nommée "Battery" ou "Power Management".
+
+Vous pouvez définir un seuil de charge, par exemple 80%, pour éviter de charger
+la batterie à 100% en permanence, ce qui peut réduire sa capacité au fil du
+temps.
+
+Si vous utilisez votre ordinateur portable principalement branché sur secteur,
+il est recommandé d'activer cette option pour préserver la santé de la batterie.
+
+### Exercice pratique 5 - Limiter l'accès au BIOS/UEFI avec un mot de passe
+
+Toute personne qui a accès au BIOS/UEFI peut modifier les paramètres de
+l'ordinateur, ce qui peut poser des problèmes de sécurité, comme le démarrage
+sur un périphérique externe pour contourner le système d'exploitation installé.
+
+Il est donc recommandé de définir un mot de passe pour protéger l'accès au
+BIOS/UEFI. Cette option se trouve généralement dans la section "Security" ou
+"Password" du BIOS/UEFI. Il est important de choisir un mot de passe fort et de
+le stocker dans votre
+[gestionnaire de mots de passe](/heig-vd-upinfo-course/02-premiers-pas-a-la-heig-vd/07-installer-et-configurer-un-gestionnaire-de-mots-de-passe),
+car si vous l'oubliez, vous pourriez être bloqué·e hors du BIOS/UEFI et perdre
+l'accès à certaines fonctionnalités de votre ordinateur.
