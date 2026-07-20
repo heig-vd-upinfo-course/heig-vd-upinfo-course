@@ -154,6 +154,14 @@ flowchart
     **🐧 Système d'exploitation**
     _Windows, macOS, Linux_
   `"]
+  DRIVERS["`
+    **🛠️ Drivers**
+    _Pilotes de périphériques_
+  `"]
+  KERNEL["`
+    **🧩 Kernel**
+    _Cœur du système d'exploitation_
+  `"]
   GUI["`
     **📺 Interface graphique (GUI)**
     _Interaction visuelle avec l'utilisateur·trice_
@@ -170,6 +178,8 @@ flowchart
   subgraph Software["`**🔢 Composants logiciels**`"]
     direction TB
 
+    OS --> DRIVERS
+    OS --> KERNEL
     GUI --> OS
     CLI --> OS
     Applications --> GUI

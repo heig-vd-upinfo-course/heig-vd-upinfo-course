@@ -89,8 +89,6 @@ jobs:
   merge-files-for-github-pages:
     runs-on: ubuntu-latest
     needs: [generate-presentations, build-website, generate-printable-documents]
-    # Only run on main
-    if: github.ref == 'refs/heads/main'
     steps:
       - uses: actions/download-artifact@v8
         with:
