@@ -78,6 +78,8 @@ docker run \
 			\cline{2-2}
 			Stockage actuel                     &                                                                       \\
 			\cline{2-2}
+			Périphériques externes              & $\square$ Souris \quad $\square$ Clé USB \quad $\square$ Stockage externe \quad $\square$ Autre \\
+			\cline{2-2}
 			Touche(s) pour le BIOS/UEFI         &                                                                       \\
 			\hline
 			\multicolumn{2}{|l|}{\textbf{Comptes}} \\
@@ -108,7 +110,6 @@ docker run \
 			                                    & $\square$ Chrome (avec uBlock Origin Lite et Bitwarden)       \\
 			                                    & $\square$ Visual Studio Code                                  \\
 			                                    & $\square$ Secure Shell (SSH)                                  \\
-			                                    & $\square$ Git et GitHub                                       \\
 			\hline
 		\end{tabular}}
 \end{table}
@@ -124,7 +125,8 @@ docker run \
 		\centering
 		\begin{tabular}{|p{0.33\textwidth}|p{0.6\textwidth}|}
 			\hline
-			Logiciels installés et configurés   & $\square$ Docker                                                      \\
+			Logiciels installés et configurés   & $\square$ Git et GitHub                                               \\
+			                                    & $\square$ Docker                                                      \\
 			                                    & $\square$ VLC                                                         \\
 			                                    & $\square$ La suite Microsoft Office                                   \\
 			                                    & $\square$ La suite Adobe                                              \\
