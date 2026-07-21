@@ -2,7 +2,7 @@
 title: Processeur (CPU)
 ---
 
-import { Steps, TabItem, Tabs } from "@astrojs/starlight/components";
+import { Aside, Steps, TabItem, Tabs } from "@astrojs/starlight/components";
 
 Le processeur, ou CPU (Central Processing Unit), est le composant central d'un
 ordinateur. Il exécute les instructions des programmes : calculs, comparaisons,
@@ -27,87 +27,49 @@ Tout ce que vous faites sur un ordinateur, que ce soit ouvrir un logiciel, taper
 du texte ou regarder une vidéo, est traduit en langage machine pour que le
 processeur puisse l'exécuter et vous renvoyer le résultat.
 
-## Notation binaire et hexadécimale
+## Notations décimale, binaire et hexadécimale
 
 Les nombres que nous utilisons au quotidien sont en base 10 (décimale),
-c'est-à-dire qu'ils sont composés de chiffres allant de 0 à 9. Cependant, le
-langage machine est en base 2 (binaire), ce qui signifie qu'il n'utilise que
-deux chiffres : 0 et 1. Chaque chiffre binaire est appelé un bit.
+c'est-à-dire qu'ils sont composés de chiffres allant de 0 à 9.
 
-Par exemple, le nombre décimal 5 est représenté en binaire par `0101`.
+Ainsi, lorsque nous atteignons le chiffre 9, nous passons à la dizaine suivante
+en ajoutant un chiffre à gauche, ce qui donne 10.
 
-Nous lisons le nombre binaire de droite à gauche, en groupe de quatre bits.
-Chaque bit représente une puissance de 2, en commençant par 2<sup>0</sup>.
+Le langage machine, lui, est en base 2 (binaire), ce qui signifie qu'il
+n'utilise que deux chiffres : 0 et 1. Chaque chiffre binaire est appelé un bit.
 
-Ainsi, le nombre binaire `0101` se décompose comme suit :
+Ainsi, nous commençons à compter en binaire de la manière suivante : `0` (0 en
+décimal), `1` (1 en décimal), `10` (2 en décimal), `11` (3 en décimal), `100` (4
+en décimal), `101` (5 en décimal), `110` (6 en décimal), `111` (7 en décimal),
+`1000` (8 en décimal), etc.
 
-- Le bit le plus à droite (1) représente 2<sup>0</sup> = 1
-- Le bit suivant (0) représente 2<sup>1</sup> = 0
-- Le bit suivant (1) représente 2<sup>2</sup> = 4
-- Le bit le plus à gauche (0) représente 2<sup>3</sup> = 0
+Pour différencier les nombres binaires des nombres décimaux, on utilise souvent
+le préfixe `0b` pour indiquer qu'il s'agit d'un nombre binaire. En reprenant
+l'exemple précédent, nous aurions : `0b0`, `0b1`, `0b10`, `0b11`, `0b100`,
+`0b101`, `0b110`, `0b111`, `0b1000`, etc.
 
-En additionnant ces valeurs, on obtient 0 + 4 + 0 + 1 = 5 en décimal.
+Une autre notation utilisée en informatique est l'hexadécimal, qui est en
+base 16. L'hexadécimal utilise les chiffres de 0 à 9 et les lettres A à F pour
+représenter les valeurs de 10 à 15.
 
-Le nombre binaire `10101111` se décompose comme suit :
+Ainsi, nous commençons à compter en hexadécimal de la manière suivante : `0`,
+`1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `A`, `B`, `C`, `D`, `E`, `F`, `10`,
+etc.
 
-- Le bit le plus à droite (1) représente 2<sup>0</sup> = 1
-- Le bit suivant (1) représente 2<sup>1</sup> = 2
-- Le bit suivant (1) représente 2<sup>2</sup> = 4
-- Le bit suivant (1) représente 2<sup>3</sup> = 8
-- Le bit suivant (0) représente 2<sup>4</sup> = 0
-- Le bit suivant (1) représente 2<sup>5</sup> = 32
-- Le bit suivant (0) représente 2<sup>6</sup> = 0
-- Le bit le plus à gauche (1) représente 2<sup>7</sup> = 128
+Lorsque nous atteignons le chiffre F, nous passons à la dizaine suivante en
+ajoutant un chiffre à gauche, ce qui donne 10 en hexadécimal (équivalent à 16 en
+décimal).
 
-En additionnant ces valeurs, on obtient 128 + 0 + 32 + 0 + 8 + 4 + 2 + 1 = 175
-en décimal.
+Pour différencier les nombres hexadécimaux des nombres décimaux, on utilise
+souvent le préfixe `0x` pour indiquer qu'il s'agit d'un nombre hexadécimal. En
+reprenant l'exemple précédent, nous aurions : `0x0`, `0x1`, `0x2`, `0x3`, `0x4`,
+`0x5`, `0x6`, `0x7`, `0x8`, `0x9`, `0xA`, `0xB`, `0xC`, `0xD`, `0xE`, `0xF`,
+`0x10`, etc.
 
-Une autre façon de représenter les nombres binaires est l'hexadécimal, qui est
-en base 16. L'hexadécimal utilise les chiffres de 0 à 9 et les lettres A à F
-pour représenter les valeurs de 10 à 15.
-
-Ainsi, le nombre binaire `0101` peut également être représenté en hexadécimal
-par `0x05`, car il correspond à la valeur décimale 5.
-
-Pour différencier les nombres binaires et hexadécimaux, on utilise souvent des
-préfixes : `0b` pour le binaire (souvent omis) et `0x` pour l'hexadécimal. Par
-exemple, `0b0101` représente le nombre binaire 0101, tandis que `0x05`
-représente le nombre hexadécimal 5.
-
-Le nombre binaire `1111` correspond à la valeur décimale 15, qui est représentée
-en hexadécimal par `0x0F`.
-
-<details>
-<summary>Voir la décomposition</summary>
-
-Le nombre binaire `1111` se décompose comme suit :
-
-- Le bit le plus à droite (1) représente 2<sup>0</sup> = 1
-- Le bit suivant (1) représente 2<sup>1</sup> = 2
-- Le bit suivant (1) représente 2<sup>2</sup> = 4
-- Le bit le plus à gauche (1) représente 2<sup>3</sup> = 8
-
-En additionnant ces valeurs, on obtient 8 + 4 + 2 + 1 = 15 en décimal, ce qui
-correspond à `F` en hexadécimal.
-
-</details>
-
-Le nombre binaire `10101111` correspond à la valeur décimale 175, qui est
-représentée en hexadécimal par `0xAF`.
-
-<details>
-<summary>Voir la décomposition</summary>
-
-Le nombre binaire `10101111` se décompose comme suit :
-
-- Premier groupe de quatre bits (de droite à gauche) : `1111` correspond à 15 en
-  décimal, soit `0x0F` en hexadécimal.
-- Deuxième groupe de quatre bits : `1010` correspond à 10 en décimal, soit
-  `0x0A` en hexadécimal.
-
-En combinant ces deux groupes, on obtient `0xAF` en hexadécimal.
-
-</details>
+Vous allez apprendre ces notations plus en détails dans de futurs cours, mais il
+est important de les connaître dès maintenant, car elles sont utilisées dans de
+nombreux contextes en informatique, notamment pour représenter des adresses
+mémoire, des couleurs ou des instructions machine.
 
 ## Processeurs 32 bits et 64 bits
 
@@ -252,7 +214,95 @@ votre ordinateur.
 
 </Tabs>
 
-### Exercice pratique 3 : conversions décimales, binaires et hexadécimales
+## Aller plus loin
+
+<Aside type="tip">
+
+Ce contenu est optionnel. Vous pouvez le consulter si vous souhaitez approfondir
+vos connaissances sur le sujet.
+
+</Aside>
+
+### Conversion entre les bases décimale, binaire et hexadécimale
+
+Le nombre décimal 5 est représenté en binaire par `0101`.
+
+Nous lisons le nombre binaire de droite à gauche, en groupe de quatre bits.
+Chaque bit représente une puissance de 2, en commençant par 2<sup>0</sup>.
+
+Ainsi, le nombre binaire `0101` se décompose comme suit :
+
+- Le bit le plus à droite (1) représente 2<sup>0</sup> = 1
+- Le bit suivant (0) représente 2<sup>1</sup> = 0 (comme le bit est 0, il
+  n'ajoute rien à la valeur totale)
+- Le bit suivant (1) représente 2<sup>2</sup> = 4
+- Le bit le plus à gauche (0) représente 2<sup>3</sup> = 0 (comme le bit est 0,
+  il n'ajoute rien à la valeur totale)
+
+En additionnant ces valeurs, on obtient 0 + 4 + 0 + 1 = 5 en décimal.
+
+Le nombre binaire `10101111` se décompose comme suit :
+
+- Le bit le plus à droite (1) représente 2<sup>0</sup> = 1
+- Le bit suivant (1) représente 2<sup>1</sup> = 2
+- Le bit suivant (1) représente 2<sup>2</sup> = 4
+- Le bit suivant (1) représente 2<sup>3</sup> = 8
+- Le bit suivant (0) représente 2<sup>4</sup> = 0 (comme le bit est 0, il
+  n'ajoute rien à la valeur totale)
+- Le bit suivant (1) représente 2<sup>5</sup> = 32
+- Le bit suivant (0) représente 2<sup>6</sup> = 0 (comme le bit est 0, il
+  n'ajoute rien à la valeur totale)
+- Le bit le plus à gauche (1) représente 2<sup>7</sup> = 128
+
+En additionnant ces valeurs, on obtient 128 + 0 + 32 + 0 + 8 + 4 + 2 + 1 = 175
+en décimal.
+
+Une autre façon de représenter les nombres binaires est l'hexadécimal, qui est
+en base 16. L'hexadécimal utilise les chiffres de 0 à 9 et les lettres A à F
+pour représenter les valeurs de 10 à 15.
+
+Ainsi, le nombre binaire `0101` peut également être représenté en hexadécimal
+par `0x05`, car il correspond à la valeur décimale 5.
+
+Pour différencier les nombres binaires et hexadécimaux, on utilise souvent des
+préfixes : `0b` pour le binaire (souvent omis) et `0x` pour l'hexadécimal. Par
+exemple, `0b0101` représente le nombre binaire 0101, tandis que `0x05`
+représente le nombre hexadécimal 5.
+
+Le nombre binaire `0b1111` correspond à la valeur décimale 15, qui est
+représentée en hexadécimal par `0x0F`.
+
+<details>
+<summary>Voir la décomposition</summary>
+
+Le nombre binaire `1111` se décompose comme suit :
+
+- Le bit le plus à droite (1) représente 2<sup>0</sup> = 1
+- Le bit suivant (1) représente 2<sup>1</sup> = 2
+- Le bit suivant (1) représente 2<sup>2</sup> = 4
+- Le bit le plus à gauche (1) représente 2<sup>3</sup> = 8
+
+En additionnant ces valeurs, on obtient 8 + 4 + 2 + 1 = 15 en décimal, ce qui
+correspond à `F` en hexadécimal.
+
+</details>
+
+Le nombre binaire `0b10101111` correspond à la valeur décimale 175, qui est
+représentée en hexadécimal par `0xAF`.
+
+<details>
+<summary>Voir la décomposition</summary>
+
+Le nombre binaire `0b10101111` se décompose comme suit :
+
+- Premier groupe de quatre bits (de droite à gauche) : `1111` correspond à 15 en
+  décimal, soit `0x0F` en hexadécimal.
+- Deuxième groupe de quatre bits : `0b1010` correspond à 10 en décimal, soit
+  `0x0A` en hexadécimal.
+
+En combinant ces deux groupes, on obtient `0xAF` en hexadécimal.
+
+</details>
 
 Soit les nombres décimaux suivants, convertissez-les en binaire et en
 hexadécimal :

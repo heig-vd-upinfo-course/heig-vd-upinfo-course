@@ -100,10 +100,10 @@ jobs:
           mv website-files public
 
           # Move the presentation files to the `public` directory
-          cp --recursive --link --update presentation-files/* public/
+          cp --recursive --link --update presentation-files/src/content/docs/* public/
 
           # Move the printable documents to the `public` directory
-          cp --recursive --link --update printable-documents-files/* public/
+          cp --recursive --link --update printable-documents-files/src/content/docs/* public/
 
       - name: Upload files to GitHub Pages
         uses: actions/upload-pages-artifact@v5

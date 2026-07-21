@@ -66,40 +66,49 @@ docker run \
 			\hline
 			\multicolumn{2}{|l|}{\textbf{Spécifications techniques}} \\
 			\hline
-			Système d'exploitation              & $\square$ Windows \quad $\square$ macOS \quad $\square$ Linux         \\
+			Système d'exploitation (OS)         & $\square$ Windows \quad $\square$ macOS \quad $\square$ Linux         \\
 			\cline{2-2}
 			Version                             &                                                                       \\
 			\cline{2-2}
-			Architecture                        & $\square$ x86/x64 (AMD/Intel) \quad $\square$ ARM (Apple Silicon)     \\
+			Architecture processeur (CPU)       & $\square$ x86/x64 (AMD/Intel) \quad $\square$ ARM (Apple Silicon)     \\
 			\cline{2-2}
 			Mémoire vive (RAM) actuelle         &                                                                       \\
 			\cline{2-2}
 			Mémoire vive (RAM) maximale         &                                                                       \\
 			\cline{2-2}
-			Stockage                            &                                                                       \\
+			Stockage actuel                     &                                                                       \\
 			\cline{2-2}
-			Touche(s) pour le BIOS/UEFI &                                                                       \\
+			Touche(s) pour le BIOS/UEFI         &                                                                       \\
 			\hline
-			\multicolumn{2}{|l|}{\textbf{Comptes HES-SO/HEIG-VD}} \\
+			\multicolumn{2}{|l|}{\textbf{Comptes}} \\
 			\hline
-			Adresse mail HES-SO                 &                                                                       \\
+			Nom d'utilisateur OS                &                                                                       \\
+			\cline{2-2}
+			Nom d'utilisateur WSL               &                                                                       \\
 			\cline{2-2}
 			Nom d'utilisateur HES-SO (AAI)      &                                                                       \\
 			\cline{2-2}
+			Adresse mail HES-SO                 &                                                                       \\
+			\cline{2-2}
 			Adresse mail HEIG-VD                &                                                                       \\
+			\cline{2-2}
+			Adresse mail personnelle            &                                                                       \\
 			\hline
 			\multicolumn{2}{|l|}{\textbf{Configuration HEIG-VD}} \\
 			\hline
-			Logiciels installés et configurés   & $\square$ Firefox (avec uBlock Origin et Bitwarden)                  \\
-			                                    & $\square$ Chrome (avec Bitwarden)                                    \\
-			                                    & $\square$ Client e-mails (Outlook/Thunderbird)                       \\
-			                                    & $\square$ Outil pour gérer les archives (7zip/Keka)                  \\
-			                                    & $\square$ Lecteur multimedia VLC                                     \\
-			                                    & $\square$ Suite Microsoft Office                                     \\
-			                                    & $\square$ Suite Adobe                                                \\
-			                                    & $\square$ Éditeur de code Visual Studio Code (et sa configuration)   \\
-			                                    & $\square$ Outil de prise de notes Markdown                           \\
-			                                    & $\square$ Antivirus (Windows uniquement)                             \\
+			Logiciels installés et configurés   & $\square$ Gestionnaire de mots de passe                       \\
+			                                    & $\square$ Application 2FA                                     \\
+			                                    & $\square$ VPN                                                 \\
+			                                    & $\square$ Pilotes d'impression                                \\
+			                                    & $\square$ Terminal et shell                                   \\
+			                                    & $\square$ Antivirus (Windows uniquement)                      \\
+			                                    & $\square$ WSL (Windows uniquement)                            \\
+			                                    & $\square$ Gestionnaire de paquets (WinGet, Homebrew ou apt)   \\
+			                                    & $\square$ Firefox (avec uBlock Origin et Bitwarden)           \\
+			                                    & $\square$ Chrome (avec uBlock Origin Lite et Bitwarden)       \\
+			                                    & $\square$ Visual Studio Code                                  \\
+			                                    & $\square$ Secure Shell (SSH)                                  \\
+			                                    & $\square$ Git et GitHub                                       \\
 			\hline
 		\end{tabular}}
 \end{table}
@@ -115,6 +124,16 @@ docker run \
 		\centering
 		\begin{tabular}{|p{0.33\textwidth}|p{0.6\textwidth}|}
 			\hline
+			Logiciels installés et configurés   & $\square$ Docker                                                      \\
+			                                    & $\square$ VLC                                                         \\
+			                                    & $\square$ La suite Microsoft Office                                   \\
+			                                    & $\square$ La suite Adobe                                              \\
+			                                    & $\square$ Un client de messagerie (Thunderbird/Apple Mail/Outlook)    \\
+			                                    & $\square$ Un outil pour gérer les archives (7zip/Keka)                \\
+			                                    & $\square$ Un outil pour traiter des documents PDF (Acrobat Reader)    \\
+			                                    & $\square$ Un outil pour sauvegarder/restaurer ses données             \\
+			                                    & $\square$ Un outil de prise de notes Markdown                         \\
+			\hline
 			\multicolumn{2}{|l|}{\textbf{Acquis du cours}} \\
 			\hline
 			Je suis à l'aise avec & $\square$ Connexion WiFi                                      \\
@@ -122,7 +141,7 @@ docker run \
 			                                            & $\square$ Impression de documents                             \\
 			                                            & $\square$ Différences composants matériels et logiciels       \\
 			                                            & $\square$ Sensibilité de la casse selon l'OS                  \\
-			                                            & $\square$ Différence dossier / fichier                        \\
+			                                            & $\square$ Différences entre les dossiers et les fichiers                        \\
 			                                            & $\square$ Installation de logiciels                           \\
 			                                            & $\square$ Mise à jour OS et logiciels                         \\
 			                                            & $\square$ Gestion de mots de passe et 2FA                     \\
@@ -130,13 +149,9 @@ docker run \
 			                                            & $\square$ Sauvegarde et restauration de documents             \\
 			                                            & $\square$ Ouverture et usage d'un terminal                    \\
 			\hline
-			J'ai réalisé les éléments suivants          & $\square$ Connexion au Wi-Fi HEIG-VD                          \\
-			                                            & $\square$ Connexion au Wi-Fi eduroam                          \\
-			                                            & $\square$ Installation/configuration des imprimantes + test   \\
-			\hline
 			\multicolumn{2}{|l|}{\textbf{Notes personnelles}} \\
-            \hline
-            \multicolumn{2}{|l|}{} \\[10cm]
+			\hline
+			\multicolumn{2}{|l|}{} \\[5cm]
 			\hline
 		\end{tabular}}
 \end{table}
