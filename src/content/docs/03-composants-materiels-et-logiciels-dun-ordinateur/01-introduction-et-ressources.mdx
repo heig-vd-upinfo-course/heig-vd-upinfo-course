@@ -26,6 +26,7 @@ Les thématiques abordées sont les suivantes :
   avec l'ordinateur.
 - Les applications, qui sont les logiciels utilisés pour accomplir des tâches
   spécifiques.
+- Les utilisateurs·trices, qui sont les personnes qui utilisent l'ordinateur.
 
 ```mermaid
 ---
@@ -64,11 +65,11 @@ flowchart
     **🐧 Système d'exploitation**
     _Windows, macOS, Linux_
   `"]
-  DRIVERS["`
+  Drivers["`
     **🛠️ Drivers**
     _Pilotes de périphériques_
   `"]
-  KERNEL["`
+  Kernel["`
     **🧩 Kernel**
     _Cœur du système d'exploitation_
   `"]
@@ -84,12 +85,31 @@ flowchart
     **📦 Applications**
     _Logiciels pour accomplir des tâches spécifiques_
   `"]
+  User_1["`
+    **👤 Utilisateur·trice 1**
+    _Personne qui utilise un ordinateur_
+  `"]
+  User_2["`
+    **👤 Utilisateur·trice 2**
+    _Personne qui utilise un ordinateur_
+  `"]
+
+  subgraph Users["`**👥 Groupes d'utilisateur·trices**`"]
+    direction TB
+
+    User_1
+    User_2
+  end
+
+  Users --> Applications
 
   subgraph Software["`**🔢 Composants logiciels**`"]
     direction TB
 
-    OS --> DRIVERS
-    OS --> KERNEL
+    OS --> Drivers
+
+    OS --> Kernel
+
     GUI --> OS
     CLI --> OS
     Applications --> GUI

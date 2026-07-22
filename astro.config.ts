@@ -107,7 +107,9 @@ export default defineConfig({
 			routeMiddleware: ["./src/route-middleware.ts"],
 			plugins: [
 				// https://starlight-links-validator.vercel.app/
-				starlightLinksValidator(),
+				starlightLinksValidator({
+					errorOnLocalLinks: false,
+				}),
 			],
 			sidebar: [
 				{

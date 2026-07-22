@@ -90,11 +90,11 @@ flowchart
     **🐧 Système d'exploitation**
     _Windows, macOS, Linux_
   `"]
-  DRIVERS["`
+  Drivers["`
     **🛠️ Drivers**
     _Pilotes de périphériques_
   `"]
-  KERNEL["`
+  Kernel["`
     **🧩 Kernel**
     _Cœur du système d'exploitation_
   `"]
@@ -102,8 +102,10 @@ flowchart
   subgraph Software["`**🔢 Composants logiciels**`"]
     direction TB
 
-    OS --> DRIVERS
-    OS --> KERNEL
+    OS --> Drivers
+
+    OS --> Kernel
+
   end
 
   subgraph Hardware["`**🛠️ Composants matériels**`"]

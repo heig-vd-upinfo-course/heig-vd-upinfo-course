@@ -103,13 +103,13 @@ docker run \
 			                                    & $\square$ VPN                                                 \\
 			                                    & $\square$ Pilotes d'impression                                \\
 			                                    & $\square$ Terminal et shell                                   \\
+			                                    & $\square$ Services de synchronisation de fichiers              \\
 			                                    & $\square$ Antivirus (Windows uniquement)                      \\
 			                                    & $\square$ WSL (Windows uniquement)                            \\
 			                                    & $\square$ Gestionnaire de paquets (WinGet, Homebrew ou apt)   \\
 			                                    & $\square$ Firefox (avec uBlock Origin et Bitwarden)           \\
 			                                    & $\square$ Chrome (avec uBlock Origin Lite et Bitwarden)       \\
 			                                    & $\square$ Visual Studio Code                                  \\
-			                                    & $\square$ Secure Shell (SSH)                                  \\
 			\hline
 		\end{tabular}}
 \end{table}
@@ -125,7 +125,8 @@ docker run \
 		\centering
 		\begin{tabular}{|p{0.33\textwidth}|p{0.6\textwidth}|}
 			\hline
-			Logiciels installés et configurés   & $\square$ Git et GitHub                                               \\
+			Logiciels installés et configurés   & $\square$ Secure Shell (SSH)                                               \\
+			                                    & $\square$ Git et GitHub                                               \\
 			                                    & $\square$ Docker                                                      \\
 			                                    & $\square$ VLC                                                         \\
 			                                    & $\square$ La suite Microsoft Office                                   \\

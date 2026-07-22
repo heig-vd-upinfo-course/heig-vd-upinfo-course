@@ -1,0 +1,118 @@
+---
+title: Se connecter aux partages réseaux
+---
+
+import { Aside, Steps, Tabs, TabItem } from "@astrojs/starlight/components";
+
+Un partage réseau est un dossier ou un lecteur situé sur un autre ordinateur ou
+serveur, accessible via le réseau local ou Internet. Il permet de stocker et de
+partager des fichiers entre plusieurs utilisateur·trices.
+
+À première vue, vous n'aurez que très rarement besoin d'accéder aux partages
+réseau de la HEIG-VD. Cependant, il est toujours bon de savoir comment y
+accéder, au cas où vous en auriez besoin pour un projet ou un cours spécifique.
+
+Si vous n'êtes pas sur le campus de la HEIG-VD, vous devez d'abord vous
+connecter au VPN pour accéder aux partages réseau internes (voir le contenu
+[Se connecter au VPN](/heig-vd-upinfo-course/02-premiers-pas-a-la-heig-vd/14-se-connecter-au-vpn)).
+
+<Aside type="note">
+
+Des informations supplémentaires sur les partages réseau sont disponibles sur
+l'intranet de la HEIG-VD à l'adresse suivante :
+[Services - Informatique - Services - Partage de fichiers](https://intra.heig-vd.ch/services/informatique/poste-de-travail/partage-de-fichiers/Pages/partage-de-fichiers.aspx).
+
+Consultez la page
+[Accéder à l'intranet de la HEIG-VD](/heig-vd-upinfo-course/02-premiers-pas-a-la-heig-vd/13-acceder-a-lintranet)
+pour plus d'informations sur l'accès à l'intranet.
+
+</Aside>
+
+## Partages réseau disponibles
+
+À la HEIG-VD, plusieurs partages réseau sont disponibles pour les étudiant·es et
+le personnel. Voici quelques exemples de partages réseau couramment utilisés :
+
+- `\\eistore1\cours\` (Windows) ou `smb://eistore1.einet.ad.eivd.ch/cours/comem`
+  (macOS/Linux) : Partage réseau pour les cours.
+- `\\eistore0\softs@tous` (Windows) ou
+  `smb://eistore0.einet.ad.eivd.ch/softs/@tous` (macOS/Linux) : Partage réseau
+  pour certains logiciels utilisés dans les cours.
+
+## Se connecter à un partage réseau
+
+Se connecter à un partage réseau peut varier selon le système d'exploitation
+utilisé. Les instructions ci-dessous couvrent les systèmes d'exploitation les
+plus courants.
+
+<Tabs syncKey="operating-system">
+<TabItem label="Windows" icon="seti:windows">
+
+Pour se connecter à un partage réseau sur Windows, suivez ces étapes :
+
+<Steps>
+
+1. Ouvrez l'Explorateur de fichiers (Windows + E).
+
+2. Dans la barre d'adresse, tapez l'adresse du partage réseau (par exemple,
+   `\\eistore1\cours\`) et appuyez sur Entrée.
+
+3. Si vous êtes invité·e à entrer vos informations d'identification, saisissez
+   votre nom d'utilisateur et mot de passe HES-SO.
+
+4. Le partage réseau devrait maintenant s'ouvrir et vous pourrez accéder aux
+   fichiers qu'il contient.
+
+</Steps>
+
+</TabItem>
+<TabItem label="macOS" icon="apple">
+
+Pour se connecter à un partage réseau sur macOS, suivez ces étapes :
+
+<Steps>
+
+1. Dans le Finder, cliquez sur "Aller" dans la barre de menu, puis sélectionnez
+   "Se connecter au serveur..." (ou utilisez le raccourci Commande + K).
+
+2. Dans la fenêtre qui s'ouvre, saisissez l'adresse du partage réseau (par
+   exemple, `smb://eistore1.einet.ad.eivd.ch/cours/comem`) et cliquez sur "Se
+   connecter".
+
+3. Si vous êtes invité·e à entrer vos informations d'identification, saisissez
+   votre nom d'utilisateur et mot de passe HES-SO.
+
+4. Le partage réseau devrait maintenant s'ouvrir et vous pourrez accéder aux
+   fichiers qu'il contient.
+
+</Steps>
+
+</TabItem>
+<TabItem label="Linux" icon="linux">
+
+Pour se connecter à un partage réseau sur Linux, suivez ces étapes :
+
+<Steps>
+
+1. Ouvrez votre gestionnaire de fichiers (par exemple, Nautilus, Dolphin,
+   Thunar).
+
+2. Dans la barre d'adresse, tapez l'adresse du partage réseau (par exemple,
+   `smb://eistore1.einet.ad.eivd.ch/cours/comem`) et appuyez sur Entrée.
+
+3. Si vous êtes invité·e à entrer vos informations d'identification, saisissez
+   votre nom d'utilisateur et mot de passe HES-SO.
+
+4. Le partage réseau devrait maintenant s'ouvrir et vous pourrez accéder aux
+   fichiers qu'il contient.
+
+</Steps>
+
+</TabItem>
+</Tabs>
+
+## Résumé
+
+Le VPN est indispensable pour accéder aux ressources internes de la HEIG-VD en
+dehors du campus. Installez le client en début de formation et testez-le avant
+d'en avoir besoin.
