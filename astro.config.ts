@@ -202,4 +202,5 @@ export default defineConfig({
 			],
 		}),
 	],
+	trailingSlash: "always",
 });
