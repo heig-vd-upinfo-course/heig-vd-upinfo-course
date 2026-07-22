@@ -55,7 +55,7 @@ suivantes :
 ### Langages de programmation
 
 Comme vu dans le contenu
-[Processeur (CPU)](/heig-vd-upinfo-course/03-composants-materiels-et-logiciels-dun-ordinateur/02-processeur-cpu),
+[Processeur (CPU)](/heig-vd-upinfo-course/03-composants-materiels-et-logiciels-dun-ordinateur/02-processeur-cpu/),
 le processeur ne comprend que le langage machine, constitué de 0 et de 1.
 
 Il n'est pas pratique pour les humain·es d'écrire directement en langage
@@ -154,6 +154,14 @@ flowchart
     **🐧 Système d'exploitation**
     _Windows, macOS, Linux_
   `"]
+  Drivers["`
+    **🛠️ Drivers**
+    _Pilotes de périphériques_
+  `"]
+  Kernel["`
+    **🧩 Kernel**
+    _Cœur du système d'exploitation_
+  `"]
   GUI["`
     **📺 Interface graphique (GUI)**
     _Interaction visuelle avec l'utilisateur·trice_
@@ -169,6 +177,10 @@ flowchart
 
   subgraph Software["`**🔢 Composants logiciels**`"]
     direction TB
+
+    OS --> Drivers
+
+    OS --> Kernel
 
     GUI --> OS
     CLI --> OS

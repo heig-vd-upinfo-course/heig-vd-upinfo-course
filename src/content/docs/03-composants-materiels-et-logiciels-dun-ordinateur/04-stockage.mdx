@@ -2,7 +2,13 @@
 title: Stockage
 ---
 
-import { FileTree, Steps, TabItem, Tabs } from "@astrojs/starlight/components";
+import {
+	Aside,
+	FileTree,
+	Steps,
+	TabItem,
+	Tabs,
+} from "@astrojs/starlight/components";
 
 Le stockage est un composant essentiel d'un ordinateur, permettant de conserver
 les données et les programmes de manière permanente.
@@ -85,7 +91,7 @@ choisir le format approprié pour vos besoins.
 ### Encodage des caractères
 
 Comme mentionné dans le contenu
-[Processeur (CPU)](/heig-vd-upinfo-course/03-composants-materiels-et-logiciels-dun-ordinateur/02-processeur-cpu),
+[Processeur (CPU)](/heig-vd-upinfo-course/03-composants-materiels-et-logiciels-dun-ordinateur/02-processeur-cpu/),
 un ordinateur ne comprend que le langage machine, constitué de 0 et de 1, appelé
 des bits.
 
@@ -227,7 +233,7 @@ utiliser le chemin relatif `../rapport.pdf`, où `..` nous ramène au dossier
 parent `/home/sam`.
 
 Nous reviendrons sur la notion d'arborescence dans le contenu
-[Système d'exploitation](/heig-vd-upinfo-course/03-composants-materiels-et-logiciels-dun-ordinateur/09-systeme-dexploitation).
+[Système d'exploitation](/heig-vd-upinfo-course/03-composants-materiels-et-logiciels-dun-ordinateur/09-systeme-dexploitation/).
 
 ### Différences entre les systèmes de fichiers
 
@@ -284,7 +290,18 @@ flowchart
 
 ## À vous de jouer !
 
-### Exercice pratique 1
+<Aside type="tip">
+
+Ces exercices sont là pour vous aider. Bien qu'ils ne soient pas notés, il est
+fortement recommandé de les réaliser pour vous familiariser avec l'environnement
+de la HEIG-VD.
+
+Si vous avez des questions ou des difficultés, n'hésitez pas à demander de
+l'aide au corps enseignant.
+
+</Aside>
+
+### Exercice pratique 1 : identifier le type et la capacité de stockage de votre ordinateur
 
 Identifiez le type de stockage (HDD ou SSD) et la capacité de stockage de votre
 ordinateur et notez ces informations pour référence future.
@@ -303,8 +320,9 @@ ordinateur et notez ces informations pour référence future.
       3. Dans la fenêtre qui s'ouvre, recherchez la section "Stockage" pour voir le type de stockage et la capacité installée sur votre ordinateur.
 
       </Steps>
-    </TabItem>
-    <TabItem label="macOS" icon="apple">
+
+</TabItem>
+<TabItem label="macOS" icon="apple">
     	Accédez aux informations sur votre stockage en suivant ces étapes :
 
       <Steps>
@@ -316,8 +334,9 @@ ordinateur et notez ces informations pour référence future.
     	3. Dans la fenêtre qui s'ouvre, vous verrez les informations sur votre stockage.
 
       </Steps>
-    </TabItem>
-    <TabItem label="Linux" icon="linux">
+
+</TabItem>
+<TabItem label="Linux" icon="linux">
       	Accédez aux informations sur votre stockage en suivant ces étapes :
 
         <Steps>
@@ -332,11 +351,11 @@ ordinateur et notez ces informations pour référence future.
       	3. Recherchez les lignes "Filesystem" pour voir la capacité de stockage installée sur votre ordinateur.
 
         </Steps>
-    </TabItem>
 
+</TabItem>
 </Tabs>
 
-### Exercice pratique 2
+### Exercice pratique 2 : exercice sur l'arborescence
 
 Soit l'arborescence suivante d'un projet informatique :
 
@@ -375,7 +394,7 @@ Soit l'arborescence suivante d'un projet informatique :
         - 05-votre-ordinateur-un-outil-de-travail.md
         - 06-se-connecter-au-wi-fi.md
         - 07-installer-et-configurer-un-gestionnaire-de-mots-de-passe.md
-        - 08-installer-et-configurer-une-application-a-deux-facteurs.md
+        - 08-installer-et-configurer-une-application-2fa.md
         - 09-gerer-son-compte-hes-so-heig-vd-et-switch-eduid.md
         - 10-acceder-a-ses-e-mails.md
         - 11-acceder-a-microsoft-teams.md
@@ -394,8 +413,9 @@ Soit l'arborescence suivante d'un projet informatique :
         - 07-peripheriques-externes.md
         - 08-bios-uefi.md
         - 09-systeme-dexploitation.md
-        - 10-interface-graphique-gui-et-terminal-cli.md
-        - 11-applications.md
+        - 10-drivers-et-kernel.md
+        - 11-interface-graphique-gui-et-terminal-cli.md
+        - 12-applications.md
       - 04-communications-reseaux-et-internet
         - 01-introduction-et-ressources.md
         - 02-ordinateurs-serveurs-et-internet.md
@@ -411,10 +431,9 @@ Soit l'arborescence suivante d'un projet informatique :
         - 02-langue-et-clavier.md
         - 03-gestionnaire-de-fichiers.md
         - 04-terminal-et-shells.md
-        - 05-droits-et-permissions.md
         - 06-gerer-les-mises-a-jour.md
         - 07-services-de-synchronisation-en-ligne.md
-        - 08-applications-par-defaut.md
+        - 08-applications-preinstallees-et-applications-par-defaut.mdx.md
         - 09-applications-au-demarrage.md
         - 10-chiffrement-de-ses-donnees.md
         - 11-anti-virus.md
@@ -432,7 +451,7 @@ Soit l'arborescence suivante d'un projet informatique :
         - 23-git.md
         - 24-docker.md
         - 25-un-outil-pour-traiter-des-documents-pdf.md
-        - 26-reinstaller-son-systeme-dexploitation.md
+        - 27-reinstaller-son-systeme-dexploitation.md
       - 06-sauvegarder-et-restaurer-ses-donnees
         - 01-introduction-et-ressources.md
         - 02-strategie-de-sauvegarde-3-2-1.md
