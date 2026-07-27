@@ -58,7 +58,7 @@ Il n'y a pas de règle stricte, mais voici quelques indications :
 
 Dans le cadre de vos études, vous serez amené·e à utiliser les deux. Le terminal
 sera abordé en détail dans le contenu
-[Travailler avec le terminal](/heig-vd-upinfo-course/08-travailler-avec-le-terminal/01-introduction-et-ressources).
+[Travailler avec le terminal](/heig-vd-upinfo-course/08-travailler-avec-le-terminal/01-introduction-et-ressources/).
 
 Lorsque nous sommes habitué·es à l'interface graphique, il peut être difficile
 de se familiariser avec le terminal. Cependant, il est important de comprendre
@@ -109,6 +109,14 @@ flowchart
     **🐧 Système d'exploitation**
     _Windows, macOS, Linux_
   `"]
+  Drivers["`
+    **🛠️ Drivers**
+    _Pilotes de périphériques_
+  `"]
+  Kernel["`
+    **🧩 Kernel**
+    _Cœur du système d'exploitation_
+  `"]
   GUI["`
     **📺 Interface graphique (GUI)**
     _Interaction visuelle avec l'utilisateur·trice_
@@ -120,6 +128,10 @@ flowchart
 
   subgraph Software["`**🔢 Composants logiciels**`"]
     direction TB
+
+    OS --> Drivers
+
+    OS --> Kernel
 
     GUI --> OS
     CLI --> OS

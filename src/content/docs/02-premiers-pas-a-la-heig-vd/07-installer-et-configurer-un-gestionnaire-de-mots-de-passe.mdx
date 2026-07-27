@@ -16,7 +16,24 @@ service est compromis, tous vos comptes le deviennent.
 
 Un gestionnaire de mots de passe résout ce problème en générant et en stockant
 des mots de passe complexes et différents pour chaque compte, protégés par un
-unique **mot de passe maître**.
+unique mot de passe.
+
+## Pourquoi ne pas utiliser les gestionnaires de mots de passe intégrés aux navigateurs ou au système ?
+
+Bien que les navigateurs web et certains systèmes d'exploitation proposent des
+gestionnaires de mots de passe intégrés (Apple Keychain par exemple), ils
+présentent plusieurs inconvénients :
+
+- Ils sont souvent limités à un seul navigateur ou système d'exploitation, ce
+  qui complique la synchronisation entre différents appareils.
+- Ils peuvent être moins sécurisés que des gestionnaires de mots de passe
+  dédiés, car ils sont plus exposés aux vulnérabilités du navigateur ou du
+  système.
+- Ils offrent généralement moins de fonctionnalités avancées, comme le partage
+  sécurisé de mots de passe ou la génération de mots de passe complexes.
+
+Pour ces raisons, il est recommandé d'utiliser un gestionnaire de mots de passe
+dédié.
 
 ## Bonnes pratiques pour la sécurité de vos mots de passe
 
@@ -98,7 +115,7 @@ Si vous utilisez KeePassXC, assurez-vous de sauvegarder régulièrement votre
 fichier de mots de passe et de le protéger avec un mot de passe maître fort.
 
 Le contenu
-[Sauvegarder et restaurer ses données](/heig-vd-upinfo-course/06-sauvegarder-et-restaurer-ses-donnees/01-introduction-et-ressources)
+[Sauvegarder et restaurer ses données](/heig-vd-upinfo-course/06-sauvegarder-et-restaurer-ses-donnees/01-introduction-et-ressources/)
 de ce site contient des informations utiles sur la sauvegarde de vos données.
 
 </Aside>
@@ -116,6 +133,26 @@ utilisateur simplifiée.
 
 Pour plus d'informations sur les passkeys, vous pouvez consulter la page
 [passkeys.com - Qu'est-ce qu'un passkey?](https://www.passkeys.com/fr/passkey-cest-quoi).
+
+## Partager un mot de passe en toute sécurité
+
+Il arrive parfois que vous ayez besoin de partager un mot de passe avec
+quelqu'un de confiance. Il est important de le faire de manière sécurisée pour
+éviter que le mot de passe ne soit intercepté par des personnes malveillantes.
+
+La plupart des gestionnaires de mots de passe, y compris Bitwarden, offrent une
+fonctionnalité de partage sécurisé. Vous pouvez partager un mot de passe avec
+une autre personne de manière sécurisée.
+
+Dans Bitwarden, vous trouverez cette fonctionnalité dans l'onglet "Send"
+(Envoyer). Vous pouvez créer un lien sécurisé pour le mot de passe que vous
+souhaitez partager. Vous pouvez définir une date d'expiration pour le lien, un
+nombre maximum de vues et un mot de passe pour accéder au lien, ce qui garantit
+que le mot de passe ne sera pas accessible indéfiniment.
+
+Le destinataire pourra alors accéder au mot de passe de manière sécurisée, sans
+que vous ayez à l'envoyer par email ou messagerie instantanée, qui sont moins
+sécurisés.
 
 ## Résumé
 

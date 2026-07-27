@@ -2,6 +2,8 @@
 title: BIOS/UEFI
 ---
 
+import { Aside } from "@astrojs/starlight/components";
+
 Le BIOS (Basic Input/Output System) et son successeur l'UEFI (Unified Extensible
 Firmware Interface) sont des logiciels intégrés directement dans la carte mère.
 Ils constituent le premier programme exécuté lorsque l'ordinateur est mis sous
@@ -50,6 +52,12 @@ Pour accéder au BIOS/UEFI, il faut généralement appuyer sur une touche
 spécifique lors du démarrage de l'ordinateur. Les touches les plus courantes
 sont `F2`, `F10`, `Del` ou `Esc`. Le message indiquant la touche à presser
 s'affiche souvent à l'écran au moment du démarrage.
+
+Sur macOS, l'accès au BIOS/UEFI dépend de l'architecture du Mac. Sur les Mac
+Intel, il faut maintenir la touche `Option` (ou `Alt`) enfoncée au démarrage
+pour accéder au menu de démarrage. Sur les Mac Apple Silicon, il faut maintenir
+le bouton d'alimentation enfoncé jusqu'à ce que les options de démarrage
+apparaissent.
 
 ## Paramétrer le BIOS/UEFI
 
@@ -117,6 +125,17 @@ flowchart
 
 ## À vous de jouer !
 
+<Aside type="tip">
+
+Ces exercices sont là pour vous aider. Bien qu'ils ne soient pas notés, il est
+fortement recommandé de les réaliser pour vous familiariser avec l'environnement
+de la HEIG-VD.
+
+Si vous avez des questions ou des difficultés, n'hésitez pas à demander de
+l'aide au corps enseignant.
+
+</Aside>
+
 ### Exercice pratique 1 - Accéder au BIOS/UEFI
 
 Identifiez la touche à presser pour accéder au BIOS/UEFI de votre ordinateur.
@@ -162,6 +181,6 @@ Il est donc recommandé de définir un mot de passe pour protéger l'accès au
 BIOS/UEFI. Cette option se trouve généralement dans la section "Security" ou
 "Password" du BIOS/UEFI. Il est important de choisir un mot de passe fort et de
 le stocker dans votre
-[gestionnaire de mots de passe](/heig-vd-upinfo-course/02-premiers-pas-a-la-heig-vd/07-installer-et-configurer-un-gestionnaire-de-mots-de-passe),
+[gestionnaire de mots de passe](/heig-vd-upinfo-course/02-premiers-pas-a-la-heig-vd/07-installer-et-configurer-un-gestionnaire-de-mots-de-passe/),
 car si vous l'oubliez, vous pourriez être bloqué·e hors du BIOS/UEFI et perdre
 l'accès à certaines fonctionnalités de votre ordinateur.

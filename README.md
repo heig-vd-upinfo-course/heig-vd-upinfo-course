@@ -12,16 +12,18 @@ Suisse !
 À l'issue de ce cours, la personne qui étudie sera capable de :
 
 - Comprendre les bases de l'informatique pour ses études à la HEIG-VD.
-- Configurer et utiliser un système d'exploitation pour un environnement de
-  travail efficace.
+- Configurer et utiliser son ordinateur pour un environnement de travail
+  efficace.
 - Installer et configurer les applications de base nécessaires pour ses études à
   la HEIG-VD.
 - Sauvegarder et restaurer ses données pour ne jamais perdre son travail.
 - Prendre des notes et documenter son travail avec Markdown.
+- Travailler efficacement dans le terminal pour automatiser des tâches et gérer
+  son environnement de travail.
 
 Grâce à ces compétences, la personne qui étudie sera en mesure de travailler
 efficacement avec les outils et les technologies informatiques nécessaires pour
-réussir dans son parcours académique et professionnel en ingénierie des médias.
+réussir dans son parcours académique et professionnel.
 
 ## ➡️ Par où commencer ?
 
