@@ -48,7 +48,8 @@ export default defineConfig({
 			title,
 			description,
 			logo: {
-				src: "./src/assets/logo.svg",
+				light: "./src/assets/heig-vd-logo-light.svg",
+				dark: "./src/assets/heig-vd-logo-dark.svg",
 				replacesTitle: true,
 			},
 			social: [
@@ -114,18 +115,19 @@ export default defineConfig({
 			sidebar: [
 				{
 					label: "Introduction au cours",
+					collapsed: true,
 					items: [{ autogenerate: { directory: "01-introduction-au-cours" } }],
 				},
 				{
 					label: "Premiers pas à la HEIG-VD",
-					collapsed: false,
+					collapsed: true,
 					items: [
 						{ autogenerate: { directory: "02-premiers-pas-a-la-heig-vd" } },
 					],
 				},
 				{
 					label: "Composants matériels et logiciels d'un ordinateur",
-					collapsed: false,
+					collapsed: true,
 					items: [
 						{
 							autogenerate: {
@@ -137,7 +139,7 @@ export default defineConfig({
 				},
 				{
 					label: "Communications réseaux et Internet",
-					collapsed: false,
+					collapsed: true,
 					items: [
 						{
 							autogenerate: {
@@ -148,7 +150,7 @@ export default defineConfig({
 				},
 				{
 					label: "Configurer son système d'exploitation et ses applications",
-					collapsed: false,
+					collapsed: true,
 					items: [
 						{
 							autogenerate: {
@@ -160,7 +162,7 @@ export default defineConfig({
 				},
 				{
 					label: "Sauvegarder et restaurer ses données",
-					collapsed: false,
+					collapsed: true,
 					items: [
 						{
 							autogenerate: {
@@ -171,7 +173,7 @@ export default defineConfig({
 				},
 				{
 					label: "Prendre des notes Markdown",
-					collapsed: false,
+					collapsed: true,
 					items: [
 						{
 							autogenerate: {
@@ -182,7 +184,7 @@ export default defineConfig({
 				},
 				{
 					label: "Travailler avec le terminal",
-					collapsed: false,
+					collapsed: true,
 					items: [
 						{
 							autogenerate: {
@@ -193,10 +195,12 @@ export default defineConfig({
 				},
 				{
 					label: "Conclusion au cours",
+					collapsed: true,
 					items: [{ autogenerate: { directory: "09-conclusion-au-cours" } }],
 				},
 				{
 					label: "Autre",
+					collapsed: true,
 					items: [{ autogenerate: { directory: "10-autre" } }],
 				},
 			],
