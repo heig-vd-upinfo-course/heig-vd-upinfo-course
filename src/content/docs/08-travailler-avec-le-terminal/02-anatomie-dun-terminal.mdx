@@ -1,0 +1,138 @@
+---
+title: Anatomie d'un terminal
+---
+
+## Structure de l'invite de commande
+
+Lorsque vous ouvrez un terminal, vous voyez une **invite de commande** (prompt)
+qui indique :
+
+```bash title="Terminal Bash/Zsh"
+alice@monpc:~/Documents$
+```
+
+- `alice` : le nom d'utilisateur·trice.
+- `monpc` : le nom de la machine.
+- `~/Documents` : le répertoire dans lequel vous vous trouvez (`~` est le
+  dossier personnel).
+- `$` : indique la délimitation d'une commande.
+
+Le nom d'utilisateur·trice et le nom de la machine sont séparés par un `@`. Le
+répertoire courant est précédé d'un `:`. L'invite de commande se termine par un
+`$` ou un `#`.
+
+## Le symbole `$` ou `#`
+
+Selon les ressources sur lesquelles vous allez trouver, un utilisateur·trice
+normal·e est représenté par le symbole `$`. Cela signifie que la commande sera
+exécutée en mode utilisateur. Sur certains systèmes, la ligne de commande est
+remplacée par le symbole `#`, qui indique le mode root. Cela signifie que la
+commande sera exécutée avec des privilèges de l'utilisateur root (=
+l'utilisateur administrateur). Il est important de faire attention lorsque vous
+utilisez le mode root, car vous pouvez modifier ou supprimer des fichiers
+système critiques.
+
+## Les commentaires dans le terminal
+
+Lorsque vous trouverez des commandes à exécuter dans le terminal, vous verrez
+parfois des commentaires comme ceux-ci :
+
+```bash title="Terminal Bash/Zsh"
+# Ceci est un commentaire. Il n'est pas exécuté par le terminal.
+# La commande suivante affiche le répertoire courant
+pwd
+```
+
+Les commentaires commencent par le symbole `#` et ne sont pas exécutés par le
+terminal. Ils sont utilisés pour expliquer ce que fait la commande ou pour
+fournir des informations supplémentaires.
+
+Les commentaires sont surtout utilisés dans de la documentation technique ou des
+scripts shell pour expliquer le fonctionnement des commandes. Vous pouvez
+également ajouter vos propres commentaires dans vos scripts pour vous rappeler
+ce que fait chaque partie du code.
+
+## Options et arguments des commandes
+
+Dans le terminal, vous pouvez taper des commandes pour interagir avec le système
+d'exploitation. Chaque commande peut avoir des **arguments** et des **options**.
+
+Il est courant de voir des commandes avec des options ou des arguments qui sont
+passés à la commande. Par exemple, pour lister les fichiers dans le répertoire
+courant avec des détails, vous pouvez utiliser :
+
+```bash title="Terminal Bash/Zsh"
+ls -l
+```
+
+La commande `ls` liste les fichiers et dossiers, et l'option `-l` affiche les
+détails (permissions, propriétaire, taille, date de modification) sous la forme
+d'une liste.
+
+Il est commun de retrouver la notation suivante pour indiquer qu'une commande
+peut prendre des options et des arguments :
+
+```bash title="Terminal Bash/Zsh"
+ls [-l] <chemin-du-dossier>
+```
+
+Ici, l'option `-l` est facultative (indiquée par les crochets `[]`) et
+`<chemin-du-dossier>` est un argument obligatoire qui indique le chemin du
+dossier à lister. **C'est à vous de remplacer les chevrons et le texte à
+l'intérieur par la valeur réelle que vous souhaitez utiliser.** Par exemple,
+pour lister les fichiers dans le dossier `/home/user/Documents`, vous pouvez
+exécuter :
+
+```bash title="Terminal Bash/Zsh"
+ls -l /home/user/Documents
+```
+
+## Trouver de l'aide pour une commande
+
+Pour afficher l'aide d'une commande, vous pouvez généralement utiliser l'option
+`--help` ou `-h`. Ces options sont disponibles pour une majorité de commandes.
+
+Par exemple, pour obtenir de l'aide sur la commande `ls`, vous pouvez exécuter :
+
+```bash title="Terminal Bash/Zsh"
+ls --help
+```
+
+L'aide affichera les différentes options disponibles pour la commande `ls`.
+
+Une autre source d'aide est la commande `man` (pour "manual"). Elle affiche le
+manuel de la commande. Par exemple, pour afficher le manuel de la commande `ls`,
+vous pouvez exécuter :
+
+```bash title="Terminal Bash/Zsh"
+man ls
+```
+
+Une interface de navigation s'ouvrira, vous permettant de parcourir le manuel.
+Vous pouvez utiliser les touches fléchées pour naviguer, `q` pour quitter et `/`
+pour rechercher un mot-clé dans le manuel.
+
+## Quitter une commande ou un programme dans le terminal
+
+Parfois, certaines commandes ou programmes dans le terminal peuvent bloquer les
+saisies utilisateur·trice (comme la commande `man` que nous venons de voir) car
+ils attendent une action de votre part ou simplement ils attendent une action
+pour continuer (issues par exemple d'un autre processus, comme étudié dans le
+contenu
+[Définition d'un processus](/heig-vd-upinfo-course/04-communications-reseaux-et-internet/07-definition-dun-processus/)).
+
+Pour quitter ces programmes, vous pouvez généralement utiliser le raccourci
+clavier `Ctrl+C`. Cela envoie un signal d'interruption au programme en cours
+d'exécution et le termine.
+
+Il est souvent possible de quitter un tel programme avec la touche `q` (pour
+"quit") ou en appuyant sur `Ctrl+D` (qui envoie un signal de fin de fichier).
+Cependant, ces méthodes peuvent varier selon le programme que vous utilisez.
+
+## Résumé
+
+Le terminal est un outil puissant pour interagir avec le système d'exploitation.
+Il est important de comprendre la structure de l'invite de commande, les
+symboles utilisés, les commentaires, ainsi que les options et arguments des
+commandes. En maîtrisant ces concepts, vous serez en mesure d'utiliser
+efficacement le terminal pour exécuter des commandes et gérer votre système.

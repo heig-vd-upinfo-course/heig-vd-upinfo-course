@@ -5,6 +5,8 @@ fontsize: "11pt"
 papersize: "a4"
 header-includes: |
   \usepackage{fancyhdr}
+  \usepackage{multirow}
+  \usepackage[table]{xcolor}
 
   \newcommand{\institution}{HEIG-VD}
   \newcommand{\coursename}{UPInfo 2026-2027}
@@ -18,8 +20,6 @@ header-includes: |
   \fancyfoot[RO,RE]{\session}
   \renewcommand{\footrulewidth}{0.4pt}
 
-  \usepackage[table]{xcolor}
-  \usepackage{multirow}
   \renewcommand{\arraystretch}{1.5}
   \setlength{\tabcolsep}{10pt}
 
@@ -60,7 +60,7 @@ docker run \
 			\cline{2-2}
 			Modèle                              &                                                                     \\
 			\cline{2-2}
-			Année                               &                                                                     \\
+			Année de sortie                     &                                                                     \\
 			\cline{2-2}
 			Fiche produit                       &                                                                     \\
 			\hline
@@ -68,7 +68,7 @@ docker run \
 			\hline
 			Système d'exploitation (OS)         & $\square$ Windows \quad $\square$ macOS \quad $\square$ Linux         \\
 			\cline{2-2}
-			Version                             &                                                                       \\
+			Version du système d'exploitation   &                                                                       \\
 			\cline{2-2}
 			Architecture processeur (CPU)       & $\square$ x86/x64 (AMD/Intel) \quad $\square$ ARM (Apple Silicon)     \\
 			\cline{2-2}
@@ -81,6 +81,8 @@ docker run \
 			Périphériques externes              & $\square$ Souris \quad $\square$ Clé USB \quad $\square$ Stockage externe \quad $\square$ Autre \\
 			\cline{2-2}
 			Touche(s) pour le BIOS/UEFI         &                                                                       \\
+			\cline{2-2}
+			Version du BIOS/UEFI                &                                                                       \\
 			\hline
 			\multicolumn{2}{|l|}{\textbf{Comptes}} \\
 			\hline
@@ -90,11 +92,13 @@ docker run \
 			\cline{2-2}
 			Nom d'utilisateur HES-SO (AAI)      &                                                                       \\
 			\cline{2-2}
+			Nom d'utilisateur GitHub            &                                                                       \\
+			\cline{2-2}
 			Adresse mail HES-SO                 &                                                                       \\
 			\cline{2-2}
 			Adresse mail HEIG-VD                &                                                                       \\
 			\cline{2-2}
-			Adresse mail personnelle            &                                                                       \\
+			Adresse mail GitHub                 &                                                                       \\
 			\hline
 			\multicolumn{2}{|l|}{\textbf{Configuration HEIG-VD}} \\
 			\hline
@@ -108,8 +112,6 @@ docker run \
 			                                    & $\square$ WSL (Windows uniquement)                            \\
 			                                    & $\square$ Gestionnaire de paquets (WinGet, Homebrew ou apt)   \\
 			                                    & $\square$ Firefox (avec uBlock Origin et Bitwarden)           \\
-			                                    & $\square$ Chrome (avec uBlock Origin Lite et Bitwarden)       \\
-			                                    & $\square$ Visual Studio Code                                  \\
 			\hline
 		\end{tabular}}
 \end{table}
@@ -125,7 +127,9 @@ docker run \
 		\centering
 		\begin{tabular}{|p{0.33\textwidth}|p{0.6\textwidth}|}
 			\hline
-			Logiciels installés et configurés   & $\square$ Secure Shell (SSH)                                               \\
+			Logiciels installés et configurés   & $\square$ Chrome (avec uBlock Origin Lite et Bitwarden)       \\
+			                                    & $\square$ Visual Studio Code                                  \\
+			                                    & $\square$ Secure Shell (SSH)                                               \\
 			                                    & $\square$ Git et GitHub                                               \\
 			                                    & $\square$ Docker                                                      \\
 			                                    & $\square$ VLC                                                         \\
@@ -141,20 +145,24 @@ docker run \
 			\hline
 			Je suis à l'aise avec & $\square$ Connexion WiFi                                      \\
 			                                            & $\square$ Accès aux e-mails                                   \\
-			                                            & $\square$ Impression de documents                             \\
+			                                            & $\square$ Impression et numérisation de documents                             \\
 			                                            & $\square$ Différences composants matériels et logiciels       \\
 			                                            & $\square$ Sensibilité de la casse selon l'OS                  \\
 			                                            & $\square$ Différences entre les dossiers et les fichiers                        \\
-			                                            & $\square$ Installation de logiciels                           \\
+			                                            & $\square$ Installation de logiciels à l'aide d'un gestionnaire de paquets                          \\
 			                                            & $\square$ Mise à jour OS et logiciels                         \\
 			                                            & $\square$ Gestion de mots de passe et 2FA                     \\
 			                                            & $\square$ Création et partage d'une archive                   \\
 			                                            & $\square$ Sauvegarde et restauration de documents             \\
 			                                            & $\square$ Ouverture et usage d'un terminal                    \\
+			                                            & $\square$ Exécution de commandes dans un terminal             \\
+			                                            & $\square$ Navigation dans le système de fichiers (GUI et terminal)             \\
+			                                            & $\square$ Création et exécution de scripts                    \\
+			                                            & $\square$ Gestion des utilisateur·trices et permissions       \\
 			\hline
 			\multicolumn{2}{|l|}{\textbf{Notes personnelles}} \\
 			\hline
-			\multicolumn{2}{|l|}{} \\[5cm]
+			\multicolumn{2}{|l|}{} \\[2.5cm]
 			\hline
 		\end{tabular}}
 \end{table}

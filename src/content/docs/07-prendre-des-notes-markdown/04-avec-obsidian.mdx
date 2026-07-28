@@ -4,16 +4,21 @@ sidebar:
   label: avec Obsidian
 ---
 
-import { Aside } from "@astrojs/starlight/components";
-
-<Aside type="caution">
-	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
-	prochainement. Merci de revenir plus tard.
-</Aside>
+import { Aside, TabItem, Tabs, Steps } from "@astrojs/starlight/components";
 
 Obsidian est une application dédiée à la prise de notes, basée sur des fichiers
 Markdown stockés localement sur votre machine. Elle est gratuite pour un usage
 personnel et disponible sur Windows, macOS, Linux, Android et iOS.
+
+<Aside type="note">
+
+Nous vous recommandons de lire tous les contenus de cette section avant de vous
+décider sur l'outil que vous souhaitez utiliser pour prendre vos notes Markdown.
+
+- [Prendre des notes Markdown avec Visual Studio Code](/heig-vd-upinfo-course/07-prendre-des-notes-markdown/03-avec-visual-studio-code/).
+- [Prendre des notes Markdown avec Pandoc](/heig-vd-upinfo-course/07-prendre-des-notes-markdown/05-avec-pandoc/).
+
+</Aside>
 
 ## Philosophie : les notes comme graphe
 
@@ -24,15 +29,6 @@ entre les idées.
 
 Cette approche est particulièrement utile pour les prises de notes de cours, où
 les concepts se référencent mutuellement.
-
-## Télécharger et installer l'application
-
-Utilisez les instructions ci-dessous pour installer l'application sur votre
-système d'exploitation. Vous pouvez choisir d'utiliser un gestionnaire de
-paquets (recommandé) ou d'installer l'application manuellement.
-
-Téléchargez Obsidian depuis le site officiel :
-[obsidian.md](https://obsidian.md)
 
 ## Concepts clés
 
@@ -58,7 +54,7 @@ Téléchargez Obsidian depuis le site officiel :
 Les notes étant de simples fichiers Markdown, elles peuvent être synchronisées
 via :
 
-- **Git** : versionning et synchronisation via GitHub ou GitLab.
+- **Git** : versionning et synchronisation via GitHub.
 - **OneDrive, iCloud, Google Drive** : synchronisation automatique.
 - **Obsidian Sync** : service payant officiel avec chiffrement de bout en bout.
 
@@ -68,3 +64,72 @@ Obsidian est une application puissante et flexible pour la prise de notes en
 Markdown. Sa capacité à lier les notes entre elles et à les visualiser en graphe
 en fait un outil particulièrement adapté aux étudiant·es qui souhaitent
 construire une base de connaissances structurée.
+
+## À vous de jouer !
+
+<Aside type="tip">
+
+Ces exercices sont là pour vous aider. Bien qu'ils ne soient pas notés, il est
+fortement recommandé de les réaliser pour vous familiariser avec l'environnement
+de la HEIG-VD.
+
+Si vous avez des questions ou des difficultés, n'hésitez pas à demander de
+l'aide au corps enseignant.
+
+</Aside>
+
+## Exercice pratique - Télécharger et installer l'application
+
+Utilisez les instructions ci-dessous pour installer l'application sur votre
+système d'exploitation. Vous pouvez choisir d'utiliser un gestionnaire de
+paquets (recommandé) ou d'installer l'application manuellement.
+
+<Tabs syncKey="package-manager">
+<TabItem label="WinGet (Windows)" icon="seti:windows">
+
+    Obsidian est disponible sur [winget.run](https://winget.run/pkg/Obsidian/Obsidian) :
+
+    ```powershell title="Shell PowerShell"
+    winget install -e --id Obsidian.Obsidian
+    ```
+
+</TabItem>
+<TabItem label="Homebrew (macOS)" icon="apple">
+
+    Obsidian est disponible sur [brew.sh](https://formulae.brew.sh/cask/obsidian) :
+
+    ```bash title="Shell Bash/Zsh"
+    # Installe l'application
+    brew install --cask obsidian
+    ```
+
+</TabItem>
+<TabItem label="apt (Linux)" icon="linux">
+
+    Les instructions suivantes sont adaptées pour des distributions basées sur Ubuntu/Debian.
+
+    Pour une autre distribution (Fedora, Arch, OpenSUSE, etc.), merci de vous référer à votre gestionnaire de paquets pour installer cette application.
+
+    ```bash title="Shell Bash/Zsh"
+    # Installe l'application
+    sudo apt install obsidian
+    ```
+
+</TabItem>
+<TabItem label="Installation manuelle" icon="setting">
+      <Steps>
+
+        1. Rendez-vous sur le site officiel de Obsidian : [obsidian.md](https://obsidian.md).
+
+        2. Installez Obsidian manuellement selon votre système.
+
+      </Steps>
+
+</TabItem>
+</Tabs>
+
+Créez un vault pour commencer à prendre des notes. Vous pouvez créer un nouveau
+dossier ou utiliser un dossier existant. Explorez les fonctionnalités de base et
+créez quelques notes pour vous familiariser avec l'application. N'hésitez pas à
+consulter la documentation officielle et les tutoriels pour découvrir les
+fonctionnalités avancées et les plugins disponibles.

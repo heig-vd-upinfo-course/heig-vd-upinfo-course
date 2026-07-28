@@ -6,14 +6,22 @@ sidebar:
 
 import { Aside } from "@astrojs/starlight/components";
 
-<Aside type="caution">
-	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
-	prochainement. Merci de revenir plus tard.
-</Aside>
-
 Visual Studio Code prend en charge Markdown nativement et constitue un excellent
 environnement pour rédiger des notes. Il n'est pas nécessaire d'installer quoi
 que ce soit pour commencer.
+
+Pour plus d'informations sur Visual Studio Code, consultez le contenu
+[Visual Studio Code](/heig-vd-upinfo-course/05-configurer-son-systeme-dexploitation-et-ses-applications/17-visual-studio-code/).
+
+<Aside type="note">
+
+Nous vous recommandons de lire tous les contenus de cette section avant de vous
+décider sur l'outil que vous souhaitez utiliser pour prendre vos notes Markdown.
+
+- [Prendre des notes Markdown avec Obsidian](/heig-vd-upinfo-course/07-prendre-des-notes-markdown/04-avec-obsidian/).
+- [Prendre des notes Markdown avec Pandoc](/heig-vd-upinfo-course/07-prendre-des-notes-markdown/05-avec-pandoc/).
+
+</Aside>
 
 ## Prévisualisation Markdown intégrée
 
@@ -31,20 +39,36 @@ Vous pouvez ouvrir le fichier source et la prévisualisation côte à côte avec
 
 Quelques extensions améliorent l'expérience Markdown dans Visual Studio Code :
 
-- **Markdown All in One** : raccourcis clavier, table des matières automatique,
-  prévisualisation améliorée.
-- **Markdown Lint** : vérification du style et de la cohérence de la syntaxe
-  Markdown.
-- **Prettier** : formatage automatique des fichiers Markdown.
-- **Paste Image** : coller une image depuis le presse-papiers directement dans
-  un fichier Markdown.
+- [**Markdown All in One**](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
+  : raccourcis clavier, table des matières automatique, prévisualisation
+  améliorée.
+- [**Markdown PDF**](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf)
+  : : exporte vos notes en PDF.
+- [**Markdown Lint**](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
+  : vérification du style et de la cohérence de la syntaxe Markdown.
+- [**vscode-pdf**](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf)
+  : permet de visualiser les fichiers PDF directement dans Visual Studio Code.
+
+Installez ces extensions et vous pouvez les utiliser.
+
+Par exemple, pour générer une table des matières dans votre note, utilisez la
+commande `Markdown All in One: Create Table of Contents` dans la palette de
+commandes (`Ctrl+Shift+P` ou `⌘+Shift+P`).
+
+Pour exporter vos notes en PDF, utilisez la commande
+`Markdown PDF: Export (pdf)`.
 
 ## Organiser ses notes
 
 Avec Visual Studio Code, les notes Markdown peuvent être organisées dans un
-dossier de votre choix. Une arborescence claire facilite la navigation :
+dossier de votre choix. Une arborescence claire facilite la navigation (voir
+contenus
+[Stockage](/heig-vd-upinfo-course/03-composants-materiels-et-logiciels-dun-ordinateur/04-stockage/)
+et
+[Gestionnaire de fichiers](/heig-vd-upinfo-course/05-configurer-son-systeme-dexploitation-et-ses-applications/03-gestionnaire-de-fichiers/))
+:
 
-```
+```text
 notes/
 ├── cours/
 │   ├── algorithmique.md
@@ -61,7 +85,9 @@ par son contenu.
 
 Un dossier de notes Markdown peut être versionné avec Git et synchronisé sur
 GitHub ou GitLab. Cela offre un historique des modifications, une sauvegarde
-automatique et la possibilité de travailler sur plusieurs appareils.
+automatique et la possibilité de travailler sur plusieurs appareils (voir
+contenu
+[Git et GitHub](/heig-vd-upinfo-course/05-configurer-son-systeme-dexploitation-et-ses-applications/19-git-et-github/)).
 
 ## Résumé
 
@@ -69,3 +95,24 @@ Visual Studio Code est un environnement polyvalent pour rédiger en Markdown :
 prévisualisation intégrée, extensions disponibles et intégration Git native.
 C'est un excellent choix si vous souhaitez garder un seul outil pour le code et
 les notes.
+
+## À vous de jouer !
+
+<Aside type="tip">
+
+Ces exercices sont là pour vous aider. Bien qu'ils ne soient pas notés, il est
+fortement recommandé de les réaliser pour vous familiariser avec l'environnement
+de la HEIG-VD.
+
+Si vous avez des questions ou des difficultés, n'hésitez pas à demander de
+l'aide au corps enseignant.
+
+</Aside>
+
+### Exercice pratique - Installer et configurer Visual Studio Code pour la prise de notes Markdown
+
+Installez Visual Studio Code sur votre ordinateur et configurez-le selon les
+étapes ci-dessus.
+
+Créez un dossier pour vos notes et commencez à rédiger en Markdown. Testez la
+prévisualisation, les extensions et la synchronisation Git si vous le souhaitez.

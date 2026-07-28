@@ -4,22 +4,39 @@ title: Présentation de Markdown
 
 import { Aside } from "@astrojs/starlight/components";
 
-<Aside type="caution">
-	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
-	prochainement. Merci de revenir plus tard.
-</Aside>
+Markdown est un langage de balisage créé en 2004 par John Gruber et Aaron
+Swartz, le co-fondateur de Reddit.
 
-Markdown est un langage de balisage créé en 2004 par John Gruber. Son objectif
-est de permettre d'écrire du texte structuré dans un format lisible à la fois
-par les humains et convertible facilement en HTML ou d'autres formats.
+Son objectif est de permettre d'écrire du texte structuré dans un format lisible
+à la fois par les humains et convertible facilement en HTML ou d'autres formats.
 
 Contrairement à un traitement de texte comme Word, Markdown sépare le contenu
 (ce que vous écrivez) de la mise en forme (l'apparence). Le fichier `.md` est un
 simple fichier texte qui peut être ouvert avec n'importe quel éditeur.
 
+Il est possible d'utiliser Markdown pour créer des documents simples ou
+complexes. Par exemple, l'entièreté de ce site est écrite en Markdown, y compris
+les pages web, les présentations et les documents de travail.
+
+Il n'est pas toujours possible de gérer la mise en forme de manière très précise
+avec Markdown, mais avec les bons outils, il est possible de créer des documents
+très complets et bien structurés.
+
+Comme tout document Markdown n'est qu'un fichier texte, il est facile de le
+versionner avec un système de contrôle de version comme Git, ce qui est très
+utile pour collaborer sur des documents (voir contenu
+[Git et GitHub](/heig-vd-upinfo-course/05-configurer-son-systeme-dexploitation-et-ses-applications/19-git-et-github/)).
+
 ## Syntaxe de base
 
+Dans les fichiers Markdown, la mise en forme est indiquée par des symboles
+spéciaux, appelés balises, qui entourent le texte. Les sections qui suivent
+présentent les balises les plus courantes.
+
 ### Titres
+
+Pour créer des titres, utilisez le symbole `#` suivi d'un espace. Le nombre de
+`#` détermine le niveau du titre (de 1 à 6).
 
 ```markdown
 # Titre de niveau 1
@@ -31,11 +48,24 @@ simple fichier texte qui peut être ouvert avec n'importe quel éditeur.
 
 ### Mise en évidence
 
+Pour mettre du texte en gras, en italique ou barré, utilisez les balises
+suivantes :
+
 ```markdown
 **Texte en gras** _Texte en italique_ ~~Texte barré~~
 ```
 
+<details>
+<summary>Voir le rendu</summary>
+
+**Texte en gras** _Texte en italique_ ~~Texte barré~~
+
+</details>
+
 ### Listes
+
+Il existe trois types de listes : les listes non ordonnées, les listes ordonnées
+et les listes avec des cases à cocher.
 
 ```markdown
 - Élément de liste non ordonnée
@@ -43,24 +73,67 @@ simple fichier texte qui peut être ouvert avec n'importe quel éditeur.
 
 1. Premier élément
 2. Deuxième élément
+
+- [ ] Case à cocher non cochée
+- [x] Case à cocher cochée
 ```
+
+<details>
+<summary>Voir le rendu</summary>
+
+- Élément de liste non ordonnée
+- Autre élément
+
+1. Premier élément
+2. Deuxième élément
+
+- [ ] Case à cocher non cochée
+- [x] Case à cocher cochée
+
+</details>
 
 ### Liens et images
 
+Il est possible d'ajouter des liens et des images en utilisant la syntaxe
+suivante :
+
 ```markdown
-[Texte du lien](https://exemple.com) ![Texte alternatif](chemin/vers/image.png)
+[Texte du lien](https://exemple.com)
+![Houston, le logo d'Astro](https://github.com/heig-vd-upinfo-course/heig-vd-upinfo-course/blob/main/src/assets/houston.webp?raw=true)
 ```
+
+Lorsque vous cliquez sur le lien, il vous redirige vers l'URL spécifiée. Pour
+les images, le texte alternatif est affiché si l'image ne peut pas être chargée.
+
+<details>
+<summary>Voir le rendu</summary>
+
+[Texte du lien](https://exemple.com)
+![Houston, le logo d'Astro](https://github.com/heig-vd-upinfo-course/heig-vd-upinfo-course/blob/main/src/assets/houston.webp?raw=true)
+
+</details>
+
+Les liens ou les images peuvent avoir des liens absolus (URL complète) ou
+relatifs (chemin vers un fichier dans le projet) (voir contenu
+[Stockage](/heig-vd-upinfo-course/03-composants-materiels-et-logiciels-dun-ordinateur/04-stockage/)).
 
 ### Code
 
-Pour du code en ligne, entourez-le de backticks :
+Pour du code en ligne, entourez-le de backticks (`` ` ``).
 
 ```markdown
 Voici une commande `ls -la` dans le texte.
 ```
 
-Pour un bloc de code avec coloration syntaxique, utilisez trois backticks et
-spécifiez le langage :
+<details>
+<summary>Voir le rendu</summary>
+
+Voici une commande `ls -la` dans le texte.
+
+</details>
+
+Pour un bloc de code avec coloration syntaxique, utilisez trois
+backticks(` ``` `) et spécifiez le langage :
 
 ````markdown
 ```python
@@ -68,7 +141,19 @@ print("Bonjour le monde")
 ```
 ````
 
+<details>
+<summary>Voir le rendu</summary>
+
+```python
+print("Bonjour le monde")
+```
+
+</details>
+
 ### Tableaux
+
+Il est possible de créer des tableaux en utilisant des barres verticales `|`
+pour séparer les colonnes et des tirets `-` pour créer l'en-tête.
 
 ```markdown
 | Colonne A | Colonne B |
@@ -76,17 +161,65 @@ print("Bonjour le monde")
 | Valeur 1  | Valeur 2  |
 ```
 
+<details>
+<summary>Voir le rendu</summary>
+
+| Colonne A | Colonne B |
+| --------- | --------- |
+| Valeur 1  | Valeur 2  |
+
+</details>
+
+Il est possible de changer l'alignement du texte dans les colonnes en ajoutant
+des deux-points `:` dans la ligne d'en-tête.
+
+```markdown
+| Colonne A | Colonne B | Colonne C |
+| :-------- | :-------: | --------: |
+| Gauche    |  Centre   |    Droite |
+```
+
+<details>
+<summary>Voir le rendu</summary>
+
+| Colonne A | Colonne B | Colonne C |
+| :-------- | :-------: | --------: |
+| Gauche    |  Centre   |    Droite |
+
+</details>
+
 ### Citations
+
+Les citations sont créées en utilisant le symbole `>` au début de la ligne.
 
 ```markdown
 > Ceci est une citation.
 ```
 
+Ceci est utile pour mettre en avant des informations importantes ou pour citer
+des sources.
+
+<details>
+<summary>Voir le rendu</summary>
+
+> Ceci est une citation.
+
+</details>
+
 ### Séparateur horizontal
+
+Pour créer un séparateur horizontal, utilisez trois tirets `---` sur une ligne.
 
 ```markdown
 ---
 ```
+
+<details>
+<summary>Voir le rendu</summary>
+
+---
+
+</details>
 
 ## Variantes de Markdown
 

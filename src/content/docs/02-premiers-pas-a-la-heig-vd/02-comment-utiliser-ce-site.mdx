@@ -2,7 +2,13 @@
 title: Comment utiliser ce site
 ---
 
-import { Aside, Steps, TabItem, Tabs } from "@astrojs/starlight/components";
+import {
+	Aside,
+	FileTree,
+	Steps,
+	TabItem,
+	Tabs,
+} from "@astrojs/starlight/components";
 
 Ce site est conçu pour vous aider à acquérir les compétences nécessaires en
 informatique qui vont vous accompagner tout au long de votre formation.
@@ -145,6 +151,39 @@ attentivement les instructions et de suivre les étapes pour éviter les
 problèmes.
 
 </Aside>
+
+## Arborescences de fichiers et dossiers
+
+Vous serez peut-être amené à voir des arborescences de fichiers et dossiers pour
+mieux comprendre la structure des projets ou des exercices. Ces arborescences
+sont présentées sous les formes suivantes :
+
+<FileTree>
+
+- dossier/
+  - sous-dossier/
+    - fichier1.txt
+    - fichier2.md
+  - autre-dossier/
+    - fichier3.py
+
+</FileTree>
+
+ou encore
+
+```text
+dossier/
+├── sous-dossier/
+│   ├── fichier1.txt
+│   └── fichier2.md
+└── autre-dossier/
+    └── fichier3.py
+```
+
+Dans les deux cas, les dossiers sont représentés par des noms suivis d'un slash
+(`/`), et les fichiers sont représentés par leurs noms avec leurs extensions.
+Les indentations et les symboles (`├`, `└`, `│`, `─`) indiquent la hiérarchie et
+la structure des dossiers et fichiers.
 
 ## Suivre votre progression
 
