@@ -1,0 +1,92 @@
+---
+title: Manipulation de fichiers
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+Après la navigation, voici les commandes les plus utiles pour manipuler des
+fichiers et des dossiers et afficher leur contenu.
+
+## Créer, copier, déplacer ou supprimer des fichiers
+
+<Aside type="danger">
+
+La commande `rm` ci-dessous supprime les fichiers **définitivement**, sans
+passer par la corbeille.
+
+Soyez prudent·e, surtout avec `rm -r`. Il n'existe pas de "Ctrl+Z" en terminal
+pour cette opération.
+
+</Aside>
+
+```bash title="Terminal Bash/Zsh"
+# Créer un dossier
+mkdir mon-dossier
+
+# Créer un dossier et tous les dossiers parents nécessaires
+mkdir -p chemin/vers/dossier
+
+# Créer un fichier vide
+touch fichier.txt
+
+# Copier un fichier d'une source vers une destination
+cp source.txt destination.txt
+
+# Copier un dossier et son contenu d'une source vers une destination (l'option -r est nécessaire pour copier récursivement)
+cp -r dossier-source/ copie-du-dossier-source/
+
+# Déplacer ou renommer un fichier
+mv ancien-nom.txt nouveau-nom.txt
+
+# Déplacer un fichier vers un autre dossier
+mv fichier.txt ~/Documents/
+
+# Supprimer un fichier
+rm fichier.txt
+
+# Supprimer un dossier et son contenu (l'option -r est nécessaire pour supprimer récursivement)
+rm -r dossier/
+
+# Supprimer un dossier et son contenu avec confirmation pour chaque fichier
+rm -ri dossier/
+```
+
+## Afficher le contenu d'un fichier
+
+```bash title="Terminal Bash/Zsh"
+# Affiche le contenu d'un fichier
+cat fichier.txt
+
+# Affiche le contenu d'un fichier avec pagination (quitter avec q)
+less fichier.txt
+
+# Affiche les 20 premières lignes d'un fichier
+head -20 fichier.txt
+
+# Affiche les 20 dernières lignes d'un fichier
+tail -20 fichier.txt
+```
+
+## Rechercher des fichiers et du texte dans des fichiers
+
+```bash title="Terminal Bash/Zsh"
+# Chercher un fichier par nom (ici, tous les fichiers .md dans le dossier courant)
+find . -name "*.md"
+
+# Chercher un fichier par nom dans le dossier personnel (ici, un fichier nommé "rapport.pdf")
+find ~ -name "rapport.pdf"
+
+# Chercher du texte dans des fichiers (ici, le mot "mot" dans fichier.txt)
+grep "mot" fichier.txt
+
+# Chercher du texte dans tous les fichiers d'un dossier (ici, le mot "erreur" dans le dossier logs/)
+grep -r "erreur" logs/
+
+# Afficher le numéro de ligne où le texte est trouvé dans un fichier
+grep -n "TODO" *.py         # Affiche le numéro de ligne
+```
+
+## Résumé
+
+Un ensemble restreint de commandes suffit pour la plupart des tâches courantes :
+`mkdir`, `touch`, `cp`, `mv`, `rm`, `cat`, `grep`, `find`.

@@ -1,0 +1,283 @@
+---
+title: Écrire et exécuter un script simple
+---
+
+import { Aside, Steps } from "@astrojs/starlight/components";
+
+Dans ce dernier contenu, nous allons apprendre à écrire un script simple en Bash
+et à l'exécuter.
+
+Un script est un fichier texte contenant une séquence de commandes que le shell
+exécute automatiquement de lignes en lignes à l'aide d'un interpréteur (voir
+contenus
+[Applications](/heig-vd-upinfo-course/03-composants-materiels-et-logiciels-dun-ordinateur/12-applications/)).
+
+Un script permet d'automatiser des tâches répétitives et d'enchaîner des
+opérations complexes en une seule commande. Nous allons voir comment créer un
+script Bash, le rendre exécutable et l'exécuter.
+
+## Créer un script Bash
+
+Un script Bash est un fichier texte avec l'extension `.sh`. Voici un exemple
+minimal d'un script Bash nommé `mon-script.sh` qui affiche le texte "Hello,
+world !" à l'écran :
+
+```bash title="mon-script.sh"
+#!/usr/bin/env bash
+echo "Hello, world !"
+```
+
+La première ligne (`#!/usr/bin/env bash`) s'appelle le **shebang**. Elle indique
+au système quel interpréteur utiliser pour exécuter le script. Sans elle, le
+système ne sait pas quel shell utiliser pour exécuter le script (voir le contenu
+[Terminal et shells](/heig-vd-upinfo-course/05-configurer-son-systeme-dexploitation-et-ses-applications/04-terminal-et-shells/)).
+
+Dans cet exemple, le shell Bash est utilisé pour exécuter le script. La deuxième
+ligne utilise la commande `echo` pour afficher le texte "Hello, world !" à
+l'écran.
+
+## Rendre un script exécutable
+
+Par défaut, un fichier texte n'est pas exécutable. Il faut lui accorder la
+permission d'exécution (voir le contenu
+[Utilisateur·trices, groupes et permissions](/heig-vd-upinfo-course/03-composants-materiels-et-logiciels-dun-ordinateur/13-utilisateur-trices-groupes-et-permissions/))
+avant de pouvoir l'exécuter. Pour cela, utilisez la commande `chmod` (qui
+signifie "change mode") :
+
+```bash title="Terminal Bash/Zsh"
+chmod +x mon-script.sh
+```
+
+L'option `+x` ajoute la permission d'exécution sur le fichier `mon-script.sh`.
+
+Sans cette permission, si vous essayez d'exécuter le script, vous obtiendrez une
+erreur du type "Permission denied".
+
+## Exécuter un script
+
+Une fois le script rendu exécutable, vous pouvez l'exécuter de la manière
+suivante :
+
+```bash title="Terminal Bash/Zsh"
+# Exécuter le script qui est présent dans le répertoire courant
+./mon-script.sh
+```
+
+## Variables
+
+Afin de rendre nos scripts plus dynamiques, nous pouvons utiliser des variables.
+Une variable est un espace de stockage qui peut contenir une valeur, comme un
+texte ou un nombre.
+
+Voici un exemple de script qui utilise une variable pour stocker un nom et
+l'afficher :
+
+```bash title="mon-script.sh"
+#!/bin/bash
+NOM="Alice"
+
+echo "Bonjour, $NOM !"
+```
+
+Ici, la variable `NOM` contient la valeur "Alice".
+
+Pour utiliser la variable dans le script, on utilise le signe `$` devant le nom
+de la variable. Ainsi, `echo "Bonjour, $NOM !"` affichera "Bonjour, Alice !".
+
+## Variables d'environnement
+
+Les variables d'environnement sont des variables prédéfinies par le système ou
+définies par l'utilisateur·trice qui influencent le comportement des processus
+et des applications.
+
+Elles sont accessibles dans les scripts et peuvent être utilisées pour stocker
+des informations importantes, comme le chemin d'accès aux fichiers ou les
+paramètres de configuration.
+
+La variable d'environnement `HOME` contient le chemin du répertoire personnel de
+l'utilisateur·trice. Par exemple, pour afficher le chemin du répertoire
+personnel, vous pouvez utiliser la commande suivante dans un script :
+
+```bash title="mon-script.sh"
+#!/usr/bin/env bash
+echo "Votre répertoire personnel est : $HOME"
+```
+
+```text
+# Votre répertoire personnel est : /home/votre-nom-utilisateur
+```
+
+Une autre variable d'environnement est `USER`, qui contient le nom de
+l'utilisateur·trice actuellement connecté·e. Vous pouvez l'utiliser dans un
+script pour afficher le nom de l'utilisateur·trice :
+
+```bash title="mon-script.sh"
+#!/usr/bin/env bash
+echo "Vous êtes connecté·e en tant que : $USER"
+```
+
+```text
+# Vous êtes connecté·e en tant que : votre-nom-utilisateur
+```
+
+## Résumé
+
+Écrire des scripts est une compétence clé pour automatiser des tâches
+répétitives. Un script Bash commence par un shebang, s'exécute après un
+`chmod +x`, et peut utiliser des variables, des arguments et d'autres structures
+que vous étudierez en cours.
+
+## À vous de jouer !
+
+<Aside type="tip">
+
+Ces exercices sont là pour vous aider. Bien qu'ils ne soient pas notés, il est
+fortement recommandé de les réaliser pour vous familiariser avec l'environnement
+de la HEIG-VD.
+
+Si vous avez des questions ou des difficultés, n'hésitez pas à demander de
+l'aide au corps enseignant.
+
+</Aside>
+
+### Exercice pratique - Valider votre configuration à l'aide d'un script
+
+Dans ce dernier contenu pratique, vous allez créer un script Shell qui affiche
+un résumé des informations de votre système, y compris le nom d'utilisateur, le
+répertoire personnel, le type et la version du système d'exploitation,
+l'architecture et le modèle du processeur, l'utilisation de la mémoire et du
+stockage, le shell actuel et les outils installés (SSH, Git, Docker et Docker
+Compose) avec leurs versions respectives.
+
+Cela vous permettra de vérifier que votre configuration est correcte et que tous
+les outils de base sont installés et fonctionnent correctement.
+
+Le résultat attendu est un script nommé `sysinfo.sh` qui affiche les
+informations de votre système de manière claire et lisible. Voici un exemple de
+sortie attendue du script :
+
+```text
+==============================================
+               SYSTEM INFORMATION
+==============================================
+Username             : ludelafo
+Home directory       : /home/ludelafo
+Manufacturer         : Framework
+Model                : Laptop 13 (AMD Ryzen 7040Series)
+Serial number        : Unknown (may require root privileges, e.g. sudo)
+OS type              : Linux
+OS version           : Fedora Linux 44 (Workstation Edition)
+CPU type             : x64
+CPU model            : AMD Ryzen 7 7840U w/ Radeon  780M Graphics
+Memory total         : 30.6 GB
+Memory used          : 13.1 GB
+Memory free          : 3.6 GB
+Storage total        : 1906.1 GB
+Storage used         : 1381.5 GB
+Storage free         : 516.2 GB
+Current shell        : /bin/bash
+----------------------------------------------
+SSH installed        : Yes (OpenSSH_10.2p1, OpenSSL 3.5.7 9 Jun 2026)
+Git installed        : Yes (git version 2.55.0)
+Docker installed     : Yes (Docker version 29.6.2, build dfc4efb)
+Docker Compose       : Yes (Docker Compose version v5.3.1)
+Package managers     : dnf, yum
+----------------------------------------------
+SSH keys found
+
+  - id_ed25519.pub
+    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO2rno7GopWQv9983A06TAqPPsUr9A84q+r2QuNlOBZX ludovic.delafontaine@heig-vd.ch
+
+Git config (/home/ludelafo/.gitconfig)
+
+  [user]
+  	email = ludovic.delafontaine@heig-vd.ch
+  	name = Ludovic Delafontaine
+  [gpg]
+  	format = ssh
+  [commit]
+  	gpgsign = true
+  [init]
+  	defaultBranch = main
+  [gpg "ssh"]
+  	defaultKeyCommand = ssh-add -L
+
+==============================================
+```
+
+Le script se trouve à l'adresse suivante :
+[GitHub - sysinfo.sh](https://github.com/heig-vd-upinfo-course/heig-vd-upinfo-course/blob/main/sysinfo.sh).
+
+<Aside type="note">
+
+Il est normal si vous ne comprenez pas toutes les lignes du script.
+
+Vous allez acquérir les connaissances nécessaires pour comprendre et écrire des
+scripts plus complexes au fur et à mesure de votre formation et vous pourrez
+revenir sur ce script pour l'analyser en détail.
+
+Pour l'instant, concentrez-vous sur la création et l'exécution du script, ainsi
+que sur la vérification des informations affichées.
+
+</Aside>
+
+Avec tout ce que vous avez acquis jusqu'ici, vous devriez être capable de créer
+ce script localement et de l'exécuter pour vérifier votre configuration.
+
+La marche à suivre est décrite ci-dessous, mais essayez d'abord de le faire par
+vous-même. Si vous avez des difficultés, vous pouvez suivre les instructions pas
+à pas.
+
+Validez votre configuration en exécutant le script `sysinfo.sh` et en vérifiant
+que toutes les informations affichées sont correctes et que tous les outils de
+base sont installés et fonctionnent correctement.
+
+<details>
+<summary>Afficher les instructions pas à pas</summary>
+
+<Steps>
+
+1. Créez un fichier nommé `sysinfo.sh` dans votre répertoire personnel ou dans
+   un répertoire de votre choix. Vous pouvez utiliser un éditeur de texte comme
+   Visual Studio Code ou nano pour créer le fichier.
+
+2. Copiez le contenu du script ci-dessus et collez-le dans le fichier
+   `sysinfo.sh`.
+
+3. Enregistrez le fichier et fermez l'éditeur.
+
+4. Ouvrez un terminal et naviguez jusqu'au répertoire où se trouve le fichier
+   `sysinfo.sh`. Par exemple, si vous l'avez créé dans votre répertoire
+   personnel, vous pouvez utiliser la commande suivante :
+
+   ```bash title="Terminal Bash/Zsh"
+   cd ~
+   ```
+
+5. Rendez le script exécutable en utilisant la commande `chmod` :
+
+   ```bash title="Terminal Bash/Zsh"
+   chmod +x sysinfo.sh
+   ```
+
+6. Exécutez le script en utilisant la commande suivante :
+
+   ```bash title="Terminal Bash/Zsh"
+   ./sysinfo.sh
+   ```
+
+7. Le script affichera un résumé des informations de votre système, y compris le
+   nom d'utilisateur, le répertoire personnel, le type et la version du système
+   d'exploitation, l'architecture et le modèle du processeur, l'utilisation de
+   la mémoire et du stockage, le shell actuel et les outils installés (SSH, Git,
+   Docker et Docker Compose) avec leurs versions respectives.
+
+</Steps>
+
+</details>
+
+Vous avez terminé le dernier contenu pratique de ce cours. Félicitations !
+
+Avez-vous remarqué comment le script vous a permis de facilement automatiser et
+vérifier votre configuration système ? C'est l'un des avantages majeurs de
+l'utilisation de scripts.

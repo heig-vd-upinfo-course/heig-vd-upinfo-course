@@ -4,11 +4,16 @@ sidebar:
   label: avec Pandoc
 ---
 
-import { Aside } from "@astrojs/starlight/components";
+import { Aside, TabItem, Tabs, Steps } from "@astrojs/starlight/components";
 
-<Aside type="caution">
-	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
-	prochainement. Merci de revenir plus tard.
+<Aside type="note">
+
+Nous vous recommandons de lire tous les contenus de cette section avant de vous
+décider sur l'outil que vous souhaitez utiliser pour prendre vos notes Markdown.
+
+- [Prendre des notes Markdown avec Visual Studio Code](/heig-vd-upinfo-course/07-prendre-des-notes-markdown/03-avec-visual-studio-code/).
+- [Prendre des notes Markdown avec Obsidian](/heig-vd-upinfo-course/07-prendre-des-notes-markdown/04-avec-obsidian/).
+
 </Aside>
 
 Pandoc est un outil en ligne de commande qui convertit des documents d'un format
@@ -16,31 +21,10 @@ Pandoc est un outil en ligne de commande qui convertit des documents d'un format
 sortie, et est particulièrement utile pour transformer des notes Markdown en
 documents professionnels.
 
-## Installation
-
-Pandoc est disponible sur Windows, macOS et Linux :
-
-```sh
-# macOS
-brew install pandoc
-
-# Ubuntu/Debian
-sudo apt install pandoc
-
-# Windows
-winget install JohnMacFarlane.Pandoc
-```
-
-Pour générer des PDF, Pandoc nécessite également une installation de LaTeX. Une
-version légère suffit :
-
-```sh
-# macOS / Linux
-brew install basictex   # ou tlmgr install scheme-basic
-
-# Ou installer TinyTeX via R
-wget -qO- "https://yihui.org/tinytex/install-unixl.sh" | sh
-```
+Pandoc peut être utilisé pour convertir des fichiers Markdown en PDF, Word,
+HTML, LaTeX, et bien d'autres formats. Il est très apprécié pour sa flexibilité
+et sa capacité à produire des documents de haute qualité à partir de simples
+fichiers texte.
 
 ## Conversions courantes
 
@@ -53,44 +37,125 @@ pandoc notes.md -o notes.docx
 
 # Markdown vers HTML
 pandoc notes.md -o notes.html
-
-# Avec un style personnalisé
-pandoc notes.md -o notes.pdf --template=modele.tex
 ```
+
+## Support LaTeX
+
+[LaTeX](https://www.latex-project.org/) est un système de composition de
+documents très utilisé dans le milieu académique. Pandoc peut générer des
+documents LaTeX à partir de Markdown, ce qui permet d'obtenir des PDF de qualité
+professionnelle.
+
+De plus, Markdown supporte également l'inclusion de certains aspects de LaTeX,
+notamment les formules mathématiques, ce qui est particulièrement utile pour les
+documents scientifiques.
 
 ## En-tête YAML (frontmatter)
 
 Pandoc supporte un en-tête YAML en début de fichier pour définir les métadonnées
-du document :
+du document et les options de mise en page. Voici un exemple d'en-tête YAML pour
+un document Markdown destiné à être converti en PDF avec Pandoc et LaTeX :
 
 ```markdown
 ---
-title: Mon rapport
-author: Alice Dupont
-date: 2025-09-01
+title: "Mon rapport"
+author: "Alice Dupont"
+date: 2026-09-01
+lang: "fr"
+geometry: "top=2cm, bottom=2cm, left=2cm, right=2cm"
+fontsize: "11pt"
+papersize: "a4"
+header-includes: |
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhead[L]{Entête en haut à gauche}
+  \fancyhead[R]{Entête en haut à droite}
+  \fancyfoot[LO,LE]{Pied de page en bas à gauche}
+  \fancyfoot[CO,CE]{\thepage}
+  \fancyfoot[RO,RE]{Pied de page en bas à droite}
+  \renewcommand{\footrulewidth}{0.4pt}
 ---
 
-# Introduction
+## Le second titre de votre document
+
+En effet, comme le titre du document est défini dans l'en-tête YAML, il n'est
+pas nécessaire de le répéter dans le corps du document. Vous pouvez donc
+commencer directement avec le second titre.
+
+Pour insérer une formule mathématique, vous pouvez utiliser la syntaxe LaTeX.
+Par exemple : La formule de l'aire d'un cercle est donnée par $A = \pi r^2$, où
+$r$ est le rayon du cercle.
 
 ...
 ```
 
-Ces métadonnées sont utilisées pour générer la page de titre et l'en-tête du
-document converti.
-
-## Cas d'usage
-
-Pandoc est particulièrement utile pour :
-
-- Rédiger des rapports en Markdown et les exporter en PDF pour le rendu.
-- Convertir des notes en documents Word pour les partager avec des personnes
-  n'utilisant pas Markdown.
-- Générer une documentation technique dans plusieurs formats à partir d'une
-  seule source.
-
 ## Résumé
 
-Pandoc est un outil incontournable pour quiconque rédige en Markdown et a besoin
-de produire des documents dans d'autres formats. Sa maîtrise vous permet de
+Pandoc est un outil utile pour quiconque rédige en Markdown et a besoin de
+produire des documents dans d'autres formats. Sa maîtrise vous permet de
 travailler dans un format simple (Markdown) tout en produisant des documents
 d'aspect professionnel.
+
+## À vous de jouer !
+
+<Aside type="tip">
+
+Ces exercices sont là pour vous aider. Bien qu'ils ne soient pas notés, il est
+fortement recommandé de les réaliser pour vous familiariser avec l'environnement
+de la HEIG-VD.
+
+Si vous avez des questions ou des difficultés, n'hésitez pas à demander de
+l'aide au corps enseignant.
+
+</Aside>
+
+## Exercice pratique - Télécharger et installer l'application
+
+Utilisez les instructions ci-dessous pour installer l'application sur votre
+système d'exploitation. Vous pouvez choisir d'utiliser un gestionnaire de
+paquets (recommandé) ou d'installer l'application manuellement.
+
+<Tabs syncKey="package-manager">
+<TabItem label="WinGet (Windows)" icon="seti:windows">
+
+    **N'installez pas Pandoc directement sur Windows.**
+
+    Installez-le dans votre distribution WSL (Ubuntu) en suivant les instructions de l'onglet "apt (Linux)".
+
+</TabItem>
+<TabItem label="Homebrew (macOS)" icon="apple">
+
+    Pandoc est disponible sur [brew.sh](https://formulae.brew.sh/formula/pandoc) :
+
+    ```bash title="Shell Bash/Zsh"
+    # Installe l'application
+    brew install pandoc homebrew/cask/basictex
+    ```
+
+</TabItem>
+<TabItem label="apt (Linux)" icon="linux">
+
+    Les instructions suivantes sont adaptées pour des distributions basées sur Ubuntu/Debian.
+
+    Pour une autre distribution (Fedora, Arch, OpenSUSE, etc.), merci de vous référer à votre gestionnaire de paquets pour installer cette application.
+
+    ```bash title="Shell Bash/Zsh"
+    # Installe l'application
+    sudo apt install pandoc texlive
+    ```
+
+</TabItem>
+<TabItem label="Installation manuelle" icon="setting">
+      <Steps>
+
+        1. Rendez-vous sur le site officiel de Pandoc : [pandoc.org](https://pandoc.org).
+
+        2. Installez Pandoc manuellement selon votre système.
+
+      </Steps>
+
+</TabItem>
+</Tabs>
+
+Créez un fichier Markdown avec l'en-tête YAML et le contenu ci-dessus, puis
+utilisez Pandoc pour le convertir en PDF, Word ou HTML selon vos besoins.

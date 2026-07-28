@@ -1,0 +1,110 @@
+---
+title: Écrire et modifier des fichiers
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+Nous avions vu que Visual Studio Code est un éditeur de code source très
+populaire qui s'utilise de façon graphique.
+
+Parfois, il n'est pas possible d'utiliser un éditeur graphique, par exemple si
+vous êtes connecté·e à un serveur distant via SSH. Dans ce cas, vous pouvez
+utiliser un éditeur de texte en ligne de commande comme `nano` ou `vim`.
+
+nano est un éditeur simple et facile à utiliser, tandis que Vim est plus
+puissant mais a une courbe d'apprentissage plus raide.
+
+Ainsi, pour rapidement éditer un fichier texte depuis le terminal, vous pouvez
+utiliser la commande `nano` suivie du nom du fichier.
+
+```bash title="Terminal Bash/Zsh"
+# Ouvrir un fichier texte avec l'éditeur nano
+nano fichier.txt
+```
+
+Vous vous trouverez alors dans l'éditeur `nano`, avec l'interface suivante :
+
+```text
+  GNU nano 8.7.1                      fichier.txt
+
+
+
+
+
+
+
+
+
+
+^G Help      ^O Write Out ^F Where Is  ^K Cut       ^T Execute   ^C Location
+^X Exit      ^R Read File ^\ Replace   ^U Paste     ^J Justify   ^/ Go To Line
+```
+
+Prenons quelques minutes pour comprendre l'interface de `nano` :
+
+- La première ligne indique le nom de l'éditeur et la version, ainsi que le nom
+  du fichier ouvert.
+- La zone vide au centre est l'espace d'édition où vous pouvez saisir et
+  modifier le texte.
+- Les lignes en bas de l'écran affichent les raccourcis clavier disponibles. Le
+  symbole `^` représente la touche `Ctrl`. Par exemple, `^O` signifie que vous
+  devez appuyer sur `Ctrl + O` pour enregistrer le fichier.
+
+Vous pouvez ainsi éditer le fichier, puis utiliser `Ctrl + O` pour enregistrer
+vos modifications et `Ctrl + X` pour quitter l'éditeur.
+
+Vous vous entraînerez à utiliser `nano` dans le prochain contenu.
+
+## Résumé
+
+Bien qu'il soit généralement plus agréable d'utiliser un éditeur graphique comme
+Visual Studio Code, il est important de savoir utiliser un éditeur en ligne de
+commande pour les situations où vous n'avez pas accès à une interface graphique.
+
+Il est rare d'écrire un programme entier dans un éditeur en ligne de commande,
+mais il est très utile pour éditer rapidement des fichiers de configuration ou
+des scripts sur un serveur distant.
+
+## À vous de jouer !
+
+<Aside type="tip">
+
+Ces exercices sont là pour vous aider. Bien qu'ils ne soient pas notés, il est
+fortement recommandé de les réaliser pour vous familiariser avec l'environnement
+de la HEIG-VD.
+
+Si vous avez des questions ou des difficultés, n'hésitez pas à demander de
+l'aide au corps enseignant.
+
+</Aside>
+
+### Exercice pratique - Manipulation de fichiers
+
+Dans cet exercice, vous allez reprendre les éléments étudiés dans le contenu
+précédent
+[Manipulation de fichiers](/heig-vd-upinfo-course/08-travailler-avec-le-terminal/04-manipulation-de-fichiers/)
+pour recréer l'arborescence de fichiers suivante et éditer un fichier texte avec
+`nano` :
+
+```text
+<un dossier temporaire de votre choix>
+├── Documents/
+│   ├── Projet1/
+│   │   ├── notes.txt
+│   │   └── taches.md
+│   └── Projet2/
+│       └── compte-rendu.txt
+├── Images/
+│   └── sources.md
+└── Musique/
+    └── playlist.txt
+```
+
+Utilisez les commandes `mkdir`, `cd` et `touch` pour créer les dossiers et
+fichiers nécessaires.
+
+Puis, à l'aide de `nano`, éditez le fichier `notes.txt` pour y ajouter quelques
+notes. Enregistrez vos modifications et quittez l'éditeur.
+
+Validez vos modifications en affichant le contenu du fichier avec la commande
+`cat`.

@@ -4,46 +4,9 @@ title: Naviguer dans l'arborescence de fichiers
 
 import { Aside } from "@astrojs/starlight/components";
 
-<Aside type="caution">
-	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
-	prochainement. Merci de revenir plus tard.
-</Aside>
-
 Naviguer dans l'arborescence de fichiers est la première compétence à acquérir
-en terminal. Toutes les autres commandes s'appuient sur elle.
-
-## Commandes de navigation essentielles
-
-### `pwd` - afficher le répertoire courant
-
-```sh
-pwd
-# /home/alice/Documents
-```
-
-`pwd` (Print Working Directory) affiche le chemin absolu du dossier dans lequel
-vous vous trouvez actuellement.
-
-### `ls` - lister le contenu d'un dossier
-
-```sh
-ls               # Liste les fichiers et dossiers du répertoire courant
-ls -l            # Liste détaillée (permissions, taille, date)
-ls -a            # Inclut les fichiers cachés (ceux commençant par .)
-ls -lh           # Liste détaillée avec tailles lisibles (Ko, Mo...)
-ls /etc          # Liste le contenu d'un dossier spécifié
-```
-
-### `cd` - changer de répertoire
-
-```sh
-cd Documents          # Aller dans le dossier Documents (relatif)
-cd /home/alice        # Aller vers un chemin absolu
-cd ..                 # Remonter d'un niveau dans l'arborescence
-cd ../..              # Remonter de deux niveaux
-cd ~                  # Aller dans le dossier personnel
-cd -                  # Revenir au répertoire précédent
-```
+pour travailler efficacement avec le terminal. Toutes les autres commandes
+s'appuient sur elle.
 
 ## Chemins absolus et relatifs
 
@@ -59,17 +22,74 @@ raccourcis utiles sont :
 - `..` : le répertoire parent.
 - `~` : le dossier personnel de l'utilisateur·trice.
 
+## Commandes de navigation essentielles
+
+### `pwd` - afficher le répertoire courant
+
+```bash title="Terminal Bash/Zsh"
+# Affiche le répertoire courant
+pwd
+```
+
+`pwd` (Print Working Directory) affiche le chemin absolu du dossier dans lequel
+vous vous trouvez actuellement.
+
+### `ls` - lister le contenu d'un dossier
+
+```bash title="Terminal Bash/Zsh"
+# Liste les fichiers et dossiers du répertoire courant
+ls
+
+# Liste les fichiers et dossiers du répertoire courant avec des détails
+ls -l
+
+# Liste les fichiers et dossiers du répertoire courant, y compris les fichiers cachés
+ls -a
+
+# Liste le contenu d'un dossier spécifique
+ls /home/alice/Documents
+```
+
+### `cd` - changer de répertoire
+
+```bash title="Terminal Bash/Zsh"
+# Aller dans le dossier Documents (relatif)
+
+cd Documents
+
+# Aller dans le dossier Documents (absolu)
+cd /home/alice/Documents
+
+# Remonter d'un niveau dans l'arborescence
+cd ..
+
+# Remonter de deux niveaux dans l'arborescence
+cd ../..
+
+# Aller dans le dossier personnel de l'utilisateur·trice
+cd ~
+
+# Revenir au répertoire précédent
+cd -
+```
+
 ## Autocomplétion avec Tab
 
 La touche `Tab` est votre meilleure allie au terminal. Elle complète
 automatiquement les noms de fichiers, dossiers et commandes.
 
-```sh
+```bash title="Terminal Bash/Zsh"
 cd Doc<Tab>  # Complete en cd Documents/ si le dossier existe
 ```
 
 Si plusieurs correspondances existent, appuyez deux fois sur `Tab` pour les
 afficher toutes.
+
+Vous pourrez ensuite continuer à taper le nom du fichier ou dossier pour affiner
+la recherche, puis appuyer à nouveau sur `Tab` pour compléter.
+
+Apprenez à utiliser l'autocomplétion dès le début, cela vous fera gagner
+beaucoup de temps et réduira les erreurs de frappe.
 
 ## Historique des commandes
 
@@ -86,3 +106,47 @@ Les commandes `pwd`, `ls` et `cd` constituent le trio fondamental de la
 navigation en terminal. Maîtriser les chemins absolus et relatifs, ainsi que
 l'autocomplétion par `Tab`, rend le travail en ligne de commande fluide et
 rapide.
+
+## À vous de jouer !
+
+<Aside type="tip">
+
+Ces exercices sont là pour vous aider. Bien qu'ils ne soient pas notés, il est
+fortement recommandé de les réaliser pour vous familiariser avec l'environnement
+de la HEIG-VD.
+
+Si vous avez des questions ou des difficultés, n'hésitez pas à demander de
+l'aide au corps enseignant.
+
+</Aside>
+
+### Exercice pratique - Naviguer dans l'arborescence de fichiers
+
+Soit l'arborescence de fichiers suivante :
+
+```text
+/home/alice/
+├── Documents/
+│   ├── Projet1/
+│   └── Projet2/
+├── Images/
+└── Musique/
+```
+
+Répondez aux questions suivantes en utilisant les commandes `pwd`, `ls` et `cd`
+:
+
+- Si vous êtes dans `/home/alice`, comment accéder au dossier `Projet1` ?
+- Si vous êtes dans `/home/alice/Documents/Projet1`, comment revenir au dossier
+  `Documents` ?
+- Si vous êtes dans `/home/alice/Documents/Projet1`, comment accéder au dossier
+  `Images` ?
+
+<details>
+<summary>Afficher les réponses</summary>
+
+- `cd Documents/Projet1` ou `cd /home/alice/Documents/Projet1`
+- `cd ..` ou `cd /home/alice/Documents`
+- `cd ../../Images` ou `cd /home/alice/Images`
+
+</details>
