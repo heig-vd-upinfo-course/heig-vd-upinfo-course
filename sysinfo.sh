@@ -207,6 +207,7 @@ if command_exists ssh; then
     SSH_DIR="$HOME_DIR/.ssh"
     if [ -d "$SSH_DIR" ]; then
         for pubkey in "$SSH_DIR"/*.pub; do
+            [ -f "$pubkey" ] || continue
             KEY_CONTENT="$(cat "$pubkey" 2>/dev/null)"
             SSH_KEYS="${SSH_KEYS}  - $(basename "$pubkey")"$'\n'
             SSH_KEYS="${SSH_KEYS}    ${KEY_CONTENT}"$'\n'
@@ -272,11 +273,13 @@ printf "%-20s : %s\n" "Docker Compose"    "$COMPOSE_STATUS"
 printf "%-20s : %s\n" "Package managers"  "$PACKAGE_MANAGERS"
 echo "----------------------------------------------"
 if [ "$SSH_STATUS" != "No" ]; then
-    printf "%-20s :\n" "SSH keys found"
-    printf "%s" "$SSH_KEYS"
+    echo "SSH keys found"
+    echo
+    printf "%s\n" "$SSH_KEYS"
 fi
 if [ "$GIT_STATUS" != "No" ]; then
-    printf "%-20s :\n" "Git config"
-    printf "%s\n" "$GIT_CONFIG_CONTENT"
+    echo "Git config ($GIT_CONFIG_FILE)"
+    echo
+    printf "%s\n\n" "$GIT_CONFIG_CONTENT"
 fi
 echo "=============================================="
