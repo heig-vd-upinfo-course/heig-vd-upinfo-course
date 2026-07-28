@@ -14,7 +14,7 @@ header-includes: |
 
   \pagestyle{fancy}
   \fancyhead[L]{\coursename}
-  \fancyhead[R]{Nom :\hspace{4cm}}
+  \fancyhead[R]{Nom :\hspace{6cm}}
   \fancyfoot[LO,LE]{\institution}
   \fancyfoot[CO,CE]{\thepage}
   \fancyfoot[RO,RE]{\session}
@@ -140,29 +140,30 @@ docker run \
 			                                    & $\square$ Un outil pour traiter des documents PDF (Acrobat Reader)    \\
 			                                    & $\square$ Un outil pour sauvegarder/restaurer ses données             \\
 			                                    & $\square$ Un outil de prise de notes Markdown                         \\
+			                                    & $\square$ Applications par défaut et au démarrage                         \\
 			\hline
 			\multicolumn{2}{|l|}{\textbf{Acquis du cours}} \\
 			\hline
 			Je suis à l'aise avec & $\square$ Connexion WiFi                                      \\
 			                                            & $\square$ Accès aux e-mails                                   \\
 			                                            & $\square$ Impression et numérisation de documents                             \\
-			                                            & $\square$ Différences composants matériels et logiciels       \\
-			                                            & $\square$ Sensibilité de la casse selon l'OS                  \\
+			                                            & $\square$ Différences entre les composants matériels et logiciels       \\
+			                                            & $\square$ Différences entre les systèmes d'exploitation (OS)                        \\
+			                                            & $\square$ Différences entre l'environnement Windows et WSL                        \\
+			                                            & $\square$ Notions de système de fichiers                        \\
 			                                            & $\square$ Différences entre les dossiers et les fichiers                        \\
+			                                            & $\square$ Sensibilité de la casse selon le système de fichiers                  \\
 			                                            & $\square$ Installation de logiciels à l'aide d'un gestionnaire de paquets                          \\
-			                                            & $\square$ Mise à jour OS et logiciels                         \\
+			                                            & $\square$ Mise à jour du système d'exploitation et logiciels                         \\
 			                                            & $\square$ Gestion de mots de passe et 2FA                     \\
 			                                            & $\square$ Création et partage d'une archive                   \\
+			                                            & $\square$ Prise de notes Markdown                         \\
 			                                            & $\square$ Sauvegarde et restauration de documents             \\
 			                                            & $\square$ Ouverture et usage d'un terminal                    \\
 			                                            & $\square$ Exécution de commandes dans un terminal             \\
 			                                            & $\square$ Navigation dans le système de fichiers (GUI et terminal)             \\
 			                                            & $\square$ Création et exécution de scripts                    \\
 			                                            & $\square$ Gestion des utilisateur·trices et permissions       \\
-			\hline
-			\multicolumn{2}{|l|}{\textbf{Notes personnelles}} \\
-			\hline
-			\multicolumn{2}{|l|}{} \\[2.5cm]
 			\hline
 		\end{tabular}}
 \end{table}

@@ -73,7 +73,7 @@ Voici un exemple de script qui utilise une variable pour stocker un nom et
 l'afficher :
 
 ```bash title="mon-script.sh"
-#!/bin/bash
+#!/usr/bin/env bash
 NOM="Alice"
 
 echo "Bonjour, $NOM !"
@@ -183,7 +183,7 @@ Docker installed     : Yes (Docker version 29.6.2, build dfc4efb)
 Docker Compose       : Yes (Docker Compose version v5.3.1)
 Package managers     : dnf, yum
 ----------------------------------------------
-SSH keys found
+SSH keys found (/home/ludelafo/.ssh)
 
   - id_ed25519.pub
     ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO2rno7GopWQv9983A06TAqPPsUr9A84q+r2QuNlOBZX ludovic.delafontaine@heig-vd.ch
@@ -231,6 +231,11 @@ vous-même. Si vous avez des difficultés, vous pouvez suivre les instructions p
 Validez votre configuration en exécutant le script `sysinfo.sh` et en vérifiant
 que toutes les informations affichées sont correctes et que tous les outils de
 base sont installés et fonctionnent correctement.
+
+Si vous êtes sur WSL ou Linux, exécutez le script avec `sudo`. Que pouvez-vous
+en conclure sur les informations affichées par le script ? Tout est-il correct ?
+Pourquoi certaines informations sont-elles différentes que lorsqu'on les exécute
+sans `sudo` ?
 
 <details>
 <summary>Afficher les instructions pas à pas</summary>
