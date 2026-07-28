@@ -2,12 +2,7 @@
 title: Que faire en cas de désastre
 ---
 
-import { Aside } from "@astrojs/starlight/components";
-
-<Aside type="caution">
-	Ce contenu est encore en cours de rédaction. Il est amené à évoluer tout
-	prochainement. Merci de revenir plus tard.
-</Aside>
+import { Steps } from "@astrojs/starlight/components";
 
 Même avec une bonne stratégie de sauvegarde, des situations imprévues peuvent
 survenir : panne matérielle, vol, ransomware, suppression accidentelle sans
@@ -23,46 +18,85 @@ Si un disque semble défaillant :
 
 - Éteignez l'ordinateur immédiatement pour éviter d'aggraver la panne.
 - Ne tentez pas de réparer le disque vous-même si les données sont critiques.
-- Consultez un professionnel de la récupération de données.
+- Consultez un·e professionnel·le de la récupération de données.
 
 ## Suppression accidentelle sans sauvegarde
 
 Si un fichier a été supprimé récemment :
 
+<Steps>
+
 1. Vérifiez d'abord la **corbeille** du système ou du service cloud.
+
 2. Sur Windows, des outils comme **Recuva**
    ([recuva.com](https://www.recuva.com)) permettent de récupérer des fichiers
    supprimés tant que leur espace n'a pas été réécrit.
+
 3. Sur macOS et Linux, **PhotoRec** / **TestDisk**
    ([cgsecurity.org](https://www.cgsecurity.org)) sont des outils open source de
    récupération puissants.
+
 4. Plus vous utilisez le disque après la suppression, moins les chances de
    récupération sont bonnes.
+
+</Steps>
+
+Pour limiter les risques, il est recommandé de **déconnecter le disque ou
+l'ordinateur du réseau** pour éviter que les fichiers supprimés soient écrasés
+par de nouvelles données puis de tenter la récupération sur un autre ordinateur
+en lecture seule.
+
+<Steps>
+
+1. Débranchez le disque ou l'ordinateur du réseau pour éviter que les fichiers
+   supprimés soient écrasés par de nouvelles données.
+
+2. Utilisez un boîtier externe pour y mettre le disque.
+
+3. Ouvrez le disque dur sur un autre ordinateur en lecture seule (ne pas copier
+   de fichiers dessus).
+
+4. Vérifiez la corbeille du système ou du service cloud.
+
+5. Si le fichier n'est pas dans la corbeille, utilisez un logiciel de
+   récupération de fichiers ([Recuva](https://www.recuva.com),
+   [PhotoRec](https://www.cgsecurity.org/wiki/PhotoRec), etc.) pour tenter de
+   récupérer le fichier.
+
+</Steps>
 
 ## Attaque par ransomware
 
 Un ransomware chiffre vos fichiers et réclame une rançon pour les déchiffrer. En
 cas d'infection :
 
+<Steps>
+
 1. Déconnectez immédiatement l'ordinateur du réseau (Wi-Fi et câble) pour
    stopper la propagation.
+
 2. Ne payez pas la rançon : rien ne garantit la récupération des fichiers et
    cela finance des activités criminelles.
+
 3. Signalez l'incident aux autorités (en Suisse :
    [ncsc.admin.ch](https://www.ncsc.admin.ch)).
+
 4. Si vous avez une sauvegarde hors ligne récente, réinstallez le système et
    restaurez depuis la sauvegarde.
+
 5. Consultez [nomoreransom.org](https://www.nomoreransom.org) : des outils de
    déchiffrement gratuits existent pour certaines familles de ransomware.
+
+</Steps>
 
 ## Panne matérielle
 
 Si le disque est physiquement endommagé (bruit de cliquetis, non reconnu par le
 système), les logiciels de récupération ne suffiront probablement pas. Des
-socialisations spécialisées (comme **Ontrack** ou **DriveSavers**) possèdent des
-salles blanches pour démonter et récupérer les données directement sur les
-plateaux du disque. Ces services sont coûteux (souvent plusieurs centaines à
-milliers de francs) mais peuvent récupérer des données irremplaçables.
+entreprises spécialisées possèdent des salles blanches pour démonter et
+récupérer les données directement sur les plateaux du disque. Ces services sont
+coûteux (souvent plusieurs centaines à milliers de francs) mais peuvent
+récupérer des données irremplaçables.
 
 ## Le meilleur remède reste la prévention
 

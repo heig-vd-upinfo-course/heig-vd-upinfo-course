@@ -191,6 +191,7 @@ DISK_FREE="$(bytes_to_gb $((DISK_FREE_KB * 1024)))"
 
 ## Installed tools
 SSH_STATUS="No"
+SSH_DIR="$HOME_DIR/.ssh"
 SSH_KEYS=""
 GIT_STATUS="No"
 GIT_CONFIG_CONTENT=""
@@ -204,11 +205,11 @@ if command_exists ssh; then
 
     # List available key pairs in ~/.ssh by looking at the public keys
     # (*.pub) and, when possible, showing their type/fingerprint/comment.
-    SSH_DIR="$HOME_DIR/.ssh"
     if [ -d "$SSH_DIR" ]; then
         for pubkey in "$SSH_DIR"/*.pub; do
             [ -f "$pubkey" ] || continue
             KEY_CONTENT="$(cat "$pubkey" 2>/dev/null)"
+
             SSH_KEYS="${SSH_KEYS}  - $(basename "$pubkey")"$'\n'
             SSH_KEYS="${SSH_KEYS}    ${KEY_CONTENT}"$'\n'
         done
@@ -273,7 +274,7 @@ printf "%-20s : %s\n" "Docker Compose"    "$COMPOSE_STATUS"
 printf "%-20s : %s\n" "Package managers"  "$PACKAGE_MANAGERS"
 echo "----------------------------------------------"
 if [ "$SSH_STATUS" != "No" ]; then
-    echo "SSH keys found"
+    echo "SSH keys found ($SSH_DIR)"
     echo
     printf "%s\n" "$SSH_KEYS"
 fi
