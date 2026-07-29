@@ -12,7 +12,7 @@ const site = "heig-vd-upinfo-course.github.io";
 const base = "/heig-vd-upinfo-course";
 
 // https://myogimage.com/
-const ogUrl = new URL(`${base}/og.webp?v=1`, `${protocol}://${site}`).href;
+const ogUrl = new URL(`${base}/og.png?v=1`, `${protocol}://${site}`).href;
 const ogImageAlt = `${title} - ${description}`;
 
 // https://astro.build/config
