@@ -42,8 +42,12 @@ jobs:
         with:
           name: presentation-files
           path: |
-            **/*-presentation.pdf
-            **/presentation.html
+            src/content/docs/**/*.jpg
+            src/content/docs/**/*.jpeg
+            src/content/docs/**/*.png
+            src/content/docs/**/*.svg
+            src/content/docs/**/*-presentation.pdf
+            src/content/docs/**/presentation.html
           if-no-files-found: error
           retention-days: 1
 
@@ -89,7 +93,7 @@ jobs:
         with:
           name: printable-document-files
           path: |
-            **/*.pdf
+            src/content/docs/**/*.pdf
           if-no-files-found: error
           retention-days: 1
 
