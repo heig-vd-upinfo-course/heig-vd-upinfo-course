@@ -107,14 +107,17 @@ jobs:
 
       - name: Merge files
         run: |
+          # Create a `public` directory to hold the merged files
+          mkdir public
+
           # Move the website files to the `public` directory
-          mv website-files public
+          cp --recursive --link --update website-files/* public/
 
           # Move the presentation files to the `public` directory
-          cp --recursive --link --update presentation-files/src/content/docs/* public/
+          cp --recursive --link --update presentation-files/* public/
 
           # Move the printable document files to the `public` directory
-          cp --recursive --link --update printable-document-files/src/content/docs/* public/
+          cp --recursive --link --update printable-document-files/* public/
 
       - name: Upload files to GitHub Pages
         uses: actions/upload-pages-artifact@v5
@@ -124,8 +127,10 @@ jobs:
   deploy-to-github-pages:
     runs-on: ubuntu-latest
     needs: merge-files-for-github-pages
-    # Only run on main
-    if: github.ref == 'refs/heads/main'
+    # Only run on main or when manually triggered from the Actions tab in GitHub
+    if:
+      github.ref == 'refs/heads/main' || github.event_name ==
+      'workflow_dispatch'
     environment:
       name: GitHub Pages
       url: ${{ steps.deployment.outputs.page_url }}
