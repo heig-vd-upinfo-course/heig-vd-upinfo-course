@@ -323,8 +323,7 @@ Est-ce que vous avez des questions ?
 <div class="two-thirds-one-third-columns">
 <div>
 
-Appliquez le contenu "[Premiers pas à la HEIG-VD][contenu-complet]" du site web
-dédié :
+Appliquez le contenu "[Premiers pas à la HEIG-VD][contenu-complet]" :
 
 - Lisez le contenu et les instructions.
 - Appliquez les exercices pratiques.
