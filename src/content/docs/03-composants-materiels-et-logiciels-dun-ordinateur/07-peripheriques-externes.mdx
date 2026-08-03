@@ -83,10 +83,10 @@ flowchart
   subgraph Hardware["`**🛠️ Composants matériels**`"]
     direction TB
 
-    CPU --> RAM
-    CPU --> Storage
-    Motherboard --> CPU
-    GPU --> Motherboard
-    Peripherals --> Motherboard
+    CPU <--> RAM
+    CPU <--> Storage
+    Motherboard <--> CPU
+    GPU <--> Motherboard
+    Peripherals <--> Motherboard
   end
 ```

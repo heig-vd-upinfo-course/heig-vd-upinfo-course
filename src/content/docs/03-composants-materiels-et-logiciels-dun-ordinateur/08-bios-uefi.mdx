@@ -57,7 +57,8 @@ Sur macOS, l'accès au BIOS/UEFI dépend de l'architecture du Mac. Sur les Mac
 Intel, il faut maintenir la touche `Option` (ou `Alt`) enfoncée au démarrage
 pour accéder au menu de démarrage. Sur les Mac Apple Silicon, il faut maintenir
 le bouton d'alimentation enfoncé jusqu'à ce que les options de démarrage
-apparaissent.
+apparaissent (source :
+[Apple Support](https://support.apple.com/en-us/guide/security/sec10869885b/web)).
 
 ## Paramétrer le BIOS/UEFI
 
@@ -126,14 +127,14 @@ flowchart
   subgraph Hardware["`**🛠️ Composants matériels**`"]
     direction TB
 
-    CPU --> RAM
-    CPU --> Storage
-    Motherboard --> CPU
-    GPU --> Motherboard
-    Peripherals --> Motherboard
+    CPU <--> RAM
+    CPU <--> Storage
+    Motherboard <--> CPU
+    GPU <--> Motherboard
+    Peripherals <--> Motherboard
   end
 
-  BIOS_UEFI --> Hardware
+  BIOS_UEFI <--> Hardware
 ```
 
 ## À vous de jouer !
@@ -156,7 +157,7 @@ Redémarrez votre ordinateur et appuyez sur cette touche pour entrer dans le
 BIOS/UEFI. Explorez les différentes options disponibles, mais soyez prudent et
 évitez de modifier des paramètres si vous n'êtes pas sûr·e de leur fonction.
 
-### Exercice pratique 3 - Identifier la version du BIOS/UEFI
+### Exercice pratique 2 - Identifier la version du BIOS/UEFI
 
 Identifiez la version du BIOS/UEFI de votre ordinateur. Cette information est
 généralement affichée sur l'écran principal du BIOS/UEFI ou dans une section
@@ -164,25 +165,15 @@ nommée "Information système" ou "System Information". Notez cette version pour
 référence future, surtout si vous envisagez de mettre à jour le BIOS/UEFI ou de
 résoudre des problèmes matériels.
 
-Si vous le souhaitez, mettez à jour le BIOS/UEFI en suivant les instructions du
-fabricant de votre carte mère. Assurez-vous de suivre attentivement les étapes
-et de ne pas interrompre le processus de mise à jour, car cela pourrait rendre
-votre ordinateur inutilisable.
+**Note** : si votre ordinateur ne rencontre pas de problème particulier, il
+n'est pas nécessaire de mettre à jour le BIOS/UEFI.
 
-### Exercice pratique 2 - Activer les options de virtualisation
+### Exercice pratique 3 - Activer les options de virtualisation
 
 Les options de virtualisation permettent à l'ordinateur d'exécuter des machines
 virtuelles plus efficacement. Pour activer cette fonctionnalité, il faut
 généralement accéder au BIOS/UEFI et chercher une option nommée "Intel VT-x",
 "AMD-V" ou similaire, puis la mettre sur "Enabled".
-
-### Exercice pratique 3 - Changer l'ordre de démarrage
-
-L'ordre de démarrage détermine quel périphérique l'ordinateur essaie de démarrer
-en premier. Cela peut être utile pour démarrer à partir d'une clé USB ou d'un
-disque externe. Pour modifier l'ordre de démarrage, il faut accéder au BIOS/UEFI
-et chercher une section nommée "Boot" ou "Boot Order", puis réorganiser les
-périphériques selon vos besoins.
 
 ### Exercice pratique 4 - Limiter la charge de la batterie sur les ordinateurs portables
 

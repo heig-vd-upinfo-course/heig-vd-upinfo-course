@@ -75,9 +75,9 @@ chacun avec des privilèges différents.
 ## Permissions
 
 Sur un système d'exploitation, les permissions sont des règles qui déterminent
-quels comptes ou groupes d'de peuvent accéder à des fichiers, des dossiers ou
-des ressources spécifiques et quelles actions ils peuvent effectuer sur ces
-éléments.
+quels comptes ou groupes d'utilisateur·trice peuvent accéder à des fichiers, des
+dossiers ou des ressources spécifiques et quelles actions ils peuvent effectuer
+sur ces éléments.
 
 En effet, chaque fichier et dossier sur un système d'exploitation a des
 permissions associées qui définissent qui peut lire, écrire ou exécuter ces
@@ -117,6 +117,9 @@ Nous y reviendrons dans le contenu
 </Aside>
 
 ## Mécanismes de sécurité supplémentaires
+
+Il existe des mécanismes de sécurité supplémentaires sur les systèmes
+d'exploitation pour protéger les comptes d'utilisateur·trice et les données.
 
 ### Clic droit et "Exécuter en tant qu'administrateur" sur Windows
 
@@ -262,32 +265,32 @@ flowchart
     User_2
   end
 
-  Users --> Applications
+  Users <--> Applications
 
   subgraph Software["`**🔢 Composants logiciels**`"]
     direction TB
 
-    OS --> Drivers
+    OS <--> Drivers
 
-    OS --> Kernel
+    OS <--> Kernel
 
-    GUI --> OS
-    CLI --> OS
-    Applications --> GUI
-    Applications --> CLI
+    GUI <--> OS
+    CLI <--> OS
+    Applications <--> GUI
+    Applications <--> CLI
   end
 
   subgraph Hardware["`**🛠️ Composants matériels**`"]
     direction TB
 
-    CPU --> RAM
-    CPU --> Storage
-    Motherboard --> CPU
-    GPU --> Motherboard
-    Peripherals --> Motherboard
+    CPU <--> RAM
+    CPU <--> Storage
+    Motherboard <--> CPU
+    GPU <--> Motherboard
+    Peripherals <--> Motherboard
   end
 
-  Software --> BIOS_UEFI --> Hardware
+  Software <--> BIOS_UEFI <--> Hardware
 ```
 
 ## À vous de jouer !

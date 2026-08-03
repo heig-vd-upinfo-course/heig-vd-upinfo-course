@@ -88,62 +88,6 @@ d'autres personnes utilisant différents systèmes d'exploitation. Il est donc
 important de comprendre les différences entre ces systèmes de fichiers et de
 choisir le format approprié pour vos besoins.
 
-### Encodage des caractères
-
-Comme mentionné dans le contenu
-[Processeur (CPU)](/heig-vd-upinfo-course/03-composants-materiels-et-logiciels-dun-ordinateur/02-processeur-cpu/),
-un ordinateur ne comprend que le langage machine, constitué de 0 et de 1, appelé
-des bits.
-
-Ces séquences de bits permettent de représenter des caractères à l'aide d'octets
-(des séries de 8 bits). Mais une problématique survient : comment interpréter
-une suite de bits tels que `01000001` ? Ou encore `11000011 10101000` ? Comment
-savoir ce que ces suites de bits représentent ? Des lettres, des chiffres ou des
-symboles ?
-
-C'est ici qu'intervient l'encodage des caractères. L'encodage des caractères
-définit comment les lettres, chiffres et symboles doivent être interprétés pour
-l'humain à partir de ces suites de bits. Il existe plusieurs encodages, chacun
-ayant ses propres règles pour représenter les caractères :
-
-- ASCII : un encodage simple qui représente les caractères anglais de base.
-- ISO-8859-1 : un encodage qui étend ASCII pour inclure des caractères accentués
-  utilisés dans les langues européennes comme le français, l'espagnol et
-  l'allemand.
-- UTF-8 : un encodage universel et moderne qui peut représenter tous les
-  caractères de toutes les langues du monde, y compris les symboles et les
-  emojis.
-
-Ainsi, selon l'encodage utilisé, une même suite de bits peut représenter des
-caractères différents. Par exemple, la suite de bits `01000001` représente la
-lettre `A` en ASCII et UTF-8, mais pourrait représenter un caractère différent
-dans un autre encodage. De même, la suite de bits `11000011 10101000` représente
-le caractère `è` en UTF-8, mais pourrait être interprétée différemment dans un
-autre encodage.
-
-Peut-être êtes-vous déjà tombé·e sur des fichiers texte avec des caractères
-bizarres ou des symboles étranges à la place des lettres accentuées. Cela est
-souvent dû à un problème d'encodage des caractères. Par exemple, si un fichier
-texte est encodé en UTF-8 mais ouvert avec un logiciel qui s'attend à un
-encodage ISO-8859-1, les caractères accentués peuvent apparaître comme des
-symboles étranges (`�`) ou des points d'interrogation (`?`). C'est pour ça que
-l'encodage des caractères est crucial pour garantir que les fichiers texte sont
-lisibles et interprétés correctement sur différents systèmes et logiciels.
-
-L'encodage le plus répandu aujourd'hui est UTF-8, qui supporte la quasi-totalité
-des caractères de toutes les langues du monde.
-
-La plupart des systèmes d'exploitation modernes et des logiciels utilisent UTF-8
-par défaut, ce qui facilite le partage de fichiers texte entre différents
-systèmes et logiciels sans rencontrer de problèmes d'affichage des caractères.
-
-Mais peut-être que vous allez rencontrer des fichiers texte encodés dans
-d'autres formats, comme ISO-8859-1 ou ASCII. Si vous rencontrez des problèmes
-d'affichage de caractères, il est recommandé de vérifier l'encodage du fichier
-et de le convertir en UTF-8 si nécessaire. La plupart des éditeurs de texte
-modernes offrent des options pour changer l'encodage d'un fichier ou pour
-l'enregistrer dans un encodage différent.
-
 ### Sensibilité à la casse
 
 La sensibilité à la casse désigne le fait de distinguer les lettres majuscules
@@ -161,11 +105,6 @@ différence à l'esprit lorsque vous travaillez en équipe ou lorsque vous parta
 des fichiers entre différents systèmes.
 
 ### Fichiers et dossiers
-
-Les fichiers et les dossiers sont stockés sur le disque de stockage selon les
-notions présentées ci-dessus, à savoir
-l'[Encodage des caractères](#encodage-des-caractères) et la
-[Sensibilité à la casse](#sensibilité-à-la-casse).
 
 Lorsque nous parlons de fichiers et de dossiers, il est important de garder à
 l'esprit les concepts suivants :
@@ -189,6 +128,10 @@ et de dossiers sur certains systèmes de fichiers, comme les caractères `/`, `\
 garantir la compatibilité entre différents systèmes d'exploitation et logiciels,
 même si vous arrivez à créer des fichiers ou dossiers avec ces caractères sur
 certains systèmes.
+
+Nous recommandons également d'éviter les caractères accentués et les apostrophes
+dans les noms de fichiers et dossiers, car ils peuvent causer des problèmes de
+compatibilité et de lisibilité sur différents systèmes et logiciels.
 
 Par exemple :
 
@@ -283,8 +226,8 @@ flowchart
   subgraph Hardware["`**🛠️ Composants matériels**`"]
     direction TB
 
-    CPU --> RAM
-    CPU --> Storage
+    CPU <--> RAM
+    CPU <--> Storage
   end
 ```
 
@@ -416,6 +359,7 @@ Soit l'arborescence suivante d'un projet informatique :
         - 10-drivers-et-kernel.md
         - 11-interface-graphique-gui-et-terminal-cli.md
         - 12-applications.md
+        - 13-utilisateur-trices-groupes-et-permissions.md
       - 04-communications-reseaux-et-internet
         - 01-introduction-et-ressources.md
         - 02-ordinateurs-serveurs-et-internet.md
@@ -423,35 +367,34 @@ Soit l'arborescence suivante d'un projet informatique :
         - 04-serveur-dhcp.md
         - 05-serveur-dns.md
         - 06-modem-routeur-wi-fi.md
-        - 07-definition-dun-processus.md
-        - 08-communications-inter-processus.md
-        - 09-effectuer-une-recherche-sur-internet.md
+        - 07-architecture-client-serveur.md
+        - 08-effectuer-une-recherche-sur-internet.md
       - 05-configurer-son-systeme-dexploitation-et-ses-applications
         - 01-introduction-et-ressources.md
         - 02-langue-et-clavier.md
         - 03-gestionnaire-de-fichiers.md
         - 04-terminal-et-shells.md
-        - 06-gerer-les-mises-a-jour.md
-        - 07-services-de-synchronisation-en-ligne.md
-        - 08-applications-preinstallees-et-applications-par-defaut.mdx.md
-        - 09-applications-au-demarrage.md
-        - 10-chiffrement-de-ses-donnees.md
-        - 11-anti-virus.md
-        - 12-environnement-wsl.md
-        - 13-gestionnaires-de-paquets.md
-        - 14-mozilla-firefox.md
-        - 15-google-chrome.md
-        - 16-safari.md
-        - 17-un-client-de-messagerie.md
-        - 18-un-outil-pour-compresser-decompresser-des-archives.md
-        - 19-visual-studio-code.md
-        - 20-vlc.md
-        - 21-la-suite-microsoft-office.md
-        - 22-la-suite-adobe.md
-        - 23-git.md
-        - 24-docker.md
-        - 25-un-outil-pour-traiter-des-documents-pdf.md
-        - 27-reinstaller-son-systeme-dexploitation.md
+        - 05-gerer-les-mises-a-jour.md
+        - 06-services-de-synchronisation-en-ligne.md
+        - 07-applications-preinstallees-et-applications-par-defaut.mdx.md
+        - 08-applications-au-demarrage.md
+        - 09-chiffrement-de-ses-donnees.md
+        - 10-anti-virus.md
+        - 11-environnement-wsl.md
+        - 12-gestionnaires-de-paquets.md
+        - 13-mozilla-firefox.md
+        - 14-google-chrome.md
+        - 15-safari.md
+        - 16-un-client-de-messagerie.md
+        - 17-un-outil-pour-compresser-decompresser-des-archives.md
+        - 18-visual-studio-code.md
+        - 19-vlc.md
+        - 20-la-suite-microsoft-office.md
+        - 21-la-suite-adobe.md
+        - 22-git.md
+        - 23-docker.md
+        - 24-un-outil-pour-traiter-des-documents-pdf.md
+        - 25-reinstaller-son-systeme-dexploitation.md
       - 06-sauvegarder-et-restaurer-ses-donnees
         - 01-introduction-et-ressources.md
         - 02-strategie-de-sauvegarde-3-2-1.md
