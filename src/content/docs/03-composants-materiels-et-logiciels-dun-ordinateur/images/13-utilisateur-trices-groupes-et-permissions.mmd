@@ -1,0 +1,27 @@
+flowchart
+  Hardware["`
+    **🛠️ Composants matériels**
+  `"]
+  BIOS_UEFI["`
+    **🔗 BIOS/UEFI**
+  `"]
+  Software["`
+    **🔢 Composants logiciels**
+  `"]
+  User_1["`
+    **👤 Utilisateur·trice 1**
+    _Personne qui utilise un ordinateur_
+  `"]
+  User_2["`
+    **👤 Utilisateur·trice 2**
+    _Personne qui utilise un ordinateur_
+  `"]
+
+  subgraph Users["`**👥 Groupes d'utilisateur·trices**`"]
+    direction TB
+
+    User_1
+    User_2
+  end
+
+  Users <--> Software <--> BIOS_UEFI <--> Hardware

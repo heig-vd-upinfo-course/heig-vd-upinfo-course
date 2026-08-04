@@ -34,9 +34,9 @@ pour plus d'informations sur l'accès à l'intranet.
 le personnel. Voici quelques exemples de partages réseau couramment utilisés :
 
 - `\\eistore1\cours\` (Windows) ou `smb://eistore1.einet.ad.eivd.ch/cours/comem`
-  (macOS/Linux) : Partage réseau pour les cours.
+  (macOS/Linux) : partage réseau pour les cours.
 - `\\eistore0\softs@tous` (Windows) ou
-  `smb://eistore0.einet.ad.eivd.ch/softs/@tous` (macOS/Linux) : Partage réseau
+  `smb://eistore0.einet.ad.eivd.ch/softs/@tous` (macOS/Linux) : partage réseau
   pour certains logiciels utilisés dans les cours.
 
 ## Se connecter à un partage réseau
@@ -52,13 +52,18 @@ Pour se connecter à un partage réseau sur Windows, suivez ces étapes :
 
 <Steps>
 
-1. Ouvrez l'Explorateur de fichiers (Windows + E).
+1. Ouvrez l'Explorateur de fichiers (`Windows + E`).
 
 2. Dans la barre d'adresse, tapez l'adresse du partage réseau (par exemple,
    `\\eistore1\cours\`) et appuyez sur Entrée.
 
-3. Si vous êtes invité·e à entrer vos informations d'identification, saisissez
-   votre nom d'utilisateur et mot de passe HES-SO.
+3. Si vous êtes invité·e à entrer vos informations d'identification, vous devez
+   vous connecter avec vos identifiants HES-SO sous le format `EINET\prenom.nom`
+   (remplacez `prenom` et `nom` par vos informations, par exemple
+   `EINET\ludovic.delafont`) et votre mot de passe HES-SO.
+
+   Pour effectuer le signe `\` sur un clavier suisse, utilisez la combinaison de
+   touches `Alt Gr + <`.
 
 4. Le partage réseau devrait maintenant s'ouvrir et vous pourrez accéder aux
    fichiers qu'il contient.
@@ -73,14 +78,16 @@ Pour se connecter à un partage réseau sur macOS, suivez ces étapes :
 <Steps>
 
 1. Dans le Finder, cliquez sur "Aller" dans la barre de menu, puis sélectionnez
-   "Se connecter au serveur..." (ou utilisez le raccourci Commande + K).
+   "Se connecter au serveur..." (ou utilisez le raccourci `Command+K`).
 
 2. Dans la fenêtre qui s'ouvre, saisissez l'adresse du partage réseau (par
    exemple, `smb://eistore1.einet.ad.eivd.ch/cours/comem`) et cliquez sur "Se
    connecter".
 
-3. Si vous êtes invité·e à entrer vos informations d'identification, saisissez
-   votre nom d'utilisateur et mot de passe HES-SO.
+3. Si vous êtes invité·e à entrer vos informations d'identification, vous devez
+   vous connecter avec vos identifiants HES-SO sous le format `prenom.nom`
+   (remplacez `prenom` et `nom` par vos informations, par exemple
+   `ludovic.delafont`) et votre mot de passe HES-SO.
 
 4. Le partage réseau devrait maintenant s'ouvrir et vous pourrez accéder aux
    fichiers qu'il contient.
@@ -100,8 +107,10 @@ Pour se connecter à un partage réseau sur Linux, suivez ces étapes :
 2. Dans la barre d'adresse, tapez l'adresse du partage réseau (par exemple,
    `smb://eistore1.einet.ad.eivd.ch/cours/comem`) et appuyez sur Entrée.
 
-3. Si vous êtes invité·e à entrer vos informations d'identification, saisissez
-   votre nom d'utilisateur et mot de passe HES-SO.
+3. Si vous êtes invité·e à entrer vos informations d'identification, vous devez
+   vous connecter avec vos identifiants HES-SO sous le format `prenom.nom`
+   (remplacez `prenom` et `nom` par vos informations, par exemple
+   `ludovic.delafont`) et votre mot de passe HES-SO.
 
 4. Le partage réseau devrait maintenant s'ouvrir et vous pourrez accéder aux
    fichiers qu'il contient.
