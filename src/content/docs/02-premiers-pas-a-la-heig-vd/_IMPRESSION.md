@@ -150,9 +150,9 @@ docker run \
 			                                            & $\square$ Différences entre les composants matériels et logiciels       \\
 			                                            & $\square$ Différences entre les systèmes d'exploitation (OS)                        \\
 			                                            & $\square$ Différences entre l'environnement Windows et WSL                        \\
+			                                            & $\square$ Différences entre les fichiers locaux et distants                        \\
 			                                            & $\square$ Notions de système de fichiers et sensibilité à la casse                        \\
 			                                            & $\square$ Différences entre les dossiers et les fichiers                        \\
-			                                            & $\square$ Sensibilité de la casse selon le système de fichiers                  \\
 			                                            & $\square$ Installation de logiciels à l'aide d'un gestionnaire de paquets                          \\
 			                                            & $\square$ Mise à jour du système d'exploitation et logiciels                         \\
 			                                            & $\square$ Gestion de mots de passe et 2FA                     \\

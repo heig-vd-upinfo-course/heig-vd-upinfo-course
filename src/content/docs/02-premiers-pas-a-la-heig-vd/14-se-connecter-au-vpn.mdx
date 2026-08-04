@@ -45,6 +45,7 @@ configuration varient selon le système d'exploitation.
 
 <Tabs syncKey="operating-system">
 <TabItem label="Windows" icon="seti:windows">
+
 <Steps>
 
 1. Installez le client VPN depuis le site
@@ -60,6 +61,7 @@ configuration varient selon le système d'exploitation.
 
 </TabItem>
 <TabItem label="macOS" icon="apple">
+
 <Steps>
 
 1. Installez le client VPN depuis le site
@@ -72,25 +74,24 @@ configuration varient selon le système d'exploitation.
    - Mot de passe : votre mot de passe HES-SO
 
 </Steps>
+
 </TabItem>
 <TabItem label="Linux" icon="linux">
-<Steps>
 
-1. Il n'est pas nécessaire d'installer un client VPN spécifique sur Linux. Vous
-   pouvez utiliser le client intégré à votre distribution Linux (NetworkManager)
-   ou un client tiers compatible avec le protocole utilisé par la HEIG-VD (Palo
-   Alto Networks GlobalProtect).
+Il n'est pas nécessaire d'installer un client VPN spécifique sur Linux. Vous
+pouvez utiliser le client intégré à votre distribution Linux (NetworkManager) ou
+un client tiers compatible avec le protocole utilisé par la HEIG-VD (Palo Alto
+Networks GlobalProtect).
 
-2. Configurez le client VPN avec les informations suivantes :
-   - Protocole VPN : Palo Alto Networks GlobalProtect
-   - Passerelle : vpn.heig-vd.ch
-   - Certificat CA : (Aucun)
+Configurez le client VPN avec les informations suivantes :
+
+- Protocole VPN : Palo Alto Networks GlobalProtect
+- Passerelle : vpn.heig-vd.ch
+- Certificat CA : (Aucun)
 
 Toutes les autres informations restent par défaut. Vous devrez vous connecter
 avec votre adresse e-mail HEIG-VD et le mot de passe HES-SO (ex. :
 `ludovic.delafontaine@heig-vd.ch`)
-
-</Steps>
 
 **Note** : J'ai (Ludovic) eu plusieurs soucis avec le VPN sur Linux avant de me
 rendre compte que je devais me connecter au moins une fois sur le site
@@ -127,6 +128,9 @@ il faudra essayer à nouveau en début septembre, à la rentrée académique, lo
 votre compte sera complètement activé.
 
 </Aside>
+
+Vous devriez maintenant être en mesure de vous connecter au VPN et d'accéder aux
+ressources internes de la HEIG-VD depuis l'extérieur du campus.
 
 N'oubliez pas de déconnecter le VPN lorsque vous n'en avez plus besoin afin de
 ne pas ralentir votre connexion Internet inutilement.

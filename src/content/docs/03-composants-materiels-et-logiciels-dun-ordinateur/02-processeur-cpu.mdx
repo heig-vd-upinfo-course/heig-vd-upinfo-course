@@ -141,19 +141,21 @@ l'architecture de votre processeur ainsi que sa version (32 bits ou 64 bits) sur
 votre ordinateur.
 
 <Tabs syncKey="operating-system">
+<TabItem label="Windows" icon="seti:windows">
 
-    <TabItem label="Windows" icon="seti:windows">
-    	Accédez aux informations sur votre processeur en suivant ces étapes :
+Accédez aux informations sur votre processeur en suivant ces étapes :
 
-      <Steps>
+<Steps>
 
-    	1. Cliquez sur le bouton Démarrer.
+1. Cliquez sur le bouton Démarrer.
 
-    	2. Tapez "Informations système" dans la barre de recherche et appuyez sur Entrée.
+2. Tapez "Système" dans la barre de recherche et appuyez sur Entrée.
 
-      3. Dans la fenêtre qui s'ouvre, recherchez la section "Processeur" pour voir le fabricant, le modèle et l'architecture de votre processeur.
+3. Dans la fenêtre qui s'ouvre, recherchez la section "Spécifications de
+   l'appareil" pour voir le fabricant, le modèle et l'architecture de votre
+   processeur.
 
-      </Steps>
+</Steps>
 
 </TabItem>
 <TabItem label="macOS" icon="apple">
@@ -173,22 +175,26 @@ Accédez aux informations sur votre processeur en suivant ces étapes :
    x86/x64.
 
 </Steps>
+
 </TabItem>
 <TabItem label="Linux" icon="linux">
-      	Accédez aux informations sur votre processeur en suivant ces étapes :
 
-        <Steps>
+Accédez aux informations sur votre processeur en suivant ces étapes :
 
-      	1. Ouvrez un terminal.
+<Steps>
 
-      	2. Tapez la commande suivante et appuyez sur Entrée :
-      	   ```
-      	   lscpu
-      	   ```
+1. Ouvrez un terminal.
 
-      	3. Recherchez les lignes "Architecture" et "Modèle du processeur" pour voir le fabricant, le modèle et l'architecture de votre processeur.
+2. Tapez la commande suivante et appuyez sur Entrée :
 
-        </Steps>
+   ```bash title="Terminal Bash/Zsh"
+   lscpu
+   ```
+
+3. Recherchez les lignes "Architecture" et "Modèle du processeur" pour voir le
+   fabricant, le modèle et l'architecture de votre processeur.
+
+</Steps>
 
 </TabItem>
 </Tabs>

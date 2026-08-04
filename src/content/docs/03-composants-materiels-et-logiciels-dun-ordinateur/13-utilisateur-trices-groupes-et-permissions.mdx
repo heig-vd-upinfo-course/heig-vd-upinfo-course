@@ -2,7 +2,7 @@
 title: Utilisateur·trices, groupes et permissions
 ---
 
-import { Aside, Steps } from "@astrojs/starlight/components";
+import { Aside, TabItem, Tabs, Steps } from "@astrojs/starlight/components";
 
 Un·e utilisateur·trice est une personne qui utilise un ordinateur ou un système
 informatique pour effectuer des tâches spécifiques.
@@ -310,8 +310,56 @@ l'aide au corps enseignant.
 
 Identifiez les comptes d'utilisateur·trice sur votre ordinateur.
 
-Pour cela, rendez-vous dans les paramètres de votre système d'exploitation et
-recherchez la section "Comptes" ou "Utilisateurs".
+<Tabs syncKey="operating-system">
+<TabItem label="Windows" icon="seti:windows">
+
+Accédez aux informations sur les comptes utilisateurs en suivant ces étapes :
+
+<Steps>
+
+1. Cliquez sur le bouton Démarrer.
+
+2. Tapez "Comptes d'utilisateur" dans la barre de recherche et appuyez sur
+   Entrée.
+
+3. Dans la fenêtre qui s'ouvre, vous verrez la liste des comptes
+   d'utilisateur·trice sur votre ordinateur.
+
+</Steps>
+
+</TabItem>
+<TabItem label="macOS" icon="apple">
+
+Accédez aux informations sur les comptes utilisateurs en suivant ces étapes :
+
+<Steps>
+
+1. Cliquez sur le menu Apple dans le coin supérieur gauche de l'écran.
+
+2. Sélectionnez "Réglages système".
+
+3. Sélectionnez "Utilisateurs et groupes" dans le menu de gauche.
+
+4. Dans la fenêtre qui s'ouvre, vous verrez la liste des comptes
+   d'utilisateur·trice sur votre ordinateur.
+
+</Steps>
+
+</TabItem>
+<TabItem label="Linux" icon="linux">
+
+Accédez aux informations sur les comptes utilisateurs en suivant ces étapes :
+
+<Steps>
+
+1. Rendez-vous dans les paramètres de votre système d'exploitation.
+
+2. Recherchez la section "Comptes" ou "Utilisateurs".
+
+</Steps>
+
+</TabItem>
+</Tabs>
 
 Notez les noms d'utilisateur·trice et les privilèges de chaque compte. Vous
 pouvez également vérifier si des groupes d'utilisateur·trice sont présents et
