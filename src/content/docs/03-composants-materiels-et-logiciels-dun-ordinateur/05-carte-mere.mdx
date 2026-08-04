@@ -18,22 +18,6 @@ Elle contient notamment :
 - Les ports d'entrée/sortie (USB, HDMI, audio...) accessibles depuis l'extérieur
   du boîtier.
 
-## Compatibilité et types de RAM
-
-Il existe deux grandes familles de modules de RAM, DIMMs et SO-DIMMs, qui
-diffèrent par leur taille et leur usage :
-
-- Les DIMMs (Dual Inline Memory Modules) sont utilisés dans les ordinateurs de
-  bureau. Ils sont plus grands et offrent plus de capacité.
-- Les SO-DIMMs (Small Outline DIMMs) sont utilisés dans les ordinateurs
-  portables et les mini-PC. Ils sont plus compacts mais offrent généralement
-  moins de capacité.
-
-Il existe également différents types de RAM, comme DDR4 et DDR5, qui diffèrent
-par leur vitesse et leur efficacité énergétique. Il est important de vérifier la
-compatibilité de la RAM avec la carte mère et le processeur avant d'acheter ou
-d'installer de nouveaux modules.
-
 ## Connecteurs et interfaces pour le stockage
 
 Les connecteurs et interfaces de stockage déterminent comment les dispositifs de
@@ -78,8 +62,8 @@ flowchart
   subgraph Hardware["`**🛠️ Composants matériels**`"]
     direction TB
 
-    CPU --> RAM
-    CPU --> Storage
-    Motherboard --> CPU
+    CPU <--> RAM
+    CPU <--> Storage
+    Motherboard <--> CPU
   end
 ```

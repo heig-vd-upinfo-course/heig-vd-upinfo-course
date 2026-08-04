@@ -102,21 +102,21 @@ flowchart
   subgraph Software["`**🔢 Composants logiciels**`"]
     direction TB
 
-    OS --> Drivers
+    OS <--> Drivers
 
-    OS --> Kernel
+    OS <--> Kernel
 
   end
 
   subgraph Hardware["`**🛠️ Composants matériels**`"]
     direction TB
 
-    CPU --> RAM
-    CPU --> Storage
-    Motherboard --> CPU
-    GPU --> Motherboard
-    Peripherals --> Motherboard
+    CPU <--> RAM
+    CPU <--> Storage
+    Motherboard <--> CPU
+    GPU <--> Motherboard
+    Peripherals <--> Motherboard
   end
 
-  Software --> BIOS_UEFI --> Hardware
+  Software <--> BIOS_UEFI <--> Hardware
 ```
