@@ -1,0 +1,58 @@
+flowchart
+  IP["`
+    **🏠 Adresse IP**
+    _Identifie chaque machine sur un réseau_
+  `"]
+  DHCP["`
+    **📣 Serveur DHCP**
+    _Attribue automatiquement les adresses IP_
+  `"]
+  Computer["`
+    **💻 Ordinateur**
+    _Machine qui exécute des applications, dont un navigateur web_
+  `"]
+  Server1["`
+    **🖥️ Serveur 1**
+    _Machine qui fournit des services à d'autres machines_
+  `"]
+  Server2["`
+    **🖥️ Serveur 2**
+    _Machine qui fournit des services à d'autres machines_
+  `"]
+  Internet["`
+    **☁️ Internet**
+    _Réseau mondial de machines interconnectées_
+  `"]
+  User["`
+    **👤 Utilisateur·trice**
+    _Personne qui utilise un ordinateur_
+  `"]
+
+  subgraph LAN_1["🏢 Réseau interne (LAN entreprise)"]
+    direction TB
+
+    Server1
+    Server2
+  end
+
+  subgraph WAN["🌍 Réseau externe (WAN)"]
+    direction TB
+
+    Internet
+  end
+
+  subgraph LAN_2["🏢 Réseau interne (LAN maison)"]
+    direction TB
+
+    subgraph Modem["📡 Modem/Routeur"]
+      direction TB
+
+      DHCP
+    end
+
+    Modem <--> Computer
+    Computer --> IP
+    Computer --> User
+  end
+
+  LAN_1 <--> WAN <--> LAN_2

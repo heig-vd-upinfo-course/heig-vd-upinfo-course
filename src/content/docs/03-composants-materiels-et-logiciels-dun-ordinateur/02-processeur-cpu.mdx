@@ -13,11 +13,11 @@ des instructions, les interprète et effectue les opérations nécessaires pour
 produire un résultat. Il est responsable de la vitesse et de l'efficacité de
 l'ordinateur.
 
-## Langage machine/binaire
+## Langage machine
 
 Un ordinateur est un composant électronique qui, dans le fond, est extrêmement
-basique et n'a aucune intelligence (il n'est pas capable de réfléchir ou de
-comprendre le langage humain).
+basique et n'a aucune intelligence propre (il n'est pas capable de réfléchir ou
+de comprendre le langage humain).
 
 Il ne comprend que le langage machine, constitué de 0 et de 1 (appelés des
 bits), qui forment des instructions binaires. Ces instructions sont ensuite
@@ -141,50 +141,60 @@ l'architecture de votre processeur ainsi que sa version (32 bits ou 64 bits) sur
 votre ordinateur.
 
 <Tabs syncKey="operating-system">
+<TabItem label="Windows" icon="seti:windows">
 
-    <TabItem label="Windows" icon="seti:windows">
-    	Accédez aux informations sur votre processeur en suivant ces étapes :
+Accédez aux informations sur votre processeur en suivant ces étapes :
 
-      <Steps>
+<Steps>
 
-    	1. Cliquez sur le bouton Démarrer.
+1. Cliquez sur le bouton Démarrer.
 
-    	2. Tapez "Informations système" dans la barre de recherche et appuyez sur Entrée.
+2. Tapez "Système" dans la barre de recherche et appuyez sur Entrée.
 
-      3. Dans la fenêtre qui s'ouvre, recherchez la section "Processeur" pour voir le fabricant, le modèle et l'architecture de votre processeur.
+3. Dans la fenêtre qui s'ouvre, recherchez la section "Spécifications de
+   l'appareil" pour voir le fabricant, le modèle et l'architecture de votre
+   processeur.
 
-      </Steps>
+</Steps>
 
 </TabItem>
 <TabItem label="macOS" icon="apple">
-    	Accédez aux informations sur votre processeur en suivant ces étapes :
 
-      <Steps>
+Accédez aux informations sur votre processeur en suivant ces étapes :
 
-    	1. Cliquez sur le menu Apple dans le coin supérieur gauche de l'écran.
+<Steps>
 
-    	2. Sélectionnez "À propos de ce Mac".
+1. Cliquez sur le menu Apple dans le coin supérieur gauche de l'écran.
 
-    	3. Dans la fenêtre qui s'ouvre, vous verrez les informations sur votre processeur, y compris le fabricant, le modèle et l'architecture.
+2. Sélectionnez "À propos de ce Mac".
 
-      </Steps>
+3. Dans la fenêtre qui s'ouvre, vous verrez les informations sur votre
+   processeur (nommé "Puce"), y compris le fabricant, le modèle et
+   l'architecture. Si votre Mac utilise un processeur Apple, il s'agit d'une
+   architecture ARM. Si c'est un processeur Intel, il s'agit d'une architecture
+   x86/x64.
+
+</Steps>
 
 </TabItem>
 <TabItem label="Linux" icon="linux">
-      	Accédez aux informations sur votre processeur en suivant ces étapes :
 
-        <Steps>
+Accédez aux informations sur votre processeur en suivant ces étapes :
 
-      	1. Ouvrez un terminal.
+<Steps>
 
-      	2. Tapez la commande suivante et appuyez sur Entrée :
-      	   ```
-      	   lscpu
-      	   ```
+1. Ouvrez un terminal.
 
-      	3. Recherchez les lignes "Architecture" et "Modèle du processeur" pour voir le fabricant, le modèle et l'architecture de votre processeur.
+2. Tapez la commande suivante et appuyez sur Entrée :
 
-        </Steps>
+   ```bash title="Terminal Bash/Zsh"
+   lscpu
+   ```
+
+3. Recherchez les lignes "Architecture" et "Modèle du processeur" pour voir le
+   fabricant, le modèle et l'architecture de votre processeur.
+
+</Steps>
 
 </TabItem>
 </Tabs>

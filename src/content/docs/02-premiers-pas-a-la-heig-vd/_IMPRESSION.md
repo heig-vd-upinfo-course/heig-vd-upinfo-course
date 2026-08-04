@@ -1,6 +1,6 @@
 ---
 lang: "fr"
-geometry: "top=2cm, bottom=2cm, left=2cm, right=2cm"
+geometry: "top=2.5cm, bottom=2cm, left=2cm, right=2cm"
 fontsize: "11pt"
 papersize: "a4"
 header-includes: |
@@ -57,47 +57,47 @@ docker run \
 			\multicolumn{2}{|l|}{\textbf{Données générales}} \\
 			\hline
 			Marque                              &                                                                     \\
-			\cline{2-2}
+			\hline
 			Modèle                              &                                                                     \\
-			\cline{2-2}
+			\hline
 			Année de sortie                     &                                                                     \\
-			\cline{2-2}
+			\hline
 			Fiche produit                       &                                                                     \\
 			\hline
 			\multicolumn{2}{|l|}{\textbf{Spécifications techniques}} \\
 			\hline
 			Système d'exploitation (OS)         & $\square$ Windows \quad $\square$ macOS \quad $\square$ Linux         \\
-			\cline{2-2}
+			\hline
 			Version du système d'exploitation   &                                                                       \\
-			\cline{2-2}
+			\hline
 			Architecture processeur (CPU)       & $\square$ x86/x64 (AMD/Intel) \quad $\square$ ARM (Apple Silicon)     \\
-			\cline{2-2}
+			\hline
 			Mémoire vive (RAM) actuelle         &                                                                       \\
-			\cline{2-2}
+			\hline
 			Mémoire vive (RAM) maximale         &                                                                       \\
-			\cline{2-2}
+			\hline
 			Stockage actuel                     &                                                                       \\
-			\cline{2-2}
+			\hline
 			Périphériques externes              & $\square$ Souris \quad $\square$ Clé USB \quad $\square$ Stockage externe \quad $\square$ Autre \\
-			\cline{2-2}
+			\hline
 			Touche(s) pour le BIOS/UEFI         &                                                                       \\
-			\cline{2-2}
+			\hline
 			Version du BIOS/UEFI                &                                                                       \\
 			\hline
 			\multicolumn{2}{|l|}{\textbf{Comptes}} \\
 			\hline
 			Nom d'utilisateur OS                &                                                                       \\
-			\cline{2-2}
+			\hline
 			Nom d'utilisateur WSL               &                                                                       \\
-			\cline{2-2}
+			\hline
 			Nom d'utilisateur HES-SO (AAI)      &                                                                       \\
-			\cline{2-2}
+			\hline
 			Nom d'utilisateur GitHub            &                                                                       \\
-			\cline{2-2}
+			\hline
 			Adresse mail HES-SO                 &                                                                       \\
-			\cline{2-2}
+			\hline
 			Adresse mail HEIG-VD                &                                                                       \\
-			\cline{2-2}
+			\hline
 			Adresse mail GitHub                 &                                                                       \\
 			\hline
 			\multicolumn{2}{|l|}{\textbf{Configuration HEIG-VD}} \\
@@ -111,7 +111,6 @@ docker run \
 			                                    & $\square$ Antivirus (Windows uniquement)                      \\
 			                                    & $\square$ WSL (Windows uniquement)                            \\
 			                                    & $\square$ Gestionnaire de paquets (WinGet, Homebrew ou apt)   \\
-			                                    & $\square$ Firefox (avec uBlock Origin et Bitwarden)           \\
 			\hline
 		\end{tabular}}
 \end{table}
@@ -127,7 +126,8 @@ docker run \
 		\centering
 		\begin{tabular}{|p{0.33\textwidth}|p{0.6\textwidth}|}
 			\hline
-			Logiciels installés et configurés   & $\square$ Chrome (avec uBlock Origin Lite et Bitwarden)       \\
+			Logiciels installés et configurés   & $\square$ Firefox (avec uBlock Origin et Bitwarden)           \\
+			                                    & $\square$ Chrome (avec uBlock Origin Lite et Bitwarden)       \\
 			                                    & $\square$ Visual Studio Code                                  \\
 			                                    & $\square$ Secure Shell (SSH)                                               \\
 			                                    & $\square$ Git et GitHub                                               \\
@@ -150,20 +150,18 @@ docker run \
 			                                            & $\square$ Différences entre les composants matériels et logiciels       \\
 			                                            & $\square$ Différences entre les systèmes d'exploitation (OS)                        \\
 			                                            & $\square$ Différences entre l'environnement Windows et WSL                        \\
-			                                            & $\square$ Notions de système de fichiers                        \\
+			                                            & $\square$ Différences entre les fichiers locaux et distants                        \\
+			                                            & $\square$ Notions de système de fichiers et sensibilité à la casse                        \\
 			                                            & $\square$ Différences entre les dossiers et les fichiers                        \\
-			                                            & $\square$ Sensibilité de la casse selon le système de fichiers                  \\
 			                                            & $\square$ Installation de logiciels à l'aide d'un gestionnaire de paquets                          \\
 			                                            & $\square$ Mise à jour du système d'exploitation et logiciels                         \\
 			                                            & $\square$ Gestion de mots de passe et 2FA                     \\
+			                                            & $\square$ Navigation dans le système de fichiers (GUI et terminal)             \\
 			                                            & $\square$ Création et partage d'une archive                   \\
 			                                            & $\square$ Prise de notes Markdown                         \\
 			                                            & $\square$ Sauvegarde et restauration de documents             \\
 			                                            & $\square$ Ouverture et usage d'un terminal                    \\
-			                                            & $\square$ Exécution de commandes dans un terminal             \\
-			                                            & $\square$ Navigation dans le système de fichiers (GUI et terminal)             \\
-			                                            & $\square$ Création et exécution de scripts                    \\
-			                                            & $\square$ Gestion des utilisateur·trices et permissions       \\
+			                                            & $\square$ Exécution de commandes et de scripts dans un terminal             \\
 			\hline
 		\end{tabular}}
 \end{table}

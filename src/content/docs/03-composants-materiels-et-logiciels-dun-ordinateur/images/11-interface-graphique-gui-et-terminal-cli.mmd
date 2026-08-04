@@ -1,0 +1,40 @@
+flowchart
+  Hardware["`
+    **🛠️ Composants matériels**
+  `"]
+  BIOS_UEFI["`
+    **🔗 BIOS/UEFI**
+  `"]
+  OS["`
+    **🐧 Système d'exploitation**
+    _Windows, macOS, Linux_
+  `"]
+  Drivers["`
+    **🛠️ Drivers**
+    _Pilotes de périphériques_
+  `"]
+  Kernel["`
+    **🧩 Kernel**
+    _Cœur du système d'exploitation_
+  `"]
+  GUI["`
+    **📺 Interface graphique (GUI)**
+    _Interaction visuelle avec l'utilisateur·trice_
+  `"]
+  CLI["`
+    **📜 Terminal (CLI)**
+    _Interaction textuelle avec l'utilisateur·trice_
+  `"]
+
+  subgraph Software["`**🔢 Composants logiciels**`"]
+    direction TB
+
+    OS <--> Drivers
+
+    OS <--> Kernel
+
+    GUI <--> OS
+    CLI <--> OS
+  end
+
+  Software <--> BIOS_UEFI <--> Hardware

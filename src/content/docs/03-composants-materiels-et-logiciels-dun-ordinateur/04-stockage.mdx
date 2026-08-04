@@ -250,50 +250,58 @@ Identifiez le type de stockage (HDD ou SSD) et la capacité de stockage de votre
 ordinateur et notez ces informations pour référence future.
 
 <Tabs syncKey="operating-system">
+<TabItem label="Windows" icon="seti:windows">
 
-    <TabItem label="Windows" icon="seti:windows">
-    	Accédez aux informations sur votre stockage en suivant ces étapes :
+Accédez aux informations sur votre stockage en suivant ces étapes :
 
-      <Steps>
+<Steps>
 
-    	1. Cliquez sur le bouton Démarrer.
+1. Cliquez sur le bouton Démarrer.
 
-    	2. Tapez "Informations système" dans la barre de recherche et appuyez sur Entrée.
+2. Tapez "Système" dans la barre de recherche et appuyez sur Entrée.
 
-      3. Dans la fenêtre qui s'ouvre, recherchez la section "Stockage" pour voir le type de stockage et la capacité installée sur votre ordinateur.
+3. Dans la fenêtre qui s'ouvre, recherchez la section "Spécifications de
+   l'appareil" pour voir le type de stockage et la capacité installée sur votre
+   ordinateur.
 
-      </Steps>
+</Steps>
 
 </TabItem>
 <TabItem label="macOS" icon="apple">
-    	Accédez aux informations sur votre stockage en suivant ces étapes :
 
-      <Steps>
+Accédez aux informations sur votre stockage en suivant ces étapes :
 
-    	1. Cliquez sur le menu Apple dans le coin supérieur gauche de l'écran.
+<Steps>
 
-    	2. Sélectionnez "À propos de ce Mac".
+1. Cliquez sur le menu Apple dans le coin supérieur gauche de l'écran.
 
-    	3. Dans la fenêtre qui s'ouvre, vous verrez les informations sur votre stockage.
+2. Sélectionnez "À propos de ce Mac".
 
-      </Steps>
+3. Sélectionnez "En savoir plus...".
+
+4. Dans la fenêtre qui s'ouvre, vous verrez les informations sur votre stockage.
+
+</Steps>
 
 </TabItem>
 <TabItem label="Linux" icon="linux">
-      	Accédez aux informations sur votre stockage en suivant ces étapes :
 
-        <Steps>
+Accédez aux informations sur votre stockage en suivant ces étapes :
 
-      	1. Ouvrez un terminal.
+<Steps>
 
-      	2. Tapez la commande suivante et appuyez sur Entrée :
-      	   ```
-      	   df -h
-      	   ```
+1. Ouvrez un terminal.
 
-      	3. Recherchez les lignes "Filesystem" pour voir la capacité de stockage installée sur votre ordinateur.
+2. Tapez la commande suivante et appuyez sur Entrée :
 
-        </Steps>
+   ```bash title="Terminal Bash/Zsh"
+   df -h
+   ```
+
+3. Recherchez les lignes "Filesystem" pour voir la capacité de stockage
+   installée sur votre ordinateur.
+
+</Steps>
 
 </TabItem>
 </Tabs>

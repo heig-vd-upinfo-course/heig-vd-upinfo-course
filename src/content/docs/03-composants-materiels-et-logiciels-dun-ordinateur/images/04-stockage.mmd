@@ -1,0 +1,20 @@
+flowchart
+  CPU["`
+    **🧠 Processeur (CPU)**
+    _Cerveau de l'ordinateur_
+  `"]
+  RAM["`
+    **⚡ Mémoire vive (RAM)**
+    _Stockage temporaire des données_
+  `"]
+  Storage["`
+    **💾 Stockage**
+    _Conservation permanente des données_
+  `"]
+
+  subgraph Hardware["`**🛠️ Composants matériels**`"]
+    direction TB
+
+    CPU <--> RAM
+    CPU <--> Storage
+  end

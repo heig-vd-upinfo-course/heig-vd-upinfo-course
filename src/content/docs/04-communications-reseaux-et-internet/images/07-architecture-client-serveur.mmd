@@ -1,0 +1,17 @@
+sequenceDiagram
+  autonumber
+
+  box Ordinateur client (IP 192.168.1.34)
+    participant User as Utilisateur·trice
+    participant Client as Application cliente
+  end
+
+  box Serveur (IP 192.168.1.67)
+    participant Server as Application serveur (port 8080)
+  end
+
+  User ->> Client: Demande une ressource.
+  Client ->> Server: Requête vers 192.168.1.67:8080.
+  Server ->> Server: Traite la requête.
+  Server -->> Client: Réponse.
+  Client -->> User: Affiche le résultat.

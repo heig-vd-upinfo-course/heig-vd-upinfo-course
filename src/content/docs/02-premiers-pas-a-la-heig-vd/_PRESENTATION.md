@@ -315,8 +315,9 @@ Est-ce que vous avez des questions ?
 - Gérer son compte HES-SO, HEIG-VD et Switch eduID.
 - Accéder à ses e-mail, Microsoft Teams, GAPS et l'intranet.
 - Se connecter au VPN et aux partages réseaux.
-- Imprimer et numériser des documents
-- Obtenir de l'aide au helpdesk.
+- Imprimer et numériser des documents.
+
+**But** : connaître la base de ce qui compose la HEIG-VD.
 
 ## À vous de jouer !
 
