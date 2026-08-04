@@ -571,7 +571,7 @@ N'hésitez pas à vous entraidez ou nous solliciter si vous avez des difficulté
 </div>
 </div>
 
-## Sources
+## Sources (1/2)
 
 - [Illustration principale][illustration-principale] par
   [Growtika](https://unsplash.com/@growtika) sur
@@ -596,6 +596,9 @@ N'hésitez pas à vous entraidez ou nous solliciter si vous avez des difficulté
 - [Illustration][illustration-modem-routeur-wi-fi] par
   [miguel pela-yo_ou_voce](https://unsplash.com/@mr_meegs_01) sur
   [Unsplash](https://unsplash.com/photos/a-bunch-of-wires-that-are-connected-to-a-computer-3Smj8VEHCoY).
+
+## Sources (2/2)
+
 - [Illustration][illustration-obtenir-de-laide-la-bibliotheque] par
   [enrico bet](https://unsplash.com/@henry_be) sur
   [Unsplash](https://unsplash.com/photos/library-shelf-near-black-wooden-ladder-lc7xcWebECc).
