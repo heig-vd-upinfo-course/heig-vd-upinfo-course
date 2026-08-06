@@ -36,6 +36,8 @@ l'adresse IP `127.0.0.1` qui désigne la machine locale).
 Une même machine peut proposer plusieurs services en même temps, chacun sur un
 port différent.
 
+### Analogie de l'immeuble
+
 Une analogie pour comprendre cette situation est celle d'un immeuble avec
 plusieurs appartements : l'adresse de l'immeuble correspond à l'adresse IP,
 tandis que le numéro de l'appartement correspond au port.
@@ -47,8 +49,11 @@ locataire (l'application réseau associée) approprié.
 
 ## Séquence de connexion
 
-Quand la personne utilise le client, celui-ci envoie une requête au serveur. Le
-serveur traite la requête puis renvoie une réponse.
+Quand la personne utilise le client, celui-ci envoie une requête au serveur.
+
+Le serveur reçoit la requête et la traite.
+
+Une fois le traitement terminé, le serveur renvoie une réponse au client.
 
 ```mermaid
 sequenceDiagram
