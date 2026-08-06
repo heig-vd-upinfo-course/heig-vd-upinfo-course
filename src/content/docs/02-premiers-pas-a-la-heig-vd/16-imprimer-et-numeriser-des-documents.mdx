@@ -2,7 +2,13 @@
 title: Imprimer et numériser des documents
 ---
 
-import { Aside, LinkCard, Steps } from "@astrojs/starlight/components";
+import {
+	Aside,
+	LinkCard,
+	TabItem,
+	Tabs,
+	Steps,
+} from "@astrojs/starlight/components";
 
 Des imprimantes multifonctions (impression, numérisation, copie) sont
 disponibles sur les différents sites de la HEIG-VD. Elles sont accessibles aux
@@ -56,6 +62,71 @@ C'est la méthode la plus simple et la plus universelle.
 Vous pourrez alors directement sélectionner le fichier à imprimer depuis l'écran
 de l'imprimante et choisir les options d'impression (nombre de copies, couleur,
 recto-verso, etc.).
+
+<Aside type="tip" title="Astuce : formatter sa clé USB en FAT32">
+
+Pendant très longtemps, les clés USB achetées en magasin étaient formatées en
+FAT32, les rendant compatibles avec la majorité des imprimantes.
+
+Maintenant que les capacités des clés peuvent faire plusieurs Go, les clés USB
+sont plus souvent formatées en exFAT ou NTFS, des systèmes de fichiers
+incompatibles avec les imprimantes de la HEIG-VD.
+
+Pour remédier à cela, il est nécessaire de formater votre clé USB en FAT32. Vous
+pouvez également utiliser ces instructions pour vérifier si votre clé USB est
+bien formatée de la bonne manière.
+
+**Notez que votre clé USB ne doit contenir qu'une seule partition formatée en
+FAT32. Si plusieurs partitions sont sur la clé USB, même si l'une d'entre elles
+est bien en FAT32, l'imprimante n'arrivera pas à la détecter.**
+
+C'est une des raisons pour lesquelles nous vous conseillons d'avoir une clé USB
+dédiée pour les impressions pour éviter des soucis.
+
+**Si vous formatez la clé USB, tout son contenu sera effacé ! Assurez-vous
+d'avoir bien sauvegardé le contenu de la clé avant de la formater.**
+
+<Tabs syncKey="operating-system">
+<TabItem label="Windows" icon="seti:windows">
+
+TODO
+
+</TabItem>
+<TabItem label="macOS" icon="apple">
+
+<Steps>
+
+1. Ouvrez l'application "Disque" de macOS.
+
+2. En haut à droite de l'écran, sélectionnez "Formater".
+
+3. Sélectionnez le système de fichiers "FAT (compatibles avec tous les
+   systèmes)".
+
+4. Validez le formatage de la clé USB.
+
+</Steps>
+
+</TabItem>
+<TabItem label="Linux" icon="linux">
+
+<Steps>
+
+1. Ouvrez l'application "Disques" de Linux.
+
+2. Sélectionnez votre clé USB dans la liste des périphériques.
+
+3. Dans les options de la clé USB, sélectionnez "Formater le disque".
+
+4. Sélectionnez le système de partition "Compatible avec tous les systèmes (MBR
+   / DOS)".
+
+</Steps>
+
+</TabItem>
+</Tabs>
+
+</Aside>
 
 ### Via le réseau
 
