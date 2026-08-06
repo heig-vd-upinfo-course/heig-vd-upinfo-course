@@ -546,7 +546,7 @@ Est-ce que vous avez des questions ?
 
 ## Et maintenant ?
 
-- Continuez la configuration de votre ordinateur.
+- Continuer la configuration de votre ordinateur.
 
 ## À vous de jouer !
 

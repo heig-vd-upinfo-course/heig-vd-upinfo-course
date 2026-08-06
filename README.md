@@ -1,11 +1,19 @@
 # HEIG-VD UPInfo Course
 
 [![Licence](https://img.shields.io/github/license/heig-vd-upinfo-course/heig-vd-upinfo-course)](./LICENSE.md)
+[![AI Disclaimer](https://img.shields.io/badge/ai%20disclaimer-assisted%20with%20AI-orange)](./AI_DISCLAIMER.md)
 
 Bienvenue sur le dépôt principal de l'unité préparatoire d'informatique pour
 ingénierie des médias enseignée à la
 [Haute École d'ingénierie et de gestion du canton de Vaud (HEIG-VD)](https://heig-vd.ch),
 Suisse !
+
+> [!NOTE]
+>
+> Ce projet utilise des outils d'intelligence artificielle en appui au
+> développement. Consultez le document [`AI_DISCLAIMER.md`](./AI_DISCLAIMER.md)
+> pour plus d'informations sur les usages, les limites et le processus de
+> relecture humaine.
 
 ## 🎯 Objectifs généraux
 
