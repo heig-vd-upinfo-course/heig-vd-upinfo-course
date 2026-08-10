@@ -122,11 +122,7 @@ Guidoux**
 
 **Parcours**
 
-- TODO
-
 **Enseignement**
-
-- TODO
 
 </small>
 
