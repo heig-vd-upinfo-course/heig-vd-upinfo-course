@@ -1,5 +1,5 @@
 ---
-title: Installer un outil pour sauvegarder/restaurer ses documents
+title: Configurer un outil pour sauvegarder/restaurer ses documents
 ---
 
 import { Aside, TabItem, Tabs, Steps } from "@astrojs/starlight/components";
@@ -57,9 +57,7 @@ Sur Linux, plusieurs outils permettent de sauvegarder ses données :
 </TabItem>
 </Tabs>
 
-## Limites des outils natifs
-
-Les outils natifs sont pratiques et faciles à configurer, mais ils présentent
+Il est important de garder en tête que les outils intégrés peuvent présentent
 certaines limites :
 
 - Ils sont limités à un écosystème spécifique (Windows, macOS, Linux) et ne sont
@@ -73,10 +71,6 @@ certaines limites :
 
 Si vous pensez que ces limitations sont un problème pour votre usage, vous
 pouvez envisager d'utiliser des solutions tierces.
-
-Si, au contraire, vous n'utilisez qu'un seul système d'exploitation et que vous
-n'avez pas besoin de fonctionnalités avancées, les outils natifs sont suffisants
-pour une utilisation courante.
 
 ## Alternatives tierces
 
@@ -93,11 +87,10 @@ tierces :
 ## Résumé
 
 Time Machine (macOS) et l'Historique des fichiers (Windows) sont des outils
-natifs faciles à configurer et suffisants pour une utilisation courante. Elles
-présentent cependant certaines limites, notamment en termes de compatibilité et
-de fonctionnalités avancées. Pour une solution plus flexible et
-multi-plateforme, des alternatives tierces comme Duplicati ou Kopia peuvent être
-envisagées.
+natifs faciles à configurer et suffisants pour une utilisation courante.
+
+Pour une solution plus flexible et multi-plateforme, des alternatives tierces
+comme Duplicati ou Kopia peuvent être envisagées.
 
 ## À vous de jouer !
 
@@ -112,59 +105,23 @@ l'aide au corps enseignant.
 
 </Aside>
 
-### Exercice pratique - Télécharger et installer Duplicati
+### Exercice pratique - Configurer un outil de sauvegarde
 
-Afin de vous proposer un outil de sauvegarde multi-plateforme, nous vous
-recommandons d'installer Duplicati. Vous êtes libre d'utiliser un autre outil de
-sauvegarde si vous le souhaitez, mais nous ne pourrons pas vous aider à
-l'installer.
+Explorez les outils de sauvegarde disponibles sur votre système d'exploitation
+et configurez-en un pour sauvegarder vos documents importants selon les étapes
+ci-dessus.
 
-Utilisez les instructions ci-dessous pour installer l'application sur votre
-système d'exploitation. Vous pouvez choisir d'utiliser un gestionnaire de
-paquets (recommandé) ou d'installer l'application manuellement.
+Vous aurez besoin d'un disque dur externe pour effectuer la sauvegarde.
 
-<Tabs syncKey="package-manager">
-<TabItem label="WinGet (Windows)" icon="seti:windows">
+Si vous en avez la possibilité, chiffrez vos sauvegardes pour protéger vos
+données en cas de perte ou de vol du disque dur externe. Notez le mot de passe
+utilisé pour le chiffrement dans votre gestionnaire de mots de passe, car il
+sera nécessaire pour restaurer vos données.
 
-    Duplicati est disponible sur [winget.run](https://winget.run/pkg/Duplicati/Duplicati) :
+Si vous êtes obligé·e de saisir un indice de sécurité, utilisez simplement le
+caractère `-` (tiret) pour ne pas divulguer d'informations sensibles.
 
-    ```powershell title="Shell PowerShell"
-    winget install -e --id Duplicati.Duplicati
-    ```
-
-</TabItem>
-<TabItem label="Homebrew (macOS)" icon="apple">
-
-    Duplicati est disponible sur [brew.sh](https://formulae.brew.sh/cask/duplicati) :
-
-    ```bash title="Shell Bash/Zsh"
-    # Installe l'application
-    brew install --cask duplicati
-    ```
-
-</TabItem>
-<TabItem label="apt (Linux)" icon="linux">
-
-    Les instructions suivantes sont adaptées pour des distributions basées sur Ubuntu/Debian.
-
-    Pour une autre distribution (Fedora, Arch, OpenSUSE, etc.), merci de vous référer à votre gestionnaire de paquets pour installer cette application.
-
-    ```bash title="Shell Bash/Zsh"
-    # Installe l'application
-    sudo apt install duplicati
-    ```
-
-</TabItem>
-<TabItem label="Installation manuelle" icon="setting">
-      <Steps>
-
-        1. Rendez-vous sur le site officiel de Duplicati : [duplicati.com](https://www.duplicati.com).
-
-        2. Installez Duplicati manuellement selon votre système.
-
-      </Steps>
-
-</TabItem>
-</Tabs>
-
-Ouvrez Duplicati et vérifiez que l'application fonctionne correctement.
+Explorez les options offertes par l'outil de sauvegarde pour planifier des
+sauvegardes automatiques et pour gérer les versions de vos fichiers. Vous
+devriez pouvoir exclure certains fichiers ou dossiers de la sauvegarde si
+nécessaire.
