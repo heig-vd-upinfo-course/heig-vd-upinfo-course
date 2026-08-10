@@ -224,6 +224,19 @@ questions. **Nous sommes payés pour ça.**
 Si quelque chose ne convient pas, n'hésitez pas à nous le dire. Nous acceptons
 toutes critiques pour améliorer notre enseignement.
 
+---
+
+<!-- _class: lead -->
+
+**Il n'est pas attendu à ce que vous reteniez l'intégralité du contenu de ce
+cours.**
+
+Vous étudierez certains de ces contenus plus en profondeur dans vos cours à la
+HEIG-VD.
+
+L'objectif est de vous donner de bonnes bases pour que vos prochains cours
+soient plus accessibles.
+
 ## La ressource principale : le site web
 
 Nous avons créé un site web dédié pour l'unité préparatoire.
@@ -246,6 +259,12 @@ Vous y trouverez tous les contenus du cours pour configurer votre ordinateur
 **Nous sommes là pour vous aider.**
 
 ![bg right:40% contain](./images/website-light.png)
+
+## Questions
+
+<!-- _class: lead -->
+
+Est-ce que vous avez des questions jusqu'ici ?
 
 ## HES-SO et HEIG-VD (1/3)
 

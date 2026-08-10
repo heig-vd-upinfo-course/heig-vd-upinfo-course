@@ -2,6 +2,8 @@
 title: Interface graphique (GUI) et terminal (CLI)
 ---
 
+import { Aside, TabItem, Tabs } from "@astrojs/starlight/components";
+
 Nous sommes habitué·es à utiliser des ordinateurs avec une interface graphique
 (des fenêtres, des icônes, des menus). C'est l'interface que la plupart des
 personnes utilisent au quotidien (un peu comme un smartphone ou une tablette).
@@ -65,6 +67,91 @@ de se familiariser avec le terminal. Cependant, il est important de comprendre
 que le terminal est un outil puissant et efficace. Il est donc recommandé de se
 familiariser avec les deux interfaces pour devenir un·e utilisateur·trice
 compétent·e et polyvalent·e.
+
+## Zones principales de l'interface graphique
+
+L'interface graphique dispose de zones dédiées qui affichent en un coup d'œil
+les applications ouvertes ou actives. Ce sont aussi les endroits où se cachent
+les applications qui tournent en **arrière-plan**, c'est-à-dire sans fenêtre
+visible à l'écran.
+
+<Tabs syncKey="operating-system">
+<TabItem label="Windows" icon="seti:windows">
+
+### Windows
+
+Sur **Windows**, la **barre des tâches** (en bas de l'écran) affiche les
+applications ouvertes et épinglées. À droite se trouve la **zone de
+notification** (aussi appelée _system tray_) avec les icônes système et les
+applications en arrière-plan. Certaines de ces icônes sont **masquées** et
+regroupées derrière un chevron `^`.
+
+![Barre des tâches Windows](./images/windows-taskbar.png)
+
+Pour afficher les icônes masquées, cliquez sur le **chevron `^`** situé à gauche
+de la zone de notification. Un panneau s'ouvre alors avec les applications qui
+tournent en arrière-plan mais dont l'icône n'est pas affichée en permanence.
+
+![Barre des tâches Windows et icônes masquées](./images/windows-taskbar-hidden-icons.png)
+
+Vous pouvez personnaliser les icônes affichées en permanence via
+**Paramètres** > **Personnalisation** > **Barre des tâches** > **Autres icônes
+de la barre d'état système**.
+
+Pour voir précisément ce qui s'exécute et, au besoin, arrêter une application,
+ouvrez le **Gestionnaire des tâches** (`Ctrl+Shift+Esc`). L'onglet **Processus**
+liste les applications et les processus en cours d'exécution, y compris ceux en
+arrière-plan.
+
+</TabItem>
+<TabItem label="macOS" icon="apple">
+
+### macOS
+
+Sur **macOS**, la **barre des menus** (en haut de l'écran) contient les menus de
+l'application active à gauche et, à droite, des **icônes de statut** (le _menu
+extras_ : Wi-Fi, batterie, volume, ainsi que des applications en arrière-plan).
+Le **Dock** (en bas de l'écran) affiche les applications épinglées et ouvertes ;
+un **point** sous une icône indique que l'application est en cours d'exécution.
+
+![Dock macOS](./images/macos-dock.png)
+
+Les applications en arrière-plan ajoutent souvent une **icône de statut** dans
+la partie droite de la barre des menus. Cliquez sur ces icônes pour accéder aux
+options de l'application correspondante.
+
+![Barre des menus macOS](./images/macos-menu-bar.png)
+
+Pour retrouver ou fermer une application qui ne répond plus, utilisez **Forcer à
+quitter** (`Cmd+Option+Esc`). Pour une vue détaillée de toutes les applications
+et de leur consommation de ressources, ouvrez le **Moniteur d'activité** (dans
+_Applications_ > _Utilitaires_).
+
+</TabItem>
+<TabItem label="Linux" icon="linux">
+
+### Linux
+
+L'emplacement des icônes d'arrière-plan dépend de votre environnement de bureau
+: la barre supérieure sous GNOME, ou la zone d'état de la barre des tâches sous
+KDE Plasma. Certaines applications peuvent nécessiter une extension pour
+afficher leur icône de statut.
+
+Pour voir les applications et processus en cours, ouvrez le **moniteur système**
+de votre environnement (par exemple _Moniteur système_ sous GNOME).
+
+</TabItem>
+</Tabs>
+
+<Aside type="tip">
+
+Si une application que vous pensiez avoir fermée continue d'apparaître dans ces
+zones, elle est peut-être configurée pour se lancer automatiquement. Consultez
+la page
+[Applications au démarrage](/heig-vd-upinfo-course/05-configurer-son-systeme-dexploitation-et-ses-applications/09-applications-au-demarrage/)
+pour contrôler ce qui démarre avec votre système.
+
+</Aside>
 
 ## Résumé
 
@@ -149,3 +236,26 @@ flowchart
 
   Software <--> BIOS_UEFI <--> Hardware
 ```
+
+## À vous de jouer !
+
+<Aside type="tip">
+
+Ces exercices sont là pour vous aider. Bien qu'ils ne soient pas notés, il est
+fortement recommandé de les réaliser pour vous familiariser avec l'environnement
+de la HEIG-VD.
+
+Si vous avez des questions ou des difficultés, n'hésitez pas à demander de
+l'aide au corps enseignant.
+
+</Aside>
+
+### Exercice pratique - Explorer votre barre des tâches ou barre des menus
+
+1. Repérez la barre des tâches (Windows), la barre des menus et le Dock (macOS)
+   sur votre ordinateur.
+2. Affichez les icônes masquées (chevron `^` sur Windows) ou observez les icônes
+   de statut de la barre des menus (macOS).
+3. Identifiez au moins une application qui tourne en arrière-plan et retrouvez
+   où la gérer (Gestionnaire des tâches sur Windows, Moniteur d'activité sur
+   macOS).

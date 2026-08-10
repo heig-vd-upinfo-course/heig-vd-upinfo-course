@@ -60,7 +60,7 @@ un document Markdown destiné à être converti en PDF avec Pandoc et LaTeX :
 ---
 title: "Mon rapport"
 author: "Alice Dupont"
-date: 2026-09-01
+date: 20.09.2026
 lang: "fr"
 geometry: "top=2cm, bottom=2cm, left=2cm, right=2cm"
 fontsize: "11pt"
@@ -76,7 +76,7 @@ header-includes: |
   \renewcommand{\footrulewidth}{0.4pt}
 ---
 
-## Le second titre de votre document
+## Un premier titre de niveau 2
 
 En effet, comme le titre du document est défini dans l'en-tête YAML, il n'est
 pas nécessaire de le répéter dans le corps du document. Vous pouvez donc
@@ -86,7 +86,27 @@ Pour insérer une formule mathématique, vous pouvez utiliser la syntaxe LaTeX.
 Par exemple : La formule de l'aire d'un cercle est donnée par $A = \pi r^2$, où
 $r$ est le rayon du cercle.
 
-...
+<!-- La commande ci-dessous permet de forcer un saut de page (commande LaTeX) -->
+
+\pagebreak
+
+## Un second titre de niveau 2
+
+Il est possible d'ajouter des images, des tableaux, et d'autres éléments de mise
+en page dans le document :
+
+| Colonne A | Colonne B | Colonne C |
+| :-------- | :-------: | --------: |
+| Gauche    |  Centre   |    Droite |
+
+### Un sous-titre de niveau 3
+
+Pandoc est une solution puissante pour convertir vos notes Markdown en documents
+professionnels.
+
+Il est possible d'utiliser des thèmes LaTeX pour personnaliser davantage
+l'apparence de vos documents PDF. Vous pouvez également inclure des
+bibliographies et des citations en utilisant le format BibTeX.
 ```
 
 ## Résumé
@@ -118,41 +138,38 @@ paquets (recommandé) ou d'installer l'application manuellement.
 <Tabs syncKey="package-manager">
 <TabItem label="WinGet (Windows)" icon="seti:windows">
 
-    **N'installez pas Pandoc directement sur Windows.**
+**N'installez pas Pandoc directement sur Windows.**
 
-    Installez-le dans votre distribution WSL (Ubuntu) en suivant les instructions de l'onglet "apt (Linux)".
+Installez-le dans votre distribution WSL (Ubuntu) en suivant les instructions de
+l'onglet "apt (Linux)".
 
 </TabItem>
 <TabItem label="Homebrew (macOS)" icon="apple">
 
-    Pandoc est disponible sur [brew.sh](https://formulae.brew.sh/formula/pandoc) :
+Pandoc est disponible sur [brew.sh](https://formulae.brew.sh/formula/pandoc) :
 
-    ```bash title="Shell Bash/Zsh"
-    # Installe l'application
-    brew install pandoc homebrew/cask/basictex
-    ```
+```bash title="Shell Bash/Zsh"
+brew install pandoc homebrew/cask/basictex
+```
 
 </TabItem>
 <TabItem label="apt (Linux)" icon="linux">
 
-    Les instructions suivantes sont adaptées pour des distributions basées sur Ubuntu/Debian.
+Les instructions suivantes sont adaptées pour des distributions basées sur
+Ubuntu/Debian.
 
-    Pour une autre distribution (Fedora, Arch, OpenSUSE, etc.), merci de vous référer à votre gestionnaire de paquets pour installer cette application.
+Pour une autre distribution (Fedora, Arch, OpenSUSE, etc.), merci de vous
+référer à votre gestionnaire de paquets pour installer cette application.
 
-    ```bash title="Shell Bash/Zsh"
-    # Installe l'application
-    sudo apt install pandoc texlive
-    ```
+```bash title="Shell Bash/Zsh"
+sudo apt install pandoc texlive texlive-lang-french
+```
 
 </TabItem>
 <TabItem label="Installation manuelle" icon="setting">
-      <Steps>
 
-        1. Rendez-vous sur le site officiel de Pandoc : [pandoc.org](https://pandoc.org).
-
-        2. Installez Pandoc manuellement selon votre système.
-
-      </Steps>
+Nous ne recommandons pas d'installer Pandoc manuellement. Veuillez utiliser l'un
+des gestionnaires de paquets ci-dessus pour installer Pandoc sur votre système.
 
 </TabItem>
 </Tabs>
