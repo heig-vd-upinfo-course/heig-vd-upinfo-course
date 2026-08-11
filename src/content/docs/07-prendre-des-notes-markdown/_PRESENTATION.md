@@ -289,11 +289,3 @@ N'hésitez pas à vous entraidez ou nous solliciter si vous avez des difficulté
 
 [illustration-principale]:
 	https://images.unsplash.com/photo-1537498425277-c283d32ef9db?fit=crop&h=720
-
-<!-- Illustrations à compléter (photos Unsplash par thème) :
-[illustration-presentation-markdown]: TODO
-[illustration-visual-studio-code]: TODO
-[illustration-obsidian]: TODO
-[illustration-pandoc]: TODO
-[illustration-alternatives]: TODO
--->

@@ -2,7 +2,13 @@
 title: Imprimer et numériser des documents
 ---
 
-import { Aside, LinkCard, Steps } from "@astrojs/starlight/components";
+import {
+	Aside,
+	LinkCard,
+	TabItem,
+	Tabs,
+	Steps,
+} from "@astrojs/starlight/components";
 
 Des imprimantes multifonctions (impression, numérisation, copie) sont
 disponibles sur les différents sites de la HEIG-VD. Elles sont accessibles aux
@@ -113,7 +119,102 @@ l'aide au corps enseignant.
 
 </Aside>
 
-### Exercice pratique 1 - Imprimer un document
+### Exercice pratique 1 - Formatter sa clé USB en FAT32
+
+Nous reviendrons sur cette étape dans le cours (contenu
+[Stockage](/heig-vd-upinfo-course/03-composants-materiels-et-logiciels-dun-ordinateur/04-stockage/)),
+mais il est important de vérifier que votre clé USB est bien formatée en FAT32
+avant de l'utiliser pour imprimer ou numériser des documents.
+
+Pendant très longtemps, les clés USB achetées en magasin étaient formatées en
+FAT32, les rendant compatibles avec la majorité des imprimantes.
+
+Maintenant que les capacités des clés peuvent faire plusieurs Go, les clés USB
+sont plus souvent formatées en exFAT ou NTFS, des systèmes de fichiers
+incompatibles avec les imprimantes de la HEIG-VD.
+
+Pour remédier à cela, il est nécessaire de formater votre clé USB en FAT32. Vous
+pouvez également utiliser ces instructions pour vérifier si votre clé USB est
+bien formatée de la bonne manière.
+
+C'est une des raisons pour lesquelles nous vous conseillons d'avoir une clé USB
+dédiée pour les impressions pour éviter des soucis.
+
+<Aside type="note">
+
+Notez que votre clé USB ne doit contenir qu'une seule partition formatée en
+FAT32. Si plusieurs partitions sont sur la clé USB, même si l'une d'entre elles
+est bien en FAT32, l'imprimante n'arrivera pas à la détecter.
+
+</Aside>
+
+<Aside type="danger">
+
+Si vous formatez la clé USB, tout son contenu sera effacé ! Assurez-vous d'avoir
+bien sauvegardé le contenu de la clé avant de la formater.
+
+</Aside>
+
+<Tabs syncKey="operating-system">
+<TabItem label="Windows" icon="seti:windows">
+
+<Steps>
+
+1. Insérer la clé USB dans votre ordinateur.
+
+2. Ouvrez l'explorateur de fichiers et faites un clic droit sur la clé USB.
+
+3. Sélectionnez "Formater".
+
+4. Dans le menu déroulant "Système de fichiers", sélectionnez "FAT32".
+
+5. Cliquez sur "Démarrer" pour lancer le formatage de la clé USB.
+
+</Steps>
+
+</TabItem>
+<TabItem label="macOS" icon="apple">
+
+<Steps>
+
+1. Insérer la clé USB dans votre ordinateur.
+
+2. Ouvrez l'application "Disque" de macOS.
+
+3. En haut à droite de l'écran, sélectionnez "Formater".
+
+4. Sélectionnez le système de fichiers "FAT (compatibles avec tous les
+   systèmes)".
+
+5. Validez le formatage de la clé USB.
+
+</Steps>
+
+</TabItem>
+<TabItem label="Linux" icon="linux">
+
+<Steps>
+
+1. Insérer la clé USB dans votre ordinateur.
+
+2. Ouvrez l'application "Disques" de Linux.
+
+3. Sélectionnez votre clé USB dans la liste des périphériques.
+
+4. Dans les options de la clé USB, sélectionnez "Formater le disque".
+
+5. Sélectionnez le système de partition "Compatible avec tous les systèmes (MBR
+   / DOS)".
+
+</Steps>
+
+</TabItem>
+</Tabs>
+
+Il est maintenant possible d'utiliser votre clé USB pour imprimer et numériser
+des documents à la HEIG-VD.
+
+### Exercice pratique 2 - Imprimer un document
 
 Imprimez le document suivant sur l'une des imprimantes de la HEIG-VD :
 
@@ -133,7 +234,7 @@ pouvoir imprimer le document depuis une clé USB.
 
 Conservez ce document imprimé ; il vous sera utile pour de futurs exercices.
 
-### Exercice pratique 2 - Numériser un document
+### Exercice pratique 3 - Numériser un document
 
 À la fin de ce cours, vous pouvez numériser le document que vous avez imprimé
 pour conserver une copie numérique. Vous pouvez l'envoyer par e-mail ou le

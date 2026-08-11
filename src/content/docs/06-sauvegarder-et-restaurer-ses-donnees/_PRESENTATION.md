@@ -97,11 +97,11 @@ graves.
 
 ### Exemple concret
 
-| Copie | Support                            | Emplacement |
-| ----- | ---------------------------------- | ----------- |
-| 1     | Ordinateur (disque interne)        | Chez soi    |
-| 2     | Disque dur externe                 | Chez soi    |
-| 3     | Disque externe distant ou le cloud | Hors site   |
+| Copie n° | Support                            | Emplacement |
+| -------- | ---------------------------------- | ----------- |
+| 1        | Ordinateur (disque interne)        | Chez soi    |
+| 2        | Disque dur externe                 | Chez soi    |
+| 3        | Disque externe distant ou le cloud | Hors site   |
 
 ### Sauvegarde vs synchronisation
 
