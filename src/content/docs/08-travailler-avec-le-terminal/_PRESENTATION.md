@@ -501,7 +501,7 @@ de feedback pour nous aider à améliorer le cours.</small>
 <div class="two-thirds-one-third-columns">
 <div>
 
-Appliquez le contenu "[Travailler avec le terminal][contenu-complet]" :g
+Appliquez le contenu "[Travailler avec le terminal][contenu-complet]" :
 
 - Lisez le contenu et les instructions.
 - Appliquez les exercices pratiques.
