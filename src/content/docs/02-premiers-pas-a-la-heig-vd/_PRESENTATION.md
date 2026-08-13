@@ -256,6 +256,18 @@ Vous y trouverez tous les contenus du cours pour configurer votre ordinateur
 
 ![bg right:40% contain](./images/website-light.png)
 
+## Salles à disposition
+
+Durant cette semaine, nous avons les salles suivantes à disposition :
+
+- **R102** : moments théoriques de présentation, d'explications et de
+  questions/réponses.
+- **T103** et **TODO** : moments pratiques pour appliquer les contenus et
+  réaliser les exercices.
+
+Vous pouvez vous installer dans la salle de votre choix pour travailler sur les
+exercices pratiques. Nous serons présents dans les deux salles pour vous aider.
+
 ## Questions
 
 <!-- _class: lead -->
