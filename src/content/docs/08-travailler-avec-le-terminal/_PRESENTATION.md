@@ -463,6 +463,29 @@ cours.
 
 Est-ce que vous avez des questions ?
 
+## Feedback
+
+<div class="two-thirds-one-third-columns">
+<div>
+
+Le formulaire de feedback vous **permet de partager votre retour** sur le cours
+_"UPInfo"_.
+
+Vos retours sont importants pour nous aider à améliorer le cours et savoir ce
+qui a bien fonctionné ou ce qui pourrait être amélioré.
+
+**Merci beaucoup !**
+
+</div>
+<div class="center">
+
+[![feedback-qr-code]][feedback]
+
+[Feedback][feedback]
+
+</div>
+</div>
+
 ## Et maintenant ?
 
 - Prendre en main le terminal et les commandes de base.
@@ -470,14 +493,15 @@ Est-ce que vous avez des questions ?
 - Valider la configuration du cours à l'aide de ce script.
 
 **But** : gagner en aisance et en efficacité en ligne de commande et valider la
-configuration de votre environnement de travail.
+configuration de votre environnement de travail <small>\+ répondre au formulaire
+de feedback pour nous aider à améliorer le cours.</small>
 
 ## À vous de jouer !
 
 <div class="two-thirds-one-third-columns">
 <div>
 
-Appliquez le contenu "[Travailler avec le terminal][contenu-complet]" :
+Appliquez le contenu "[Travailler avec le terminal][contenu-complet]" :g
 
 - Lisez le contenu et les instructions.
 - Appliquez les exercices pratiques.
@@ -512,6 +536,9 @@ N'hésitez pas à vous entraidez ou nous solliciter si vous avez des difficulté
 	https://heig-vd-upinfo-course.github.io/heig-vd-upinfo-course/08-travailler-avec-le-terminal/01-introduction-et-ressources/
 [contenu-complet-qr-code]:
 	https://quickchart.io/qr?format=png&ecLevel=Q&size=300&margin=1&text=https://heig-vd-upinfo-course.github.io/heig-vd-upinfo-course/08-travailler-avec-le-terminal/01-introduction-et-ressources/
+[feedback]: https://framaforms.org/upinfo-2026-2027-feedback-1786621190
+[feedback-qr-code]:
+	https://quickchart.io/qr?format=png&ecLevel=Q&size=300&margin=1&text=https://framaforms.org/upinfo-2026-2027-feedback-1786621190
 
 <!-- Illustrations -->
 
