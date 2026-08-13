@@ -12,8 +12,7 @@ Suisse !
 >
 > Ce projet utilise des outils d'intelligence artificielle en appui au
 > développement. Consultez le document [`AI_DISCLAIMER.md`](./AI_DISCLAIMER.md)
-> pour plus d'informations sur les usages, les limites et le processus de
-> relecture humaine.
+> pour plus d'informations sur les usages et le processus de relecture humaine.
 
 ## 🎯 Objectifs généraux
 

@@ -85,7 +85,13 @@ tout au long du cours ainsi que les ressources spécifiques suivantes :
   : le document que vous avez imprimé avec toutes les informations sur votre
   ordinateur.
 
-## Conclusion (1/2)
+## Retour sur vos retours
+
+<!-- _class: lead -->
+
+Discussions générales sur l'unité préparatoire.
+
+## Conclusion
 
 Ce cours n'était qu'une **introduction** à l'informatique.
 
@@ -98,50 +104,9 @@ vous sera utile pour vos études et votre future carrière.
 Continuez à **explorer, apprendre et développer** vos compétences, et restez
 curieux·se face aux futures nouveautés qui vous attendent.
 
-## Conclusion (2/2)
-
-Vous pouvez partager vos retours sur le cours et vos suggestions pour
-l'améliorer via le **formulaire de feedback** (à venir prochainement).
-
-Votre avis est précieux pour nous aider à offrir une meilleure expérience
-d'apprentissage à l'avenir.
-
-## Feedback
-
-<div class="two-thirds-one-third-columns">
-<div>
-
-Le formulaire de feedback vous **permet de partager votre retour** sur le cours
-_"UPInfo"_.
-
-Vos retours sont importants pour nous aider à améliorer le cours et savoir ce
-qui a bien fonctionné ou ce qui pourrait être amélioré.
-
-**Merci beaucoup !**
-
-</div>
-<div class="center">
-
-[![feedback-qr-code]][feedback]
-
-[Feedback][feedback]
-
-</div>
-</div>
-
-## Questions
+## Merci beaucoup et à bientôt !
 
 <!-- _class: lead -->
-
-Est-ce que vous avez des questions ou des éléments à partager ?
-
-## Et maintenant ?
-
-- Reprendre les contenus et exercices pour consolider vos acquis.
-- Explorer les ressources proposées pour aller plus loin.
-- Continuer à pratiquer et rester curieux·se !
-
-**But** : poursuivre votre apprentissage bien au-delà de ce cours.
 
 Encore **merci pour votre participation et votre engagement** dans ce cours.
 Nous vous souhaitons beaucoup de succès dans vos études à la HEIG-VD !
@@ -158,9 +123,6 @@ Nous vous souhaitons beaucoup de succès dans vos études à la HEIG-VD !
 	https://github.com/heig-vd-upinfo-course/heig-vd-upinfo-course/blob/main/LICENSE.md
 [contenu-complet]:
 	https://heig-vd-upinfo-course.github.io/heig-vd-upinfo-course/09-conclusion-au-cours/01-introduction-et-ressources/
-[feedback]: https://framaforms.org/progserv1-2025-2026-feedback-1778517625
-[feedback-qr-code]:
-	https://quickchart.io/qr?format=png&ecLevel=Q&size=300&margin=1&text=https://framaforms.org/progserv1-2025-2026-feedback-1778517625
 
 <!-- Illustrations -->
 

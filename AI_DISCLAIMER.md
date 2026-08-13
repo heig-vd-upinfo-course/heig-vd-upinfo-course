@@ -108,6 +108,6 @@ déploiement et l'accessibilité du dépôt pour les personnes utilisatrices.
 Cet avertissement a été adapté à partir des ressources suivantes :
 
 - [䷼ AI Declaration](https://ai-declaration.md/), qui positionne ce dépôt
-  approximativement au niveau `assist/pair`.
+  approximativement au niveau `assist / pair`.
 - [DALIA Scale](https://daliascale.org/), qui positionne ce dépôt
   approximativement au niveau `D2 (AI-Augmented) / D3 (Guided Creation)`.

@@ -122,7 +122,22 @@ Guidoux**
 
 **Parcours**
 
+- 2010-2013 : Maturité gymnasiale @ Yverdon.
+- 2014-2016 : 1<sup>ère</sup> année en informatique @ EPFL.
+- 2016-2020 : BSc en informatique @ HEIG-VD.
+- 2020-2022 : Ingénieur logiciel @ Ancotech SA.
+- 2022-2026 : Artios + Enseignement @ HEIG-VD.
+
 **Enseignement**
+
+- [MVP](https://github.com/heig-vd-mvp-course/heig-vd-mvp-course),
+  [WEB](https://github.com/web-classroom/web-classroom.github.io) @ TIC.
+- [DévProdMéd](https://github.com/heig-vd-devprodmed-course/heig-vd-devprodmed-course),
+  [MSCI](https://github.com/heig-vd-msci-course/heig-vd-msci-course),
+  [ProgIM1](https://github.com/heig-vd-progim-course/heig-vd-progim1-course),
+  [ProgIM2](https://github.com/heig-vd-progim-course/heig-vd-progim2-course),
+  [UPInfo](https://github.com/heig-vd-upinfo-course/heig-vd-upinfo-course), @
+  COMEM.
 
 </small>
 
@@ -255,6 +270,18 @@ Vous y trouverez tous les contenus du cours pour configurer votre ordinateur
 **Nous sommes là pour vous aider.**
 
 ![bg right:40% contain](./images/website-light.png)
+
+## Salles à disposition
+
+Durant cette semaine, nous avons les salles suivantes à disposition :
+
+- **R102** : moments théoriques de présentation, d'explications et de
+  questions/réponses.
+- **T105** et **T107** : moments pratiques pour appliquer les contenus et
+  réaliser les exercices.
+
+Vous pouvez vous installer dans la salle de votre choix pour travailler sur les
+exercices pratiques. Nous serons présents dans les deux salles pour vous aider.
 
 ## Questions
 
