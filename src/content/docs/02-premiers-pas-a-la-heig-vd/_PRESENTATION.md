@@ -135,7 +135,8 @@ Guidoux**
 - [DévProdMéd](https://github.com/heig-vd-devprodmed-course/heig-vd-devprodmed-course),
   [MSCI](https://github.com/heig-vd-msci-course/heig-vd-msci-course),
   [ProgIM1](https://github.com/heig-vd-progim-course/heig-vd-progim1-course),
-  [ProgIM2](https://github.com/heig-vd-progim-course/heig-vd-progim2-course) @
+  [ProgIM2](https://github.com/heig-vd-progim-course/heig-vd-progim2-course),
+  [UPInfo](https://github.com/heig-vd-upinfo-course/heig-vd-upinfo-course), @
   COMEM.
 
 </small>
