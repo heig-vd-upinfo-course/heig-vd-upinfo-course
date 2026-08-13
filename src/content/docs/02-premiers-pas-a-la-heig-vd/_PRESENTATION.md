@@ -277,7 +277,7 @@ Durant cette semaine, nous avons les salles suivantes à disposition :
 
 - **R102** : moments théoriques de présentation, d'explications et de
   questions/réponses.
-- **T103** et **TODO** : moments pratiques pour appliquer les contenus et
+- **T105** et **T107** : moments pratiques pour appliquer les contenus et
   réaliser les exercices.
 
 Vous pouvez vous installer dans la salle de votre choix pour travailler sur les
