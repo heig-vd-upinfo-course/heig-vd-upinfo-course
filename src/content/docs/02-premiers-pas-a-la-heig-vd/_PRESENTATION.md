@@ -122,7 +122,21 @@ Guidoux**
 
 **Parcours**
 
+- 2010-2013 : Maturité gymnasiale @ Yverdon.
+- 2014-2016 : 1<sup>ère</sup> année en informatique @ EPFL.
+- 2016-2020 : BSc en informatique @ HEIG-VD.
+- 2020-2022 : Ingénieur logiciel @ Ancotech SA.
+- 2022-2026 : Artios + Enseignement @ HEIG-VD.
+
 **Enseignement**
+
+- [MVP](https://github.com/heig-vd-mvp-course/heig-vd-mvp-course),
+  [WEB](https://github.com/web-classroom/web-classroom.github.io) @ TIC.
+- [DévProdMéd](https://github.com/heig-vd-devprodmed-course/heig-vd-devprodmed-course),
+  [MSCI](https://github.com/heig-vd-msci-course/heig-vd-msci-course),
+  [ProgIM1](https://github.com/heig-vd-progim-course/heig-vd-progim1-course),
+  [ProgIM2](https://github.com/heig-vd-progim-course/heig-vd-progim2-course) @
+  COMEM.
 
 </small>
 
