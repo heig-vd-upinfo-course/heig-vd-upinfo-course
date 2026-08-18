@@ -138,9 +138,9 @@ Il existe aussi des solutions **tierces** offrant plus de flexibilité.
 
 ### Outils natifs
 
-- **Windows — Historique des fichiers** : sauvegarde automatiquement les
+- **Windows - Historique des fichiers** : sauvegarde automatiquement les
   versions de vos fichiers sur un disque externe ou un partage réseau.
-- **macOS — Time Machine** : sauvegarde automatique et incrémentale de tout le
+- **macOS - Time Machine** : sauvegarde automatique et incrémentale de tout le
   Mac (horaire, quotidienne, hebdomadaire).
 - **Linux** : `rsync` (synchronisation en ligne de commande) ou `restic`
   (sauvegarde chiffrée et dédupliquée).
