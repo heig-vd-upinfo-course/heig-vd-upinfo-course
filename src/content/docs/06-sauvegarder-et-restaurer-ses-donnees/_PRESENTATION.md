@@ -126,56 +126,6 @@ perte de données.
 
 ![bg right:40%][illustration-strategie-de-sauvegarde-3-2-1]
 
-## Installer un outil de sauvegarde
-
-Chaque système d'exploitation propose des outils **natifs** pour sauvegarder ses
-données.
-
-Il existe aussi des solutions **tierces** offrant plus de flexibilité.
-
-![bg right:40%][illustration-windows] ![bg right:40%][illustration-macos]
-![bg right:40% vertical][illustration-linux]
-
-### Outils natifs
-
-- **Windows - Historique des fichiers** : sauvegarde automatiquement les
-  versions de vos fichiers sur un disque externe ou un partage réseau.
-- **macOS - Time Machine** : sauvegarde automatique et incrémentale de tout le
-  Mac (horaire, quotidienne, hebdomadaire).
-- **Linux** : `rsync` (synchronisation en ligne de commande) ou `restic`
-  (sauvegarde chiffrée et dédupliquée).
-
-### Limites des outils natifs
-
-- Limités à un **écosystème** (Windows, macOS, Linux), peu compatibles entre
-  eux.
-- Ne sauvegardent pas toujours vers des services cloud tiers.
-- Fonctionnalités avancées parfois absentes (planification, compression,
-  chiffrement, versions).
-
-Suffisants pour un usage courant sur un seul système ; sinon, envisagez une
-solution tierce.
-
-### Alternatives tierces
-
-Pour une sauvegarde flexible et multi-plateforme :
-
-- **Duplicati** : open source, interface graphique, nombreuses destinations
-  (local, FTP, S3, Backblaze B2, OneDrive, Google Drive, etc.) avec chiffrement.
-- **Kopia** : sauvegarde et synchronisation, interface graphique, mêmes types de
-  destinations, avec chiffrement.
-
-### Résumé
-
-Time Machine (macOS) et l'Historique des fichiers (Windows) sont natifs, faciles
-à configurer et suffisants pour un usage courant.
-
-Pour plus de flexibilité et le multi-plateforme, des outils comme **Duplicati**
-ou **Kopia** sont de bonnes alternatives.
-
-![bg right:40%][illustration-windows] ![bg right:40%][illustration-macos]
-![bg right:40% vertical][illustration-linux]
-
 ## Identifier les fichiers à sauvegarder
 
 Avant de sauvegarder, il faut identifier ce qui doit l'être et ce qui peut être
@@ -201,8 +151,6 @@ données essentielles.
 
 - **Fichiers système et applications** : généralement réinstallables.
 - **Fichiers temporaires, caches** : régénérables ou re-téléchargeables.
-- **Code source et projets en cours** : normalement déjà versionnés et poussés
-  sur un dépôt distant (GitHub, GitLab, etc.).
 
 ### Résumé
 
@@ -213,6 +161,45 @@ Mieux vaut sauvegarder trop que pas assez, sans pour autant encombrer
 inutilement votre sauvegarde.
 
 ![bg right:40%][illustration-identifier-les-fichiers-a-sauvegarder]
+
+## Configurer un outil pour sauvegarder/restaurer ses documents
+
+Chaque système d'exploitation propose des outils **natifs** pour sauvegarder ses
+données.
+
+Il existe aussi des solutions **tierces** offrant plus de flexibilité.
+
+![bg right:40%][illustration-windows] ![bg right:40%][illustration-macos]
+![bg right:40% vertical][illustration-linux]
+
+### Outils natifs
+
+- **Windows - Historique des fichiers** : sauvegarde automatiquement les
+  versions de vos fichiers sur un disque externe ou un partage réseau.
+- **macOS - Time Machine** : sauvegarde automatique et incrémentale de tout le
+  Mac (horaire, quotidienne, hebdomadaire).
+- **Linux** : `rsync` (synchronisation en ligne de commande) ou `restic`
+  (sauvegarde chiffrée et dédupliquée).
+
+### Alternatives tierces
+
+Pour une sauvegarde flexible et multi-plateforme :
+
+- **Duplicati** : open source, interface graphique, nombreuses destinations
+  (local, FTP, S3, Backblaze B2, OneDrive, Google Drive, etc.) avec chiffrement.
+- **Kopia** : sauvegarde et synchronisation, interface graphique, mêmes types de
+  destinations, avec chiffrement.
+
+### Résumé
+
+Time Machine (macOS) et l'Historique des fichiers (Windows) sont natifs, faciles
+à configurer et suffisants pour un usage courant.
+
+Pour plus de flexibilité et le multi-plateforme, des outils comme **Duplicati**
+ou **Kopia** sont de bonnes alternatives.
+
+![bg right:40%][illustration-windows] ![bg right:40%][illustration-macos]
+![bg right:40% vertical][illustration-linux]
 
 ## Sauvegarder ses données
 
