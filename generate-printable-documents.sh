@@ -23,5 +23,6 @@ fi
 echo "Converting printable documents to PDF..."
 
 "${PANDOC_CMD[@]}" "--output=./src/content/docs/02-premiers-pas-a-la-heig-vd/UPINFO_DONNEES_SUR_MON_ORDINATEUR.pdf" "./src/content/docs/02-premiers-pas-a-la-heig-vd/_IMPRESSION.md"
+"${PANDOC_CMD[@]}" "--output=./src/content/docs/09-conclusion-au-cours/UPINFO_EVALUATION_DES_ACQUIS.pdf" "./src/content/docs/09-conclusion-au-cours/_IMPRESSION.md"
 
 echo "All printable documents processed successfully!"
