@@ -22,17 +22,6 @@ header-includes: |
 
   \renewcommand{\arraystretch}{1.5}
   \setlength{\tabcolsep}{10pt}
-
-  \newcommand{\nametable}{%
-    \begin{center}%
-      \renewcommand{\arraystretch}{2}%
-      \setlength{\tabcolsep}{10pt}%
-      \begin{tabular}{ l p{8cm} }%
-        Nom : & \\%
-        \hline%
-      \end{tabular}%
-    \end{center}%
-  }
 ---
 
 <!--
