@@ -59,31 +59,36 @@ plus loin.
 
 ### Ce que vous avez appris (1/2)
 
-- **Premiers pas à la HEIG-VD** : l'environnement, les outils et les ressources.
-- **Composants matériels et logiciels** : les bases de l'informatique et les
+- **Premiers pas à la HEIG-VD** : l'environnement, les outils et les ressources
+  disponibles à la HEIG-VD.
+- **Composants matériels et logiciels** : les bases de l'informatique et des
   systèmes d'exploitation.
-- **Communications réseaux et Internet** : les réseaux, Internet et la sécurité
-  en ligne.
-- **Configurer et sécuriser son ordinateur** : pour une utilisation optimale.
+- **Communications réseaux et Internet** : les réseaux, Internet et comment des
+  ordinateurs communiquent entre eux.
+- **Configurer son système d'exploitation et ses applications** : tous les
+  outils nécessaires pour votre formation à la HEIG-VD.
 
 ### Ce que vous avez appris (2/2)
 
 - **Sauvegarder et restaurer ses données** : une stratégie de sauvegarde
-  efficace et la restauration.
-- **Prendre des notes avec Markdown** : rédiger notes et documents.
-- **Travailler avec le terminal** : exécuter des commandes, configurer son
-  système et automatiser des tâches.
+  efficace et la restauration de vos fichiers personnels.
+- **Prendre des notes avec Markdown** : rédiger notes et documents dans un
+  format simple et efficace.
+- **Travailler avec le terminal** : exécuter des commandes, travailler avec le
+  système de fichiers et exécuter des scripts shell pour automatiser des tâches.
 
 ## Valider vos acquis
 
-Vous pouvez valider vos acquis en reprenant les ressources et exercices proposés
-tout au long du cours ainsi que les ressources spécifiques suivantes :
+Vous pouvez valider vos acquis à l'aide de l'auto-évaluation disponible ici :
 
-- [Évaluer si je devrais suivre ce cours](/heig-vd-upinfo-course/01-introduction-au-cours/05-evaluer-si-je-devrais-suivre-ce-cours/)
-  : le test d'auto-évaluation du cours.
-- [Données sur mon ordinateur](https://heig-vd-upinfo-course.github.io/heig-vd-upinfo-course/02-premiers-pas-a-la-heig-vd/UPINFO_DONNEES_SUR_MON_ORDINATEUR.pdf)
-  : le document que vous avez imprimé avec toutes les informations sur votre
-  ordinateur.
+- [UPInfo - Évaluation des acquis](https://heig-vd-upinfo-course.github.io/heig-vd-upinfo-course/09-conclusion-au-cours/UPINFO_EVALUATION_DES_ACQUIS.pdf)
+  : une auto-évaluation pour valider vos acquis - à imprimer ou à remplir
+  numériquement.
+
+Et également :
+
+- [Évaluer si je devrais suivre ce cours](/heig-vd-upinfo-course/01-introduction-au-cours/05-evaluer-si-je-devrais-suivre-ce-cours/).
+- [Données sur mon ordinateur](https://heig-vd-upinfo-course.github.io/heig-vd-upinfo-course/02-premiers-pas-a-la-heig-vd/UPINFO_DONNEES_SUR_MON_ORDINATEUR.pdf).
 
 ## Retour sur vos retours
 
