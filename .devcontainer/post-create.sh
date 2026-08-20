@@ -25,3 +25,6 @@ sudo apt install --yes ghostscript
 # Install network utilities (dig, nslookup, ping, ncat)
 sudo apt install --yes dnsutils iputils-ping ncat
 
+# Configure Git to rebase when pulling
+git config pull.rebase true
+
