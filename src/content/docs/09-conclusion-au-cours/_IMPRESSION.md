@@ -10,7 +10,6 @@ header-includes: |
   \usepackage{xurl}
 
   \makeatletter
-  \renewcommand{\texttt}[1]{\path{#1}}
   \renewcommand{\section}{%
     \@startsection{section}{1}{\z@}%
       {-3.5ex \@plus -1ex \@minus -.2ex}%
@@ -263,27 +262,28 @@ Répondez aux questions suivantes :
 
 1. Quel est le chemin absolu vers le fichier `fichier.txt` ?
 2. Quel est le chemin relatif vers le fichier `fichier.txt` si nous sommes dans
-   le répertoire `/home/alice/Documents/projet2` ?
+   le répertoire \path{/home/alice/Documents/projet2} ?
 3. Quel est le chemin relatif vers le fichier `fichier.txt` si nous sommes dans
-   le répertoire `/home/alice/Documents/projet1` ?
+   le répertoire \path{/home/alice/Documents/projet1} ?
 4. Quelle commande permet de créer un nouveau répertoire nommé `projet3` dans le
-   répertoire `/home/alice/Documents` ?
+   répertoire \path{/home/alice/Documents} ?
 5. Quelle commande permet de supprimer le répertoire `projet1` et tout son
    contenu ?
 6. Quelle commande permet de copier le fichier `fichier.txt` dans le répertoire
-   `/home/alice/Documents/projet2` ?
+   \path{/home/alice/Documents/projet2} ?
 7. Quelle commande permet de déplacer le fichier `fichier.txt` dans le
-   répertoire `/home/alice/Documents/projet2` ?
+   répertoire \path{/home/alice/Documents/projet2} ?
 8. Quelle commande permet de lister les fichiers et répertoires dans le
-   répertoire `/home/alice/Documents` ?
+   répertoire \path{/home/alice/Documents} ?
 9. Quelle commande permet de changer le répertoire courant pour aller dans le
-   répertoire `/home/alice/Images` si nous sommes dans le répertoire
-   `/home/alice/Documents` ?
+   répertoire \path{/home/alice/Images} si nous sommes dans le répertoire
+   \path{/home/alice/Documents} ?
 10. Quelle commande permet de créer un fichier vide nommé `nouveau_fichier.txt`
-    dans le répertoire `/home/alice/Documents/projet2` ?
+    dans le répertoire \path{/home/alice/Documents/projet2} ?
 11. Quelle commande permet de supprimer le fichier `nouveau_fichier.txt` dans le
-    répertoire `/home/alice/Documents/projet2` ?
+    répertoire \path{/home/alice/Documents/projet2} ?
 12. Quelle commande permet de renommer le fichier `fichier.txt` en
-    `ancien_fichier.txt` dans le répertoire `/home/alice/Documents/projet2` ?
+    `ancien_fichier.txt` dans le répertoire \path{/home/alice/Documents/projet2}
+    ?
 13. Quelle commande permet de visualiser le contenu du fichier `fichier.txt`
-    dans le répertoire `/home/alice/Documents/projet2` ?
+    dans le répertoire \path{/home/alice/Documents/projet2} ?
