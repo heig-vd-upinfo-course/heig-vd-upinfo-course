@@ -185,6 +185,8 @@ Comment un client et un serveur communiquent-ils entre eux sur Internet ?
 ### Quels sont le ou les rôles d'un serveur DNS ?
 -->
 
+\pagebreak
+
 ## Configurer son système d'exploitation et ses applications
 
 ### Question 20
